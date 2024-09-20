@@ -1,0 +1,4 @@
+krg_waiter:
+  hosts:
+    waiter:
+      ansible_host: waiter.dynamic.ucsd.edu

@@ -1,0 +1,22 @@
+- name: KRG Waiter
+  hosts: localhost
+  remote_user: root
+  tasks:
+  - name: Set timezone to America/Los_Angeles
+    community.general.timezone:
+      name: America/Los_Angeles
+  - name: Ensure that system is up to date
+    apt:
+      name: "*"
+      state: latest
+      update_cache: yes
+  - name: Install/update system packages
+    apt:
+      packages:
+        - ca-certificates
+        - curl
+  - name: Enable node-exporter
+    prometheus.prometheus.node_exporter:
+      node_exporter_version: "1.8.2"
+
+  - import_tasks: docker_ubuntu_24.yaml
