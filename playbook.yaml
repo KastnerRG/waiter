@@ -12,11 +12,11 @@
       update_cache: yes
   - name: Install/update system packages
     apt:
-      packages:
+      pkg:
         - ca-certificates
         - curl
-  - name: Enable node-exporter
-    prometheus.prometheus.node_exporter:
-      node_exporter_version: "1.8.2"
+  # - name: Enable node-exporter
+    # prometheus.prometheus.node_exporter:
+      # node_exporter_version: "1.8.2"
 
   - import_tasks: docker_ubuntu_24.yaml
