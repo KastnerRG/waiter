@@ -1,0 +1,8 @@
+- name: Create Users
+  ansible.builtin.user:
+    name: '{{ item["name"] }}'
+    password: '!'
+  loop: "{{users}}"
+- name: Deploy keys
+  ansible.posix.authorized_key:
+    user: 
