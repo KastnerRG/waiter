@@ -1,0 +1,10 @@
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    eno1np0:
+      dhcp4: true
+      dhcp6: false
+    eno2np1:
+      dhcp4: true
+      dhcp6: false
