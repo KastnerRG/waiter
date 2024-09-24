@@ -21,7 +21,7 @@
 - name: Add CUDA GPG APT key
   become: true
   ansible.builtin.apt_key:
-    file: /var/cuda-repo-ubuntu2404-12-6-local/cuda-*-keyring.gpg
+    file: /var/cuda-repo-ubuntu2404-12-6-local/cuda-1E1DCD98-keyring.gpg
 # sudo apt-get update
 # sudo apt-get -y install cuda-toolkit-12-6
 # sudo apt-get install -y nvidia-open
