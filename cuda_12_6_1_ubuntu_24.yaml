@@ -1,0 +1,36 @@
+######
+###### Each of the comments before the Ansible blocks were pulled directly from https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=24.04&target_type=deb_local.
+###### They indicate the step as suggested by NVIDIA.  The blocks below adapt them into ansible configs.
+######
+
+# wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-ubuntu2404.pin
+# sudo mv cuda-ubuntu2404.pin /etc/apt/preferences.d/cuda-repository-pin-600
+- name: Setup CUDA repository pin
+  become: true
+  ansible.builtin.get_url:
+    url: https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-ubuntu2404.pin
+    dest: /etc/apt/preferences.d/cuda-repository-pin-600
+    mode: '0440'
+# wget https://developer.download.nvidia.com/compute/cuda/12.6.1/local_installers/cuda-repo-ubuntu2404-12-6-local_12.6.1-560.35.03-1_amd64.deb
+# sudo dpkg -i cuda-repo-ubuntu2404-12-6-local_12.6.1-560.35.03-1_amd64.deb
+- name: Setup CUDA Repo
+  become: true
+  ansible.builtin.apt:
+    deb: https://developer.download.nvidia.com/compute/cuda/12.6.1/local_installers/cuda-repo-ubuntu2404-12-6-local_12.6.1-560.35.03-1_amd64.deb
+# sudo cp /var/cuda-repo-ubuntu2404-12-6-local/cuda-*-keyring.gpg /usr/share/keyrings/
+- name: Add CUDA GPG APT key
+  become: true
+  ansible.builtin.copy:
+    src: /var/cuda-repo-ubuntu2404-12-6-local/cuda-1E1DCD98-keyring.gpg
+    dest: /usr/share/keyrings/
+# sudo apt-get update
+# sudo apt-get -y install cuda-toolkit-12-6
+# sudo apt-get install -y nvidia-open
+- name: Add CUDA Components
+  become: true
+  ansible.builtin.apt:
+    pkg:
+      - cuda-toolkit-12-6
+      - nvidia-open
+    state: latest
+    update_cache: true
