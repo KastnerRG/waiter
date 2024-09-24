@@ -6,12 +6,13 @@ services:
       - '--path.rootfs=/host'
     network_mode: host
     pid: host
-    restart: unless-stopped
+    restart: always
     volumes:
       - '/:/host:ro,rslave'
   dcgm_exporter:
     image: nvcr.io/nvidia/k8s/dcgm-exporter:3.3.8-3.6.0-ubuntu22.04
     container_name: dcgm_exporter
+    restart: always
     ports:
       - 9400:9400
     deploy:
