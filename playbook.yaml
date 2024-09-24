@@ -20,3 +20,4 @@
         - curl
   - import_tasks: docker_ubuntu_24.yaml
   - import_tasks: cuda_12_6_1_ubuntu_24.yaml
+  - import_tasks: nvidia-container-toolkit_ubuntu_24.yaml
