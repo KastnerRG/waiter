@@ -16,6 +16,6 @@ then
     ansible-galaxy collection install -r requirements.yml
     ansible-playbook playbook.yaml
     docker compose pull
-    docker compose up --detach --remove-orphans
+    docker compose up --detach
     docker image prune
 fi
