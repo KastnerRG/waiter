@@ -22,3 +22,27 @@ services:
             - driver: nvidia
               count: all
               capabilities: [gpu]
+  label_studio:
+    image: heartexlabs/label-studio:latest
+    volumes:
+      - ./label_studio_data:/label-studio/data
+      - ./label_studio_files:/label-studio/files`
+    environment:
+      - LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLE=true
+      - LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/label-studio/files
+    labels:
+      caddy: labeler.e4e.ucsd.edu
+      caddy.reverse_proxy: "{{upstreams 8080}}"
+  
+  caddy:
+    image: lucaslorentz/caddy-docker-proxy:2.9.1
+    container_name: caddy
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      - CADDY_INGRESS_NETWORKS=monitoring_default
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./caddy-data:/data
