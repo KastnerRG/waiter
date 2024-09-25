@@ -1,6 +1,5 @@
 - name: KRG Waiter
   hosts: localhost
-  remote_user: root
   vars_files:
     - waiter_users.yaml
   tasks:
@@ -20,7 +19,23 @@
       pkg:
         - ca-certificates
         - curl
+        - build-essential
+        - python3
   - import_tasks: docker_ubuntu_24.yaml
   - import_tasks: cuda_12_6_1_ubuntu_24.yaml
   - import_tasks: nvidia-container-toolkit_ubuntu_24.yaml
   - import_tasks: create_users.yaml
+  - name: Install nvm
+    ansible.builtin.shell: >
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+    args:
+      creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+  - name: Install npm
+    ansible.builtin.shell: "source {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install v22.9.0"
+    args:
+      executable: /bin/bash
+  - name: Install BitWarden CLI
+    community.general.npm:
+      name: '@bitwarden/cli'
+      executable: /home/waiter-admin/.nvm/versions/node/v22.9.0/bin/npm
+      global: true
