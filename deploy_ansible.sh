@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /home/waiter-admin/waiter
-set -e
+set -ex
 
 # Change to main branch if needed
 BRANCH="$(git branch --show-current)"
@@ -10,9 +10,11 @@ then
 fi
 
 # Deploy if changes have been made
-GIT_STATUS="$(git status -s)"
+git remote update
+GIT_STATUS="$(git diff origin/main)"
 if [ -n "$GIT_STATUS" ]
 then
+    git pull
     source .venv/bin/activate
     ansible-galaxy collection install -r requirements.yml
     ansible-playbook playbook.yaml
