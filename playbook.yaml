@@ -1,6 +1,8 @@
 - name: KRG Waiter
   hosts: localhost
   remote_user: root
+  vars_files:
+    - waiter_users.yaml
   tasks:
   - name: Set timezone to America/Los_Angeles
     become: true
@@ -21,3 +23,4 @@
   - import_tasks: docker_ubuntu_24.yaml
   - import_tasks: cuda_12_6_1_ubuntu_24.yaml
   - import_tasks: nvidia-container-toolkit_ubuntu_24.yaml
+  - import_tasks: create_users.yaml

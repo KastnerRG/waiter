@@ -1,5 +1,6 @@
 #!/bin/bash
-cd /home/waiter/waiter
+cd /home/waiter-admin/waiter
+set -e
 
 # Change to main branch if needed
 BRANCH="$(git branch --show-current)"
