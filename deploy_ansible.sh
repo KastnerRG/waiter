@@ -17,6 +17,9 @@ then
     git pull
     source .venv/bin/activate
     ansible-galaxy collection install -r requirements.yml
+    ANSIBLE_CONFIG='/home/waiter-admin/waiter/ansible.cfg'
+    ANSIBLE_INVENTORY='/home/waiter-admin/waiter/inventory.yaml'
+    BW_SESSION=`cat /home/waiter-admin/bw_session`
     ansible-playbook playbook.yaml
     docker compose pull
     docker compose up --detach

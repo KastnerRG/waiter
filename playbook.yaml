@@ -1,6 +1,5 @@
 - name: KRG Waiter
   hosts: localhost
-  remote_user: root
   vars_files:
     - waiter_users.yaml
   tasks:

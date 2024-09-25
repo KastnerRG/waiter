@@ -1,6 +1,8 @@
-hosts:
-  localhost:
-    vars:
-      ansible_become: yes  # use sudo 
-      ansible_become_method: sudo 
-      ansible_become_pass: '{{ waiter_sudo_pass }}'
+all:
+  hosts:
+    localhost:
+      vars:
+        ansible_connection: local
+        ansible_become: yes  # use sudo 
+        ansible_become_method: sudo 
+        ansible_become_pass: '{{ waiter_sudo_pass }}'
