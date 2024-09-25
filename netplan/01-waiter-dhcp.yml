@@ -1,0 +1,19 @@
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    eno1np0:
+      dhcp4: false
+      dhcp6: false
+      addresses:
+        - 132.239.95.67/24
+      routes:
+        - to: default
+          via: 132.239.95.1
+      nameservers:
+        addresses:
+          - 132.239.0.252
+          - 8.8.8.8
+          - 1.1.1.1
+    eno2np1:
+      activation-mode: off

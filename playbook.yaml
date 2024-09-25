@@ -5,6 +5,30 @@
   - name: Set timezone to America/Los_Angeles
     community.general.timezone:
       name: America/Los_Angeles
+  - name: Stop and disable NetworkManager
+    become: true
+    ansible.builtin.systemd_service:
+      state: stopped
+      name: NetworkManager
+      enabled: false
+  - name: Start and enable networkd
+    become: true
+    ansible.builtin.systemd_service:
+      state: started
+      name: systemd-networkd
+      enabled: true
+  - name: Start and enable resolved
+    become: true
+    ansible.builtin.systemd_service:
+      state: started
+      enabled: true
+      name: sytemd-resolvd
+  - name: Set resolve.conf
+    become: true
+    ansible.builtin.shell: |
+      rm /etc/resolv.conf
+      ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+
   - name: Ensure that system is up to date
     apt:
       name: "*"
