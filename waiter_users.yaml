@@ -13,3 +13,10 @@ users:
     expires: '2024-12-31 23:59:59'
     groups:
       - docker
+  - username: z.ma
+    name: Zhenghua Ma
+    authorized_keys:
+      - ssh-ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBABPxzRjaI5qJcSFvjdpI452Zbf6NGQu051vNd3IQNB9rhAAoE9Eos9h0LM5/3O4fGZrom6RKn8SX8M2N4JztJLN3AAXez4bUmB4mb4Q5glFE03EcD6JIP07oE3Ot4WdtaIfpZz2AYE53T/PRaxv1if+5B2vjYfgur/rtEJp5XLTeN0pVQ== zhenghuama@Zhenghuas-MacBook-Pro.local
+    expires: '2025-06-30 23:59:59'
+    groups:
+      - docker
