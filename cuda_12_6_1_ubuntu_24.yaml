@@ -34,3 +34,40 @@
       - nvidia-open
     state: latest
     update_cache: true
+
+# For GPU management.  See https://askubuntu.com/questions/893528/restrict-user-access-to-gpu
+
+- name: Create CUDA group
+  become: true
+  ansible.builtin.group:
+    name: cuda
+    state: present
+    gid: 65533
+
+- name: Configure NVIDIA permissions
+  become: true
+  ansible.builtin.file:
+    path: '{{ item }}'
+    mode: '0750'
+    owner: root
+    group: cuda
+  loop:
+    - /dev/nvidia0
+    - /dev/nvidia1
+    - /dev/nvidia2
+    - /dev/nvidia3
+- name: Set NVIDIA driver gid
+  become: true
+  community.general.modprobe:
+    name: nvidia
+    params: NVreg_DeviceFileGID=65533
+    state: present
+    persistent: present
+
+- name: Set NVIDIA driver File Mode
+  become: true
+  community.general.modprobe:
+    name: nvidia
+    params: NVreg_DeviceFileMode=0750
+    state: present
+    persistent: present
