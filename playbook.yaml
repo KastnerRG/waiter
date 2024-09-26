@@ -24,7 +24,7 @@
     ansible.builtin.systemd_service:
       state: started
       enabled: true
-      name: systemd-resolvd
+      name: systemd-resolved
   - name: Set resolve.conf
     become: true
     ansible.builtin.shell: |
