@@ -30,6 +30,18 @@
     ansible.builtin.shell: |
       rm /etc/resolv.conf
       ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+  - name: Install netplan config
+    become: true
+    ansible.builtin.copy:
+      src: netplan/01-waiter-dhcp.yml
+      dest: /etc/netplan/01-waiter.yaml
+      owner: root
+      group: root
+      mode: '0600'
+  - name: Netplan Apply
+    become: true
+    ansible.builtin.command:
+      cmd: netplan apply
 
   - name: Ensure that system is up to date
     become: true
