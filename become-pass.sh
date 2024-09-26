@@ -1,3 +1,3 @@
 #!/bin/bash
 set -e
-bw get password 'waiter-admin'
+/home/waiter-admin/.nvm/versions/node/v22.9.0/bin/bw get password 'waiter-admin'
