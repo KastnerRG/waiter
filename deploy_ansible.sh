@@ -23,5 +23,5 @@ then
     ansible-playbook playbook.yaml
     docker compose pull
     docker compose up --detach
-    docker image prune
+    docker image prune -f
 fi
