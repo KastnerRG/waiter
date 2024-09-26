@@ -38,6 +38,16 @@
                 "ANSIBLE_INVENTORY": "${workspaceFolder}/inventory.yaml"
             }
         }
+      },
+      {
+        "label": "Test Become Pass",
+        "type": "shell",
+        "command": "./become-pass.sh",
+        "group": "test",
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        }
       }
     ]
   }
