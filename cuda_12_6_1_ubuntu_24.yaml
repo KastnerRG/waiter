@@ -62,7 +62,7 @@
     name: nvidia
     params: NVreg_DeviceFileGID=65533
     state: present
-    persistent: true
+    persistent: present
 
 - name: Set NVIDIA driver File Mode
   become: true
@@ -70,4 +70,4 @@
     name: nvidia
     params: NVreg_DeviceFileMode=0750
     state: present
-    persistent: true
+    persistent: present
