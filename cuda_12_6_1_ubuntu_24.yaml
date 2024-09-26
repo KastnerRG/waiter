@@ -38,6 +38,7 @@
 # For GPU management.  See https://askubuntu.com/questions/893528/restrict-user-access-to-gpu
 
 - name: Create CUDA group
+  become: true
   ansible.builtin.group:
     name: cuda
     state: present
