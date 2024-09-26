@@ -60,14 +60,8 @@
   become: true
   community.general.modprobe:
     name: nvidia
-    params: NVreg_DeviceFileGID=65533
-    state: present
-    persistent: present
-
-- name: Set NVIDIA driver File Mode
-  become: true
-  community.general.modprobe:
-    name: nvidia
-    params: NVreg_DeviceFileMode=0750
+    params: |
+      NVreg_DeviceFileGID=65533
+      NVreg_DeviceFileMode=0750
     state: present
     persistent: present
