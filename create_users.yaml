@@ -6,7 +6,7 @@
     shell: /bin/bash
     append: yes
     groups: '{{item.groups | default([]) | join(",")}}'
-    password: '!'
+    password: '{{item.password | default("!")}}'
     expires: '{{(item.expires | to_datetime).strftime("%s")}}'
   loop: "{{users}}"
 - name: Deploy keys
