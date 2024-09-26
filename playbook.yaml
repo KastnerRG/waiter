@@ -33,7 +33,7 @@
   - name: Install netplan config
     become: true
     ansible.builtin.copy:
-      src: netplan/01-waiter-dhcp.yml
+      src: netplan/01-waiter.yml
       dest: /etc/netplan/01-waiter.yaml
       owner: root
       group: root
