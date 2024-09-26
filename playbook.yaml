@@ -44,3 +44,13 @@
       cmd: >
         bash -c "source $HOME/.nvm/nvm.sh && nvm exec v22.9.0 && npm install -g @bitwarden/cli"
       creates: "/home/waiter-admin/.nvm/versions/node/v22.9.0/bin/bw"
+  - import_tasks: ufw.yaml
+
+  - name: Configure Xilinx License server
+    ansible.builtin.lineinfile:
+      path: /etc/environment
+      regexp: 'XILINXD_LICENSE_FILE\=\"2100@cselm2.ucsd.edu\"'
+      line: 'XILINXD_LICENSE_FILE="2100@cselm2.ucsd.edu"'
+      owner: root
+      group: root
+      mode: '0644'
