@@ -1,0 +1,21 @@
+- name: Set logging
+  community.general.ufw:
+    logging: 'on'
+- community.general.ufw:
+    default: deny
+    direction: incoming
+    log: true
+- community.general.ufw:
+    default: allow
+    direction: outgoing
+    log: false
+- community.general.ufw:
+    rule: allow
+    name: OpenSSH
+- community.general.ufw:
+    rule: allow
+    port: 3389
+    proto: tcp
+    src: 67.58.52.163/26
+- community.general.ufw:
+    state: enabled
