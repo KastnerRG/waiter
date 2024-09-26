@@ -1,3 +1,22 @@
+# To add a user, add the a block with the following structure:
+# - username: {first initial}.{last name}
+#   name: {full name}
+#   authorized_keys:
+#     - {ssh pubkey}
+#   expires: {account expiration date}
+#   # Note that everything below this line is optional
+#   groups:
+#     - {groups}
+#   password: {password hash}
+# 
+# SSH Pubkeys should be ED25519 keys
+# 
+# Account expiration should be no more than 1 calendar year from today, 
+# and should end on the last day of a month at 23:59:59
+# 
+# Password hashes should be generated with `openssl passwd -6 {plaintext password}`.  This is only used
+# as the initial password.  Subsequent changes need to be made using `passwd` while logged in.
+
 users:
   - username: l.weng
     name: Olivia Weng
@@ -13,6 +32,8 @@ users:
     expires: '2024-12-31 23:59:59'
     groups:
       - docker
+      - rdp_users
+    password: $6$nsfPF5c2H2Puxea9$FcU3gsFT5BUWGXh6tzy196usIaWC83UvzWYS7FvOjnYY6gmtai1FD8Dbx4mqvy3mlRANK5xyGErH1zbv2tqGx1
   - username: z.ma
     name: Zhenghua Ma
     authorized_keys:
@@ -20,3 +41,12 @@ users:
     expires: '2025-06-30 23:59:59'
     groups:
       - docker
+      - rdp_users
+  - username: a.gnaneswaran
+    name: Aba Gnaneswaran
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGbpKj1MiYHa32RvQB50NltsfXAToigFMyYJkgpTxo8M abarajithan07@gmail.com
+    expires: '2025-06-30 23:59:59'
+    groups:
+      - docker
+      - rdp_users

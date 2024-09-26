@@ -39,12 +39,50 @@
       update_cache: yes
   - name: Install/update system packages
     become: true
-    apt:
+    ansible.builtin.apt:
       pkg:
         - ca-certificates
         - curl
         - build-essential
         - python3
+        - xrdp
+        - unattended-upgrades
+  - import_tasks: vivado.yml
+  - name: Configure Xilinx License server
+    ansible.builtin.lineinfile:
+      path: /etc/environment
+      regexp: 'XILINXD_LICENSE_FILE\=\"2100@cselm2.ucsd.edu\"'
+      line: 'XILINXD_LICENSE_FILE="2100@cselm2.ucsd.edu"'
+      owner: root
+      group: root
+      mode: '0644'
+  - name: Update unix-chkpwd for xrdp
+    become: true
+    ansible.builtin.file:
+      path: /sbin/unix_chkpwd
+      mode: u+s
+  - name: Create rdp_users group
+    become: true
+    ansible.builtin.group:
+      name: rdp_users
+      state: present
+  - name: Deploy sesman.ini
+    become: true
+    ansible.builtin.copy:
+      src: xrdp/sesman.ini
+      dest: /etc/xrdp/sesman.ini
+      owner: root
+      group: root
+      mode: '0644'
+  - name: Start xRDP
+    become: true
+    ansible.builtin.systemd_service:
+      name: xrdp
+      daemon_reload: true
+      enabled: true
+      masked: false
+      state: started
+
   - import_tasks: docker_ubuntu_24.yaml
   - import_tasks: cuda_12_6_1_ubuntu_24.yaml
   - import_tasks: nvidia-container-toolkit_ubuntu_24.yaml
@@ -67,3 +105,12 @@
       cmd: >
         bash -c "source $HOME/.nvm/nvm.sh && nvm exec v22.9.0 && npm install -g @bitwarden/cli"
       creates: "/home/waiter-admin/.nvm/versions/node/v22.9.0/bin/bw"
+
+  - import_tasks: ufw.yml
+
+  - import_tasks: oec_qualys_trellix.yaml
+    vars:
+      installer: /home/waiter-admin/installers/qualys_trellix/oec-qualystrellixinstallers-linux.tgz
+
+# Enable unattended upgrades
+  - import_tasks: unattended-upgrades.yml
