@@ -1,0 +1,16 @@
+- name: Install/update dependency packages
+  become: true
+  ansible.builtin.apt:
+    pkg:
+      - libstdc++6
+      - libgtk2.0-0
+      - dpkg-dev
+      - python3-pip
+- name: install libtinfo5
+  become: true
+  ansible.builtin.apt:
+    deb: http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.4-2_amd64.deb
+- name: install libncurses5
+  become: true
+  ansible.builtin.apt:
+    deb: http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.4-2_amd64.deb
