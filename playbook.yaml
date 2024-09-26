@@ -57,7 +57,7 @@
       daemon_reload: true
       enabled: true
       masked: false
-      state: reloaded
+      state: started
 
   - import_tasks: docker_ubuntu_24.yaml
   - import_tasks: cuda_12_6_1_ubuntu_24.yaml
