@@ -49,7 +49,7 @@
   ansible.builtin.file:
     path: '{{ item }}'
     mode: '0750'
-    owner: cuda
+    owner: root
     group: cuda
   loop:
     - /dev/nvidia0
