@@ -15,7 +15,9 @@
         "options": {
             "env": {
                 "VIRTUAL_ENV": "${workspaceFolder}/.venv",
-                "PATH": "${workspaceFolder}/.venv/bin:$PATH"
+                "PATH": "${workspaceFolder}/.venv/bin:$PATH",
+                "ANSIBLE_CONFIG": "${workspaceFolder}/ansible.cfg",
+                "ANSIBLE_INVENTORY": "${workspaceFolder}/inventory.yaml"
             }
         }
       }
