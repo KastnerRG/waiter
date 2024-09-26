@@ -1,7 +1,0 @@
-{
-    "terminal.integrated.env.linux": {
-        "ANSIBLE_CONFIG": "${workspace_folder}/ansible.cfg",
-        "ANSIBLE_INVENTORY": "${workspace_folder}/inventory.yaml",
-        "BW_SESSION": "$HOME/bw_session"
-    }
-}
