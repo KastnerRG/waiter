@@ -13,7 +13,7 @@ users:
     expires: '2024-12-31 23:59:59'
     groups:
       - docker
-    password: B77D9D92E263622223C5B0E4C157E33889B539245F53C6E808B1E419F012A160786BCC106698B8A46C2D6B37904F4CFE77C042EB7DD8E8AD13E765353EDD5A58
+    password: $1$$1$SomeS$ZrXPtDsB7r5PqYKHs/3fB1
   - username: z.ma
     name: Zhenghua Ma
     authorized_keys:
