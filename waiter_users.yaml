@@ -32,6 +32,7 @@ users:
     expires: '2024-12-31 23:59:59'
     groups:
       - docker
+      - rdp_users
     password: $6$nsfPF5c2H2Puxea9$FcU3gsFT5BUWGXh6tzy196usIaWC83UvzWYS7FvOjnYY6gmtai1FD8Dbx4mqvy3mlRANK5xyGErH1zbv2tqGx1
   - username: z.ma
     name: Zhenghua Ma
@@ -40,6 +41,7 @@ users:
     expires: '2025-06-30 23:59:59'
     groups:
       - docker
+      - rdp_users
   - username: a.gnaneswaran
     name: Aba Gnaneswaran
     authorized_keys:
@@ -47,3 +49,4 @@ users:
     expires: '2025-06-30 23:59:59'
     groups:
       - docker
+      - rdp_users

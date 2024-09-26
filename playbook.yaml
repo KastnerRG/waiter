@@ -33,9 +33,31 @@
       group: root
       mode: '0644'
   - name: Update unix-chkpwd for xrdp
+    become: true
     ansible.builtin.file:
       path: /sbin/unix_chkpwd
       mode: u+s
+  - name: Create rdp_users group
+    become: true
+    ansible.builtin.group:
+      name: rdp_users
+      state: present
+  - name: Deploy sesman.ini
+    become: true
+    ansible.builtin.copy:
+      src: xrdp/sesman.ini
+      dest: /etc/xrdp/sesman.ini
+      owner: root
+      group: root
+      mode: '0644'
+  - name: Start xRDP
+    become: true
+    ansible.builtin.systemd_service:
+      name: xrdp
+      daemon_reload: true
+      enabled: true
+      masked: false
+      state: reloaded
 
   - import_tasks: docker_ubuntu_24.yaml
   - import_tasks: cuda_12_6_1_ubuntu_24.yaml
