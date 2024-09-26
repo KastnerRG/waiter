@@ -1,0 +1,22 @@
+users:
+  - username: l.weng
+    name: Olivia Weng
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFYe4rcYCduSjZCAO+muks3ZZoxTUOY06nWJ22tg5p2R oweng@ucsd.edu
+    expires: '2025-06-30 23:59:59'
+    groups:
+      - docker
+  - username: n.hui
+    name: Nathan Hui
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIR1cXklusoEBrgQP4miHRvUp64rkrTUX2OrAJrE5f6H nthui@eng.ucsd.edu
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - docker
+  - username: z.ma
+    name: Zhenghua Ma
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOZUUT9mmk3zYD0y3LTdEByfIvUJPsp7zn/OpqtIrnq8 zhm007@ucsd.edu
+    expires: '2025-06-30 23:59:59'
+    groups:
+      - docker

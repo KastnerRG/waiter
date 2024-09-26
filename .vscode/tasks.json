@@ -1,0 +1,26 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Run tests",
+        "type": "shell",
+        "command": "ansible-playbook playbook.yaml",
+        "group": "test",
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "options": {
+            "env": {
+                "VIRTUAL_ENV": "${workspaceFolder}/.venv",
+                "PATH": "${workspaceFolder}/.venv/bin:${env:PATH}",
+                "ANSIBLE_CONFIG": "${workspaceFolder}/ansible.cfg",
+                "ANSIBLE_INVENTORY": "${workspaceFolder}/inventory.yaml"
+            }
+        }
+      }
+    ]
+  }
+  
