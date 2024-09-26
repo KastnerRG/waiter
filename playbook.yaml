@@ -32,6 +32,10 @@
       owner: root
       group: root
       mode: '0644'
+  - name: Update unix-chkpwd for xrdp
+    ansible.builtin.file:
+      path: /sbin/unix_chkpwd
+      mode: u+s
 
   - import_tasks: docker_ubuntu_24.yaml
   - import_tasks: cuda_12_6_1_ubuntu_24.yaml
