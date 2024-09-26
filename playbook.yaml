@@ -35,7 +35,11 @@
     args:
       executable: /bin/bash
   - name: Install BitWarden CLI
-    community.general.npm:
-      name: '@bitwarden/cli'
-      executable: /home/waiter-admin/.nvm/versions/node/v22.9.0/bin/npm
-      global: true
+    # community.general.npm:
+    #   name: '@bitwarden/cli'
+    #   executable: /home/waiter-admin/.nvm/versions/node/v22.9.0/bin/npm
+    #   global: true
+    ansible.builtin.command:
+      cmd: >
+        bash -c "source $HOME/.nvm/nvm.sh && nvm exec v22.9.0 && npm install -g @bitwarden/cli"
+      creates: "/home/waiter-admin/.nvm/versions/node/v22.9.0/bin/bw"
