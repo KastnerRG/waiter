@@ -8,6 +8,7 @@
     groups: '{{item.groups | default([]) | join(",")}}'
     password: '{{item.password | default("!")}}'
     expires: '{{(item.expires | to_datetime).strftime("%s")}}'
+    update_password: 'on_create'
   loop: "{{users}}"
 - name: Deploy keys
   become: true

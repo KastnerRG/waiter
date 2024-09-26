@@ -14,7 +14,8 @@
 # Account expiration should be no more than 1 calendar year from today, 
 # and should end on the last day of a month at 23:59:59
 # 
-# Password hashes should be generated with `openssl passwd -6 {plaintext password}`
+# Password hashes should be generated with `openssl passwd -6 {plaintext password}`.  This is only used
+# as the initial password.  Subsequent changes need to be made using `passwd` while logged in.
 
 users:
   - username: l.weng
