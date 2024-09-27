@@ -128,6 +128,7 @@ users:
   - username: wes_2025_r_lizarraga
     name: Ricardo Lizarraga
     authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC7AEC/IwRlzajFCmvAXqaT5pwdKnIm/ra/gwo/UzzCe+Ds4tRw6uk6rOdeIwoehP3Q2e7Kr+jyZ450DeUrGBpfg609R6hL+PFSNf9gUENY36R0joKd07FdDroizfBrP8dEw/72Igu9Yw/T/PVSHBXRF3trBFbgEZ4N7Y71tbnmcxZ7aPCXnj4JNiQvAjxXp/3CYN18UMthV1hMJu/Cj7GcRjomjn5/Tp49wxxcYakjCunPBQ/q/H0oeG7Yj9P7qlBE7+/DUPO3CcjQqmCEY4ScUw7m/480CehOXhGAsSnavRx+l2iBlfif2hh6l6GbBE8pBTI84+wLLahhBVSqtkmFabYxfEVYwn7KIH4WlSiZUifG/H7Qe/umYlzkx+tkXorrwUg9bo1DosdmxR8NJP46wrb9TEi9eZlN59E+R1e8DWT+a8zxMb0WNcxV7mGF3PIgkcNFqeqqj0dQYDanMXmntQiW9maqIwD0gX9PKw33nrtYspE4DEsC/hILCl69xCs= rliz0@DESKTOP-RTJE2JI
     expires: '2025-06-30 23:59:59'
     groups:
       - rdp_users
