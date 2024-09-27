@@ -51,3 +51,13 @@ users:
     groups:
       - docker
       - rdp_users
+  - username: c.crutchfield
+    name: Christopher Crutchfield:
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF2Z7LbaDPTNkdnuvFivXTUx8X9gU0ZyWrrYBH7KSmG3 chris@chris-laptop
+    expires: '2025-06-30 23:56:59'
+    password: $6$w2DjXVZz4/c3NRAC$bIdyTZwZ.Zm26Fh3TSHITus2OhHRweHxGBYrfWe/jGDKIV4WwGbEoycKZKiHVZ53mqUwQRLoTyKK7vWkrpmw70
+    groups:
+      - docker
+      - rdp_users
+      - cuda
