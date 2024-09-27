@@ -70,13 +70,14 @@ users:
     groups:
       - rdp_users
     password: $6$CpqzAHo3Tqdv/TkG$nwywK5wUgB7kUVk8L.Km6wayUMQClDSf8mA48n5hVq9j9gIoLLd3Qj99D9ZReFIiyuzD5i2FT93zHE8EW.dGQ0
-  # - username: wes_2025_w_gong
-  #   name: William Gong
-  #   authorized_keys:
-  #   expires: '2025-06-30 23:59:59'
-  #   groups:
-  #     - rdp_users
-  #   password: $6$vrTrqtm1jUVFNsLl$bhJf5Fmtk8.ChbhME3y/OdDewFlkyf.7C.sPIO8yi8zOHMVbudJgr4oTcdaklHCPdRwERhv3J7B0Doe4Zj2BR.
+  - username: wes_2025_w_gong
+    name: William Gong
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL5twx+EZa/7XvsYhEZq9XSg4iEh0TvCkpz0lQgHmSVN w_gong
+    expires: '2025-06-30 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$vrTrqtm1jUVFNsLl$bhJf5Fmtk8.ChbhME3y/OdDewFlkyf.7C.sPIO8yi8zOHMVbudJgr4oTcdaklHCPdRwERhv3J7B0Doe4Zj2BR.
   - username: wes_2025_r_atrian
     name: Ramin Atrian
     authorized_keys:
