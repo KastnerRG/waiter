@@ -7,6 +7,42 @@
     become: true
     community.general.timezone:
       name: America/Los_Angeles
+  - name: Stop and disable NetworkManager
+    become: true
+    ansible.builtin.systemd_service:
+      state: started
+      name: NetworkManager
+      enabled: true
+  - name: Start and enable networkd
+    become: true
+    ansible.builtin.systemd_service:
+      state: started
+      name: systemd-networkd
+      enabled: true
+  - name: Start and enable resolved
+    become: true
+    ansible.builtin.systemd_service:
+      state: started
+      enabled: true
+      name: systemd-resolved
+  - name: Set resolve.conf
+    become: true
+    ansible.builtin.shell: |
+      rm /etc/resolv.conf
+      ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+  - name: Install netplan config
+    become: true
+    ansible.builtin.copy:
+      src: netplan/01-waiter.yml
+      dest: /etc/netplan/01-waiter.yaml
+      owner: root
+      group: root
+      mode: '0600'
+  - name: Netplan Apply
+    become: true
+    ansible.builtin.command:
+      cmd: netplan apply
+
   - name: Ensure that system is up to date
     become: true
     apt:
