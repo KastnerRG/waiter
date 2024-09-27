@@ -52,7 +52,7 @@ users:
       - docker
       - rdp_users
   - username: c.crutchfield
-    name: Christopher Crutchfield:
+    name: Christopher Crutchfield
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF2Z7LbaDPTNkdnuvFivXTUx8X9gU0ZyWrrYBH7KSmG3 chris@chris-laptop
     expires: '2025-06-30 23:56:59'
