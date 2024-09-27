@@ -1,0 +1,27 @@
+- name: Copy installer
+  ansible.builtin.copy:
+    src: '{{installer}}'
+    dest: /tmp/oec-qualystrellixinstallers-linux.tgz
+- name: Extracts archive
+  ansible.builtin.unarchive:
+    src: /tmp/oec-qualystrellixinstallers-linux.tgz
+    dest: /tmp
+    remote_src: yes
+- name: Runs installer
+  become: true
+  ignore_errors: true
+  ansible.builtin.shell:
+    cmd: /tmp/trellixandqualys/install_ubuntu.sh
+    creates: /usr/local/qualys/cloud-agent/bin/qualys-cloud-agent
+- name: Ensures Qualys Cloud Agent is running
+  ansible.builtin.systemd:
+    name: qualys-cloud-agent
+    enabled: true
+    masked: false
+    state: started
+- name: Ensures Trellix is running
+  ansible.builtin.systemd:
+    name: xagt
+    enabled: true
+    masked: false
+    state: started

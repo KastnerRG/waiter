@@ -1,6 +1,5 @@
 - name: KRG Waiter
   hosts: localhost
-  remote_user: root
   vars_files:
     - waiter_users.yaml
   tasks:
@@ -8,6 +7,42 @@
     become: true
     community.general.timezone:
       name: America/Los_Angeles
+  - name: Stop and disable NetworkManager
+    become: true
+    ansible.builtin.systemd_service:
+      state: started
+      name: NetworkManager
+      enabled: true
+  - name: Start and enable networkd
+    become: true
+    ansible.builtin.systemd_service:
+      state: started
+      name: systemd-networkd
+      enabled: true
+  - name: Start and enable resolved
+    become: true
+    ansible.builtin.systemd_service:
+      state: started
+      enabled: true
+      name: systemd-resolved
+  - name: Set resolve.conf
+    become: true
+    ansible.builtin.shell: |
+      rm /etc/resolv.conf
+      ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+  - name: Install netplan config
+    become: true
+    ansible.builtin.copy:
+      src: netplan/01-waiter.yml
+      dest: /etc/netplan/01-waiter.yaml
+      owner: root
+      group: root
+      mode: '0600'
+  - name: Netplan Apply
+    become: true
+    ansible.builtin.command:
+      cmd: netplan apply
+
   - name: Ensure that system is up to date
     become: true
     apt:
@@ -16,11 +51,78 @@
       update_cache: yes
   - name: Install/update system packages
     become: true
-    apt:
+    ansible.builtin.apt:
       pkg:
         - ca-certificates
         - curl
+        - build-essential
+        - python3
+        - xrdp
+        - unattended-upgrades
+  - import_tasks: vivado.yml
+  - name: Configure Xilinx License server
+    ansible.builtin.lineinfile:
+      path: /etc/environment
+      regexp: 'XILINXD_LICENSE_FILE\=\"2100@cselm2.ucsd.edu\"'
+      line: 'XILINXD_LICENSE_FILE="2100@cselm2.ucsd.edu"'
+      owner: root
+      group: root
+      mode: '0644'
+  - name: Update unix-chkpwd for xrdp
+    become: true
+    ansible.builtin.file:
+      path: /sbin/unix_chkpwd
+      mode: u+s
+  - name: Create rdp_users group
+    become: true
+    ansible.builtin.group:
+      name: rdp_users
+      state: present
+  - name: Deploy sesman.ini
+    become: true
+    ansible.builtin.copy:
+      src: xrdp/sesman.ini
+      dest: /etc/xrdp/sesman.ini
+      owner: root
+      group: root
+      mode: '0644'
+  - name: Start xRDP
+    become: true
+    ansible.builtin.systemd_service:
+      name: xrdp
+      daemon_reload: true
+      enabled: true
+      masked: false
+      state: started
+
   - import_tasks: docker_ubuntu_24.yaml
   - import_tasks: cuda_12_6_1_ubuntu_24.yaml
   - import_tasks: nvidia-container-toolkit_ubuntu_24.yaml
   - import_tasks: create_users.yaml
+  - name: Install nvm
+    ansible.builtin.shell: >
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+    args:
+      creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+  - name: Install npm
+    ansible.builtin.shell: "source {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install v22.9.0"
+    args:
+      executable: /bin/bash
+  - name: Install BitWarden CLI
+    # community.general.npm:
+    #   name: '@bitwarden/cli'
+    #   executable: /home/waiter-admin/.nvm/versions/node/v22.9.0/bin/npm
+    #   global: true
+    ansible.builtin.command:
+      cmd: >
+        bash -c "source $HOME/.nvm/nvm.sh && nvm exec v22.9.0 && npm install -g @bitwarden/cli"
+      creates: "/home/waiter-admin/.nvm/versions/node/v22.9.0/bin/bw"
+
+  - import_tasks: ufw.yml
+
+  - import_tasks: oec_qualys_trellix.yaml
+    vars:
+      installer: /home/waiter-admin/installers/qualys_trellix/oec-qualystrellixinstallers-linux.tgz
+
+# Enable unattended upgrades
+  - import_tasks: unattended-upgrades.yml
