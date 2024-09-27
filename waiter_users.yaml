@@ -125,3 +125,9 @@ users:
     groups:
       - rdp_users
     password: $6$xFo6se6iQXTolmth$f8cQ12lj.nZb5uQVg02VCsvEzFyKxsuGaTDZju2BJYMQmr.rAwfo3qD.2QJplAAtNOkCXpRT4K8yOSnAazxPW/
+  - username: wes_2025_r_lizarraga
+    name: Ricardo Lizarraga
+    authorized_keys:
+    expires: '2025-06-30 23:59:59'
+    groups:
+      - rdp_users
