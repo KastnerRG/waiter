@@ -117,3 +117,11 @@ users:
     expires: '2024-12-31 23:59:59'
     groups:
       - rdp_users
+  - username: wes_2025_r_verma
+    name: Rajan Verma
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDWTuSD5+uXI/SjZrd0Fg3s3SySJYHN+9ze0lWzaP2OuM82nsDrYYrdn+qXeKNoHaGGE7A1bMf4gwkVBJ42usQg1x4B53VPGBO5S/3FckFbwUmO8TZNwh5ixddICA4Nm97aNGT/eaGRjngISS1aLQthmFtE5xsMdJtf5nSmeAQFeKie2CmsZSLyXeufv1vVY2Yj8q9roLkoPY3pJ4vZ1VRZpmegqpwUZEcVeLpBvmDauNLBPFP/eCvi7zyRCWTuzmTILc7DsT+o6tX01pYp6cMwmV+oRHs8okEo3bRUh8o/gYWPZQl0zVELCIHIRVK7rZihTsZncgnJEMd1uOYMMKnWlgcZ8eUvaaimGYzLdaDc8uum/gwZVqZIZXWSzCQLXFnvBgV/MjH5jCixwIYP7YSYF8SslDVJWR/wnu0RFKE6SSLXlGajuD4M6swXLgDOIE09UVrN4yZnqhnUxOVDgMLlHBMntJagHzKIkWbVvoDbmkhB2SpZpkIZlLO9NiyfLXU= 91814@LAPTOP-HLE3JFRQ
+    expires: '2025-06-30 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$xFo6se6iQXTolmth$f8cQ12lj.nZb5uQVg02VCsvEzFyKxsuGaTDZju2BJYMQmr.rAwfo3qD.2QJplAAtNOkCXpRT4K8yOSnAazxPW/
