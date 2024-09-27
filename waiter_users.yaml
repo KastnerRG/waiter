@@ -25,6 +25,7 @@ users:
     expires: '2025-06-30 23:59:59'
     groups:
       - docker
+      - cuda
   - username: n.hui
     name: Nathan Hui
     authorized_keys:
