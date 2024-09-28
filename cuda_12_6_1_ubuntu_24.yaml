@@ -71,6 +71,6 @@
     path: /etc/nvidia-container-runtime/config.toml
     section: nvidia-container-cli
     option: user
-    value: 'root:cuda'
+    value: root:cuda
     mode: '0644'
     backup: true
