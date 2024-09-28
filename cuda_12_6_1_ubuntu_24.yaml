@@ -48,7 +48,7 @@
   become: true
   ansible.builtin.file:
     path: '{{ item }}'
-    mode: '0750'
+    mode: '0770'
     owner: root
     group: cuda
   loop:
@@ -62,6 +62,6 @@
     name: nvidia
     params: |
       NVreg_DeviceFileGID=65533
-      NVreg_DeviceFileMode=0750
+      NVreg_DeviceFileMode=0770
     state: present
     persistent: present
