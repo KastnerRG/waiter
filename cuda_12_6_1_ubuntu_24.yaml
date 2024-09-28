@@ -48,7 +48,7 @@
   become: true
   ansible.builtin.file:
     path: '{{ item }}'
-    mode: '0750'
+    mode: '0770'
     owner: root
     group: cuda
   loop:
@@ -62,6 +62,15 @@
     name: nvidia
     params: |
       NVreg_DeviceFileGID=65533
-      NVreg_DeviceFileMode=0750
+      NVreg_DeviceFileMode=0770
     state: present
     persistent: present
+# - name: Allow docker to use cuda
+#   become: true
+#   community.general.ini_file:
+#     path: /etc/nvidia-container-runtime/config.toml
+#     section: nvidia-container-cli
+#     option: user
+#     value: root:cuda
+#     mode: '0644'
+#     backup: true
