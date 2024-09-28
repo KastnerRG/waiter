@@ -127,9 +127,14 @@
 # Enable unattended upgrades
   - import_tasks: unattended-upgrades.yml
 
+  - name: Deploy script
+    ansible.builtin.copy:
+      src: scripts/cron_hourly_zfs_snapshots.sh
+      dest: /home/waiter-admin/cron_hourly_zfs_snapshots.sh
+      mode: '0766'
   - name: Hourly rpool ZFS snapshots
     become: true
     ansible.builtin.cron:
       name: Hourly rpool zfs snapshot
       minute: 0
-      job: zfs snapshot -r "rpool@$(date +'%Y-%m-%dT%H:%M:%S%:z')"
+      job: /home/waiter-admin/cron_hourly_zfs_snapshots.sh
