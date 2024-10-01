@@ -26,6 +26,7 @@ users:
     groups:
       - docker
       - cuda
+    password: $6$taN53S4OXGzmDC2B$tFVcsi56yyLMJD3IKvGYHXdSP3sAWL1XOmVEET/F6t1f1TU1FaEorza4/8qYrzoyvymZGUU21ZsEp/vf5JEDr.
   - username: n.hui
     name: Nathan Hui
     authorized_keys:
@@ -44,6 +45,7 @@ users:
     groups:
       - docker
       - rdp_users
+    password: $6$MdMUw1Em6r.g9bI1$o7bcETGHvaSV43Ogn991bH5RPTOTJsnWN9adQ8Srt7C3YpNQMJCDQzvuTvXsxoophWQpKsL710Ut.IQ7kYL6t1
   - username: a.gnaneswaran
     name: Aba Gnaneswaran
     authorized_keys:
@@ -52,11 +54,12 @@ users:
     groups:
       - docker
       - rdp_users
+    password: $6$K3B9Pv9AR.YP8rhO$qHM9CShTVkBoa2KLbpaIOkoSqeHfaQQ07JuyUq.xOxgKyefO0m9SO1TqB7vUa9elDSJxXfV3ztkbrqSiTDLOr1
   - username: c.crutchfield
     name: Christopher Crutchfield
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF2Z7LbaDPTNkdnuvFivXTUx8X9gU0ZyWrrYBH7KSmG3 chris@chris-laptop
-    expires: '2025-06-30 23:56:59'
+    expires: '2025-06-30 23:59:59'
     password: $6$w2DjXVZz4/c3NRAC$bIdyTZwZ.Zm26Fh3TSHITus2OhHRweHxGBYrfWe/jGDKIV4WwGbEoycKZKiHVZ53mqUwQRLoTyKK7vWkrpmw70
     groups:
       - docker
@@ -72,7 +75,7 @@ users:
     groups:
       - docker
       - cuda
-
+    password: $6$91Z1YlRTDKhqygak$yXtUjqxF8GSylFjc7DtXjG0jDaFho7jNmAxMbAS9wAWNAQHO6.6rdkbiWRuprg8Ju1PgVgKtbSwO/xX10RGDz0
   - username: wes_2025_a_baez
     name: Lila Baez
     authorized_keys:
@@ -121,6 +124,7 @@ users:
     expires: '2024-12-31 23:59:59'
     groups:
       - rdp_users
+    password: $6$zd3xQNIp0PRTDJDl$m.coirdOVZXawT8K1OjiG3kidAO/3sh.CUofYXkN5DtHkl8cJ6rTA3Zb70UWLv9h9MCG/ynGJnVYuk8jdAIrk0
   - username: cse237c_fa24_r_duenas
     name: Raymond Duenas
     authorized_keys:
@@ -128,6 +132,7 @@ users:
     expires: '2024-12-31 23:59:59'
     groups:
       - rdp_users
+    password: $6$vxPPjKyYF2gQORvu$hYCTVp.kJLmYPCJOKYGV9qMhlqmV1P7DNIEsL9xdsUmTCI24UWmGQBqYgtttZ0c/VV.77IGBXbMdwRTqVMhaG1
   - username: wes_2025_r_verma
     name: Rajan Verma
     authorized_keys:
@@ -143,6 +148,7 @@ users:
     expires: '2025-06-30 23:59:59'
     groups:
       - rdp_users
+    password: $6$K6ZtErgYVyzg7fHh$G5tBvaOK1XzaHk5bHNT5UJlAFJDrvuQ28KdI4pHLoDlYyyyfdnL1AY72BgfdL44YxMyXR.DgiFT62aVHoYgIO1
   - username: cse237c_fa24_a_kumar
     name: Animesh Kumar
     authorized_keys:
@@ -195,8 +201,7 @@ users:
     name: Nikan Hojatnia
     authorized_keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDaZSm1gu29d36ZQQbQmfJw5FlaGmvuftZEkkWMDrcQusZjOKzBv7hhGSBu0Hwi17zshAay3VgWq1oMJw1HIaD2GF5I3SlemnKqs1DiDkd54EJ41bp6BAs8uyBCt8XdCh8/N0EjaZ/dXDdkNbtdoKI9VQRUKQ5/ZEqrxYJOHZTGeZbTWl5OT1gDn7kgnSfPhOXxU1BRoWhnfzRhPUPFu088gjKNuHunYCQtFtFz3iO56txNsjpYlDJ4w9qL0cYqZHU6nolnUcD9Zy+aBWsmakas39odF78cy/wrAnKDAD2p9Qvx7XMJonfALnL+D5FjlakcfriqosZnPTQV12tIL+Kj9h/JqjQQZ/TioPDRjX0h88MsjRkFpY6U0Tu3OQb/CB70ucS2QprIYhpa6UNZA9R1NogeXMVlK+T6FR4cETXvAQZV/thHnJiiCffBtDKSHI+OfYZfEmppHGsNPaeqWjEQ8o8fdwhw4QCJbF/j7gOn4Vf0NJ3jIFzDYIepgMm4u5h/n9pRTYQuYwAp/RQIJgCqpu2gEHUWL0ql8Kd7R3JjqZOB+alFw8meZxWN5jVpUxlmTBU761TQCJsPpCwbsjwCPZMm7c1tV41gbSqn0WghxwGfe/3y9oh5Z4zqD9OFPFOvSKWGH44NW+OMSXODla07FrRsmdlpRTQ5VTKB+UKtEw== nikanhn@nikan
-    expires: '2024-12-31 23:56:59'
+    expires: '2024-12-31 23:59:59'
     groups:
       - rdp_users
     password: $6$aMYL0OPfSBVa96WZ$/Y3sItIzo71zPdDeFrxStxpFpRXRwQSWu1J6AhoaRjgHzuB8CEsSoJLiEdK81iUT86/vxdX7A0xhbMORAfGQV.
-

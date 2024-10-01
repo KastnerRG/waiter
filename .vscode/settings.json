@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+      ".schemas/waiter_users.json": "waiter_users.yaml"
+    }
+}
