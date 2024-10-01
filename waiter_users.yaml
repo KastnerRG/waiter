@@ -159,3 +159,10 @@ users:
     groups:
       - rdp_users
     password: $6$0BXuHniX8Z.pYsC7$q8FNRbzoaHQazQdASBrf4ITPcyC1Hm7wq2xmePul5tWAae6khb8ZFXzkAC6v4MtDAV5.FYcigTb1dVH5.GV8l.
+  - username: cse237c_fa24_y_chen
+    name: Yaohui Chen
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOF/Wa+Pw+oAqqyMm04U/npjoyby6+wkL0GKmWdIHJX5 yac033@ucsd.edu
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
