@@ -150,7 +150,7 @@ users:
     expires: '2024-12-31 23:59:59'
     groups:
       - rdp_users
-    password: $6$H6WKt1uBNEVegqm0$EMSXedt78ULKrGrqFhN78AXtvYoxPR6bgJAgHDenkaoCJyW3m/bWSCKDR0TB1I.Q0X8SwMFjRspdptScU/6Za0
+    password: $6$lVar.jZOiEBJuITY$x8m.hWBcfPsNJ3LhnL5deUKQWZZn2RA5p8YeoHSNCf8be8eqXtAnip5y8h2S0vNm.w7NHSbsNteoiIVxtIXgm0
   - username: cse237c_fa24_d_palmer
     name: Dylan Palmer
     authorized_keys:
@@ -158,7 +158,7 @@ users:
     expires: '2024-12-31 23:59:59'
     groups:
       - rdp_users
-    password: $6$0BXuHniX8Z.pYsC7$q8FNRbzoaHQazQdASBrf4ITPcyC1Hm7wq2xmePul5tWAae6khb8ZFXzkAC6v4MtDAV5.FYcigTb1dVH5.GV8l.
+    password: $6$/kGAmXCPrL948/xO$53p2rj0cuZGpqMyBPSwDdRyfVVZYTi11L4RdjWKPpjxzWmgacwPPdxAIi.8YJ.yf8Vm7JuUx0LmHm5n3XbCfw.
   - username: cse237c_fa24_y_chen
     name: Yaohui Chen
     authorized_keys:
@@ -166,3 +166,37 @@ users:
     expires: '2024-12-31 23:59:59'
     groups:
       - rdp_users
+    password: $6$3AlPj3/aMHDh7B0f$ReIiB4X.uY4/N6B.O/vvHZ6ZMKEAp.aLy3OONyXd6jiMIy1Kp8A4G9.TIFrEcjpLnTBgbQ6fwWR176Hn6Ovl90
+  - username: cse237c_fa24_l_vu
+    name: Long-Giang Vu
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDXd19O44qdKGQM3oAgQa/ksa6+0fCOUadeTqVMwXUyR0XjzCQEFibNYbJIgpgTu3nZBKclBrR+YfWdwna+NjfKQYe78PFbxw6mX6XdU2ljUGU+VnHJ/vIJDjWibc+P5lxzknWjAKo9f0NYkDoPiYgc5Fa6bsPKZpVwfW/RVIitcD0gxD9+vpZWAjXOhVjPgFJhu6riml1mR3cDuFoLmhMMgZ7kr7ngR5rx4KuKatBj9mcg6iVqB9c/htnlgZyLYCkdyZEavC07MT290HE0tyPLX4qY/695DqXj950sQmRZ39pEfD3vlOUtVmhEIKeVsMBHgfb9m7jvhI422ns1YYoxeDLrq0CO73D56vIf+LGmorziG8WaXp93ojrvPqNCetO+spvR4Emu7BOYU1Py+pgzsIuZAPzF01OA+5sCfN1bmD7HHguWb3Ly+16UoXTNzwHCsDEIoK8+MrlHAr9THtCWqbqWCMmmg13NG5wl6A44gz5vKJ/xIlgVXFucBXtmpCU= leo@Giangs-Macbook-Pro.local
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$e1DtRWAkYZQuObYl$GabQIKacwmi/rYZWVHI85Jz.QBPQ3.RTe5WaCZMS6sEtkklDCv0G3J2Xnsgc9zid6j6TMJ.3nxw1WxrK73SXe0
+  - username: cse237c_fa24_j_liu
+    name: Jiahe Liu
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMUcCTFdlSwgxpuZD7Dg1zIz32XXlVz7ScG+88fAeZtH tliu5175@gmail.com
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$LwLIueK4fnz8cip9$ZnMz/FrjCu4OMrnExf2WC5jnwOnECHyV4hv7rf9MXIaDWlMIMqy64gcy2QOXBVAfugzUtficYOgdeIhB6lLE1/
+  - username: cse237c_fa24_a_rajan
+    name: Ashwin Rohit Alagiri Rajan
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJJx2oKcYdr7SX+Pg1+tWyMBSG26M34pE68FsK1/bAkQ aalagirirajan@ucsd.edu
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$g19UFdOrQCdQSC8z$IEzmmp01rX3/KirEBkGM8LCSgcB3EbrDFQF/MqFvnINoxu6URuJR5.hRkKXGChBKZ6t0Ka/L1zvKmReGCOeJ..
+  - username: cse237c_fa24_n_hojatnia
+    name: Nikan Hojatnia
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDaZSm1gu29d36ZQQbQmfJw5FlaGmvuftZEkkWMDrcQusZjOKzBv7hhGSBu0Hwi17zshAay3VgWq1oMJw1HIaD2GF5I3SlemnKqs1DiDkd54EJ41bp6BAs8uyBCt8XdCh8/N0EjaZ/dXDdkNbtdoKI9VQRUKQ5/ZEqrxYJOHZTGeZbTWl5OT1gDn7kgnSfPhOXxU1BRoWhnfzRhPUPFu088gjKNuHunYCQtFtFz3iO56txNsjpYlDJ4w9qL0cYqZHU6nolnUcD9Zy+aBWsmakas39odF78cy/wrAnKDAD2p9Qvx7XMJonfALnL+D5FjlakcfriqosZnPTQV12tIL+Kj9h/JqjQQZ/TioPDRjX0h88MsjRkFpY6U0Tu3OQb/CB70ucS2QprIYhpa6UNZA9R1NogeXMVlK+T6FR4cETXvAQZV/thHnJiiCffBtDKSHI+OfYZfEmppHGsNPaeqWjEQ8o8fdwhw4QCJbF/j7gOn4Vf0NJ3jIFzDYIepgMm4u5h/n9pRTYQuYwAp/RQIJgCqpu2gEHUWL0ql8Kd7R3JjqZOB+alFw8meZxWN5jVpUxlmTBU761TQCJsPpCwbsjwCPZMm7c1tV41gbSqn0WghxwGfe/3y9oh5Z4zqD9OFPFOvSKWGH44NW+OMSXODla07FrRsmdlpRTQ5VTKB+UKtEw== nikanhn@nikan
+    expires: '2024-12-31 23:56:59'
+    groups:
+      - rdp_users
+    password: $6$aMYL0OPfSBVa96WZ$/Y3sItIzo71zPdDeFrxStxpFpRXRwQSWu1J6AhoaRjgHzuB8CEsSoJLiEdK81iUT86/vxdX7A0xhbMORAfGQV.
+
