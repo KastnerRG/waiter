@@ -143,3 +143,12 @@ users:
     expires: '2025-06-30 23:59:59'
     groups:
       - rdp_users
+  - username: cse237c_fa24_a_kumar
+    name: Animesh Kumar
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCVUNQhLGm7HW8BWkvY8mgSoLXWlsgXIRlPm+5qpcveY5X7b/D709K044G4iZAoS/MQOOzpB7T/AwSPX8oseX8RuKZtIOrcgE0iB9eyArPU5UDpAUHxMKTxHVWnF06dfmECWcFOV/Y82kGwJmvf+f54KuF9aFOH4sCpWIu273WO0OAWoyaOP4tD22/17DW9qSJ3wnfM//IsFMdg8AGvbdfSxZ046iw44rWyQCRkYy7dYfYNKfdRc8/wQm3MQ4L2GXf+mlOeqi1sqm+UJgJ0z6h24FM8y0H8/7SE0Qoj1VqIdmRouxGpLECQcLQHj2SrQDdDVohg7RhHq1i5pfOsCq5+RmR7qQ4md1XtzkdheLZML3EE9aoRa0dh3nXo/mP9ydzG/7gq9Dy9b2dS+NY807PcRoBAeOUtSrw1enjbTAssqTm1lmSe2o+bMcMVLQrpadNfodMuD5URP6yNDNpZbwd1vmHLtojBqFSwm2sW2DgkXkuF7HKmuVynJIagi443nZ0= animeshtuf@animeshtuf
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$H6WKt1uBNEVegqm0$EMSXedt78ULKrGrqFhN78AXtvYoxPR6bgJAgHDenkaoCJyW3m/bWSCKDR0TB1I.Q0X8SwMFjRspdptScU/6Za0
+  
