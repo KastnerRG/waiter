@@ -152,6 +152,7 @@ users:
       - rdp_users
     password: $6$H6WKt1uBNEVegqm0$EMSXedt78ULKrGrqFhN78AXtvYoxPR6bgJAgHDenkaoCJyW3m/bWSCKDR0TB1I.Q0X8SwMFjRspdptScU/6Za0
   - username: cse237c_fa24_d_palmer
+    name: Dylan Palmer
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID31eMweq3rRgOm8V8D/EuPl2trtsKyHA464O2xkBHAf dcpalmer@ucsd.edu
     expires: '2024-12-31 23:59:59'
