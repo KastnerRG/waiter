@@ -27,9 +27,12 @@
       name: systemd-resolved
   - name: Set resolve.conf
     become: true
-    ansible.builtin.shell: |
-      rm /etc/resolv.conf
-      ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+    ansible.builtin.file:
+      src: /run/systemd/resolve/resolv.conf
+      dest: /etc/resolv.conf
+      owner: root
+      group: foo
+      state: link
   - name: Install netplan config
     become: true
     ansible.builtin.copy:
