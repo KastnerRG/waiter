@@ -229,3 +229,11 @@ users:
     groups:
       - rdp_users
     password: $6$0DCCarUgUgdfxv2m$sjV0sFG6RWBLBeTKJk2X6AXmqKUJNSRQ0w1oPVEy706EEB4VtnxY7KTNITCQtEvAyd4DmQKLUUiRx6u568wLy1
+  - username: cse237c_fa24_n_kuo
+    name: Nai-En Kuo
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCXd5a6v5ihC7OCgzd8TPG0pHZsfwc/Tm8Yj8hwRfLpN3hhyOLoDhHKoC3W5D3bZXbtlVRm7EZYjsK0YucvMvC6Iq/vbYsOpbzuUwPii4wmtGhLq7ydG0vbxz5fNYKZc8EIvuf+JOoQhJSGpEQNLufVw6LcmOc0siSpbIMW/3T8coWzXLdbKj1bm4qTV8W83apieBCFEb/zK/qHMwyFqQPfQXgiHXMemJXfOgQLdc+2TRkyV9LN3R23aFpsOfQ0U2faX/Mqe2NOkLdvdQcOzk+Jv2j5b7XO6PehdQI9O2iZq5/KDpDg2WNVGHT51tTcdu3kUux40shUG80UZdNUXGoNFg6SxHaN9gizAUB8msAlBvTgnAIqxfIFiyaETc/Ig2T/ngH4JM7T9LMShxoPps0bgifAi2RN5G1KDJ11iQPolSIQYMfE1QWH7TMflWMQCV3SNOdigyIdOkVN2SATZiqWd0kglHPBrjsW36EwlFxZgSnF0Cug9cNlgvxBIHJ3q1xocfD64CwSVM6Cs9Fae2GNGSnK8K/bVS13sk1Y3izPvRbQIZRlOlc04mmQh5wK/4FtnsHjTLjnvtObL+4J+7AsHyFO3DS/evdsucfFOUZcKeD0zad72nogycnCYzRqvyKvcQxmqjWmdLnGjo7BRH7APz+8gAhOvahlr/DbWKKauQ== n1kuo@ucsd.edu
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$odoEJSUKSm5aX7d0$.tYeAeC3uEzHQiMhWwmk0lzZ.4ieouDvJY4tz7SWOMAX0DnOg.9s8xpWKJ.gIPotkwUyI3a9RZzeNV9o/NMEb1
