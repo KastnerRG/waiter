@@ -245,3 +245,11 @@ users:
     groups:
       - rdp_users
     password: $6$ldOfl5kNboPsBcE9$fpUHIXU9Jm2e2vnoq41K.haDBLPkhhnYgvQc1F2JiDkZWEw0OKn8FOL86al96xfxxpjuOu00vsOETXVeT08oE1
+  - username: cse237c_fa24_a_amaya
+    name: Arturo Amaya
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEMIbSz2qlqwVqWOzHa5vJd9xrEVXvypuyICU1Fsa5kG arturoamaya@Mac.lan1
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$dVQUbKmJ4tNTIW4y$l97xNrzy0wKyIOW16rjduoZ19rroLEmIlI5YcODag8LTPl16ZTF0mMmh3/BUUUqS755mHGgLn5LXjJf09.H/V0
