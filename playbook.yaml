@@ -31,7 +31,7 @@
       src: /run/systemd/resolve/resolv.conf
       dest: /etc/resolv.conf
       owner: root
-      group: foo
+      group: root
       state: link
   - name: Install netplan config
     become: true
