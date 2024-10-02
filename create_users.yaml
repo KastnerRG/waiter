@@ -16,4 +16,4 @@
     user: "{{ item.username }}"
     state: present
     key: '{{ item[1] }}'
-  loop: "{{users|subelemenets('authorized_keys')}}"
+  loop: "{{users|subelements('authorized_keys')}}"
