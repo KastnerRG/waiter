@@ -13,7 +13,7 @@
 - name: Deploy keys
   become: true
   ansible.posix.authorized_key:
-    user: "{{ item.username }}"
+    user: "{{ item[0].username }}"
     state: present
     key: '{{ item[1] }}'
   loop: "{{users|subelements('authorized_keys')}}"
