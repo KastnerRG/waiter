@@ -14,7 +14,7 @@
   become: true
 - community.general.ufw:
     rule: allow
-    name: OpenSSH
+    name: ssh
   become: true
 - name: Allow RDP
   community.general.ufw:
