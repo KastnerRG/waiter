@@ -237,3 +237,11 @@ users:
     groups:
       - rdp_users
     password: $6$odoEJSUKSm5aX7d0$.tYeAeC3uEzHQiMhWwmk0lzZ.4ieouDvJY4tz7SWOMAX0DnOg.9s8xpWKJ.gIPotkwUyI3a9RZzeNV9o/NMEb1
+  - username: cse237c_fa24_z_pu
+    name: Zheming Pu
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDZDzJ3V75Qt+gjDCz2tuqoUn5uI7P9bgdROQGdbwArgzrQ9dwm3Ww9qjKvNzELfOOQeEmVE9u9FuzjIw/fbcvnGl9124By300NP6RJtlRB+vb2fVpdzbjWLHu2cpkOnCoEuFk5ne3/UN5/g0gYMtv+Mt8sPq6XlC7OH89OX/FLi6teA5zDa/LwjyjH/ejz6X7ObRxJW1+9sHBYQMBPPoK+74Uqxh0SnJN5BMzfb2XDKE9rhUzWEbrxJpBs/qRtE2LOrG1W4zOqRdVjcjSyFatOGE2awetazVYso0+kqnzC1egZlAj/filcyyEOfzsmr23hSpNuLgNIwk+AJpCXlRpnMsw1orpLjIJNn/2GGRnSGXkMlHGoK5HlGaCGlkp0KAoTNpLnMQfGjLU83uy64FOUWBU7Bq+0TG9xAd2HjBcB8Onv2/PJnLORKUQlNrqSFo2KFX+GlW5iBLtvUO4hQFT0tEWPFf8T3ojTePa+EresVJkDy/QKS/HjqgudcZk/hEPIgH1AaNyV3QLm6ZHpOTUVcMDqiuxEjMEyRBNB/XRet+SFE4WxGPPA7jaEJAJVEgDLAnb89LxiWvfmR+i7h1KRYjFTHfVpmV/J17J1RWsMRkRMubYcBnpqoskKwQaniz9mvnQWHbCZIU/AgxE+T2R+WTYPyheqouMfAmfZ5mHBPw== z3pu@ucsd.edu
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$ldOfl5kNboPsBcE9$fpUHIXU9Jm2e2vnoq41K.haDBLPkhhnYgvQc1F2JiDkZWEw0OKn8FOL86al96xfxxpjuOu00vsOETXVeT08oE1
