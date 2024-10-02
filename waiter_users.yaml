@@ -261,4 +261,11 @@ users:
     groups:
       - rdp_users
     password: $6$QVpzK8TXKstsRkv0$7Q.mSGVJdklqnITW/2a29JTIbEoiAPnm2A9vUbafLCn/3xMe41l9JBkM3TrNmYoEgFJ3SiBw.QZwCltSrM/8h.
-    
+  - username: cse237c_fa24_d_doan
+    name: Daniel Doan
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDECWmO9OKRMGajqaxDh2dXLk7SlD6eumF6oVBqoiUV4s+QR/DHRJ932XPDOUfQ8mUsLx9tqRrHhCZ45d2DmBfBChGTV29isjh1IZ/bYCF+MDKGBhlHq/BzbW/MgFjbC++o5RQa3pHyChawU91BVtY8+K3TQ/kO9svzfp2R9Vyn2Dv6okwr8U3Pk+OW983ZibraEcXqzuzRSzwKlnf+/uMAt80j8/qy0UN3ZhqcoezWAYYWXo0PDUP7XUWWEufJyaJD06CR/kAMQSAm8NQpQ6uq5btEdNjcUCFOm34LDP3vGZQ466J9XtVaPRsqE/RvCWOJ6Qe5VAV08TI0qIV/yZZbyytQfxn+Wd7PoTbJgJfP75FSqxHJJRGEf1HLOAAemqcr6ReN4HKzA9NR3+bXYygAYW+hRO0qNnrgvRF6MC5b/9bo4ZOOFt/QFyaziJdGUrodUipmS5Qz+O7GGi+RiU/6C2UUShunqUe/aEfBV9ILcatkVnJ1e2VYT+PGRg7LR8E= dadoan@ucsd.edu
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$eRlImHUkU.9lRPJm$4tb4Np6PeAauXQQS6FjK7isppp6ja6IIDqRuWFHqQVa91hrEnW/SV0YT8fOrnefCO4JA55jbZrgB3BjIwePrT1
