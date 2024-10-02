@@ -15,5 +15,5 @@
   ansible.posix.authorized_key:
     user: "{{ item.username }}"
     state: present
-    key: '{{ item.authorized_keys | join("\n") }}'
-  loop: "{{users}}"
+    key: '{{ item[1] }}'
+  loop: "{{users|subelemenets('authorized_keys')}}"
