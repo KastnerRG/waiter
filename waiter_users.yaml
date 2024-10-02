@@ -253,3 +253,12 @@ users:
     groups:
       - rdp_users
     password: $6$dVQUbKmJ4tNTIW4y$l97xNrzy0wKyIOW16rjduoZ19rroLEmIlI5YcODag8LTPl16ZTF0mMmh3/BUUUqS755mHGgLn5LXjJf09.H/V0
+  - username: cse237c_fa24_c_yan
+    name: Chenfei Yan
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDpIrGzGuSivU/WCqTYLl7ivB71LAmi41U4Rm46/b+sNEA4sSzoLGR3NUATuW+Ka/rfNxxBK9YEBL0F5PqyNbPau5hmvFpkwP0KhYdUPl93eB3kEnKPMpXZnYDST4wrecjPBKp+t0Qwj8Rqg+i1WVvruJgGuLDvjNaqxzo4/2sFAOyuNs0RX2M7+wdp8uWAMSdzLHXW27zVrB1JXH/CE31PybTZOJaNzGmJ7OEUIruz9Z3TYMerQMfVLnvW/U0/uqBMCco4vFqzg75HSxrrKzQqRIg664b8OD9JSG/FRgn/+bmny9cKI+LBv5o3K7LM0DmprL3sHBckamVd+rxru6mLY0vUtMQADn0X6TbXMaUZY7clo8UsweRd8Vynf/ZuN8biSJsbVugknbLV5P+AqXUkTx8PJ6PzDjs34exaWs3RON4yjDqqZwvLICnn3/esSjEZu01qG6qBjIqlOCL6XpGBvL69w7nSACJqupOKnn60ETNPrA5o6H+aBresuAziWVtUdEyxW3i85gBNOQqyjP3yvj1eMKT+/FilLInd1c4I/MyR7382Tso98OCkK/kzJ0ovajaWqdp3KjLLtFH7KruUaG6b0vhfqWkw3e4cZST0GEhvraMZp69CfsMOOsSnzgSAU+RMkZvv97xqEgV7rzErd+1heVaHclar2fe+Snv/YQ== c4yan@ucsd.edu
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$QVpzK8TXKstsRkv0$7Q.mSGVJdklqnITW/2a29JTIbEoiAPnm2A9vUbafLCn/3xMe41l9JBkM3TrNmYoEgFJ3SiBw.QZwCltSrM/8h.
+    
