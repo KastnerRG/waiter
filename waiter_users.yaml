@@ -269,3 +269,11 @@ users:
     groups:
       - rdp_users
     password: $6$eRlImHUkU.9lRPJm$4tb4Np6PeAauXQQS6FjK7isppp6ja6IIDqRuWFHqQVa91hrEnW/SV0YT8fOrnefCO4JA55jbZrgB3BjIwePrT1
+  - username: cse237c_fa24_m_ramesh
+    name: Mugaesh Ramesh
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDV5TRjjsAGBdZCCkF5/nxD2QjS6Z3gbFLXhBcuYB0LnDQtdRzVerKSHlfgm4nH6hhqCsURfVXwGdqsWJKUylEf6cDTWWXAKcRZ4bsrjW4fywviWT0biRWRdv3gN/6+vA0zsH3Ts0/tvhMpSx3V0rQOWbqguEFJ8lXcy+cOFTxHjB1vdNJgyPV8/29Yx4kZ1MHOOdxSkJ9nemivOOv7wLkPoY84GQ7dewC8uTyUVZbXTfk= mugae@LAPTOP-9JV54MO6
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$tLs8KfzLSYZU4aJF$3OsgmAcILpGdcsiT3kXFLhXqEkfkH0cXv5xPAK4HJyxnvJ9eM3Zd5OyBCKnDPVxfL4ZQFGsJa9GU47JkMl3p3/
