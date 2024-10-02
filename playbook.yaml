@@ -111,7 +111,7 @@
     ansible.builtin.shell: "source {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install v22.9.0"
     args:
       executable: /bin/bash
-      creates: "{{ ansible_env.HOME }}/.nvm/versions/node/v22.9.0/npm"
+      creates: "{{ ansible_env.HOME }}/.nvm/versions/node/v22.9.0/bin/npm"
   - name: Install BitWarden CLI
     # community.general.npm:
     #   name: '@bitwarden/cli'
