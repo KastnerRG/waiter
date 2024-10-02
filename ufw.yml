@@ -14,7 +14,9 @@
   become: true
 - community.general.ufw:
     rule: allow
-    name: ssh
+    # name: ssh
+    port: 22
+    proto: tcp
   become: true
 - name: Allow RDP
   community.general.ufw:
