@@ -205,3 +205,11 @@ users:
     groups:
       - rdp_users
     password: $6$aMYL0OPfSBVa96WZ$/Y3sItIzo71zPdDeFrxStxpFpRXRwQSWu1J6AhoaRjgHzuB8CEsSoJLiEdK81iUT86/vxdX7A0xhbMORAfGQV.
+  - username: cse237c_fa24_a_ranganathan
+    name: Ajay Ramesh Ranganathan
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDbaAUvLW/S7l+rZJqR1tsx8vIsjkPw50Y8cZxu7tlK4UeJaz8kgj4jlMdIS6i5er6KFYcOh5dEfjdbggFyLdBDHDhN/sYra6YraFyFcilmwxspXdRIhOvDt4hcv+KU2bFPS7aoaf23do72wuO7w+DXbfaIt8HOUho/aBqYeUEfns1OAufPggH1jCGDCjmXLNrbrHJGl0hlWhdiH+reQHdRNFb3pQMDgzjuxwaYL6vjo8pufoVItG73b4gmKQZoWUtT41cIeCXxewczaurXqJOP83GWbNc1oASNUnVvC3nlXD0c+bz/2OoMUGieH+lWtKxMZeYeSMkjlQAkKJfx62le5s3FsR1NdUi9M1hsm5Ag0E+YQtVu9bUbDFQ/8uJvSVVJqt4j8lDIMBUyotcmwk6NQLpgVlqV1d1R7INALmrRRiJR20CLLB64Cfyuo4OIJoxt0i96+SoKR2zM2moFctpUcjCR4zObxE4oa22DR58E/TKJWdovVo+AA5RkdoQtJ78= ajayr@Ajay-PC
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$1YCfg6FI1kA4LQpW$8FTt//wgHYHYnLkMq90nVj3x7kNqS3xz80749nX0.4deI2bwTmnJLy81r.NigF.MJ84swx7m09UW3Xc3lvCrp/
