@@ -213,3 +213,11 @@ users:
     groups:
       - rdp_users
     password: $6$1YCfg6FI1kA4LQpW$8FTt//wgHYHYnLkMq90nVj3x7kNqS3xz80749nX0.4deI2bwTmnJLy81r.NigF.MJ84swx7m09UW3Xc3lvCrp/
+  - username: cse237c_fa24_p_parekh
+    name: Prashil Parekh
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDr4Hyz2tXAqBs1oqzNaAqJI2pn4BbTFjraO3nX3KXbDGAnQtSDrOcCvZ3gTCEBZB9HvP3xu3aanzTk27ar3OYPI2TFgvB5GaY5WjlecU30aiNVb+O81ERq/ljMIjPfhYqdDQojcVyLivGHbckuzKGVcgxq4Ser6ZZrPQwqfE4XV6KpgxXqIPndkY6fhgLGKSYz1ZTn5KtZq1GoOtT+Qx2AIS667lJp6fzXehkFMm10qxcAtJcjS6O7bnvpxiJoC7q8u33auTjV6M7UtRSP5NB6au4L6S4ZfgpX6XsVsjeGZYFBmjOnyV02DSYj9LD2r8sNlHL/iqJPMAf6FTpPP83fP5tAkjaA2N49adxdwbCjEb0BCrNFDJZrGyHARscoDre/hoXJT8hLIIqQXPlbUNnKY6gxe6ZrzxOqUAC+SBtNOriVeIA/vUFJ+Oo84HK0hrl728+T7+2TZ8NgKYKKd1/U1hK2svrJ9UWpx16ZTP5AT/L2IhVFNYYByXvfxUt4s6Aho8lN++1rp/rXMvHzANb+zrFwgGu391HAcd4nfwi4Y6hrSGLs4YIGYvlU+UTdomFcSEA1/XN6gC3olSXVL/fNT1OqkVy1b3gBhf6Dvfpn3iNUrVpDdt6BD97Wm+0MX/RlYladd29UC22CzSGuQKcxLbDq0LKQ6CrigaJ2VeeUhw== prparekh@ucsd.edu
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$uvGHpHRomaKT9qO0$HcB3ZadIzJoRx8Hr0Y0mUg1YvbrvSBiBW66tXTzQgRMZ.mJBrmeLWEkrWDRB9.2S5mklrd1YCOMEWQc4e.PHW1
