@@ -221,3 +221,11 @@ users:
     groups:
       - rdp_users
     password: $6$uvGHpHRomaKT9qO0$HcB3ZadIzJoRx8Hr0Y0mUg1YvbrvSBiBW66tXTzQgRMZ.mJBrmeLWEkrWDRB9.2S5mklrd1YCOMEWQc4e.PHW1
+  - username: cse237c_fa24_a_tarbinian
+    name: Anthony Tarbinian
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCKNHRYfJLFnG8e+EfS6pQdgt+45Qd5Kspcsub1+Amel+Lf4wdaP781onkT4EvkJ/Z1bSO7qD9f3cp/6Dikn+9SqodZLwxqmD9Vkc3kQfCIhYnz2Cjgo7pfU2yi1MVu+636ROIdLBkLcDrjiR3YaPJwGhz84xCydOrvFqGsPqT3CIuEETZxF+ElX5HVqDn+SBTWWQASUzE34Xe4qHMjK1H4xA8fdT6/U1VkHCM5pJetE5fHk1+wExX0/xMIEZgcHTOg4Vwe9Lq4busQo/FwUIHFDm/D+n0UtCh6WHmfDpUaczTkaKkp7l972vv55WXB1TzvIk+UjxWgc8sOOaunRB3ABVk26INeuFXVlP3k3EdkjdLcEuvxuxhO5+3hVNsWRwfcjkra4KvPfpzBt4v2Td6IRR6yF/G/P0bvQcz4y85qtgA2b67uCyZrgQ0Ne2aam6zzt515yLo8/+VIXYNM/H9mzQGFdEgrLhGUQnuxK8VsodRmE0tieAbrPWzmCw8wnyXcSWuvU8oomDCJHwRhCzPcy23+dy8SuLZbhynub4593mxH1XHHJ3nezTWtzog7dD5SJezggpQ3UGSNt1W0kKrDQDUMTD9Sa464C/sjwLZDM9lJLj0G0dz03tQnWYuudQasDE/HjjSLHVRV3BawvTdcF4kz3TAkG4CoODKyhsDJ6w== atarbinian@framework-16
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$0DCCarUgUgdfxv2m$sjV0sFG6RWBLBeTKJk2X6AXmqKUJNSRQ0w1oPVEy706EEB4VtnxY7KTNITCQtEvAyd4DmQKLUUiRx6u568wLy1
