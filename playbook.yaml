@@ -40,6 +40,7 @@
         - snapper
         - git-lfs
         - git
+        - firefox
   - name: Ensure these packages are not installed
     become: true
     ansible.builtin.apt:
