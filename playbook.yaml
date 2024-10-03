@@ -7,32 +7,6 @@
     become: true
     community.general.timezone:
       name: America/Los_Angeles
-  # - name: Stop and disable NetworkManager
-  #   become: true
-  #   ansible.builtin.systemd_service:
-  #     state: started
-  #     name: NetworkManager
-  #     enabled: true
-  # - name: Start and enable networkd
-  #   become: true
-  #   ansible.builtin.systemd_service:
-  #     state: started
-  #     name: systemd-networkd
-  #     enabled: true
-  # - name: Start and enable resolved
-  #   become: true
-  #   ansible.builtin.systemd_service:
-  #     state: started
-  #     enabled: true
-  #     name: systemd-resolved
-  # - name: Set resolve.conf
-  #   become: true
-  #   ansible.builtin.file:
-  #     src: /run/systemd/resolve/resolv.conf
-  #     dest: /etc/resolv.conf
-  #     owner: root
-  #     group: root
-  #     state: link
   - name: Install netplan config
     become: true
     ansible.builtin.copy:
@@ -62,6 +36,15 @@
         - python3
         - xrdp
         - unattended-upgrades
+  - name: Ensure these packages are not installed
+    become: true
+    ansible.builtin.apt:
+      state: absent
+      pkg:
+        - cups-browsed
+        - cups-filters
+        - cups-filters-core-drivers
+        - libcupsfilters2t64
   - import_tasks: vivado.yml
   - name: Update unix-chkpwd for xrdp
     become: true
@@ -130,32 +113,3 @@
       pkg:
         - xfce4-goodies
         - xfce4
-
-# Disable cups-browsed re CVE-2024-35235, CVE-2024-47076, CVE-2024-47175, CVE-2024-47176, and CVE-2024-47177
-  - name: Disable cups-browsed
-    become: true
-    ignore_errors: true
-    ansible.builtin.service:
-      name: cups-browsed
-      enabled: false
-      state: stopped
-  - name: Disable cups
-    become: true
-    ignore_errors: true
-    ansible.builtin.service:
-      name: cups
-      enabled: false
-      state: stopped
-
-# # ZFS Hourly Snapshotting
-#   - name: Deploy script
-#     ansible.builtin.copy:
-#       src: scripts/cron_hourly_zfs_snapshots.sh
-#       dest: /home/waiter-admin/cron_hourly_zfs_snapshots.sh
-#       mode: '0766'
-#   - name: Hourly rpool ZFS snapshots
-#     become: true
-#     ansible.builtin.cron:
-#       name: Hourly rpool zfs snapshot
-#       minute: 0
-#       job: /home/waiter-admin/cron_hourly_zfs_snapshots.sh
