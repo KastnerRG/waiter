@@ -293,3 +293,11 @@ users:
     groups:
       - rdp_users
     password: $6$RAiyH3XKccpn.SjV$CnkUbF9g1ob2sQ/KkgzT21jNlXgyfBdAvF.OCWxDX5.ifPiTcYprOZ04QmY/XNQjqU69VOIsCp5gDBskjJ2gf.
+  - username: cse237c_fa24_s_dohadwalla
+    name: Sameer Dohadwalla
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQClkAP3iQa2OeDU9OSelxj45R5rUjsLL/DBRuXSCcrd0p/rM9IKetMY3m99QvsZgSkcYCR1XucKCr8CLDWNQiOs/ez7tvxQfVkD4gfAxh0fq3R0ubdEMsp7gVCOK7rT/zEZuJo/+zLuolVJ1cM309NMstq6JByfPZYmE+a0ICh13d+5LbdhdUXLOrHHLc3f4MJkX2UyDU0HokZ9pJH+aTLHhUgyRFdNcD/d+MUCg/qqeu7r3rzm0S0qyZ1S1LR7yw5C8uXTfTs6uEcmBx498SGdA9PNhD6lH6bbD92kSvH++H6412QA13K3xm73NeVxhAg+pVvNcyD56CeoXDS3PSCkV9ISuZGHbR08hZwDWSurAAJkrikJDwhxww0VaX3vOBi0Ql+brs8tdSkvOZ3WDiFEZr15vR1K1LN3IcdF+OdwpGkw2Q2CMYj3V6VbexZahBIzUrNbhXB5Tj9G/5KCmhG3qGhrfdaQ1t2djBFA2JdOENKIjUPUgllB6i4SCCmmgHk= sameer@LAPTOP-7K8GCBJS
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$pUVAQEiOquWjyjQs$f6C6wTra7Jjn3Gk2.BE1Y.9j3xn5jALd.1xv59qfo2ELyZ6JUiTU3lFp7BYYa9vIfAyjxOFqQVE2mBCm0Jkr9.
