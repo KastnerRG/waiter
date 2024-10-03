@@ -301,3 +301,11 @@ users:
     groups:
       - rdp_users
     password: $6$pUVAQEiOquWjyjQs$f6C6wTra7Jjn3Gk2.BE1Y.9j3xn5jALd.1xv59qfo2ELyZ6JUiTU3lFp7BYYa9vIfAyjxOFqQVE2mBCm0Jkr9.
+  - username: cse237c_fa24_amaan_mohammed
+    name: Amaan Mohammed
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDs92Uak8t9yPoYDz3SZTzsp+iuof4rw2W4qDIt470Xt5iKD6hnLWU44Nx5gahREjlFkMj0jy2reyw4bdHv7T5f/iVP56dQfGvDxAP8TVuJw3vuBcS0byX+Vxx8qNED/4whv3eroasGlx1QRe0Kj6dh20knZNZKGXnmWVgh/zJVr8q2mOZfCbst1FRv5G7jQ7B1GrY4VnT69joE5PqAg51i1JEDOBvNR8wgkvIFNxZiGSlBHRNYv/NmhWAZ1EVR0pcAcpv9t+VXyspjkYVdVwiHlaopbCWt25QEVzOME4j6KoZvjtNHUJ0TxjFhfbbNpNxKE67XGKlxB6iR7xZjMbQKAyOJB8mRD6y9vYwqrM5Y1fI+Xee0vARu2HwLnZlkFA/3AxgWoCFtglPwZx39+ciagqAtSpN+FiP8Sm/NMijv8EjJxA9mas8qfhvm2Kzp/qY9CxjjcTcCsKhwEOhydxBn91X4HF5LeLdtz4iPN3mTxYHVqhB7fv+5Y+vIuBvpXOd3a44PhkEuFD0n7VsJAlxqE/Tsc/L3ybghXlLj83lPm6vBioOLXln8GZZfg540I/sv5UKvDhoTQ/rM/KpbnXFBF7W8DRyiRcN+vpExeMngx3hKvAFKS8UL69oE6pPOw8JUcvYCCWTXGFB5FyF89jH1WnmpSuK0FcZRzB553sdObw== amaanm.work@gmail.com
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$r.atE/UtPz1me6Me$MpAtquluGI8qNyf4Zy3VwI3LaLsZLvp5XILPCKRUC.NIEFI5i6ej/OxlDPyzCgdI0Jc0N8CyNGTX5zbdJqOhA.
