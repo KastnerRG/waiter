@@ -131,6 +131,14 @@
 # Enable unattended upgrades
   - import_tasks: unattended-upgrades.yml
 
+# Install XFCE Desktop
+  - name:
+    become: true
+    ansible.builtin.apt:
+      pkg:
+        - xfce4-goodies
+        - xfce4
+
 # Disable cups-browsed re CVE-2024-35235, CVE-2024-47076, CVE-2024-47175, CVE-2024-47176, and CVE-2024-47177
   - name: Disable cups-browsed
     ansible.builtin.service:
