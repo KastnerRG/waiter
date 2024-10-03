@@ -14,3 +14,12 @@
   become: true
   ansible.builtin.apt:
     deb: http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.4-2_amd64.deb
+- name: Configure Xilinx License server
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/environment
+    regexp: 'XILINXD_LICENSE_FILE\=\"2100@cselm2.ucsd.edu\"'
+    line: 'XILINXD_LICENSE_FILE="2100@cselm2.ucsd.edu"'
+    owner: root
+    group: root
+    mode: '0644'

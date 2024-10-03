@@ -63,14 +63,6 @@
         - xrdp
         - unattended-upgrades
   - import_tasks: vivado.yml
-  - name: Configure Xilinx License server
-    ansible.builtin.lineinfile:
-      path: /etc/environment
-      regexp: 'XILINXD_LICENSE_FILE\=\"2100@cselm2.ucsd.edu\"'
-      line: 'XILINXD_LICENSE_FILE="2100@cselm2.ucsd.edu"'
-      owner: root
-      group: root
-      mode: '0644'
   - name: Update unix-chkpwd for xrdp
     become: true
     ansible.builtin.file:
@@ -141,25 +133,29 @@
 
 # Disable cups-browsed re CVE-2024-35235, CVE-2024-47076, CVE-2024-47175, CVE-2024-47176, and CVE-2024-47177
   - name: Disable cups-browsed
+    become: true
+    ignore_errors: true
     ansible.builtin.service:
       name: cups-browsed
       enabled: false
       state: stopped
   - name: Disable cups
+    become: true
+    ignore_errors: true
     ansible.builtin.service:
       name: cups
       enabled: false
       state: stopped
 
-# ZFS Hourly Snapshotting
-  - name: Deploy script
-    ansible.builtin.copy:
-      src: scripts/cron_hourly_zfs_snapshots.sh
-      dest: /home/waiter-admin/cron_hourly_zfs_snapshots.sh
-      mode: '0766'
-  - name: Hourly rpool ZFS snapshots
-    become: true
-    ansible.builtin.cron:
-      name: Hourly rpool zfs snapshot
-      minute: 0
-      job: /home/waiter-admin/cron_hourly_zfs_snapshots.sh
+# # ZFS Hourly Snapshotting
+#   - name: Deploy script
+#     ansible.builtin.copy:
+#       src: scripts/cron_hourly_zfs_snapshots.sh
+#       dest: /home/waiter-admin/cron_hourly_zfs_snapshots.sh
+#       mode: '0766'
+#   - name: Hourly rpool ZFS snapshots
+#     become: true
+#     ansible.builtin.cron:
+#       name: Hourly rpool zfs snapshot
+#       minute: 0
+#       job: /home/waiter-admin/cron_hourly_zfs_snapshots.sh
