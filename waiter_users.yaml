@@ -333,3 +333,11 @@ users:
     groups:
       - rdp_users
     password: $6$VQK.RrLx74BATH6/$GC4HJX/eG0TxamQsIPBub5NYO.i2KyjuQ83WU0Wbt98zIvvxNzAC7oEmO60X6zWyN2HO59xYBiMpXXMmDUED20
+  - username: cse237c_fa24_d_panchal
+    name: Devanshi Panchal
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC3R+ugpAIuySUXl+wfQdnr2LwnHnH3/H5t1F79NMsrCrAC48PVdjrxw6RkzFcMqyzwUxqTPfenQ2rPZfVnGLqWu+G31A5OMXqO2Guss6vgOCdXqgrZmtXk1IrzQVhQkYAJ9Cuu8iNdHyIlciDULAP8tHeRM9ODAPsrmmvtA7QXvmAe0iiyxVRLpwg5m6+ru0HOYn0ZmC37sIpvS5Y4SnO1JEAG7dQ5utFsey2EMUnt1SwXt2wZLHngtgEOWCYfb723SD5dQQ/W+ja735XjVKIoxou85qtWtaJ16mkU4J075D+om6QXcxDrIv3ECduAzIQaSeL/OhUuUxNcEKizJ86byH5rlJonxA2lFeDzMQhUJQVQ00kGBFyyDESTdZDWeNGFJcFX7auGZowkJUyJN0oKScBIYf6j1Tss9RiCW4ec5F8C4MSkkyYXQNW7ncQLJE+C6VxFMfyBUOpbL3wfyN3rBgDUZn2hcFsVbLdEs/+QIjtYMzkt/5bpfO1Kx5t7WbaUHqzqLNQ5gLFSXYhIHuxJZH/ILst/GFUWXQJvZT4jwpuSjLtdmqxsf6tzMGakvrFVt9/0np2R7Ya7nz+Rfh8m1X0kOODi6BcezwcTKmep3qndh4bvfGXwIwmGFTOj5D3Ugi2EGL2ncGrKKmpsQNGtc2Hp3d7vHWPZxMDOqWBvlw== devanshipanchal@Devanshis-MacBook-Air.local
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$Toy5QJ995XXxuRZj$mCWB1hIRHV5YMZ/aserwNXpBP4kM1AaFdc0IQiLymKeLHId4nRbSK4AL/MPjOn8iKRpuF30CwDmd70NLfFtFT/
