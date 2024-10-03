@@ -13,7 +13,7 @@
       - libxext6
       - libxrender1
       - libsm6
-      - libqtgui4
+      # - libqtgui4
       - libfontconfig1
       - unzip
       - zip
