@@ -125,3 +125,19 @@
       owner: root
       group: root
       mode: '0620' # user read/write, group read
+  - name: Start snapper timer
+    become: true
+    ansible.builtin.systemd_service:
+      name: snapper-timeline.timer
+      daemon_reload: true
+      enabled: true
+      masked: false
+      state: started
+  - name: Start snapper cleanup
+    become: true
+    ansible.builtin.systemd_service:
+      name: snapper-cleanup.timer
+      daemon_reload: true
+      enabled: true
+      masked: false
+      state: started
