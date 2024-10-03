@@ -63,14 +63,6 @@
         - xrdp
         - unattended-upgrades
   - import_tasks: vivado.yml
-  - name: Configure Xilinx License server
-    ansible.builtin.lineinfile:
-      path: /etc/environment
-      regexp: 'XILINXD_LICENSE_FILE\=\"2100@cselm2.ucsd.edu\"'
-      line: 'XILINXD_LICENSE_FILE="2100@cselm2.ucsd.edu"'
-      owner: root
-      group: root
-      mode: '0644'
   - name: Update unix-chkpwd for xrdp
     become: true
     ansible.builtin.file:
