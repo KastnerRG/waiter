@@ -341,3 +341,12 @@ users:
     groups:
       - rdp_users
     password: $6$Toy5QJ995XXxuRZj$mCWB1hIRHV5YMZ/aserwNXpBP4kM1AaFdc0IQiLymKeLHId4nRbSK4AL/MPjOn8iKRpuF30CwDmd70NLfFtFT/
+  - username: cse237c_fa24_y_chen_1
+    name: Yu-An Chen
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC1zhcgfBngibYT6fzNh7MUbNJzouDgKsYOIRl19s+6HrS07tkq0qOeXKrqPVHd7s2hBlCNUrxan38Ah7GKTN2xA0WRz+esWkwqwkCxmeH7Gks+jQRWujCFwP1X+pLOOVEuaVdshomvmjADjwUbuVJdU12ZN3RYXS131/ZyIaF0IoWdbGAW1zKSfJVGh0UsRgHjVEe57svx87WBgoqQX5JYtD9wQ9jI6CzyuSj0qG6Y07lUaWM+M7uMuRlUhcWSy/6JMcNLQZT6wq3gRlWzoj3HV+PYdej4gHlWtydtHSGHz+5D04hPUimoQSMdmb1VZWZVhhhczR16tceIWXFtB7APlReYAnfvV6E+zI3EdHupaQYb3EcgaPEA7dv2lvaotIoH0cqe4g1HIpnPLzuiUcGwgLNkehF6wclY9Csekc0KtFHLZ7S8S7HePqzMxqX9LjYeLEMoUx7/mxeHQEg9a9IBlA8+mnswVXN4EPWdtZhjTW7BtzGMVKbohCsd63tmShM= tony@Tony-Dizustu-Bilgisayar.local
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$Z9E4cYrZtygPdm.Z$AN.uvZZR95AclOZXUDXMusGg3UMZ9zFssltDD2SRXcFemynPsYOsgHDx3RgzLcGBbk5Dn85bbkgdxlrfip1SL1
+    
