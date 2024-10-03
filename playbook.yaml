@@ -98,9 +98,9 @@
       masked: false
       state: started
 
-  - import_tasks: docker_ubuntu_24.yaml
-  - import_tasks: cuda_12_6_1_ubuntu_24.yaml
-  - import_tasks: nvidia-container-toolkit_ubuntu_24.yaml
+  - import_tasks: docker_ubuntu_22.yaml
+  - import_tasks: cuda_12_6_1_ubuntu_22.yaml
+  - import_tasks: nvidia-container-toolkit_ubuntu.yaml
   - import_tasks: create_users.yaml
   - name: Install nvm
     ansible.builtin.shell: >
