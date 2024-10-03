@@ -25,6 +25,7 @@
     apt:
       name: "*"
       state: latest
+      autoremove: yes
       update_cache: yes
   - name: Install/update system packages
     become: true
@@ -36,6 +37,7 @@
         - python3
         - xrdp
         - unattended-upgrades
+        - snapper
   - name: Ensure these packages are not installed
     become: true
     ansible.builtin.apt:
@@ -113,3 +115,13 @@
       pkg:
         - xfce4-goodies
         - xfce4
+
+# Snapper Configuration for BTRFS
+  - name: Install snapper config
+    become: true
+    ansible.builtin.copy:
+      src: snapper/root
+      dest: /etc/snapper/configs/root
+      owner: root
+      group: root
+      mode: '0620' # user read/write, group read
