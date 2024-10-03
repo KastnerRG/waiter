@@ -25,6 +25,7 @@
     apt:
       name: "*"
       state: latest
+      autoremove: yes
       update_cache: yes
   - name: Install/update system packages
     become: true
@@ -36,6 +37,7 @@
         - python3
         - xrdp
         - unattended-upgrades
+<<<<<<< Updated upstream
   - name: Ensure these packages are not installed
     become: true
     ansible.builtin.apt:
@@ -45,6 +47,9 @@
         - cups-filters
         - cups-filters-core-drivers
         - libcupsfilters2t64
+=======
+        - snapper
+>>>>>>> Stashed changes
   - import_tasks: vivado.yml
   - name: Update unix-chkpwd for xrdp
     become: true
@@ -114,9 +119,12 @@
         - xfce4-goodies
         - xfce4
 
-# BTRFS
-  - name: Install snapper for BTRFS
+# Snapper Configuration for BTRFS
+  - name: Install snapper config
     become: true
-    ansible.builtin.apt:
-      pkg:
-        - snapper
+    ansible.builtin.copy:
+      src: snapper/root
+      dest: /etc/snapper/configs/root
+      owner: root
+      group: root
+      mode: '0620' # user read/write, group read
