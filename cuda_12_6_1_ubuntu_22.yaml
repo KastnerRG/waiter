@@ -21,7 +21,7 @@
 - name: Add CUDA GPG APT key
   become: true
   ansible.builtin.copy:
-    src: /var/cuda-repo-ubuntu2204-12-6-local/cuda-1E1DCD98-keyring.gpg
+    src: /var/cuda-repo-ubuntu2204-12-6-local/cuda-D60B4864-keyring.gpg
     dest: /usr/share/keyrings/
 # sudo apt-get update
 # sudo apt-get -y install cuda-toolkit-12-6
