@@ -317,3 +317,12 @@ users:
     groups:
       - rdp_users
     password: $6$8HRF7fUyDqCOX4yE$5CSPbzgtyqt5SH2VAK60ZZ56EeLK21884MiyJDm8KxO0133ezu2COWy9tjzj8VaaBfgNmhHNAN/4MuFAEASAi.
+  - username: cse237c_fa24_y_liu
+    name: Yulei Liu
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAie5hl6pdASJb69yBzQDYh0dQS0IuM0iab3NCVYttyXd1E9AwH2mfgL+VTElB5cA26Ven5JkmsDY/A283puTEzHYXWm1kD8WPjTMdyNMO6vRwSOSEMctkOuAo5tTpM1cfw7WYCWZomtT+BRCKK8a8JVkHCqS+1dqc5hDOSFu+B/0OcHS9XD1V2N0z2Uvum3qG81irxgjlglScEO1KrAc1uCm/qSxWIUC3JWUNSbg9jMifvgBgHRsg2K7TvqxPoiTuKE5ZtuYRU6t2ye3EH/ayLdDhddL+oRsMeZIpyjfF2sNXjdXXRRzTKrCfXcLZ9E/MgyL4jbgRuPoEtSGT9kBVmJe9W/JxzFNat1MPmivIZBeagVpF2bGpQqVkMoP51Pn/iKixluFppOnbeuvfm9Id2ti+cLermDpVBeio/JHjZU5Z31uUOhOCYq0yJDl7c2u+pa7nYwWCWL7XtsDi8LTc7ek2Ut1o01nQUE949vL28Fv3v8mp5G3gKZUApf6xzVc= 1515999248@qq.com
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$OMshF0Hi5H6UtFVi$UgAN3evNGJssdaCl6cxsmSnVBtvN4.k9MefS9YHWhhHhBlni9gyJBM46.P9/I1kZQHlPnEKhoHXIsEEc84FBT/
+
