@@ -309,3 +309,11 @@ users:
     groups:
       - rdp_users
     password: $6$r.atE/UtPz1me6Me$MpAtquluGI8qNyf4Zy3VwI3LaLsZLvp5XILPCKRUC.NIEFI5i6ej/OxlDPyzCgdI0Jc0N8CyNGTX5zbdJqOhA.
+  - username: cse237c_fa24_y_zhang
+    name: Yaosen Zhang
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCrMZLp8uaKk2mzUQYxPK36YpJOJmYfC7qTFC0EvQJzlHqDxy08ccbCFzboWgQRA8O6zAOWTp3ecTijc/i+xacpRbQFbyz/AwkAew5TmAZCfErYjzHHT8HjnClZ/oR/jg57Z6JCH/sUUwBX/zRHFzTAVukAO3ve3jX/ggOR82hvtbrWEBLjzePA/Xbs6RpDIrkSg+qYKq3KKH8m4skOXRCDJGIumKgilWWPL5q9xOGpIkiBqVTYMG++uyN04dgIvktZnmtLsTAqPGeAD577OtqdcLlrjOYBVMIOywmfE40ddRtZfnvJq1Xkmgu8aXJDBIGBmZchX+DGJGbgfADQ2Eq37LyjQUq/8B26x6J7bNE+FwQW1wSwzycN4VEP7/bRgzm6WAmknIsgW2MlqIpZ9TkJYa6GNNrLzYfQyuK6gjetpNVXP4V+aEbD+eKWDc9e3piOAPcuXm9azVFkUHx4fgZNCMZHL1hdvEHS3ZwRhZm9dSQ26rzDHO4DYILeF/5YvK0iXNGyiIlZJzObAzvs5SYosmgAGLajrHFbXVDT3bQDvMatyuFspwXWdI4aXNjY+H+NdKFZBZ6/1EzUAyNqr/r2cQff4mcsm13psMMM2BbMBj1eKM93FE3mXFPffAH2Ebrrjejg2fmUfRrM/jqJeJ2Jmxbj+5UJUyCBEOdQtstFWQ== yaz001@ucsd.edu
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$8HRF7fUyDqCOX4yE$5CSPbzgtyqt5SH2VAK60ZZ56EeLK21884MiyJDm8KxO0133ezu2COWy9tjzj8VaaBfgNmhHNAN/4MuFAEASAi.
