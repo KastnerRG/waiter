@@ -143,6 +143,20 @@
       enabled: false
       state: stopped
 
+# BTRFS
+  - name: Install snapper for BTRFS
+    become: true
+    ansible.builtin.apt:
+      pkg:
+        - snapper
+  - name: Create the snapper config
+    become: true
+    ansible.bulitin.command:
+    cmd: >
+      snapper -c root create-config /
+    creates: /etc/snapper/configs/root
+    
+
 # # ZFS Hourly Snapshotting
 #   - name: Deploy script
 #     ansible.builtin.copy:
