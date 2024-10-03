@@ -6,6 +6,7 @@
       - libgtk2.0-0
       - dpkg-dev
       - python3-pip
+      - libxtst6
 - name: install libtinfo5
   become: true
   ansible.builtin.apt:
