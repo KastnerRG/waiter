@@ -277,3 +277,11 @@ users:
     groups:
       - rdp_users
     password: $6$tLs8KfzLSYZU4aJF$3OsgmAcILpGdcsiT3kXFLhXqEkfkH0cXv5xPAK4HJyxnvJ9eM3Zd5OyBCKnDPVxfL4ZQFGsJa9GU47JkMl3p3/
+  - username: cse237c_fa24_x_liu
+    name: Xun Liu
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDQvddcs1S0aO2Bt5B3pqom6LPUK/PUbwWrH31KOFshY379eHONXKMRqfJWjSEQVFrexIVBsinQ6+/O8SkDfoS7GfAyJ8iWTgqDrnaVk3ghKuduC0ToRoGCjEC66hn72YiGsW9xjkoAYK6hhuiro5apqw61vOpBHUFvbbMhC3bJ/JejljFiJsvl2qsuz/kMkJn+bDxDCZ6X0ho5lj5HKHxIM3XpQ4RcMzdPNpoJUcZ1f3Q77+XH44OfyXRX9cFD80R593jOTa8SVDEEXIRRXfJruXUrTdt5Nd1agGfAdD+vEN/8vOSs/WP7ob0yDIU62ssBIdDkPBUol9aX3BNPHxMSAIKSj+5AKkxTIuLGJkr5wMjE1/2dU9/tWz765JpdVs57j1sFk37MSrtL+ous7MUgjxx1DG0XfjFyt6GMhE7/HoAFCBj5Aa73nvMuLbtnB6H+iNCRp4QYqF5T2yngeVXhs3lAPBOOiJ/GJk1dwHAAo12kxg3IJjcX7eYo+TO174s= 17877@ZenXL
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$dYLNeuxh8d3bU3SN$GbmIu4V2rtZM7Tks9J3dwKh04akEDEmstknnmaA7nkZ6e7XY4u5tVt2weDDYdJ2AColp0tuh78tlWcPlbe.Ab/
