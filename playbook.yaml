@@ -37,7 +37,7 @@
         - python3
         - xrdp
         - unattended-upgrades
-<<<<<<< Updated upstream
+        - snapper
   - name: Ensure these packages are not installed
     become: true
     ansible.builtin.apt:
@@ -47,9 +47,6 @@
         - cups-filters
         - cups-filters-core-drivers
         - libcupsfilters2t64
-=======
-        - snapper
->>>>>>> Stashed changes
   - import_tasks: vivado.yml
   - name: Update unix-chkpwd for xrdp
     become: true
