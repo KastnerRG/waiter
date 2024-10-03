@@ -277,3 +277,67 @@ users:
     groups:
       - rdp_users
     password: $6$tLs8KfzLSYZU4aJF$3OsgmAcILpGdcsiT3kXFLhXqEkfkH0cXv5xPAK4HJyxnvJ9eM3Zd5OyBCKnDPVxfL4ZQFGsJa9GU47JkMl3p3/
+  - username: cse237c_fa24_x_liu
+    name: Xun Liu
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDQvddcs1S0aO2Bt5B3pqom6LPUK/PUbwWrH31KOFshY379eHONXKMRqfJWjSEQVFrexIVBsinQ6+/O8SkDfoS7GfAyJ8iWTgqDrnaVk3ghKuduC0ToRoGCjEC66hn72YiGsW9xjkoAYK6hhuiro5apqw61vOpBHUFvbbMhC3bJ/JejljFiJsvl2qsuz/kMkJn+bDxDCZ6X0ho5lj5HKHxIM3XpQ4RcMzdPNpoJUcZ1f3Q77+XH44OfyXRX9cFD80R593jOTa8SVDEEXIRRXfJruXUrTdt5Nd1agGfAdD+vEN/8vOSs/WP7ob0yDIU62ssBIdDkPBUol9aX3BNPHxMSAIKSj+5AKkxTIuLGJkr5wMjE1/2dU9/tWz765JpdVs57j1sFk37MSrtL+ous7MUgjxx1DG0XfjFyt6GMhE7/HoAFCBj5Aa73nvMuLbtnB6H+iNCRp4QYqF5T2yngeVXhs3lAPBOOiJ/GJk1dwHAAo12kxg3IJjcX7eYo+TO174s= 17877@ZenXL
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$dYLNeuxh8d3bU3SN$GbmIu4V2rtZM7Tks9J3dwKh04akEDEmstknnmaA7nkZ6e7XY4u5tVt2weDDYdJ2AColp0tuh78tlWcPlbe.Ab/
+  - username: cse237c_fa24_b_wu
+    name: Buwei Wu
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDfRQSHXAY7C1o0jVaZKvnNuHApPJGYWh2O2yQAuaOHX1kycAMxgO7iJ9Mes7DxiuJECrM57Jpat4aVhas9/EP0X9r2q3IULLCmOfcT5FPzIdRlio2+Dk/c4uTqWShC5gf0sdNIz8/Pp9WRgUqGICFa4MvhZNBZ+vZ7tPw/xDHdr3Z+N96Anc1s8MBlAo0OZLNozhmp8haLChyKkRHazbg4J3FdS5ZZgwYCTB2on26qz1KFFE+nZdFb4JlCCAH9O04dgFR7QdEBHqqABvt2QUC4+LPvSkpcMyU5d/msh441kMFATT1WXdLOOBUVtGVhw/LZPxeXsT6tp/Nq1yiezDdPDKHLXdO9PeON8H4oswj33GxIWRwC3tBUSQLFpWdWtb/VUyErEm8NqU02H6l/KngbRoiSKmQEEli7nBv+tIS5TwGI9f3Z05SRYpQm0E4qRTutM4oxH8VKITnuN/QIlm8VQ1fKN4pL0jU3XYD8UEkDjkoPeDNCxcxj6vGiCmTc7Lwz7RlgVP/gUrdEj43WtEHBHtpDRob4HcXsz1X4YFt2e4IkK3fn8E7kccPd3B/n8TVyw/UaBiY2+ypBEJ4EXYRfPDzmDK38HfBqbvu4av+gNbBMAd9D5mFg6CLrNK40I+2/KmAP/UQydUHhDY09PjcFnw27wmNrxysHPxCpCMpcPw== buwu@ucsd.edu
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$RAiyH3XKccpn.SjV$CnkUbF9g1ob2sQ/KkgzT21jNlXgyfBdAvF.OCWxDX5.ifPiTcYprOZ04QmY/XNQjqU69VOIsCp5gDBskjJ2gf.
+  - username: cse237c_fa24_s_dohadwalla
+    name: Sameer Dohadwalla
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQClkAP3iQa2OeDU9OSelxj45R5rUjsLL/DBRuXSCcrd0p/rM9IKetMY3m99QvsZgSkcYCR1XucKCr8CLDWNQiOs/ez7tvxQfVkD4gfAxh0fq3R0ubdEMsp7gVCOK7rT/zEZuJo/+zLuolVJ1cM309NMstq6JByfPZYmE+a0ICh13d+5LbdhdUXLOrHHLc3f4MJkX2UyDU0HokZ9pJH+aTLHhUgyRFdNcD/d+MUCg/qqeu7r3rzm0S0qyZ1S1LR7yw5C8uXTfTs6uEcmBx498SGdA9PNhD6lH6bbD92kSvH++H6412QA13K3xm73NeVxhAg+pVvNcyD56CeoXDS3PSCkV9ISuZGHbR08hZwDWSurAAJkrikJDwhxww0VaX3vOBi0Ql+brs8tdSkvOZ3WDiFEZr15vR1K1LN3IcdF+OdwpGkw2Q2CMYj3V6VbexZahBIzUrNbhXB5Tj9G/5KCmhG3qGhrfdaQ1t2djBFA2JdOENKIjUPUgllB6i4SCCmmgHk= sameer@LAPTOP-7K8GCBJS
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$pUVAQEiOquWjyjQs$f6C6wTra7Jjn3Gk2.BE1Y.9j3xn5jALd.1xv59qfo2ELyZ6JUiTU3lFp7BYYa9vIfAyjxOFqQVE2mBCm0Jkr9.
+  - username: cse237c_fa24_amaan_mohammed
+    name: Amaan Mohammed
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDs92Uak8t9yPoYDz3SZTzsp+iuof4rw2W4qDIt470Xt5iKD6hnLWU44Nx5gahREjlFkMj0jy2reyw4bdHv7T5f/iVP56dQfGvDxAP8TVuJw3vuBcS0byX+Vxx8qNED/4whv3eroasGlx1QRe0Kj6dh20knZNZKGXnmWVgh/zJVr8q2mOZfCbst1FRv5G7jQ7B1GrY4VnT69joE5PqAg51i1JEDOBvNR8wgkvIFNxZiGSlBHRNYv/NmhWAZ1EVR0pcAcpv9t+VXyspjkYVdVwiHlaopbCWt25QEVzOME4j6KoZvjtNHUJ0TxjFhfbbNpNxKE67XGKlxB6iR7xZjMbQKAyOJB8mRD6y9vYwqrM5Y1fI+Xee0vARu2HwLnZlkFA/3AxgWoCFtglPwZx39+ciagqAtSpN+FiP8Sm/NMijv8EjJxA9mas8qfhvm2Kzp/qY9CxjjcTcCsKhwEOhydxBn91X4HF5LeLdtz4iPN3mTxYHVqhB7fv+5Y+vIuBvpXOd3a44PhkEuFD0n7VsJAlxqE/Tsc/L3ybghXlLj83lPm6vBioOLXln8GZZfg540I/sv5UKvDhoTQ/rM/KpbnXFBF7W8DRyiRcN+vpExeMngx3hKvAFKS8UL69oE6pPOw8JUcvYCCWTXGFB5FyF89jH1WnmpSuK0FcZRzB553sdObw== amaanm.work@gmail.com
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$r.atE/UtPz1me6Me$MpAtquluGI8qNyf4Zy3VwI3LaLsZLvp5XILPCKRUC.NIEFI5i6ej/OxlDPyzCgdI0Jc0N8CyNGTX5zbdJqOhA.
+  - username: cse237c_fa24_y_zhang
+    name: Yaosen Zhang
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCrMZLp8uaKk2mzUQYxPK36YpJOJmYfC7qTFC0EvQJzlHqDxy08ccbCFzboWgQRA8O6zAOWTp3ecTijc/i+xacpRbQFbyz/AwkAew5TmAZCfErYjzHHT8HjnClZ/oR/jg57Z6JCH/sUUwBX/zRHFzTAVukAO3ve3jX/ggOR82hvtbrWEBLjzePA/Xbs6RpDIrkSg+qYKq3KKH8m4skOXRCDJGIumKgilWWPL5q9xOGpIkiBqVTYMG++uyN04dgIvktZnmtLsTAqPGeAD577OtqdcLlrjOYBVMIOywmfE40ddRtZfnvJq1Xkmgu8aXJDBIGBmZchX+DGJGbgfADQ2Eq37LyjQUq/8B26x6J7bNE+FwQW1wSwzycN4VEP7/bRgzm6WAmknIsgW2MlqIpZ9TkJYa6GNNrLzYfQyuK6gjetpNVXP4V+aEbD+eKWDc9e3piOAPcuXm9azVFkUHx4fgZNCMZHL1hdvEHS3ZwRhZm9dSQ26rzDHO4DYILeF/5YvK0iXNGyiIlZJzObAzvs5SYosmgAGLajrHFbXVDT3bQDvMatyuFspwXWdI4aXNjY+H+NdKFZBZ6/1EzUAyNqr/r2cQff4mcsm13psMMM2BbMBj1eKM93FE3mXFPffAH2Ebrrjejg2fmUfRrM/jqJeJ2Jmxbj+5UJUyCBEOdQtstFWQ== yaz001@ucsd.edu
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$8HRF7fUyDqCOX4yE$5CSPbzgtyqt5SH2VAK60ZZ56EeLK21884MiyJDm8KxO0133ezu2COWy9tjzj8VaaBfgNmhHNAN/4MuFAEASAi.
+  - username: cse237c_fa24_y_liu
+    name: Yulei Liu
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAie5hl6pdASJb69yBzQDYh0dQS0IuM0iab3NCVYttyXd1E9AwH2mfgL+VTElB5cA26Ven5JkmsDY/A283puTEzHYXWm1kD8WPjTMdyNMO6vRwSOSEMctkOuAo5tTpM1cfw7WYCWZomtT+BRCKK8a8JVkHCqS+1dqc5hDOSFu+B/0OcHS9XD1V2N0z2Uvum3qG81irxgjlglScEO1KrAc1uCm/qSxWIUC3JWUNSbg9jMifvgBgHRsg2K7TvqxPoiTuKE5ZtuYRU6t2ye3EH/ayLdDhddL+oRsMeZIpyjfF2sNXjdXXRRzTKrCfXcLZ9E/MgyL4jbgRuPoEtSGT9kBVmJe9W/JxzFNat1MPmivIZBeagVpF2bGpQqVkMoP51Pn/iKixluFppOnbeuvfm9Id2ti+cLermDpVBeio/JHjZU5Z31uUOhOCYq0yJDl7c2u+pa7nYwWCWL7XtsDi8LTc7ek2Ut1o01nQUE949vL28Fv3v8mp5G3gKZUApf6xzVc= 1515999248@qq.com
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$OMshF0Hi5H6UtFVi$UgAN3evNGJssdaCl6cxsmSnVBtvN4.k9MefS9YHWhhHhBlni9gyJBM46.P9/I1kZQHlPnEKhoHXIsEEc84FBT/
+  - username: cse237c_fa_w_wu
+    name: Wesley Wu
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINiv3C+cWuTc8v51BbleN83C8c79GnWqflkHP8yDLe50 wew059@ucsd.edu
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$VQK.RrLx74BATH6/$GC4HJX/eG0TxamQsIPBub5NYO.i2KyjuQ83WU0Wbt98zIvvxNzAC7oEmO60X6zWyN2HO59xYBiMpXXMmDUED20
+  - username: cse237c_fa24_d_panchal
+    name: Devanshi Panchal
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC3R+ugpAIuySUXl+wfQdnr2LwnHnH3/H5t1F79NMsrCrAC48PVdjrxw6RkzFcMqyzwUxqTPfenQ2rPZfVnGLqWu+G31A5OMXqO2Guss6vgOCdXqgrZmtXk1IrzQVhQkYAJ9Cuu8iNdHyIlciDULAP8tHeRM9ODAPsrmmvtA7QXvmAe0iiyxVRLpwg5m6+ru0HOYn0ZmC37sIpvS5Y4SnO1JEAG7dQ5utFsey2EMUnt1SwXt2wZLHngtgEOWCYfb723SD5dQQ/W+ja735XjVKIoxou85qtWtaJ16mkU4J075D+om6QXcxDrIv3ECduAzIQaSeL/OhUuUxNcEKizJ86byH5rlJonxA2lFeDzMQhUJQVQ00kGBFyyDESTdZDWeNGFJcFX7auGZowkJUyJN0oKScBIYf6j1Tss9RiCW4ec5F8C4MSkkyYXQNW7ncQLJE+C6VxFMfyBUOpbL3wfyN3rBgDUZn2hcFsVbLdEs/+QIjtYMzkt/5bpfO1Kx5t7WbaUHqzqLNQ5gLFSXYhIHuxJZH/ILst/GFUWXQJvZT4jwpuSjLtdmqxsf6tzMGakvrFVt9/0np2R7Ya7nz+Rfh8m1X0kOODi6BcezwcTKmep3qndh4bvfGXwIwmGFTOj5D3Ugi2EGL2ncGrKKmpsQNGtc2Hp3d7vHWPZxMDOqWBvlw== devanshipanchal@Devanshis-MacBook-Air.local
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$Toy5QJ995XXxuRZj$mCWB1hIRHV5YMZ/aserwNXpBP4kM1AaFdc0IQiLymKeLHId4nRbSK4AL/MPjOn8iKRpuF30CwDmd70NLfFtFT/
