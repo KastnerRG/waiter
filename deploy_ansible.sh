@@ -1,4 +1,13 @@
 #!/bin/bash
+execute-ansible() {
+  which snapper > /dev/null
+  if [ $? -eq 0; ] then # Snapper found
+    snapper -c root create --command "ansible-playbook $1"
+  else # Snapper not found
+    ansible-playbook $1
+  fi
+}
+
 cd /home/waiter-admin/waiter
 set -ex
 
@@ -20,7 +29,7 @@ then
     ANSIBLE_CONFIG='/home/waiter-admin/waiter/ansible.cfg'
     ANSIBLE_INVENTORY='/home/waiter-admin/waiter/inventory.yaml'
     BW_SESSION=`cat /home/waiter-admin/bw_session`
-    ansible-playbook playbook.yaml
+    execute-ansible playbook.yaml
     docker compose pull
     docker compose up --detach
     docker image prune -f
