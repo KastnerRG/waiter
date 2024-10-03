@@ -9,7 +9,7 @@
       - libxtst6
       - libtinfo5
       - libncurses5
-      - lib32stc++
+      - lib32stdc++
       - libx11
       - libxext6
       - libxrender1
