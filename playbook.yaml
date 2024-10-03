@@ -149,12 +149,12 @@
     ansible.builtin.apt:
       pkg:
         - snapper
-  - name: Create the snapper config
-    become: true
-    ansible.bulitin.command:
-    cmd: >
-      snapper -c root create-config /
-    creates: /etc/snapper/configs/root
+  # - name: Create the snapper config
+  #   become: true
+  #   ansible.bulitin.command:
+  #   cmd: >
+  #     snapper -c root create-config /
+  #   creates: /etc/snapper/configs/root
     
 
 # # ZFS Hourly Snapshotting
