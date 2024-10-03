@@ -20,7 +20,7 @@
       - g++
       - xvfb
       - git
-      - libncursesw5
+      # - libncursesw5
       - libc6-dev-i386
       - net-tools
       - graphviz
