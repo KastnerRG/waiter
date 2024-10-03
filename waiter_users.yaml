@@ -285,3 +285,11 @@ users:
     groups:
       - rdp_users
     password: $6$dYLNeuxh8d3bU3SN$GbmIu4V2rtZM7Tks9J3dwKh04akEDEmstknnmaA7nkZ6e7XY4u5tVt2weDDYdJ2AColp0tuh78tlWcPlbe.Ab/
+  - username: cse237c_fa24_b_wu
+    name: Buwei Wu
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDfRQSHXAY7C1o0jVaZKvnNuHApPJGYWh2O2yQAuaOHX1kycAMxgO7iJ9Mes7DxiuJECrM57Jpat4aVhas9/EP0X9r2q3IULLCmOfcT5FPzIdRlio2+Dk/c4uTqWShC5gf0sdNIz8/Pp9WRgUqGICFa4MvhZNBZ+vZ7tPw/xDHdr3Z+N96Anc1s8MBlAo0OZLNozhmp8haLChyKkRHazbg4J3FdS5ZZgwYCTB2on26qz1KFFE+nZdFb4JlCCAH9O04dgFR7QdEBHqqABvt2QUC4+LPvSkpcMyU5d/msh441kMFATT1WXdLOOBUVtGVhw/LZPxeXsT6tp/Nq1yiezDdPDKHLXdO9PeON8H4oswj33GxIWRwC3tBUSQLFpWdWtb/VUyErEm8NqU02H6l/KngbRoiSKmQEEli7nBv+tIS5TwGI9f3Z05SRYpQm0E4qRTutM4oxH8VKITnuN/QIlm8VQ1fKN4pL0jU3XYD8UEkDjkoPeDNCxcxj6vGiCmTc7Lwz7RlgVP/gUrdEj43WtEHBHtpDRob4HcXsz1X4YFt2e4IkK3fn8E7kccPd3B/n8TVyw/UaBiY2+ypBEJ4EXYRfPDzmDK38HfBqbvu4av+gNbBMAd9D5mFg6CLrNK40I+2/KmAP/UQydUHhDY09PjcFnw27wmNrxysHPxCpCMpcPw== buwu@ucsd.edu
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$RAiyH3XKccpn.SjV$CnkUbF9g1ob2sQ/KkgzT21jNlXgyfBdAvF.OCWxDX5.ifPiTcYprOZ04QmY/XNQjqU69VOIsCp5gDBskjJ2gf.
