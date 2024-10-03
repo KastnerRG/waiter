@@ -325,4 +325,11 @@ users:
     groups:
       - rdp_users
     password: $6$OMshF0Hi5H6UtFVi$UgAN3evNGJssdaCl6cxsmSnVBtvN4.k9MefS9YHWhhHhBlni9gyJBM46.P9/I1kZQHlPnEKhoHXIsEEc84FBT/
-
+  - username: cse237c_fa_w_wu
+    name: Wesley Wu
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINiv3C+cWuTc8v51BbleN83C8c79GnWqflkHP8yDLe50 wew059@ucsd.edu
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$VQK.RrLx74BATH6/$GC4HJX/eG0TxamQsIPBub5NYO.i2KyjuQ83WU0Wbt98zIvvxNzAC7oEmO60X6zWyN2HO59xYBiMpXXMmDUED20
