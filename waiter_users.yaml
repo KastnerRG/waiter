@@ -390,3 +390,11 @@ users:
     groups:
       - rdp_users
     password: $6$WLVEnge763fQLtM0$5gY5Q0gxnA7RfjohC4VVVTbdBqbTtaEIwCQGXaSJxJO6w1ahCZiMBC.YAOBgu/6xk3lrzxSR86TU7glE2mmfo.
+  - username: cse237c_fa24_s_prakash
+    name: Suraj Sathya Prakash
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDH+S6EZ60m4ihKzP2dAzA7GRkH16UIx5m87gh6WhHCsfAGDumgPshhy3dlOTdAlejl8YAGqbDe+NBKYO3s42RJgQqvnr21V7N5uX5L1c/LfijJeIyemfVoSaC7pKUfzE+l5zML519mI6rj4HT4PrwEAGtp8Zg5/l2Sd2ejQqt9ItvIbClxAezatmnRm/Uz6RIeGB8ScmR3YZjTrjL+5zS+WMEoXe4TPdgLExPkVeALuYZz5JIRaEAjqBAzVzmwE+QZITPamhkUYcfegTseujV7KSJ8efJ5+owtX35nQoxHoxpDWVKgeH7/OfAsnoux5VjY5CwwytnPkI4HGqBDwNUQWoI4zwyko7XqM0miAgQjBEW4znawiHX1hA1ld3rut40DENdtELzklxwzn7YGqjtW5QEpLV2TxmcyI+rQpjlxacLr4kUgafN8wkUYct5imbpYMdNuB2+Q4qgstD5OHrcxwGOfS9fE683HI4A+2rrqYwhzUkOUgfXKGFo6pm+cwzE= itsloaner@DESKTOP-J6UUAPN
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$lqRmXFIywvP8W7.l$M.aHd9hoetTY/lCeVEEz8yVcwKKC6SSd5DhE3SZPMSi0EGeVumcgNQTOQ3Xl5SaEn9TiP9zv3yE0/EcEgCwqs0
