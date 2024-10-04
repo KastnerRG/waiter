@@ -382,3 +382,11 @@ users:
     groups:
       - rdp_users
     password: $6$8SWcXeBXcxwoJR0g$LXhTxfudd1rv0WX0DxmSXqyrRV5QH6R169jb8fOoaByDu3QAUYyQdjVhLAoYtO6xzdnzyumLlzXYqeeftVLHq.
+  - username: cse237c_fa24_d_doan_1
+    name: Dan Doan (dtdoan)
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC5BosX5Y+DcDakeJTkoqIiJ2Zhe0zqLgzqM1kPgNXdSe4MHNfqZ2XFUybgCJFoMGfcRO+sZD5hENjt6vqXSctgkH3/ZrUte0a6AcuJz1BMclx1a4Ek7uxVfQZDX9di/bLEx5THSkPv/TwyP9ps9xtmWB7vlw9fziYoxRM9pSjMpJbW4hidDrBzWNYzR4dYZ5k6oCVPMjae+fpFUR48mtwNO6vqUsVP7BDaJKssLoRvOPL+R+Nsl7M4yQpvExL8KqC9aFaelCJ91l2fB/J+bun6yuBGbBlMzi7PLIttY1E1J3Ir8UNb3939DchQEyNCBvoHBkvPXjxsuQrGsFpnNfp3CRlfYyRlV6RkMoF8ZrDKVfR3pxcFKymGdWF48sLf8ESUN+qAbuIVk5cA3P0j42+QRvPEYPl0TfWaFWx/COZUktMjO7sd5Uv2zB5+GwLe79FEpvH1hZ2oO162B9ogLjT24K+OzNRu1+jN0b2FS5hqyQd202cHWolTW8kcoTwFH0M= dan@DESKTOP-Q52LL27
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$WLVEnge763fQLtM0$5gY5Q0gxnA7RfjohC4VVVTbdBqbTtaEIwCQGXaSJxJO6w1ahCZiMBC.YAOBgu/6xk3lrzxSR86TU7glE2mmfo.
