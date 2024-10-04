@@ -373,3 +373,11 @@ users:
     groups:
       - rdp_users
     password: $6$1Q2l.4oq/9EosNHL$GU0lAJrKXEXf81bm6CBQd8EYzwqWkggbs3RJ1M3YKXvh/NK4q51J6QbaIhjME6QKgQby0JHOVlCfcQmnVCZ8a1
+  - username: cse237c_fa24_c_chen
+    name: Chih-Wei (Kevin) Chen
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIzc2w6ZeS72Faz74W6nfCF9l+Dx+wrD1c4duckTyVV0 weiwei@Mac.lan1
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$8SWcXeBXcxwoJR0g$LXhTxfudd1rv0WX0DxmSXqyrRV5QH6R169jb8fOoaByDu3QAUYyQdjVhLAoYtO6xzdnzyumLlzXYqeeftVLHq.
