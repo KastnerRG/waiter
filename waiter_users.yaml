@@ -365,3 +365,11 @@ users:
     groups:
       - rdp_users
     password: $6$GOTv62hQlPmm802T$xEfFAHFpBs/EzXIbNI9RpruDlXrWQuHbyIB5NmQIvQLIDYP/JWu9R98UN46n/kT1j/fYLSd532rIRHgqMsxUh1
+  - username: wes_2025_a_white
+    name: Anthony White
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC3OCA7j4Arb+jv92f/Uk2SAhfNVai9V2o7pOZISH0Ccu+K2nK5AQCMmOTdxB4sjil+zaZPv9kGZyUkzFfCsOccjSZ2kEL0OXcc/3AE4aGo/X2Mx5Zm/NHsXiK0ZMs6T55CYED6Aq3OZb1HtCMhM4XFOxZ42Z4zrkJD7tYAxvaqM846862/8+I48O3rFIFWuMIP6Ij58aloZMcT+emZgLmu/IaaK5nJ5+ECDa3avXgI6oOAR7OdgLBlwPpt3pQ0bvaeJe6AKs42xLC8X58KKdBwYFYLMMk902F8treqHTi0bE1I0GclhNflPpQoERipLIVxW77HcYHsuhh/fRLvvO0mPHlV7/lJQZNqKdyT3FEK10bRsWz7UMOPGVxWQdKf//oatIf51namZzhDAdYmLtWa/yLMUrbKijYdeXpfqgOnz/Z7aLGd8lpb4sOcdVnqXP56/qacm/8QDsiycAhkrXsJQtCEzQ2PkQTFQRdJDGV8T9q/56yBtUP76Ceqh6T9kZc= anthony@LAPTOP-0L2G6MH7
+    expires: '2025-06-30 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$1Q2l.4oq/9EosNHL$GU0lAJrKXEXf81bm6CBQd8EYzwqWkggbs3RJ1M3YKXvh/NK4q51J6QbaIhjME6QKgQby0JHOVlCfcQmnVCZ8a1
