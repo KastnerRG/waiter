@@ -357,3 +357,11 @@ users:
     groups:
       - rdp_users
     password: $6$/sI0R84R8jJpEJrr$BfE6WI5Ule1mUDjRkYHBtCMygSrqDr1YJaHNZuhGtS7ZXxADXTiXYI3AAQIUo3oFUkLbDEG.bk5o5msUPvSlD1
+  - username: cse237c_fa24_j_lin
+    name: Jheng-Ying Lin
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBMwXvKmyvUXiU+FAikYl2sM3I6rkXf0h+oPhJxQ/sPP jhlin@ucsd.edu
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$GOTv62hQlPmm802T$xEfFAHFpBs/EzXIbNI9RpruDlXrWQuHbyIB5NmQIvQLIDYP/JWu9R98UN46n/kT1j/fYLSd532rIRHgqMsxUh1
