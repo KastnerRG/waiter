@@ -349,4 +349,11 @@ users:
     groups:
       - rdp_users
     password: $6$Z9E4cYrZtygPdm.Z$AN.uvZZR95AclOZXUDXMusGg3UMZ9zFssltDD2SRXcFemynPsYOsgHDx3RgzLcGBbk5Dn85bbkgdxlrfip1SL1
-    
+  - username: cse237c_fa24_t_rucker
+    name: Tyden Rucker
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC0ZA2jHjSzrji6c6+gQMCZ8p2JjOXooR8uIbomKUiK9E2lFz9zZ/t9AOroVy8Z8IshTyqYdCHY1MjtCK+ZyMWL9OCixsL2CHSykVwSZJhGcPg4/hKZWdz0fHGD6t9edH/OphRPmFAXVJ7q8nsMc5BRZtE4DltsWPymqz3LWRqNs0C65Ac6zPToqjkrtTkZZYarDRLQtE/MmqK/gSnUVa9FSZyXa3/VizwKybexLTiKYYu/qlgWtX/a7ohzULhM+lIZY583aOCTbKBr5EgDULRzbRwHUaaQriVcA4LBbuGcf0Qpf139In++ZiBtxYrjXMmm6DdPYegggfXhi1kRx4gfLCDZUDKDevrW+pKKsiyNKdTxERKvPoUu2XYDtKCCbKMxdbxGt5tYoHLozm9+83nyrn8kJFQ8JiVowxT36D1w5c8YkW23RRA5Von/vEGqeqxN9JN8sQwvKZ931Sw42gSK1tXQYZrQndKFNK7Dk067qVqLdzMAqbKHFMOIOzafbu+efVjcF59LVGs+DVnGGH+Igp7NKwlIgEqtYOXh8bFsFj46THQosZe1Rg15pdtsyUc5Z3tLs0Z+WEJs7BeYQDpcKBv2BZctnsWZqwaECY+pBlR6m5hNNc14u8XbISdaN2OlwhB7X4pfkZD55cgjbklkQscyKrEjG/A+jO7kZqBZYQ== tydenrucker@Tydens-MacBook-Pro.local
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$/sI0R84R8jJpEJrr$BfE6WI5Ule1mUDjRkYHBtCMygSrqDr1YJaHNZuhGtS7ZXxADXTiXYI3AAQIUo3oFUkLbDEG.bk5o5msUPvSlD1
