@@ -75,9 +75,11 @@
       masked: false
       state: started
 
-  - import_tasks: docker_ubuntu_22.yaml
   - import_tasks: cuda_12_6_1_ubuntu_22.yaml
   - import_tasks: nvidia-container-toolkit_ubuntu.yaml
+
+  # Install after nvidia container runtime.  We are going to register it as a Docker runtime.
+  - import_tasks: docker_ubuntu_22.yaml
   - import_tasks: create_users.yaml
   - name: Install nvm
     ansible.builtin.shell: >
@@ -141,3 +143,11 @@
       enabled: true
       masked: false
       state: started
+
+  handlers:
+  # Restart Docker if necessary
+  - name: Restart Docker
+    become: true
+    service:
+      name: docker
+      state: restarted
