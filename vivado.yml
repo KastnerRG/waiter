@@ -7,14 +7,28 @@
       - dpkg-dev
       - python3-pip
       - libxtst6
-- name: install libtinfo5
-  become: true
-  ansible.builtin.apt:
-    deb: http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libtinfo5_6.4-2_amd64.deb
-- name: install libncurses5
-  become: true
-  ansible.builtin.apt:
-    deb: http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.4-2_amd64.deb
+      - libtinfo5
+      - libncurses5
+      # - libx11
+      - libxext6
+      - libxrender1
+      - libsm6
+      # - libqtgui4
+      - libfontconfig1
+      - unzip
+      - zip
+      - g++
+      - xvfb
+      - git
+      # - libncursesw5
+      - libc6-dev-i386
+      - net-tools
+      - graphviz
+      - make
+      - libexpat1-dev
+      - libapr1
+      - libapr1-dev
+      - libaprutil1
 - name: Configure Xilinx License server
   become: true
   ansible.builtin.lineinfile:

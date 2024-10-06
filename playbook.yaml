@@ -38,6 +38,9 @@
         - xrdp
         - unattended-upgrades
         - snapper
+        - git-lfs
+        - git
+        - firefox
   - name: Ensure these packages are not installed
     become: true
     ansible.builtin.apt:
@@ -109,7 +112,7 @@
   - import_tasks: unattended-upgrades.yml
 
 # Install XFCE Desktop
-  - name:
+  - name: XFCE Desktop
     become: true
     ansible.builtin.apt:
       pkg:
