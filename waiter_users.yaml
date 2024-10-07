@@ -414,3 +414,11 @@ users:
     groups:
       - rdp_users
     password: $6$gM9OZ/zX0KoKtz6t$Zuo8N3CmbvF5Lcu5Lhqp2GSkT1myWMsL3DHVky.oz0FzbqPQZwM.H.iNFN8pZe36nZcOTrOfMhUb6vY7EjBux1
+  - username: cse237c_fa24_a_esthuri
+    name: Achyuth Mahesh Esthuri
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCmQTRG5SHwMeYdpvqMjuGsps24adwmGxrwMzeHlfOrQXYyJUumxkiqw0RM18In1jC4EYBS0SLX4RPsxPZ3JCBEnf05Jouv4NPAf2qo9+PEPjetVGJLr7Aaczf1sByFKQ9NTlg6gxuRfteqDiF+n5uWWIXbCSfspG0Qjz3PhfxEfKMwNMz7hGNdCK60fgjWtGQUdHsL+yOX+SiA38JTsMt61GLQwZZvSHVZIolYXDuv+jQzbqG06j7HgjtevTwGm3iRvK2Fi2VkmWC18LUsYkhDrMnPnIToDs4aeCZenAT9M5q1TEB6ITe8WLrUnASv6+/QC+FtB+m8Yyw9grAVUspFAbqd+3XAI1FpLC7tzdu9tgRShiDPsyeEqbPJ4KNurEtF8tw+IwKdzBtvuTszhs/FMM4A1qetkjOF7C+3nOZY0eZXCUnZDnz9Ojs97HQ9twD7bSgR5lL5hdP/drte8qI1TVCUU9QfTCuEZBIfuMOndv0NPPscEPPTSSYejAvzLoyVKdXttHNEV+wMq21QjTP92g3+e69lvnQJRgxv8xmH1G3jjFIx1ImmTbJWPs64E5dIG0FijZf4fHanFerr09kFV5jcCfi47nUO61ZViMAkgfZ7JDCN7IfeBqc0YHI8kifwkMOCoQ1jNHz8mkQYk2lmFpafmrAzkKewnOaYQlvWBQ== emachyuth3@gmail.com
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$4QmdIuZipKr.6vJW$EJApqAYzHF/YQy6bv1D.wxTD23oUZkUEgon.LWRHoSdHBDKm/u.xCsfftrLRrdO5n4izK4HO9blGqSQ9QWSJC0
