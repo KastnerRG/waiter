@@ -422,3 +422,11 @@ users:
     groups:
       - rdp_users
     password: $6$4QmdIuZipKr.6vJW$EJApqAYzHF/YQy6bv1D.wxTD23oUZkUEgon.LWRHoSdHBDKm/u.xCsfftrLRrdO5n4izK4HO9blGqSQ9QWSJC0
+  - username: cse237c_fa24_y_liao
+    name: Ya Chi Liao
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDJPLnMzIOgoPaPlca9zZ93MmNFwfRZdawmtwvEQv+EaX/CPswFAtkDUx37JpNmls5Nf67xR4kJyG2BnsTZ/XfyRxzMpu/GdbDVn6Vo2APnYi0n9blN8XkMxCaaMZ78UKAtVxiEZwpC20HLl8IkdIhltu+afpEYEvBUCt6Gc+zSKj4oLnZzPuaKEzYs/5U7rFVKQ7ycXW4UK87wZKEvJeUm0yHngLn3lwJjmHrGE4NYR41KKy1KHEYQshfjTJUrO7f/Q+prUyZSo71Cx7QSueQb5by6mEHLAQkx53wtTeFgnp29QXoe/rY5FrQ4Yf9usoCeJq+Ij2dIuh8V/iXcWI52O1Y4LRy/bbvInQaWweByUePlnKx/EgBf4UV8hVheErPcO7h+pZIsmn2LhDrrRqjWxLXjC8LMIFvvqyf59E+kVhhcQ72bVyheE7MU2ED8LeDWRh+gTZYuQmwbJiYYRWdf3dgj4J+37cGhKGJ9aXSFUal4Sd5HMfWXbAUpPUetAoJyzmEvJ2ZFGd15/2ZpNKPgdwzuFnKzZ1idyT3Vydb/9NN7qtQO6Sstm6P8dl+2xLpGsy7wPfL2ZxkmchuPZfvh0g61yIpMbgRQ0TzSz/01lGMcrBBr3SXHlD/sSQGgdCya2csHbkhph8fsWXbYP5X0yRLYswoHFLf3EMsP1k9jmw== 095282kitty@gmail.com
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$iiM1QC6gVMaYSeDP$WFWM0LBcvnuDy6PibV2fuuJ3n74l5VTrYiA5tQgtBTeH13GR/EVD7S5SoS/h71FmxCSYsf17Ye00VujP5ZqdF1
