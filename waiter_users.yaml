@@ -46,6 +46,8 @@ users:
       - docker
       - rdp_users
     password: $6$MdMUw1Em6r.g9bI1$o7bcETGHvaSV43Ogn991bH5RPTOTJsnWN9adQ8Srt7C3YpNQMJCDQzvuTvXsxoophWQpKsL710Ut.IQ7kYL6t1
+    sudo_allow:
+      - /usr/bin/passwd cse237c_fa24*
   - username: a.gnaneswaran
     name: Aba Gnaneswaran
     authorized_keys:
@@ -55,6 +57,8 @@ users:
       - docker
       - rdp_users
     password: $6$K3B9Pv9AR.YP8rhO$qHM9CShTVkBoa2KLbpaIOkoSqeHfaQQ07JuyUq.xOxgKyefO0m9SO1TqB7vUa9elDSJxXfV3ztkbrqSiTDLOr1
+    sudo_allow:
+      - /usr/bin/passwd cse237c_fa24*
   - username: c.crutchfield
     name: Christopher Crutchfield
     authorized_keys:

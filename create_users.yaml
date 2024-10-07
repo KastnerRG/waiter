@@ -17,3 +17,21 @@
     state: present
     key: '{{ item[1] }}'
   loop: "{{users|subelements('authorized_keys')}}"
+- name: sudo allow
+  become: true
+  community.general.sudoers:
+    runas: root
+    state: present
+    user: '{{ item[0].username }}'
+    commands: '{{ item[1] }}'
+    name: ansible_sudoers
+  loop: "{{users | subelements('sudo_allow')}}"
+- name: sudo deny
+  become: true
+  community.general.sudoers:
+    runas: root
+    state: absent
+    user: '{{ item[0].username }}'
+    commands: '{{ item[1] }}'
+    name: ansible_sudoers
+  loop: "{{users | subelements('sudo_allow')}}"
