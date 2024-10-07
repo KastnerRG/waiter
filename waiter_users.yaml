@@ -398,3 +398,11 @@ users:
     groups:
       - rdp_users
     password: $6$lqRmXFIywvP8W7.l$M.aHd9hoetTY/lCeVEEz8yVcwKKC6SSd5DhE3SZPMSi0EGeVumcgNQTOQ3Xl5SaEn9TiP9zv3yE0/EcEgCwqs0
+  - username: cse237c_fa24_y_amanullah
+    name: Yusuf Amanullah
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDbmyt+w4gkpRbZuZHary40kfJRXYcNpk0r0KFiE/6aOE6k1QLDROKMpjzd1bVpVIf1p7jE2f1ZBKShs1ha03OyUeEBINEsOt9Ij+zwLRF9Bipxn8NnRHKZ/6pzdAmzPsmM7+JkqRUr3n/uiee7RQoKjb94Ho3/F246VZTx0h9hHzviJeZFvN0AlLh/BQdaF2Q936Ihg6DFZW+oEkGcu/O3e/panV6ERMrfPlw2b4TxZen2OGxBZibqcAZ5MdWWj61FgPl51hjQ7QErumGteoCEWzURgZ+2ZaKogn+J+NNGBkrpdZyfrwICl6q160m5mAutnKOD8yz4ZvN6lsmJXhxmP6Mi8w9bBfE7FthjD8mR13NAt2nLGrvxDZzgcNQ6+fXXFszzvwaYnAs2k4maPl63p0M0ZjWMXNvlBRTFPayo1r0ar8oTCMLCVFqiVOBCMsiCjdDIdwew8e0gb9ZmYOAhVwGHV7DwopvyGYAdrOvcKUuK0N+nRE2lDzFiwckKQjk= yusuf_a20@LAPTOP-J4PHPV8F
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$PI96JwLpgBk6vdHr$RsoiAMm2SOgsZXKadv1.rmFgXo9Y6gzJetR3OVVtgiCi5Qg0V0tqLEZmTUEf7rK/SB0iI1d7t8yrWXHE97gWR1
