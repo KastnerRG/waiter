@@ -406,3 +406,11 @@ users:
     groups:
       - rdp_users
     password: $6$PI96JwLpgBk6vdHr$RsoiAMm2SOgsZXKadv1.rmFgXo9Y6gzJetR3OVVtgiCi5Qg0V0tqLEZmTUEf7rK/SB0iI1d7t8yrWXHE97gWR1
+  - username: cse237c_fa24_s_chen
+    name: Sin-Yu Chen
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCjNqX9/498sVOskaVATVyFExQzyW1Xpsb3mc8Gd4UmLppIRRLoZlUXorEQof/Lp703dSkIacd0z94+TctrQK27O1s3gPT199zKLDyP9lJlWgwauLriLYVHAzB64eoKnp13WYd+ErPGQJS8/C9p2ZIT0KZda5EUlCy+SZrlIBlgromBmxrKuJlU31GY7k/n1WU0zuisusPdGlwkkuKpLDLEMX1jE/QVyI/E9sbW5PadXCJXWbCn9RjZDioyPNn2lN8HOzt8rv/Al6rUhs1PsXrCEe+wImsqnqx2Qd53/6xcWOezHRfIp/0Krf6kmZRwKWwPGrD8+gdYE+h10Y5U6FUIsd/dHHDZ+ya8BcfZl94iG/TKj2V3w+MNDr9o/JibM+0Tm0EoI0BkoGmKuFXJDvmt/QQRUi01QJIS0/22vfzVPjBQthGdUUTC5JCdeDSOuWqYKvoPWV2DJMWyxT70o/gxlyB24aVLjAxvg7Sdh3IhfnKI9kdK6ebbc7xQzindWeM= chenxinyu@chenxinyude-MBP
+    expires: '2024-12-31 23:59:59'
+    groups:
+      - rdp_users
+    password: $6$gM9OZ/zX0KoKtz6t$Zuo8N3CmbvF5Lcu5Lhqp2GSkT1myWMsL3DHVky.oz0FzbqPQZwM.H.iNFN8pZe36nZcOTrOfMhUb6vY7EjBux1
