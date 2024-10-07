@@ -25,7 +25,7 @@
     user: '{{ item[0].username }}'
     commands: '{{ item[1] }}'
     name: ansible_sudoers
-  loop: "{{users | subelements('sudo_allow')}}"
+  loop: "{{lookup('subelements', users, 'sudo_allow', {skip_missing=True})}}"
 - name: sudo deny
   become: true
   community.general.sudoers:
@@ -34,4 +34,5 @@
     user: '{{ item[0].username }}'
     commands: '{{ item[1] }}'
     name: ansible_sudoers
-  loop: "{{users | subelements('sudo_allow')}}"
+  loop: "{{lookup('subelements', users, 'sudo_deny', {skip_missing=True})}}"
+  
