@@ -40,6 +40,10 @@
     mode: '0644'
 
 # Xilinx 2018.2.2
+- name: Ensure Xilinx 2018.2.2 installer dir exists
+  ansible.builtin.file:
+    path: /tmp/Xilinx_Vivado_SDx_Update/2018.2.2_1001_1805
+    state: directory
 - name: Unzip Vivado
   ansible.builtin.unarchive:
     src: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Vivado_SDx_Update/2018.2.2_1001_1805.tar.gz"
