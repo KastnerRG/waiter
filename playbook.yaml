@@ -146,7 +146,6 @@
       state: started
 
 # This always at the end
-  - name: Redeploy compose
     community.docker.docker_compose_v2:
-      project_src: '.'
+      project_src: '{{ansible_env.HOME}}/waiter/'
       pull: 'always'
