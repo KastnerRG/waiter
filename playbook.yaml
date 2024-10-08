@@ -146,6 +146,7 @@
       state: started
 
 # This always at the end
+  - name: Docker compose
     community.docker.docker_compose_v2:
       project_src: '{{ansible_env.HOME}}/waiter/'
       pull: 'always'
