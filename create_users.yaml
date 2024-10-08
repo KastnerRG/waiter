@@ -24,7 +24,7 @@
     state: present
     user: '{{ item[0].username }}'
     commands: '{{ item[1] }}'
-    name: ansible_sudoers
+    name: "ansible_sudoers_{{item[0].username}}"
   loop: "{{lookup('subelements', users, 'sudo_allow', {'skip_missing': True})}}"
 - name: sudo deny
   become: true
@@ -33,6 +33,6 @@
     state: absent
     user: '{{ item[0].username }}'
     commands: '{{ item[1] }}'
-    name: ansible_sudoers
+    name: "ansible_sudoers_{{item[0].username}}"
   loop: "{{lookup('subelements', users, 'sudo_deny', {'skip_missing': True})}}"
   
