@@ -444,3 +444,10 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$rL3fn3grpGwbR2pZ$D/Oek0PON8bM4q36.NC77b/yfvonxNoBMXG8H7lSyVO.3dgAX7RoQ0UHt27Osl9o3ojPeF.EXtlLKY3VfEyih.
+  - username: f.restuccia.390
+    name: Francesco Restuccia
+    authorized_keys:
+    expires: "2025-06-30 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$a/pjLx6dHhqiocsB$KFT88l9478WgGU/cb/AlA65qCEYplGLWqb.Q.Kfi0vMpwLkFPDtvQO.X8xbE3YFpd2LSOg.wT0CnUZs4MN2l/.
