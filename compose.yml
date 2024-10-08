@@ -49,7 +49,7 @@ services:
   #     caddy: dashboard.waiter.ucsd.edu
   #     caddy.reverse_proxy: "{{upstreams 3000}}"
   grafana:
-    image: crccheck/hello_world
+    image: crccheck/hello-world
     container_name: grafana
     labels:
       caddy: dashboard.waiter.ucsd.edu
