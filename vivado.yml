@@ -46,6 +46,6 @@
     state: directory
 - name: Unzip Vivado
   ansible.builtin.unarchive:
-    src: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Vivado_SDx_Update/2018.2.2_1001_1805.tar.gz"
+    src: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Vivado_SDx_Update_2018.2.2_1001_1805.tar.gz"
     dest: /tmp/Xilinx_Vivado_SDx_Update/2018.2.2_1001_1805
     remote_src: yes
