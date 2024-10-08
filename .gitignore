@@ -271,3 +271,4 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/python,ansible,linux,windows,macos,visualstudiocode
 waiter.log*
+.bw_session
