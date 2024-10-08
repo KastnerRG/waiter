@@ -147,8 +147,6 @@
 
 # This always at the end
   - name: Redeploy compose
-    community.docker.docker_compose:
-      build: true
+    community.docker.docker_compose_v2:
       project_src: '.'
-      pull: true
-      
+      pull: 'always'
