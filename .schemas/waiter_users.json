@@ -37,7 +37,7 @@
             },
             "password": {
               "type": "string",
-              "pattern": "\\$6\\$[A-Za-z0-9+/=.]{16}\\$[A-Za-z0-9+/=.]{86}"
+              "pattern": "\\$6\\$[$A-Za-z0-9+/=.]*\\$[A-Za-z0-9+/=.]{86}"
             },
             "sudo_allow": {
               "type": "array",
