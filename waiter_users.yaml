@@ -436,3 +436,11 @@ users:
     groups:
       - rdp_users
     password: $6$iiM1QC6gVMaYSeDP$WFWM0LBcvnuDy6PibV2fuuJ3n74l5VTrYiA5tQgtBTeH13GR/EVD7S5SoS/h71FmxCSYsf17Ye00VujP5ZqdF1
+  - username: cse237c_fa24_h_zhao_294
+    name: Hongxin Zhao
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC5+4XrZmSb+evZYbTFy3IYN7v7VuClh8+PVWHfPaVhXKQDbpMKOzizVJ/cJ5oz7387aDRJqegrPFkwzYXuxVdgG+CDO7k2Eul7nf8XpX1igPAjcWiODaXFdJzNTnZTC4vpLl0yGBQK2rr/VPtmNWIo8mPt5pHSX8qODoVRCluf6skCpjc11XyjBOfYAwhyUi9ow1vx1vyXpljBAMqd1gxAQroJewyUMYZ7P2R+0qaM57IjYm8ovE9c+0FCE+F6+HjW1vOwRVMPKlP4mNYAJhLvAFbUKQhCa1qToSYZNRIjtxUG7u2vMFucXlYpcS5efis4UwCamNhdxMjdTqOWDv2mi0TFQ8Ad9V3hxni7jomL87em+vyPPgFwjIHX8/Ux6ONl8JLwCnvabG+cBqtpCGUW4Y+1kK5JHCJLybkIuHk91Y2mywJEAT5fdO5wYHcP9jZq+V5J9/4eIjNCZiI6Wp+VbX7mJEOVCohAEIc6wrox1Cc0aOqh5Oxe6Te1GaUwzy8= zhxde@DESKTOP-USM99A1
+    expires: "2024-12-31 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$rL3fn3grpGwbR2pZ$D/Oek0PON8bM4q36.NC77b/yfvonxNoBMXG8H7lSyVO.3dgAX7RoQ0UHt27Osl9o3ojPeF.EXtlLKY3VfEyih.
