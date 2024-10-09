@@ -157,6 +157,12 @@
       cmd: '{{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/bin/node {{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/lib/node_modules/@bitwarden/cli/build/bw.js --session `cat .bw_session` get password dashboard.waiter.ucsd.edu admin > {{ansible_env.HOME}}/waiter/.secrets/gf_admin_password.txt'
       chdir: '{{ansible_env.HOME}}/waiter'
       creates: '{{ansible_env.HOME}}/waiter/.secrets/gf_admin_password.txt'
+  - name: Deploy label_studio_admin_password
+    tags: [test]
+    ansible.builtin.shell:
+      cmd: '{{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/bin/node {{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/lib/node_modules/@bitwarden/cli/build/bw.js --session `cat .bw_session` get password "labeler.e4e.ucsd.edu admin" > {{ansible_env.HOME}}/waiter/.secrets/label_studio_admin_password.txt'
+      chdir: '{{ansible_env.HOME}}/waiter'
+      creates: '{{ansible_env.HOME}}/waiter/.secrets/label_studio_admin_password.txt'
 
   - name: Docker compose
     community.docker.docker_compose_v2:

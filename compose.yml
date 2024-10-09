@@ -19,19 +19,24 @@ services:
             - driver: nvidia
               count: all
               capabilities: [gpu]
+
   label_studio:
     image: heartexlabs/label-studio:latest
     volumes:
       - ./label_studio_data:/label-studio/data
-      - ./label_studio_files:/label-studio/files`
+      - ./label_studio_files:/label-studio/files
     environment:
       - LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLE=true
       - LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/label-studio/files
+      - LABEL_STUDIO_DISABLE_SIGNUP_WITHOUT_LINK=true
+      - LABEL_STUDIO_USERNAME=e4eadmin
+      - LABEL_STUDIO_PASSWORD_FILE=/run/secrets/label_studio_e4eadmin_password
     labels:
       caddy: labeler.e4e.ucsd.edu
-      caddy.reverse_proxy: "{{upstreams 8080}}"
-  
-  
+      caddy.reverse_proxy: "{{upstreams 3000}}"
+    secrets:
+      - label_studio_e4eadmin_password
+
   prometheus:
     image: prom/prometheus
     container_name: prometheus
@@ -74,3 +79,5 @@ services:
 secrets:
   grafana_e4eadmin_password:
     file: .secrets/gf_admin_password.txt
+  label_studio_e4eadmin_password:
+    file: .secrets/label_studio_admin_password.txt
