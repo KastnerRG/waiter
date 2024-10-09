@@ -275,3 +275,4 @@ waiter.log*
 docker_compose.log*
 prometheus-data
 grafana-storage
+.secrets
