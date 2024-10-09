@@ -17,7 +17,7 @@ scrape_configs:
 
     static_configs:
       - targets:
-          - 'node_exporter:9090'
+          - 'localhost:9100'
 
     # tls_config:
     #   # CA certificate to validate API server certificate with. At most one of ca and ca_file is allowed.
