@@ -26,6 +26,7 @@
     # src: 67.58.52.163/26
   become: true
 - name: Allow node-exporter to self
+  become: true
   community.general.ufw:
     rule: allow
     port: 9100
