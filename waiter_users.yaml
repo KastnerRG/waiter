@@ -452,3 +452,11 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$a/pjLx6dHhqiocsB$KFT88l9478WgGU/cb/AlA65qCEYplGLWqb.Q.Kfi0vMpwLkFPDtvQO.X8xbE3YFpd2LSOg.wT0CnUZs4MN2l/.
+  - username: cse237c_fa24_m_gao_465
+    name: Mengkun Gao
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCjRs55bMKukapmmYc29dkNFHvXC/JMWcYQnnwSnF0lgjC0rV1UvjRBALC2Q/cOpewnXyWgSyI3koj9Wu1IhqMWiWOZjdQilIw5dbkTDd2s4M6KcWLnkLhs8b8yJ7qXSCaQimJIrMbeOKgiHCdPQ80cBkVWwGqou04sy42TxbnY2KshV2fL6QBmKobElUkCbpyuUaGjP3bv2GS4KhGa0oFQFjtHZzMIBts52joT4MXeXueVa+wBQIHyaahEMWPPPf4lrvx0HAOZbdKV1TbaiugtrN3D/Br1+5Mvn/H5zTLZ0qyTdJP5IYPPAzsDBx2948W2EnRdNdb5Cx0dC9oRdSxs9l3iSegkPhVvXNwK/uikqG//8m4LvsY7sy6/4fWNhwJsR4hF+n9uxZH63Q/Dka9WV3910RbTNx1+mD3xA1HfBX1jX/c+O7mcF0di8JaibO5LIxFxMa59n8hzYMfYJ03tWS0Vo/vH3uAGKxNGkP0kl1b3sCVS7ov608y4gEExQNk= mengkun gao@MSI
+    expires: "2024-12-31 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$WzfcmAvNwINw/I8c$LjbmxasOVF/FZ39qqLkGDr5TJHNY1us.yjONID2t7Gt5xBlljQ6qBLQc4XjpEDnhsbVEG2N/rKXuh8ucq30li1
