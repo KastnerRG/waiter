@@ -273,3 +273,4 @@ $RECYCLE.BIN/
 waiter.log*
 .bw_session
 docker_compose.log*
+prometheus-data
