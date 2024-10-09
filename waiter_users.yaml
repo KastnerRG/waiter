@@ -18,6 +18,15 @@
 # as the initial password.  Subsequent changes need to be made using `passwd` while logged in.
 
 users:
+  - username: r.kastner
+    name: Ryan Kastner
+    authorized_keys: []
+    expires: '2025-06-30 23:59:59'
+    groups:
+      - docker
+      - cuda
+      - rdp_users
+    password: $6$.Zvw31TzZ1DCz2Ea$Y67zffJefjdxNxUtU5d.owk5HcAE5KFThARplFo5HKzLjjClO6FfEBhUim8MwLGPJzTaBxLm8KuHyqjwXAxRx1
   - username: l.weng
     name: Olivia Weng
     authorized_keys:
@@ -88,6 +97,7 @@ users:
     groups:
       - rdp_users
     password: $6$CpqzAHo3Tqdv/TkG$nwywK5wUgB7kUVk8L.Km6wayUMQClDSf8mA48n5hVq9j9gIoLLd3Qj99D9ZReFIiyuzD5i2FT93zHE8EW.dGQ0
+
   - username: wes_2025_w_gong
     name: William Gong
     authorized_keys:
@@ -120,7 +130,6 @@ users:
     groups:
       - rdp_users
     password: $6$fS91g/1vpYK0ZYqf$WO0.whrVaJ3vB/tPE/7gezBfBwQh09JcnV/jABA6j5kK6X7xn.uEeG6MwJg4h4U5QJS06oxuHue2FfWHTLfiz/
-
   - username: cse237c_fa24_r_zhang
     name: Richard Zhang
     authorized_keys:
