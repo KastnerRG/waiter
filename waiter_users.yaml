@@ -478,3 +478,11 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$KfSN7wsBv1NYikTp$EENoyOE2voqRChZ3BhhAhHz14pb9fVPSN/yrU9sJq2u3oGqjS5Rw9ioJFHOdZcJt0XuTLmTr39I6p/JAv81EL1
+  - username: cse237c_fa24_k_mathur_193
+    name: Karan Singh Mathur
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9KR2hmKQpLyoipoAm3GH1bviq1+UvJ1VrkUj6LZopj3PxbzDGQOu4Q/f+nQQ8wtm7dDzXY9mDpqoQwZUDblKpWkqkCL2l51Kjk754Vfm/0xQ0Q4oHyYPf+KoUgZPq3NkbfPy5ppOJUEBwFHz6Cs2+7qeU0i9HjQcCQJj/tRmTbvxMS1mBdbtTL7Z8KjBnnDGf0ug7h7H20Q4OZJtiJKdKhgnJ+W/9e+NHgbwQeMOfYyhwcGYTmAibGnJE7krWLLdzjqP77XBtEHiH1Yd4tyKJLW9kdwvojSVhG6MHC4ABio44xtQyulEg5LsmyqCzCekGsIsJ11zMJUGU31Dg4bNZthxVxCKnNN+TyUb6GvXl1F4w1B2jLwQjs+cpxh+bvxlgVRtA2YV5bE9h6c9zxMnplQkT5r9M/DMOev0lqK5o6m9fN9xcL/GcKQgJn12cX3jhsCaY+xI9ysMRv/nCSFrpXx7YEEEjcusaUL3NFUS09FVpXrbljEnmDB0lpExlg48= karan@karan-HP-Pavilion-Laptop-14-bf1xx
+    expires: "2024-12-31 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$OyhJQcNrYeWm5cgI$4Z4ztR04u88/aEKz9eYs8u4Dicef6MGhtdMNraOypwQMbdA59kNL3woIxX3kBU8QMdyGyagYacw6VwHzGFk2q/
