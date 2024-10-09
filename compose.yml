@@ -23,15 +23,17 @@ services:
               count: all
               capabilities: [gpu]
   
-  # prometheus:
-  #   image: prom/prometheus
-  #   container_name: prometheus
-  #   command:
-  #     - '--config.file=/etc/prometheus/prometheus.yml'
-  #   restart: unless-stopped
-  #   volumes:
-  #     - ./prometheus:/etc/prometheus:ro
-  #     - ./prometheus-data:/prometheus:rw
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    restart: unless-stopped
+    volumes:
+      - ./prometheus:/etc/prometheus:ro
+      - ./prometheus-data:/prometheus:rw
+    ports:
+      - 3000:3000
   # grafana:
   #   image: grafana/grafana-enterprise
   #   container_name: grafana
