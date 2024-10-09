@@ -470,3 +470,11 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$WzfcmAvNwINw/I8c$LjbmxasOVF/FZ39qqLkGDr5TJHNY1us.yjONID2t7Gt5xBlljQ6qBLQc4XjpEDnhsbVEG2N/rKXuh8ucq30li1
+  - username: cse237c_fa24_v_joshi_15
+    name: Vedant Joshi
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC3WyEaazv8ae+SWFFbNwPfkZzurQ8oYmX4bk3/S6WAVGhD9oBn+20I9tslVCLh9wCBfhFrtsGe6fuvWm7F9aVU86Njraoq14ZvfEOF0Le4ck6nE54Ka8S8JOnvPWcYyOjRJIUvS35Crg1vrzyJxN1hfQ5l5NBg2zIwoMCY3FSFd8NLgtCXRga42vqel5/Sif0s4CnkzBN1okVdKW2Vw19qtHjumBoi/lMY1RyjK4smlv3o4eRLt7KH3do6zzzCokxyBaPTiNt23w0EVwZL/VOqK38IY0uLCLoAOqUxl/Jl3KjTWLPPvA9Fx7irsk20LxJOOGZlkyKUiUHVawVUkhOSNY0HOadtpe+9xWW2pxJBqKMkpOG5VPzR8rbpjmgH/ZrWTl1OAAHqm97LkBQ7/ZwkKzVL+iEQhW7kivrb5MwPyisNWIuPTPXxItgAPKaZOudmZVS08C0Pvhbkb0f6gtui4UOQGYrgbgIN0h/zdgeIAYItoWX3aRFttBDesH2Iq8c= vedant_j@Vedant-Js-MBP.lan1
+    expires: "2024-12-31 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$KfSN7wsBv1NYikTp$EENoyOE2voqRChZ3BhhAhHz14pb9fVPSN/yrU9sJq2u3oGqjS5Rw9ioJFHOdZcJt0XuTLmTr39I6p/JAv81EL1
