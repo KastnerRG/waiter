@@ -38,4 +38,4 @@ scrape_configs:
     scrape_interval: 15s
     static_configs:
       - targets:
-        - localhost:9323
+        - waiter.ucsd.edu:9323
