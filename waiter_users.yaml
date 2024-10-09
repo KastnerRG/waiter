@@ -20,7 +20,8 @@
 users:
   - username: r.kastner
     name: Ryan Kastner
-    authorized_keys: []
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMlIBt+L1YB+cR47hzwOpE/qwh9KWPoSmWb4e0qt5ntG kastner@ucsd.edu
     expires: '2025-06-30 23:59:59'
     groups:
       - docker
