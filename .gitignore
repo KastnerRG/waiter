@@ -274,3 +274,4 @@ waiter.log*
 .bw_session
 docker_compose.log*
 prometheus-data
+grafana-storage

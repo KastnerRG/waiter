@@ -32,24 +32,22 @@ services:
     volumes:
       - ./prometheus:/etc/prometheus:ro
       - ./prometheus-data:/prometheus:rw
-    ports:
-      - 3000:3000
-  # grafana:
-  #   image: grafana/grafana-enterprise
-  #   container_name: grafana
-  #   user: '1000'
-  #   restart: unless-stopped
-  #   environment:
-  #     - GF_SECURITY_ADMIN_USER=e4eadmin
-  #     - GF_SECURITY_ADMIN_PASSWORD__FILE=/run/secrets/gf_admin_passwd
-  #   secrets:
-  #     - grafana_e4eadmin_password
-  #   volumes:
-  #     - ./grafana-storage:/var/lib/grafana:rw
-  #     - ./grafana:/etc/grafana:ro
-  #   labels:
-  #     caddy: dashboard.waiter.ucsd.edu
-  #     caddy.reverse_proxy: "{{upstreams 3000}}"
+  grafana:
+    image: grafana/grafana-enterprise
+    container_name: grafana
+    user: '1000'
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_USER=e4eadmin
+      - GF_SECURITY_ADMIN_PASSWORD__FILE=/run/secrets/gf_admin_passwd
+    secrets:
+      - grafana_e4eadmin_password
+    volumes:
+      - ./grafana-storage:/var/lib/grafana:rw
+      - ./grafana:/etc/grafana:ro
+    labels:
+      caddy: dashboard.waiter.ucsd.edu
+      caddy.reverse_proxy: "{{upstreams 3000}}"
   grafana:
     image: crccheck/hello-world
     container_name: grafana
