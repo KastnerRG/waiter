@@ -1,0 +1,37 @@
+- name: Set logging
+  become: true
+  community.general.ufw:
+    logging: 'on'
+- community.general.ufw:
+    default: deny
+    direction: incoming
+    log: true
+  become: true
+- community.general.ufw:
+    default: allow
+    direction: outgoing
+    log: false
+  become: true
+- community.general.ufw:
+    rule: allow
+    # name: ssh
+    port: 22
+    proto: tcp
+  become: true
+- name: Allow RDP
+  community.general.ufw:
+    rule: allow
+    port: 3389
+    proto: tcp
+    # src: 67.58.52.163/26
+  become: true
+- name: Allow node-exporter to self
+  community.general.ufw:
+    rule: allow
+    port: 9100
+    proto: tcp
+    src: 132.239.95.67
+
+- community.general.ufw:
+    state: enabled
+  become: true

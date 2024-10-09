@@ -1,4 +1,8 @@
-krg_waiter:
+all:
   hosts:
-    waiter:
-      ansible_host: waiter.dynamic.ucsd.edu
+    localhost:
+      vars:
+        ansible_connection: local
+        ansible_become: yes  # use sudo 
+        ansible_become_method: sudo 
+        ansible_become_pass: '{{ waiter_sudo_pass }}'

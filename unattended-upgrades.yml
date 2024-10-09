@@ -1,0 +1,44 @@
+- name: Configure unattended-upgrades
+  become: true
+  ansible.builtin.copy:
+    src: apt.conf.d/50unattended-upgrades
+    dest: /etc/apt/apt.conf.d/50unattended-upgrades
+    owner: root
+    group: root
+    mode: '0644'
+- name: Enable unattended-upgrades Update Package Lists
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/apt/apt.conf.d/20auto-upgrades
+    search_string: 'APT::Periodic::Update-Package-Lists "1";'
+    line: 'APT::Periodic::Update-Package-Lists "1";'
+    owner: root
+    group: root
+    mode: '0644'
+- name: Enable unattended-upgrades
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/apt/apt.conf.d/20auto-upgrades
+    search_string: 'APT::Periodic::Unattended-Upgrade "1";'
+    line: 'APT::Periodic::Unattended-Upgrade "1";'
+    owner: root
+    group: root
+    mode: '0644'
+- name: Enable unattended-upgrades Download Upgradeable Packages
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/apt/apt.conf.d/20auto-upgrades
+    search_string: 'APT::Periodic::Download-Upgradeable-Packages "1";'
+    line: 'APT::Periodic::Download-Upgradeable-Packages "1";'
+    owner: root
+    group: root
+    mode: '0644'
+- name: Enable unattended-upgrades Autoclean Interval
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/apt/apt.conf.d/20auto-upgrades
+    search_string: 'APT::Periodic::AutocleanInterval "7";'
+    line: 'APT::Periodic::AutocleanInterval "7";'
+    owner: root
+    group: root
+    mode: '0644'

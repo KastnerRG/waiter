@@ -1,0 +1,76 @@
+######
+###### Each of the comments before the Ansible blocks were pulled directly from https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=24.04&target_type=deb_local.
+###### They indicate the step as suggested by NVIDIA.  The blocks below adapt them into ansible configs.
+######
+
+# wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
+# sudo mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
+- name: Setup CUDA repository pin
+  become: true
+  ansible.builtin.get_url:
+    url: https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
+    dest: /etc/apt/preferences.d/cuda-repository-pin-600
+    mode: '0444'
+# wget https://developer.download.nvidia.com/compute/cuda/12.6.1/local_installers/cuda-repo-ubuntu2204-12-6-local_12.6.1-560.35.03-1_amd64.deb
+# sudo dpkg -i cuda-repo-ubuntu2204-12-6-local_12.6.1-560.35.03-1_amd64.deb
+- name: Setup CUDA Repo
+  become: true
+  ansible.builtin.apt:
+    deb: https://developer.download.nvidia.com/compute/cuda/12.6.1/local_installers/cuda-repo-ubuntu2204-12-6-local_12.6.1-560.35.03-1_amd64.deb
+# sudo cp /var/cuda-repo-ubuntu2204-12-6-local/cuda-*-keyring.gpg /usr/share/keyrings/
+- name: Add CUDA GPG APT key
+  become: true
+  ansible.builtin.copy:
+    src: /var/cuda-repo-ubuntu2204-12-6-local/cuda-D60B4864-keyring.gpg
+    dest: /usr/share/keyrings/
+# sudo apt-get update
+# sudo apt-get -y install cuda-toolkit-12-6
+# sudo apt-get install -y nvidia-open
+- name: Add CUDA Components
+  become: true
+  ansible.builtin.apt:
+    pkg:
+      - cuda-toolkit-12-6
+      - nvidia-open
+    state: latest
+    update_cache: true
+
+# For GPU management.  See https://askubuntu.com/questions/893528/restrict-user-access-to-gpu
+
+- name: Create CUDA group
+  become: true
+  ansible.builtin.group:
+    name: cuda
+    state: present
+    gid: 65533
+
+- name: Configure NVIDIA permissions
+  become: true
+  ansible.builtin.file:
+    path: '{{ item }}'
+    mode: '0770'
+    owner: root
+    group: cuda
+  loop:
+    - /dev/nvidia0
+    - /dev/nvidia1
+    - /dev/nvidia2
+    - /dev/nvidia3
+- name: Set NVIDIA driver gid
+  become: true
+  community.general.modprobe:
+    name: nvidia
+    params: |
+      NVreg_DeviceFileGID=65533
+      NVreg_DeviceFileMode=0770
+    state: present
+    persistent: present
+# - name: Allow docker to use cuda
+#   become: true
+#   community.general.ini_file:
+#     path: /etc/nvidia-container-runtime/config.toml
+#     section: nvidia-container-cli
+#     option: user
+#     value: root:cuda
+#     mode: '0644'
+#     backup: true

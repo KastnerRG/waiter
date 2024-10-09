@@ -2,4 +2,9 @@ collections:
   - name: community.general
     version: 9.4.0
     type: galaxy
-    
+  - name: ansible.posix
+    version: 1.5.4
+    type: galaxy
+  - name: community.docker
+    version: 3.12.1
+    type: galaxy

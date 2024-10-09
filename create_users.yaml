@@ -1,0 +1,38 @@
+- name: Create Users
+  become: true
+  ansible.builtin.user:
+    name: '{{ item["username"] }}'
+    create_home: yes
+    shell: /bin/bash
+    append: yes
+    groups: '{{item.groups | default([]) | join(",")}}'
+    password: '{{item.password | default("!")}}'
+    expires: '{{(item.expires | to_datetime).strftime("%s")}}'
+    update_password: 'on_create'
+  loop: "{{users}}"
+- name: Deploy keys
+  become: true
+  ansible.posix.authorized_key:
+    user: "{{ item[0].username }}"
+    state: present
+    key: '{{ item[1] }}'
+  loop: "{{users|subelements('authorized_keys')}}"
+- name: sudo allow
+  become: true
+  community.general.sudoers:
+    runas: root
+    state: present
+    user: '{{ item[0].username }}'
+    commands: '{{ item[1] }}'
+    name: "ansible_sudoers_{{item[0].username | replace('.', '_')}}"
+  loop: "{{lookup('subelements', users, 'sudo_allow', {'skip_missing': True})}}"
+- name: sudo deny
+  become: true
+  community.general.sudoers:
+    runas: root
+    state: absent
+    user: '{{ item[0].username }}'
+    commands: '{{ item[1] }}'
+    name: "ansible_sudoers_{{item[0].username | replace('.', '_')}}"
+  loop: "{{lookup('subelements', users, 'sudo_deny', {'skip_missing': True})}}"
+  

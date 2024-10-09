@@ -1,21 +1,164 @@
 - name: KRG Waiter
   hosts: localhost
-  remote_user: root
+  vars_files:
+    - waiter_users.yaml
   tasks:
   - name: Set timezone to America/Los_Angeles
     become: true
     community.general.timezone:
       name: America/Los_Angeles
+  - name: Install netplan config
+    become: true
+    ansible.builtin.copy:
+      src: netplan/01-waiter.yml
+      dest: /etc/netplan/01-waiter.yaml
+      owner: root
+      group: root
+      mode: '0600'
+  - name: Netplan Apply
+    become: true
+    ansible.builtin.command:
+      cmd: netplan apply
+
   - name: Ensure that system is up to date
     become: true
     apt:
       name: "*"
       state: latest
+      autoremove: yes
       update_cache: yes
   - name: Install/update system packages
     become: true
-    apt:
+    ansible.builtin.apt:
       pkg:
         - ca-certificates
         - curl
-  - import_tasks: docker_ubuntu_24.yaml
+        - build-essential
+        - python3
+        - xrdp
+        - unattended-upgrades
+        - snapper
+        - git-lfs
+        - git
+        - firefox
+  - name: Ensure these packages are not installed
+    become: true
+    ansible.builtin.apt:
+      state: absent
+      pkg:
+        - cups-browsed
+        - cups-filters
+        - cups-filters-core-drivers
+        - libcupsfilters2t64
+  - import_tasks: vivado.yml
+  - name: Update unix-chkpwd for xrdp
+    become: true
+    ansible.builtin.file:
+      path: /sbin/unix_chkpwd
+      mode: u+s
+  - name: Create rdp_users group
+    become: true
+    ansible.builtin.group:
+      name: rdp_users
+      state: present
+  - name: Deploy sesman.ini
+    become: true
+    ansible.builtin.copy:
+      src: xrdp/sesman.ini
+      dest: /etc/xrdp/sesman.ini
+      owner: root
+      group: root
+      mode: '0644'
+  - name: Start xRDP
+    become: true
+    ansible.builtin.systemd_service:
+      name: xrdp
+      daemon_reload: true
+      enabled: true
+      masked: false
+      state: started
+
+  - import_tasks: docker_ubuntu_22.yaml
+  - import_tasks: cuda_12_6_1_ubuntu_22.yaml
+  - import_tasks: nvidia-container-toolkit_ubuntu.yaml
+  - import_tasks: create_users.yaml
+  - name: Install nvm
+    ansible.builtin.shell: >
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+    args:
+      creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
+  - name: Install npm
+    ansible.builtin.shell: "source {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install v22.9.0"
+    args:
+      executable: /bin/bash
+      creates: "{{ ansible_env.HOME }}/.nvm/versions/node/v22.9.0/bin/npm"
+  - name: Install BitWarden CLI
+    # community.general.npm:
+    #   name: '@bitwarden/cli'
+    #   executable: /home/waiter-admin/.nvm/versions/node/v22.9.0/bin/npm
+    #   global: true
+    ansible.builtin.command:
+      cmd: >
+        bash -c "source $HOME/.nvm/nvm.sh && nvm exec v22.9.0 && npm install -g @bitwarden/cli"
+      creates: "/home/waiter-admin/.nvm/versions/node/v22.9.0/bin/bw"
+  - name: Sync BW Client
+    tags: [test]
+    ansible.builtin.shell:
+      cmd: '{{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/bin/node {{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/lib/node_modules/@bitwarden/cli/build/bw.js sync --session `cat .bw_session`'
+      chdir: '{{ansible_env.HOME}}/waiter'
+
+  - import_tasks: ufw.yml
+
+  - import_tasks: oec_qualys_trellix.yaml
+    vars:
+      installer: /home/waiter-admin/installers/qualys_trellix/oec-qualystrellixinstallers-linux.tgz
+
+# Enable unattended upgrades
+  - import_tasks: unattended-upgrades.yml
+
+# Install XFCE Desktop
+  - name: XFCE Desktop
+    become: true
+    ansible.builtin.apt:
+      pkg:
+        - xfce4-goodies
+        - xfce4
+
+# Snapper Configuration for BTRFS
+  - name: Install snapper config
+    become: true
+    ansible.builtin.copy:
+      src: snapper/root
+      dest: /etc/snapper/configs/root
+      owner: root
+      group: root
+      mode: '0620' # user read/write, group read
+  - name: Start snapper timer
+    become: true
+    ansible.builtin.systemd_service:
+      name: snapper-timeline.timer
+      daemon_reload: true
+      enabled: true
+      masked: false
+      state: started
+  - name: Start snapper cleanup
+    become: true
+    ansible.builtin.systemd_service:
+      name: snapper-cleanup.timer
+      daemon_reload: true
+      enabled: true
+      masked: false
+      state: started
+
+# This always at the end
+  - name: Deploy gf_admin_password
+    tags: [test]
+    ansible.builtin.shell:
+      cmd: '{{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/bin/node {{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/lib/node_modules/@bitwarden/cli/build/bw.js --session `cat .bw_session` get password dashboard.waiter.ucsd.edu admin > {{ansible_env.HOME}}/waiter/.secrets/gf_admin_password.txt'
+      chdir: '{{ansible_env.HOME}}/waiter'
+      creates: '{{ansible_env.HOME}}/waiter/.secrets/gf_admin_password.txt'
+
+  - name: Docker compose
+    community.docker.docker_compose_v2:
+      project_src: '{{ansible_env.HOME}}/waiter/'
+      pull: 'always'

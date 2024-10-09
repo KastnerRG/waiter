@@ -1,14 +1,11 @@
 services:
   node_exporter:
     image: quay.io/prometheus/node-exporter:v1.8.2
-    container_name: node_exporter
-    command: 
-      - '--path.rootfs=/host'
-    network_mode: host
-    pid: host
-    restart: always
     volumes:
-      - '/:/host:ro,rslave'
+      - /:/host:ro,rslave
+    restart: unless-stopped
+    network_mode: host
+    command: --path.rootfs=/host
   dcgm_exporter:
     image: nvcr.io/nvidia/k8s/dcgm-exporter:3.3.8-3.6.0-ubuntu22.04
     container_name: dcgm_exporter
@@ -34,6 +31,33 @@ services:
       caddy: labeler.e4e.ucsd.edu
       caddy.reverse_proxy: "{{upstreams 8080}}"
   
+  
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    restart: unless-stopped
+    volumes:
+      - ./prometheus:/etc/prometheus:ro
+      - ./prometheus-data:/prometheus:rw
+  grafana:
+    image: grafana/grafana-enterprise
+    container_name: grafana
+    user: '1000'
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_USER=e4eadmin
+      - GF_SECURITY_ADMIN_PASSWORD__FILE=/run/secrets/grafana_e4eadmin_password
+    secrets:
+      - grafana_e4eadmin_password
+    volumes:
+      - ./grafana-storage:/var/lib/grafana:rw
+      - ./grafana:/etc/grafana:ro
+    labels:
+      caddy: dashboard.waiter.ucsd.edu
+      caddy.reverse_proxy: "{{upstreams 3000}}"
+
   caddy:
     image: lucaslorentz/caddy-docker-proxy:2.9.1
     container_name: caddy
@@ -42,7 +66,11 @@ services:
       - 80:80
       - 443:443
     environment:
-      - CADDY_INGRESS_NETWORKS=monitoring_default
+      - CADDY_INGRESS_NETWORKS=waiter_default
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./caddy-data:/data
+
+secrets:
+  grafana_e4eadmin_password:
+    file: .secrets/gf_admin_password.txt
