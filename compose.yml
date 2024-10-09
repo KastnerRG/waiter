@@ -39,7 +39,7 @@ services:
     restart: unless-stopped
     environment:
       - GF_SECURITY_ADMIN_USER=e4eadmin
-      - GF_SECURITY_ADMIN_PASSWORD__FILE=/run/secrets/gf_admin_passwd
+      - GF_SECURITY_ADMIN_PASSWORD__FILE=/run/secrets/grafana_e4eadmin_password
     secrets:
       - grafana_e4eadmin_password
     volumes:
