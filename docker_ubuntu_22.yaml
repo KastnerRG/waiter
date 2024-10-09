@@ -18,3 +18,14 @@
       - docker-compose-plugin
     state: latest
     update_cache: true
+
+# The following updates the Docker Daemon File to fully take advantage of CUDA.
+- name: Install Docker config
+  become: true
+  notify: Restart Docker
+  ansible.builtin.copy:
+    src: docker/daemon.json
+    dest: /etc/docker/daemon.json
+    owner: root
+    group: root
+    mode: '0622' # user read/write, group read
