@@ -21,7 +21,5 @@ then
     ANSIBLE_INVENTORY='/home/waiter-admin/waiter/inventory.yaml'
     BW_SESSION=`cat /home/waiter-admin/bw_session`
     ansible-playbook playbook.yaml
-    docker compose pull
-    docker compose up --detach
-    docker image prune -f
+    docker image prune -f |& tee -a docker_compose.log
 fi

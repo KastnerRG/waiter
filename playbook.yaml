@@ -38,6 +38,9 @@
         - xrdp
         - unattended-upgrades
         - snapper
+        - git-lfs
+        - git
+        - firefox
   - name: Ensure these packages are not installed
     become: true
     ansible.builtin.apt:
@@ -100,6 +103,11 @@
       cmd: >
         bash -c "source $HOME/.nvm/nvm.sh && nvm exec v22.9.0 && npm install -g @bitwarden/cli"
       creates: "/home/waiter-admin/.nvm/versions/node/v22.9.0/bin/bw"
+  - name: Sync BW Client
+    tags: [test]
+    ansible.builtin.shell:
+      cmd: '{{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/bin/node {{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/lib/node_modules/@bitwarden/cli/build/bw.js sync --session `cat .bw_session`'
+      chdir: '{{ansible_env.HOME}}/waiter'
 
   - import_tasks: ufw.yml
 
@@ -111,7 +119,7 @@
   - import_tasks: unattended-upgrades.yml
 
 # Install XFCE Desktop
-  - name:
+  - name: XFCE Desktop
     become: true
     ansible.builtin.apt:
       pkg:
@@ -144,8 +152,21 @@
       masked: false
       state: started
 
+# This always at the end
+  - name: Deploy gf_admin_password
+    tags: [test]
+    ansible.builtin.shell:
+      cmd: '{{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/bin/node {{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/lib/node_modules/@bitwarden/cli/build/bw.js --session `cat .bw_session` get password dashboard.waiter.ucsd.edu admin > {{ansible_env.HOME}}/waiter/.secrets/gf_admin_password.txt'
+      chdir: '{{ansible_env.HOME}}/waiter'
+      creates: '{{ansible_env.HOME}}/waiter/.secrets/gf_admin_password.txt'
+
+  - name: Docker compose
+    community.docker.docker_compose_v2:
+      project_src: '{{ansible_env.HOME}}/waiter/'
+      pull: 'always'
+
   handlers:
-  # Restart Docker if necessary
+  # Restart Docker if necessary.  This happens after ALL tasks are executed, including the docker-compose task.
   - name: Restart Docker
     become: true
     service:
