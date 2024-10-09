@@ -4,5 +4,6 @@
             "args": [],
             "path": "nvidia-container-runtime"
         }
-    }
+    },
+    "metrics-addr": "127.0.0.1:9323"
 }
