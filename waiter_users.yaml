@@ -486,3 +486,11 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$OyhJQcNrYeWm5cgI$4Z4ztR04u88/aEKz9eYs8u4Dicef6MGhtdMNraOypwQMbdA59kNL3woIxX3kBU8QMdyGyagYacw6VwHzGFk2q/
+  - username: cse237c_fa24_y_hu_302
+    name: Ya-Chin Hu
+    authorized_keys:
+      - AAAAB3NzaC1yc2EAAAADAQABAAABAQCLKMqrtvmV5NjHhhK0hRPq/AG/QLfrYmnz
+    expires: "2024-12-31 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$3A6heppX3vCTQUaG$X1k8GQd8SttaFxx5.MTac6fPO3qXigkdM5Dt8CQ1sG8kHo9pjA41ceGGIizaWj78e33PhC3ZZG8XpbI6seQRW.
