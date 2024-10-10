@@ -12,6 +12,8 @@ services:
     restart: always
     ports:
       - 9400:9400
+    cap_add:
+    - SYS_ADMIN
     deploy:
       resources:
         reservations:
