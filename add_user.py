@@ -5,9 +5,9 @@ import getpass
 import secrets
 from argparse import ArgumentParser
 from pathlib import Path
-
+import yaml
 from passlib.hash import sha512_crypt
-
+import hashlib
 
 def main():
     parser = ArgumentParser()
@@ -29,6 +29,20 @@ def main():
             term = input('Class term (i.e. FA24): ').lower()
             if term != '':
                 break
+
+    email_digits = int(hashlib.sha512(email_address.encode()).hexdigest(), 16) % 999
+    if class_flag:
+        username = f'{class_code}_{term}_{first_name[0].lower()}_{last_name.split()[-1].lower()}_{email_digits}'
+    else:
+        username = f'{first_name[0].lower()}.{last_name.split()[-1].lower()}.{email_digits}'
+
+    with open(args.user_file, 'r', encoding='utf-8') as handle:
+        document = yaml.load(handle)
+    existing_usernames = [user['username'] for user in document['users']]
+    if username in existing_usernames:
+        print(f'User {username} already exists!')
+        return
+
     expiration = None
     while not expiration:
         try:
@@ -72,10 +86,6 @@ def main():
         print('Passwords do not match!')
 
     password_hash = sha512_crypt.hash(new_password)
-    if class_flag:
-        username = f'{class_code}_{term}_{first_name[0].lower()}_{last_name.split()[-1].lower()}_{hash(email_address) % 999}'
-    else:
-        username = f'{first_name[0].lower()}.{last_name.split()[-1].lower()}.{hash(email_address) % 999}'
     document =  f'  - username: {username}\n'
     document += f'    name: {first_name} {last_name}\n'
     document += '    authorized_keys:\n'
