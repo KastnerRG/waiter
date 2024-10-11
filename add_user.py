@@ -37,7 +37,7 @@ def main():
         username = f'{first_name[0].lower()}.{last_name.split()[-1].lower()}.{email_digits}'
 
     with open(args.user_file, 'r', encoding='utf-8') as handle:
-        document = yaml.load(handle)
+        document = yaml.safe_load(handle)
     existing_usernames = [user['username'] for user in document['users']]
     if username in existing_usernames:
         print(f'User {username} already exists!')
