@@ -486,3 +486,11 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$OyhJQcNrYeWm5cgI$4Z4ztR04u88/aEKz9eYs8u4Dicef6MGhtdMNraOypwQMbdA59kNL3woIxX3kBU8QMdyGyagYacw6VwHzGFk2q/
+  - username: cse237c_fa24_p_nguyen_390
+    name: Paul Nguyen
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF8Qm+7NJ/39fiQG5UKdw2Qtp1fpk2rhiSSx+iZFOkdR pdn002@ucsd.edu
+    expires: "2024-12-31 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$0v66dvuF5p6dPcOW$uIBJH8GgLtdnAQThIVw7ocOpf8gIvJv8Os4IcThUBmVju4fAbsMsNgVQvzAMxRsYn2LA5IEKmlS0lu6hs6gAZ/
