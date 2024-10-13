@@ -494,3 +494,11 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$0v66dvuF5p6dPcOW$uIBJH8GgLtdnAQThIVw7ocOpf8gIvJv8Os4IcThUBmVju4fAbsMsNgVQvzAMxRsYn2LA5IEKmlS0lu6hs6gAZ/
+  - username: cse237c_fa24_c_sung_507
+    name: Chia-Chi Sung
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+jFlOFSCj9vNaHfwKQdCgGOtmuPJZLvwQ4+JxFs9GBGT8nEq9VjBjjbWXtoi4S3TmF3fK7k3ZCxLVJzda1/OgLhWwMKTcZ1u5ZqKPLZXp0uPd5PaF/aujppv3Aje6GAmaE2+Wj8iqcmyEbhu0b/kjjAloftZEiUYBi4j4GAiYailmyvvxxoSj3irr0Y80zMDIv5xEjwbDV1oYIdjm35sCTf2FtOo75UiVMsOOS7HpJ/mqZ+xnNIqDUO54MY/c3xC1XMA9uvFDYd/gYzq0lv4t+6CK2qCgtiwQwXT49O+M7EoBtQ9tpiIs1BXwKlpuCQP6EAIwrNKDWVYSq9CqA5kHMcOkK63QOO51fpWx5VUL5NhnX+PK0n+YPXPAf9xlvTd+6Wzzbhs6yrxFO7ydOlUO4zvY2t2URc4RHfMoQlSATzd+wHwR3Bj07Jr9bn1TY5PWYJyUPiJ0boI/vKBxta2rdcthlkSnW7xi2nq052D9EWSW+ko6SXEVtlF7MYY9pGlP3JEUmtD5yjjAUmG1IXdtIt6fu5kz+pM5tBgFq1w4425T/AfjJpcBumB4U/ehy3gHIOjPOjPM95JcRkVbUBu73uxPzAxP00WhuO2mQIHFPP7Q6+Qa5A3IxhjddHCM0xvFkTYMFTaKC6mjJOKkUlg+ONdi0apYY5GIa8NJQO8c2w== gout00555@gmail.com
+    expires: "2024-12-31 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$.DphfbMvV1nHG5qC$jwLHfciBa7ICYB79O.b5.fAXF2dGLYnchv9mTo4wF3nwHD60u.okea2JFiV/h.KSwp57hICPj6a7bJaaZ9XO6.
