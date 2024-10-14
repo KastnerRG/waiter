@@ -41,6 +41,7 @@
         - git-lfs
         - git
         - firefox
+        - fail2ban
   - name: Ensure these packages are not installed
     become: true
     ansible.builtin.apt:
@@ -104,10 +105,23 @@
         bash -c "source $HOME/.nvm/nvm.sh && nvm exec v22.9.0 && npm install -g @bitwarden/cli"
       creates: "/home/waiter-admin/.nvm/versions/node/v22.9.0/bin/bw"
   - name: Sync BW Client
-    tags: [test]
     ansible.builtin.shell:
       cmd: '{{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/bin/node {{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/lib/node_modules/@bitwarden/cli/build/bw.js sync --session `cat .bw_session`'
       chdir: '{{ansible_env.HOME}}/waiter'
+
+  - name: Configure fail2ban
+    become: true
+    ansible.builtin.copy:
+      src: fail2ban/jail.local
+      dest: /etc/fal2ban/jail.local
+
+  - name: Enable fail2ban
+    become: true
+    ansible.builtin.systemd_service:
+      enabled: true
+      maked: false
+      name: fail2ban
+      state: started
 
   - import_tasks: ufw.yml
 
@@ -154,7 +168,6 @@
 
 # This always at the end
   - name: Deploy gf_admin_password
-    tags: [test]
     ansible.builtin.shell:
       cmd: '{{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/bin/node {{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/lib/node_modules/@bitwarden/cli/build/bw.js --session `cat .bw_session` get password dashboard.waiter.ucsd.edu admin > {{ansible_env.HOME}}/waiter/.secrets/gf_admin_password.txt'
       chdir: '{{ansible_env.HOME}}/waiter'

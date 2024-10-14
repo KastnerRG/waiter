@@ -1,0 +1,8 @@
+[DEFAULT]
+
+bantime = 1d
+bantime.increment = true
+bantime.rndtime = 3600
+
+[sshd]
+enabled = true
