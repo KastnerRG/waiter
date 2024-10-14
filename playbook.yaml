@@ -113,13 +113,13 @@
     become: true
     ansible.builtin.copy:
       src: fail2ban/jail.local
-      dest: /etc/fal2ban/jail.local
+      dest: /etc/fail2ban/jail.local
 
   - name: Enable fail2ban
     become: true
     ansible.builtin.systemd_service:
       enabled: true
-      maked: false
+      masked: false
       name: fail2ban
       state: started
 
