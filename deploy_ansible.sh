@@ -8,6 +8,7 @@ if [ "$BRANCH" != "main" ]
 then
   git checkout main -q
 fi
+git clean -fd
 
 # Deploy if changes have been made
 git remote update
