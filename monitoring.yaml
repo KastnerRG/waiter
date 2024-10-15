@@ -1,0 +1,3 @@
+- name: Install IPMI Exporter
+  become: true
+  prometheus.prometheus.ipmi_exporter:
