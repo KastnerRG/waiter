@@ -46,6 +46,7 @@ users:
     groups:
       - docker
       - rdp_users
+      - label_studio_admin
     password: $6$nsfPF5c2H2Puxea9$FcU3gsFT5BUWGXh6tzy196usIaWC83UvzWYS7FvOjnYY6gmtai1FD8Dbx4mqvy3mlRANK5xyGErH1zbv2tqGx1
   - username: z.ma
     name: Zhenghua Ma
