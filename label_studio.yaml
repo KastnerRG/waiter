@@ -4,6 +4,7 @@
     cmd: scripts/deploy_label_studio_pass.sh
     creates: "{{ansible_env.HOME}}/waiter/.secrets/label_studio_admin_password.env"
     executable: /bin/bash
+    chdir: "{{ansible_env.HOME}}/waiter"
 - name: Ensure label studio admin group exists
   tags: [test]
   become: true
