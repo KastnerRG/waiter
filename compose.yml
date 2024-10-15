@@ -29,13 +29,12 @@ services:
       - LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLE=true
       - LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/label-studio/files
       - LABEL_STUDIO_DISABLE_SIGNUP_WITHOUT_LINK=true
-      - LABEL_STUDIO_USERNAME=e4eadmin
-      - LABEL_STUDIO_PASSWORD_FILE=/run/secrets/label_studio_e4eadmin_password
+      - LABEL_STUDIO_USERNAME=e4e@ucsd.edu
     labels:
       caddy: labeler.e4e.ucsd.edu
       caddy.reverse_proxy: "{{upstreams 3000}}"
-    secrets:
-      - label_studio_e4eadmin_password
+    env_file:
+      - .secrets/label_studio_admin_password.env
 
   prometheus:
     image: prom/prometheus
@@ -79,5 +78,3 @@ services:
 secrets:
   grafana_e4eadmin_password:
     file: .secrets/gf_admin_password.txt
-  label_studio_e4eadmin_password:
-    file: .secrets/label_studio_admin_password.txt

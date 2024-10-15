@@ -1,0 +1,26 @@
+- name: Deploy label_studio password
+  tags: [test]
+  ansible.builtin.shell: |
+    NODE={{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/bin/node
+    BW={{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/lib/node_modules/@bitwarden/cli/build/bw.js
+    BW_SESSION=`cat .bw_session`
+    LABEL_ADMIN_PASSWD=`$NODE $BW --session $BW_SESSION get password "E4E Label Studio Admin Password"`
+    echo 'LABEL_STUDIO_PASSWORD=$LABEL_ADMIN_PASSWD' > {{ansible_env.HOME}}/waiter/.secrets/label_studio_admin_password.txt
+  args:
+    executable: /bin/bash
+    creates: "{{ansible_env.HOME}}/waiter/.secrets/label_studio_admin_password.txt"
+- name: Ensure label studio admin group exists
+  tags: [test]
+  become: true
+  ansible.builtin.group:
+    name: label_studio_admin
+
+- name: Ensure label studio files dir exists
+  tags: [test]
+  become: true
+  ansible.builtin.file:
+    group: label_studio_admin
+    mode: '0770'
+    owner: root
+    path: /share/label-studio/files
+    state: directory

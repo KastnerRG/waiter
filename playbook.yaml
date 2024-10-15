@@ -149,6 +149,9 @@
       enabled: true
       masked: false
       state: started
+    
+  - name: Setup Label Studio
+    import_tasks: label_studio.yaml
 
 # This always at the end
   - name: Deploy gf_admin_password
