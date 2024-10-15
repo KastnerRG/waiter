@@ -26,7 +26,7 @@ services:
     image: heartexlabs/label-studio:latest
     volumes:
       - ./label_studio_data:/label-studio/data
-      - ./label_studio_files:/label-studio/files
+      - /share/label-studio/files:/label-studio/files
     environment:
       - LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLE=true
       - LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/label-studio/files
@@ -34,7 +34,7 @@ services:
       - LABEL_STUDIO_USERNAME=e4e@ucsd.edu
     labels:
       caddy: labeler.e4e.ucsd.edu
-      caddy.reverse_proxy: "{{upstreams 3000}}"
+      caddy.reverse_proxy: "{{upstreams 8080}}"
     env_file:
       - .secrets/label_studio_admin_password.env
 
