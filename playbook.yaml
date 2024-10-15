@@ -41,6 +41,7 @@
         - git-lfs
         - git
         - firefox
+        - freeipmi-tools
   - name: Ensure these packages are not installed
     become: true
     ansible.builtin.apt:
@@ -117,6 +118,9 @@
 
 # Enable unattended upgrades
   - import_tasks: unattended-upgrades.yml
+
+# Enable monitoring tools
+  - import_tasks: monitoring.yaml
 
 # Install XFCE Desktop
   - name: XFCE Desktop
