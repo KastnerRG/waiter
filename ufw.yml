@@ -26,12 +26,19 @@
     # src: 67.58.52.163/26
   become: true
 - name: Allow node-exporter to self
+  become: true
   community.general.ufw:
     rule: allow
     port: 9100
     proto: tcp
     src: 132.239.95.67
-
+- name: Allow node-exporter to self
+  become: true
+  community.general.ufw:
+    rule: allow
+    port: 9323
+    proto: tcp
+    src: 132.239.95.67
 - community.general.ufw:
     state: enabled
   become: true

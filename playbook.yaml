@@ -41,6 +41,7 @@
         - git-lfs
         - git
         - firefox
+        - freeipmi-tools
   - name: Ensure these packages are not installed
     become: true
     ansible.builtin.apt:
@@ -78,9 +79,11 @@
       masked: false
       state: started
 
-  - import_tasks: docker_ubuntu_22.yaml
   - import_tasks: cuda_12_6_1_ubuntu_22.yaml
   - import_tasks: nvidia-container-toolkit_ubuntu.yaml
+
+  # Install after nvidia container runtime.  We are going to register it as a Docker runtime.
+  - import_tasks: docker_ubuntu_22.yaml
   - import_tasks: create_users.yaml
   - name: Install nvm
     ansible.builtin.shell: >
@@ -115,6 +118,9 @@
 
 # Enable unattended upgrades
   - import_tasks: unattended-upgrades.yml
+
+# Enable monitoring tools
+  - import_tasks: monitoring.yaml
 
 # Install XFCE Desktop
   - name: XFCE Desktop
@@ -171,3 +177,11 @@
     community.docker.docker_compose_v2:
       project_src: '{{ansible_env.HOME}}/waiter/'
       pull: 'always'
+
+  handlers:
+  # Restart Docker if necessary.  This happens after ALL tasks are executed, including the docker-compose task.
+  - name: Restart Docker
+    become: true
+    service:
+      name: docker
+      state: restarted
