@@ -80,6 +80,7 @@ users:
       - docker
       - rdp_users
       - cuda
+      - label_studio_admin
   - username: d.zuberi
     name: Danial Zuberi
     authorized_keys:
@@ -503,3 +504,11 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$.DphfbMvV1nHG5qC$jwLHfciBa7ICYB79O.b5.fAXF2dGLYnchv9mTo4wF3nwHD60u.okea2JFiV/h.KSwp57hICPj6a7bJaaZ9XO6.
+  - username: t.yang.565
+    name: Tongfei Yang
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDGpca7egKmnKM856fl+vwxfD8/gC7eLqh+uNFAnIZY+ftB4YJUSRiUMlvlE8MvBH/mNxIccV7ZKCvJVOXLYV6+hTeKs+vNCFj6ymKrXSpW6TkQp1wOrPPgm9O53gtsyXwVPF4J16BoRt6Nl9Q7zLj7OFMXdXBJ9FszDim74f+zDP1SOk/gqeQDbg01wt3cfQvK9Gy+Ce2nAKvVKGT3+kCUw93bUE+OnvBTqLNlvpc0mPugcW+5oJgeN3FU8qYoT0jQk6ZccJgx2ZhQIxzF/xs5VPWD4sgA2jlv6kX/Zb6jWl4RmYVwl6vRP0d/50x9c/2oXGC6odXujx/gh4VRafikHbMX4UIc7OlpoDNwZ4bpPjadk1bJ0zS3aiM8fVmNa0gJLuWyBzlHgWllYri2RNLKyyFRGUWjTyPynbjoU0gdlfbE0oKqVACPLWSnJvl3bm2GuCImdYSvCb407qZcaLouK2/7tkkSkgai37y9hgWm0yc5Sup8OxPkYreVjnefgNE= tongfeiyang@Catherines-MacBook-Pro.local
+    expires: "2025-06-30 23:59:59"
+    groups:
+      - label_studio_admin
+    password: $6$rounds=656000$Ki0AsX3vvPlzwY8C$3ePDQQtpN.VNq1BMA1JehNXXzz3h7105OUsamSnMrtp2/wwCOs9BUO3uz/cOTNQICU/Evq5eWS4SdBTaPFHkb.
