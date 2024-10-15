@@ -17,3 +17,10 @@
     owner: root
     path: /share/label-studio/files
     state: directory
+
+- name: Ensure label studio data dir exists
+  become: true
+  ansible.builtin.file:
+    group: root
+    path: "{{ansible_env.HOME}}/waiter/label_studio_data"
+    state: directory
