@@ -21,7 +21,8 @@
 - name: Ensure label studio data dir exists
   become: true
   ansible.builtin.file:
-    group: waiter-admin
+    group: root
     owner: waiter-admin
     path: "{{ansible_env.HOME}}/waiter/label_studio_data"
     state: directory
+    mode: '0770'
