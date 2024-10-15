@@ -156,7 +156,6 @@
       state: started
     
   - name: Setup Label Studio
-    tags: [test]
     import_tasks: label_studio.yaml
 
 # This always at the end
