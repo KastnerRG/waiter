@@ -64,7 +64,8 @@ def main():
     accepted_groups = {
         1: 'docker',
         2: 'cuda',
-        3: 'rdp_users'
+        3: 'rdp_users',
+        4: 'label_studio_admin'
     }
     for gid, gname in accepted_groups.items():
         print(f'{gid}: {gname}')
