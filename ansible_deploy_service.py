@@ -27,11 +27,12 @@ class Service:
 
     def run(self):
         start_http_server(self.PROM_PORT)
-        self.last_run = dt.datetime.now()
+        self.last_run = None
 
         while True:
-            next_run = self.last_run + self.PERIOD
-            self.sleep_until(next_run)
+            if self.last_run:
+                next_run = self.last_run + self.PERIOD
+                self.sleep_until(next_run)
 
             self.PROJECT_BRANCH.checkout(True)
             self.repo.remote().update()
