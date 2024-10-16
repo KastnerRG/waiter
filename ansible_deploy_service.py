@@ -98,7 +98,7 @@ class Service:
                 self.__log.info('Installing')
                 self.repo.remote().pull()
                 new_env = os.environ
-                galaxy_install = subprocess.check_call(['ansible-galaxy', 'collection', 'install',
+                galaxy_install = subprocess.check_call(['.venv/bin/ansible-galaxy', 'collection', 'install',
                                                         '-r', 'requirements.yml'], env=new_env)
                 self.__log.info('Galaxy install returned %d', galaxy_install)
                 subprocess_retval_gauge.labels(
@@ -112,7 +112,7 @@ class Service:
                     bw_session = handle.read()
                 new_env['BW_SESSION'] = bw_session
                 playbook_cmd = [
-                    'ansible-playbook',
+                    '.venv/bin/ansible-playbook',
                 ]
                 if self.CHECK_FLAG:
                     playbook_cmd.append('--check')
@@ -126,7 +126,7 @@ class Service:
                 docker_client.images.prune()
 
                 poetry_install = subprocess.check_call(
-                    ['poetry', 'install'], env=new_env)
+                    ['.venv/bin/poetry', 'install'], env=new_env)
                 subprocess_retval_gauge.labels(
                     command='poetry-install').set(poetry_install)
                 self.last_run = dt.datetime.now()
