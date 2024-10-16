@@ -73,66 +73,71 @@ class Service:
         self.last_run_gauge = Gauge('ads_last_run', 'Last Run Timestamp')
 
     def run(self):
-        self.__log.debug('Running')
-        start_http_server(self.PROM_PORT)
+        try:
+            self.__log.debug('Running')
+            start_http_server(self.PROM_PORT)
 
-        subprocess_retval_gauge = Gauge(
-            'ads_subprocess_retval', 'Subprocess return values', labelnames=['command'])
+            subprocess_retval_gauge = Gauge(
+                'ads_subprocess_retval', 'Subprocess return values', labelnames=['command'])
 
-        while True:
-            if self.last_run:
-                next_run = self.last_run + self.PERIOD
-                self.__log.debug('Sleeping until %s', next_run.isoformat())
-                self.sleep_until(next_run)
+            while True:
+                if self.last_run:
+                    next_run = self.last_run + self.PERIOD
+                    self.__log.debug('Sleeping until %s', next_run.isoformat())
+                    self.sleep_until(next_run)
 
-            self.PROJECT_BRANCH.checkout(True)
-            self.repo.remote().update()
+                self.PROJECT_BRANCH.checkout(True)
+                self.repo.remote().update()
 
-            remote_head = {ref.remote_head: ref for ref in self.repo.remote().refs}[
-                self.__project_branch_name]
+                remote_head = {ref.remote_head: ref for ref in self.repo.remote().refs}[
+                    self.__project_branch_name]
 
-            origin_diff = self.PROJECT_BRANCH.commit.diff(
-                remote_head.commit)
-            if len(origin_diff) != 0:
-                # Install
-                self.__log.info('Installing')
-                self.repo.remote().pull()
-                new_env = os.environ
-                galaxy_install = subprocess.check_call(['.venv/bin/ansible-galaxy', 'collection', 'install',
-                                                        '-r', 'requirements.yml'], env=new_env)
-                self.__log.info('Galaxy install returned %d', galaxy_install)
-                subprocess_retval_gauge.labels(
-                    command='ansible-galaxy').set(galaxy_install)
-                new_env['ANSIBLE_CONFIG'] = self.PROJECT_ROOT.joinpath(
-                    'ansible.cfg').absolute().as_posix()
-                new_env['ANSIBLE_INVENTORY'] = self.PROJECT_ROOT.joinpath(
-                    'inventory.yaml').absolute().as_posix()
-                bw_session_path = self.PROJECT_ROOT.joinpath('.bw_session')
-                with open(bw_session_path, 'r', encoding='utf-8') as handle:
-                    bw_session = handle.read()
-                new_env['BW_SESSION'] = bw_session
-                playbook_cmd = [
-                    '.venv/bin/ansible-playbook',
-                ]
-                if self.CHECK_FLAG:
-                    playbook_cmd.append('--check')
+                origin_diff = self.PROJECT_BRANCH.commit.diff(
+                    remote_head.commit)
+                if len(origin_diff) != 0:
+                    # Install
+                    self.__log.info('Installing')
+                    self.repo.remote().pull()
+                    new_env = os.environ
+                    galaxy_install = subprocess.check_call(['.venv/bin/ansible-galaxy', 'collection', 'install',
+                                                            '-r', 'requirements.yml'], env=new_env)
+                    self.__log.info(
+                        'Galaxy install returned %d', galaxy_install)
+                    subprocess_retval_gauge.labels(
+                        command='ansible-galaxy').set(galaxy_install)
+                    new_env['ANSIBLE_CONFIG'] = self.PROJECT_ROOT.joinpath(
+                        'ansible.cfg').absolute().as_posix()
+                    new_env['ANSIBLE_INVENTORY'] = self.PROJECT_ROOT.joinpath(
+                        'inventory.yaml').absolute().as_posix()
+                    bw_session_path = self.PROJECT_ROOT.joinpath('.bw_session')
+                    with open(bw_session_path, 'r', encoding='utf-8') as handle:
+                        bw_session = handle.read()
+                    new_env['BW_SESSION'] = bw_session
+                    playbook_cmd = [
+                        '.venv/bin/ansible-playbook',
+                    ]
+                    if self.CHECK_FLAG:
+                        playbook_cmd.append('--check')
 
-                playbook_cmd.append('playbook.yaml')
-                playbook_run = subprocess.check_call(
-                    playbook_cmd, env=new_env, cwd=self.PROJECT_ROOT)
-                subprocess_retval_gauge.labels(
-                    command='ansible-playbook').set(playbook_run)
-                docker_client = docker.from_env()
-                docker_client.images.prune()
+                    playbook_cmd.append('playbook.yaml')
+                    playbook_run = subprocess.check_call(
+                        playbook_cmd, env=new_env, cwd=self.PROJECT_ROOT)
+                    subprocess_retval_gauge.labels(
+                        command='ansible-playbook').set(playbook_run)
+                    docker_client = docker.from_env()
+                    docker_client.images.prune()
 
-                poetry_install = subprocess.check_call(
-                    ['.venv/bin/poetry', 'install'], env=new_env)
-                subprocess_retval_gauge.labels(
-                    command='poetry-install').set(poetry_install)
+                    poetry_install = subprocess.check_call(
+                        ['.venv/bin/poetry', 'install'], env=new_env)
+                    subprocess_retval_gauge.labels(
+                        command='poetry-install').set(poetry_install)
+                    self.last_run = dt.datetime.now()
+
+                    os.execl(sys.executable, os.path.abspath(
+                        __file__), *sys.argv)
                 self.last_run = dt.datetime.now()
-
-                os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
-            self.last_run = dt.datetime.now()
+        except Exception as exc:
+            self.__log.exception('Fails due to %s', exc)
 
     def sleep_until(self, until: dt.datetime):
         """Sleeps until the specified datetime
