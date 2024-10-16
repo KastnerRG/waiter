@@ -137,9 +137,9 @@ class Service:
                     self.last_deploy_gauge.set_to_current_time()
 
                     exec_args = sys.executable, os.path.abspath(
-                        __file__), *sys.argv
+                        __file__), *sys.argv[1:]
                     self.__log.info('Redeploy with args %s', exec_args)
-                    os.execl(*exec_args)
+                    os.execle(*exec_args, os.environ)
                 self.last_run = dt.datetime.now()
         except Exception as exc:
             self.__log.exception('Fails due to %s', exc)
