@@ -28,7 +28,7 @@ services:
       - ./label_studio_data:/label-studio/data
       - /share/label-studio/files:/data
     environment:
-      - LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLE=true
+      - LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED=true
       - LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/data
       - LABEL_STUDIO_DISABLE_SIGNUP_WITHOUT_LINK=true
       - LABEL_STUDIO_USERNAME=e4e@ucsd.edu
