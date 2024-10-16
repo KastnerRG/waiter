@@ -5,6 +5,7 @@ import datetime as dt
 import logging
 import os
 import subprocess
+import sys
 from pathlib import Path
 from time import sleep
 
@@ -71,6 +72,9 @@ class Service:
                 docker_client = docker.from_env()
                 docker_client.images.prune()
 
+                subprocess.check_call(['poetry', 'install'], env=new_env)
+
+                os.execl(sys.executable, *sys.argv)
             self.last_run = dt.datetime.now()
 
     def sleep_until(self, until: dt.datetime):
