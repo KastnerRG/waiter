@@ -42,9 +42,10 @@ class Service:
             if len(origin_diff) != 0:
                 # Install
                 self.repo.remote().pull()
-                galaxy_main(['collection', 'install',
+                galaxy_main(['ansible-galaxy', 'collection', 'install',
                             '-r', 'requirements.yml'])
                 playbook_main([
+                    'ansible-playbook',
                     'playbook.yaml',
                     '-i',
                     Path('inventory.yaml').as_posix(),
