@@ -8,7 +8,7 @@ import os
 import subprocess
 import sys
 from pathlib import Path
-from time import sleep, gmtime
+from time import sleep
 from typing import Optional
 import platformdirs
 from git import Repo
@@ -64,7 +64,6 @@ class Service:
                                             datefmt=date_fmt)
         console_handler.setFormatter(error_formatter)
         root_logger.addHandler(console_handler)
-        logging.Formatter.converter = gmtime
 
         self.__log = logging.getLogger('Waiter Ansible Deploy')
 
