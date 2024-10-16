@@ -36,6 +36,7 @@ class Service:
 
         log_dest = platformdirs.PlatformDirs(
             'ansible_deploy_service').user_log_path
+        log_dest.mkdir(parents=True, exist_ok=True)
         root_logger = logging.getLogger()
         root_logger.setLevel(logging.DEBUG)
         master_log_file = logging.handlers.TimedRotatingFileHandler(
