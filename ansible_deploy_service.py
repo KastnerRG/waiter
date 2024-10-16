@@ -2,6 +2,7 @@
 '''
 import argparse
 import datetime as dt
+import json
 import logging
 import logging.handlers
 import os
@@ -9,7 +10,7 @@ import subprocess
 import sys
 from pathlib import Path
 from time import sleep
-from typing import Optional
+from typing import Dict, Optional
 
 import platformdirs
 from git import Repo
@@ -40,8 +41,9 @@ class Service:
             'last_time')
         self.__last_deploy_time_path = self.__app_dirs.user_data_path.joinpath(
             'last_deploy_time')
+        self.__last_run_retvals_path = self.__app_dirs.user_data_path / 'last_retvals'
 
-        self.__last_time_path.parent.mkdir(parents=True, exist_ok=True)
+        self.__app_dirs.user_data_path.mkdir(parents=True, exist_ok=True)
         log_dest.mkdir(parents=True, exist_ok=True)
 
         root_logger = logging.getLogger()
@@ -72,23 +74,25 @@ class Service:
 
         self.__log.info('Invoked with %s', sys.orig_argv)
 
-        self.last_run_gauge = Gauge('ads_last_run', 'Last Run Timestamp')
-        self.last_deploy_gauge = Gauge(
-            'ads_last_deploy', 'Last Deploy Timestamp')
-
-        if self.last_run:
-            self.last_run_gauge.set(self.last_run)
-
-        if self.last_deploy_time:
-            self.last_deploy_gauge.set(self.last_deploy_time)
-
     def run(self):
         try:
             self.__log.debug('Running')
             start_http_server(self.PROM_PORT)
 
-            subprocess_retval_gauge = Gauge(
+            self.last_run_gauge = Gauge('ads_last_run', 'Last Run Timestamp')
+            self.last_deploy_gauge = Gauge(
+                'ads_last_deploy', 'Last Deploy Timestamp')
+
+            if self.last_run:
+                self.last_run_gauge.set(self.last_run.timestamp())
+
+            if self.last_deploy_time:
+                self.last_deploy_gauge.set(self.last_deploy_time.timestamp())
+
+            self.subprocess_retval_gauge = Gauge(
                 'ads_subprocess_retval', 'Subprocess return values', labelnames=['command'])
+
+            self.get_retvals()
 
             while True:
                 if self.last_run:
@@ -113,8 +117,7 @@ class Service:
                                                             '-r', 'requirements.yml'], env=new_env)
                     self.__log.info(
                         'Galaxy install returned %d', galaxy_install)
-                    subprocess_retval_gauge.labels(
-                        command='ansible-galaxy').set(galaxy_install)
+                    self.set_retval('ansible-galaxy', galaxy_install)
                     new_env['ANSIBLE_CONFIG'] = self.PROJECT_ROOT.joinpath(
                         'ansible.cfg').absolute().as_posix()
                     new_env['ANSIBLE_INVENTORY'] = self.PROJECT_ROOT.joinpath(
@@ -132,15 +135,13 @@ class Service:
                     playbook_cmd.append('playbook.yaml')
                     playbook_run = subprocess.check_call(
                         playbook_cmd, env=new_env, cwd=self.PROJECT_ROOT)
-                    subprocess_retval_gauge.labels(
-                        command='ansible-playbook').set(playbook_run)
+                    self.set_retval('ansible-playbook', playbook_run)
                     docker_client = docker.from_env()
                     docker_client.images.prune()
 
                     poetry_install = subprocess.check_call(
                         ['.venv/bin/poetry', 'install'], env=new_env)
-                    subprocess_retval_gauge.labels(
-                        command='poetry-install').set(poetry_install)
+                    self.set_retval('poetry-install', poetry_install)
                     self.last_run = dt.datetime.now()
                     self.last_deploy_time = dt.datetime.now()
 
@@ -192,6 +193,19 @@ class Service:
             handle.write(date_time.isoformat())
         self.last_deploy_gauge.set(date_time.timestamp())
 
+    def set_retval(self, command: str, retval: int):
+        with open(self.__last_run_retvals_path, 'r', encoding='utf-8') as handle:
+            data = json.load(handle)
+        data[command] = retval
+        self.subprocess_retval_gauge.labels(command=command).set(retval)
+        with open(self.__last_run_retvals_path, 'w', encoding='utf-8') as handle:
+            json.dump(data, handle)
+
+    def get_retvals(self):
+        with open(self.__last_run_retvals_path, 'r', encoding='utf-8') as handle:
+            data: Dict[str, int] = json.load(handle)
+        for command, retval in data.items():
+            self.subprocess_retval_gauge.labels(command=command).set(retval)
 
 
 def main():
