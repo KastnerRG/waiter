@@ -91,9 +91,10 @@ class Service:
                 # Install
                 self.__log.info('Installing')
                 self.repo.remote().pull()
-                subprocess.check_call(['ansible-galaxy', 'collection', 'install',
-                            '-r', 'requirements.yml'])
                 new_env = os.environ
+                galaxy_install = subprocess.check_call(['ansible-galaxy', 'collection', 'install',
+                                                        '-r', 'requirements.yml'], env=new_env)
+                self.__log.info('Galaxy install returned %d', galaxy_install)
                 new_env['ANSIBLE_CONFIG'] = self.PROJECT_ROOT.joinpath(
                     'ansible.cfg').absolute().as_posix()
                 new_env['ANSIBLE_INVENTORY'] = self.PROJECT_ROOT.joinpath(
