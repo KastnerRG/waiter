@@ -1,5 +1,13 @@
 {
-    "yaml.schemas": {
-      ".schemas/waiter_users.json": "waiter_users.yaml"
-    }
+  "yaml.schemas": {
+    ".schemas/waiter_users.json": "waiter_users.yaml"
+  },
+  "editor.rulers": [
+    100
+  ],
+  "python.testing.pytestEnabled": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
+  "editor.formatOnType": true
 }

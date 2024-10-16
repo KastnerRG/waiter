@@ -11,6 +11,9 @@ python = "^3.10"
 ansible = "^9.10.0"
 ansible-core = "<=2.16.99"
 passlib = "^1.7.4"
+prometheus-client = "^0.21.0"
+gitpython = "^3.1.43"
+docker = "^7.1.0"
 
 [build-system]
 requires = ["poetry-core"]
