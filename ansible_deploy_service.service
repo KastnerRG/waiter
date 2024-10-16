@@ -7,7 +7,7 @@ StartLimitIntervalSec=0
 Type=simple
 Restart=always
 RestartSec=1
-User={{ansible_user}}
+User={{ lookup('env', 'USER') }}
 ExecStart={{ansible_env.HOME}}/waiter/.venv/bin/python {{ansible_env.HOME}}/waiter/ansible_deploy_service.py
 WorkingDirectory={{ansible_env.HOME}}/waiter
 
