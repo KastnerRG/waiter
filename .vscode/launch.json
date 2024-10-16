@@ -13,9 +13,9 @@
             "cwd": "${workspaceFolder}",
             "args": [
                 "--period",
-                "6000",
+                "10",
                 "--project_branch",
-                "feat/auto_deploy_python_service",
+                "main",
                 "--check"
             ]
         }
