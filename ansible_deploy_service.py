@@ -202,10 +202,14 @@ class Service:
             json.dump(data, handle)
 
     def get_retvals(self):
-        with open(self.__last_run_retvals_path, 'r', encoding='utf-8') as handle:
-            data: Dict[str, int] = json.load(handle)
-        for command, retval in data.items():
-            self.subprocess_retval_gauge.labels(command=command).set(retval)
+        try:
+            with open(self.__last_run_retvals_path, 'r', encoding='utf-8') as handle:
+                data: Dict[str, int] = json.load(handle)
+            for command, retval in data.items():
+                self.subprocess_retval_gauge.labels(
+                    command=command).set(retval)
+        except:
+            pass
 
 
 def main():
