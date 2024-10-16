@@ -70,6 +70,8 @@ class Service:
 
         self.__log.info('Invoked with %s', sys.orig_argv)
 
+        self.last_run_gauge = Gauge('ads_last_run', 'Last Run Timestamp')
+
     def run(self):
         self.__log.debug('Running')
         start_http_server(self.PROM_PORT)
@@ -156,6 +158,7 @@ class Service:
     def last_run(self, date_time: dt.datetime):
         with open(self.__last_time_path, 'w', encoding='utf-8') as handle:
             handle.write(date_time.isoformat())
+        self.last_run_gauge.set(date_time.timestamp())
 
 
 def main():
