@@ -175,6 +175,22 @@
   - name: Setup Label Studio
     import_tasks: label_studio.yaml
 
+  - name: Ensure systemd user dir exists
+    ansible.builtin.file:
+      path: .config/systemd/user/
+      state: directory
+  - name: Set up ansible_deploy_service.service
+    ansible.builtin.template:
+      src: ansible_deploy_service.service
+      dest: .config/systemd/user/ansible_deploy_service.service
+  - name: Enable ansible_deploy_service
+    ansible.builtin.systemd_service:
+      enabled: true
+      name: ansible_deploy_service
+      state: started
+      scope: user
+
+
 # This always at the end
   - name: Deploy gf_admin_password
     ansible.builtin.shell:

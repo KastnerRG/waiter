@@ -1,0 +1,15 @@
+[Unit]
+Description=Ansible Git Continuous Deployment
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User={{ansible_user}}
+ExecStart={{ansible_env.HOME}}/waiter/.venv/bin/python {{ansible_env.HOME}}/waiter/ansible_deploy_service.py
+WorkingDirectory={{ansible_env.HOME}}/waiter
+
+[Install]
+WantedBy=default.target
