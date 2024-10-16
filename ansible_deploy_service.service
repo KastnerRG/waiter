@@ -5,6 +5,8 @@ StartLimitIntervalSec=0
 
 [Service]
 Type=exec
+Restart=always
+RestartSec=1
 ExecStart={{ansible_env.HOME}}/waiter/.venv/bin/python {{ansible_env.HOME}}/waiter/ansible_deploy_service.py
 WorkingDirectory={{ansible_env.HOME}}/waiter
 
