@@ -10,9 +10,10 @@ import sys
 from pathlib import Path
 from time import sleep
 from typing import Optional
+
 import platformdirs
 from git import Repo
-from prometheus_client import start_http_server
+from prometheus_client import Gauge, start_http_server
 
 import docker
 
@@ -73,6 +74,9 @@ class Service:
         self.__log.debug('Running')
         start_http_server(self.PROM_PORT)
 
+        subprocess_retval_gauge = Gauge(
+            'ads_subprocess_retval', labelnames=['command'])
+
         while True:
             if self.last_run:
                 next_run = self.last_run + self.PERIOD
@@ -95,6 +99,8 @@ class Service:
                 galaxy_install = subprocess.check_call(['ansible-galaxy', 'collection', 'install',
                                                         '-r', 'requirements.yml'], env=new_env)
                 self.__log.info('Galaxy install returned %d', galaxy_install)
+                subprocess_retval_gauge.labels(
+                    command='ansible-galaxy').set(galaxy_install)
                 new_env['ANSIBLE_CONFIG'] = self.PROJECT_ROOT.joinpath(
                     'ansible.cfg').absolute().as_posix()
                 new_env['ANSIBLE_INVENTORY'] = self.PROJECT_ROOT.joinpath(
@@ -110,12 +116,17 @@ class Service:
                     playbook_cmd.append('--check')
 
                 playbook_cmd.append('playbook.yaml')
-                subprocess.check_call(
+                playbook_run = subprocess.check_call(
                     playbook_cmd, env=new_env, cwd=self.PROJECT_ROOT)
+                subprocess_retval_gauge.labels(
+                    command='ansible-playbook').set(playbook_run)
                 docker_client = docker.from_env()
                 docker_client.images.prune()
 
-                subprocess.check_call(['poetry', 'install'], env=new_env)
+                poetry_install = subprocess.check_call(
+                    ['poetry', 'install'], env=new_env)
+                subprocess_retval_gauge.labels(
+                    command='poetry-install').set(poetry_install)
                 self.last_run = dt.datetime.now()
 
                 os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
