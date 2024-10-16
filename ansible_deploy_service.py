@@ -26,7 +26,6 @@ class Service:
         self.PERIOD = dt.timedelta(seconds=period)
         self.PROM_PORT = prometheus_port
 
-        self.last_run = dt.datetime.now()
         self.PROJECT_ROOT = project_root
         self.repo = Repo(self.PROJECT_ROOT)
         self.__project_branch_name = project_branch
