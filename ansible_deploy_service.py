@@ -38,6 +38,8 @@ class Service:
         log_dest = self.__app_dirs.user_log_path
         self.__last_time_path = self.__app_dirs.user_data_path.joinpath(
             'last_time')
+        self.__last_deploy_time_path = self.__app_dirs.user_data_path.joinpath(
+            'last_deploy_time')
 
         self.__last_time_path.parent.mkdir(parents=True, exist_ok=True)
         log_dest.mkdir(parents=True, exist_ok=True)
@@ -73,6 +75,12 @@ class Service:
         self.last_run_gauge = Gauge('ads_last_run', 'Last Run Timestamp')
         self.last_deploy_gauge = Gauge(
             'ads_last_deploy', 'Last Deploy Timestamp')
+
+        if self.last_run:
+            self.last_run_gauge.set(self.last_run)
+
+        if self.last_deploy_time:
+            self.last_deploy_gauge.set(self.last_deploy_time)
 
     def run(self):
         try:
@@ -134,7 +142,7 @@ class Service:
                     subprocess_retval_gauge.labels(
                         command='poetry-install').set(poetry_install)
                     self.last_run = dt.datetime.now()
-                    self.last_deploy_gauge.set_to_current_time()
+                    self.last_deploy_time = dt.datetime.now()
 
                     exec_args = sys.executable, os.path.abspath(
                         __file__), *sys.argv[1:]
@@ -169,6 +177,21 @@ class Service:
         with open(self.__last_time_path, 'w', encoding='utf-8') as handle:
             handle.write(date_time.isoformat())
         self.last_run_gauge.set(date_time.timestamp())
+
+    @property
+    def last_deploy_time(self) -> Optional[dt.datetime]:
+        try:
+            with open(self.__last_deploy_time_path, 'r', encoding='utf-8') as handle:
+                return dt.datetime.fromisoformat(handle.read())
+        except:
+            return None
+
+    @last_deploy_time.setter
+    def last_deploy_time(self, date_time: dt.datetime):
+        with open(self.__last_deploy_time_path, 'w', encoding='utf-8') as handle:
+            handle.write(date_time.isoformat())
+        self.last_deploy_gauge.set(date_time.timestamp())
+
 
 
 def main():
