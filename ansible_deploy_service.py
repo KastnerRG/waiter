@@ -74,7 +74,7 @@ class Service:
 
                 subprocess.check_call(['poetry', 'install'], env=new_env)
 
-                os.execl(sys.executable, *sys.argv)
+                os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
             self.last_run = dt.datetime.now()
 
     def sleep_until(self, until: dt.datetime):
