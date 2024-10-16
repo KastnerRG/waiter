@@ -9,7 +9,7 @@ import subprocess
 import sys
 from pathlib import Path
 from time import sleep, gmtime
-
+from typing import Optional
 import platformdirs
 from git import Repo
 from prometheus_client import start_http_server
@@ -34,8 +34,11 @@ class Service:
             head.name: head for head in self.repo.heads}[self.__project_branch_name]
         self.CHECK_FLAG = check
 
-        log_dest = platformdirs.PlatformDirs(
-            'ansible_deploy_service').user_log_path
+        self.__app_dirs = platformdirs.PlatformDirs('ansible_deploy_service')
+        log_dest = self.__app_dirs.user_log_path
+        self.__last_time_path = self.__app_dirs.user_data_path.joinpath(
+            'last_time')
+
         log_dest.mkdir(parents=True, exist_ok=True)
         root_logger = logging.getLogger()
         root_logger.setLevel(logging.DEBUG)
@@ -69,7 +72,6 @@ class Service:
     def run(self):
         self.__log.debug('Running')
         start_http_server(self.PROM_PORT)
-        self.last_run = None
 
         while True:
             if self.last_run:
@@ -113,6 +115,7 @@ class Service:
                 docker_client.images.prune()
 
                 subprocess.check_call(['poetry', 'install'], env=new_env)
+                self.last_run = dt.datetime.now()
 
                 os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
             self.last_run = dt.datetime.now()
@@ -128,6 +131,19 @@ class Service:
         if delta < 0:
             return
         sleep(delta)
+
+    @property
+    def last_run(self) -> Optional[dt.datetime]:
+        try:
+            with open(self.__last_time_path, 'r', encoding='utf-8') as handle:
+                return dt.datetime.fromisoformat(handle.read())
+        except:
+            return None
+
+    @last_run.setter
+    def write_time(self, date_time: dt.datetime):
+        with open(self.__last_time_path, 'w', encoding='utf-8') as handle:
+            handle.write(date_time.isoformat())
 
 
 def main():
