@@ -29,8 +29,9 @@ class Service:
         self.last_run = dt.datetime.now()
         self.PROJECT_ROOT = project_root
         self.repo = Repo(self.PROJECT_ROOT)
+        self.__project_branch_name = project_branch
         self.PROJECT_BRANCH = {
-            head.name: head for head in self.repo.heads}[project_branch]
+            head.name: head for head in self.repo.heads}[self.__project_branch_name]
         self.CHECK_FLAG = check
 
         log_dest = platformdirs.PlatformDirs(
@@ -78,8 +79,11 @@ class Service:
             self.PROJECT_BRANCH.checkout(True)
             self.repo.remote().update()
 
+            remote_head = {ref.remote_head: ref for ref in self.repo.remote().refs}[
+                self.__project_branch_name]
+
             origin_diff = self.PROJECT_BRANCH.commit.diff(
-                self.repo.remote().repo.head.commit)
+                remote_head.commit)
             if len(origin_diff) != 0:
                 # Install
                 self.__log.info('Installing')
