@@ -15,7 +15,8 @@
                 "--period",
                 "6000",
                 "--project_branch",
-                "feat/auto_deploy_python_service"
+                "feat/auto_deploy_python_service",
+                "--check"
             ]
         }
     ]

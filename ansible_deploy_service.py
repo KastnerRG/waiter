@@ -15,7 +15,11 @@ import docker
 
 
 class Service:
-    def __init__(self, period: int, prometheus_port: int, project_root: Path, project_branch: str):
+    def __init__(self, period: int,
+                 prometheus_port: int,
+                 project_root: Path,
+                 project_branch: str,
+                 check: bool):
         self.PERIOD = dt.timedelta(seconds=period)
         self.PROM_PORT = prometheus_port
 
@@ -24,6 +28,7 @@ class Service:
         self.repo = Repo(self.PROJECT_ROOT)
         self.PROJECT_BRANCH = {
             head.name: head for head in self.repo.heads}[project_branch]
+        self.CHECK_FLAG = check
         self.__log = logging.getLogger('Waiter Ansible Deploy')
 
     def run(self):
@@ -54,10 +59,15 @@ class Service:
                 with open(bw_session_path, 'r', encoding='utf-8') as handle:
                     bw_session = handle.read()
                 new_env['BW_SESSION'] = bw_session
-                subprocess.check_call([
+                playbook_cmd = [
                     'ansible-playbook',
-                    'playbook.yaml'
-                ], env=new_env)
+                ]
+                if self.CHECK_FLAG:
+                    playbook_cmd.append('--check')
+
+                playbook_cmd.append('playbook.yaml')
+                subprocess.check_call(
+                    playbook_cmd, env=new_env, cwd=self.PROJECT_ROOT)
                 docker_client = docker.from_env()
                 docker_client.images.prune()
 
@@ -88,10 +98,14 @@ def main():
                         help='Ansible project root', default=Path('.'))
     parser.add_argument('--project_branch', type=str,
                         help='Project branch', default='main')
+    parser.add_argument('--check', action='store_true')
     args = parser.parse_args()
 
-    Service(args.period, args.prometheus_port,
-            args.project_root, args.project_branch).run()
+    Service(period=args.period,
+            prometheus_port=args.prometheus_port,
+            project_root=args.project_root,
+            project_branch=args.project_branch,
+            check=args.check).run()
 
 
 if __name__ == '__main__':
