@@ -75,7 +75,7 @@ class Service:
         start_http_server(self.PROM_PORT)
 
         subprocess_retval_gauge = Gauge(
-            'ads_subprocess_retval', labelnames=['command'])
+            'ads_subprocess_retval', 'Subprocess return values', labelnames=['command'])
 
         while True:
             if self.last_run:
