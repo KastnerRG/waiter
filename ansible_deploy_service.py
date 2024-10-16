@@ -71,6 +71,8 @@ class Service:
         self.__log.info('Invoked with %s', sys.orig_argv)
 
         self.last_run_gauge = Gauge('ads_last_run', 'Last Run Timestamp')
+        self.last_deploy_gauge = Gauge(
+            'ads_last_deploy', 'Last Deploy Timestamp')
 
     def run(self):
         try:
@@ -132,9 +134,12 @@ class Service:
                     subprocess_retval_gauge.labels(
                         command='poetry-install').set(poetry_install)
                     self.last_run = dt.datetime.now()
+                    self.last_deploy_gauge.set_to_current_time()
 
-                    os.execl(sys.executable, os.path.abspath(
-                        __file__), *sys.argv)
+                    exec_args = sys.executable, os.path.abspath(
+                        __file__), *sys.argv
+                    self.__log.info('Redeploy with args %s', exec_args)
+                    os.execl(*exec_args)
                 self.last_run = dt.datetime.now()
         except Exception as exc:
             self.__log.exception('Fails due to %s', exc)
