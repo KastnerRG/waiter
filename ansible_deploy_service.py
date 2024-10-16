@@ -194,8 +194,11 @@ class Service:
         self.last_deploy_gauge.set(date_time.timestamp())
 
     def set_retval(self, command: str, retval: int):
-        with open(self.__last_run_retvals_path, 'r', encoding='utf-8') as handle:
-            data = json.load(handle)
+        try:
+            with open(self.__last_run_retvals_path, 'r', encoding='utf-8') as handle:
+                data = json.load(handle)
+        except:
+            data = {}
         data[command] = retval
         self.subprocess_retval_gauge.labels(command=command).set(retval)
         with open(self.__last_run_retvals_path, 'w', encoding='utf-8') as handle:
