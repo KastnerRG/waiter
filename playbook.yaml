@@ -42,6 +42,7 @@
         - git
         - firefox
         - freeipmi-tools
+        - cifs-utils
   - name: Ensure these packages are not installed
     become: true
     ansible.builtin.apt:
