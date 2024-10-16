@@ -140,7 +140,7 @@ class Service:
             return None
 
     @last_run.setter
-    def write_time(self, date_time: dt.datetime):
+    def last_run(self, date_time: dt.datetime):
         with open(self.__last_time_path, 'w', encoding='utf-8') as handle:
             handle.write(date_time.isoformat())
 
