@@ -3,12 +3,14 @@
 import argparse
 import datetime as dt
 import logging
+import logging.handlers
 import os
 import subprocess
 import sys
 from pathlib import Path
-from time import sleep
+from time import sleep, gmtime
 
+import platformdirs
 from git import Repo
 from prometheus_client import start_http_server
 
@@ -30,15 +32,47 @@ class Service:
         self.PROJECT_BRANCH = {
             head.name: head for head in self.repo.heads}[project_branch]
         self.CHECK_FLAG = check
+
+        log_dest = platformdirs.PlatformDirs(
+            'ansible_deploy_service').user_log_path
+        root_logger = logging.getLogger()
+        root_logger.setLevel(logging.DEBUG)
+        master_log_file = logging.handlers.TimedRotatingFileHandler(
+            log_dest.joinpath('ansible_service.log'),
+            when='d',
+            interval=1,
+            backupCount=15)
+        master_log_file.setLevel(logging.DEBUG)
+
+        date_fmt = '%Y-%m-%dT%H:%M:%S'
+        log_fmt: str = '%(asctime)s.%(msecs)03d - %(name)s - %(levelname)s - %(message)s'
+        root_formatter = logging.Formatter(log_fmt,
+                                           datefmt=date_fmt)
+        master_log_file.setFormatter(root_formatter)
+        root_logger.addHandler(master_log_file)
+
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(logging.DEBUG)
+
+        error_formatter = logging.Formatter(log_fmt,
+                                            datefmt=date_fmt)
+        console_handler.setFormatter(error_formatter)
+        root_logger.addHandler(console_handler)
+        logging.Formatter.converter = gmtime
+
         self.__log = logging.getLogger('Waiter Ansible Deploy')
 
+        self.__log.info('Invoked with %s', sys.orig_argv)
+
     def run(self):
+        self.__log.debug('Running')
         start_http_server(self.PROM_PORT)
         self.last_run = None
 
         while True:
             if self.last_run:
                 next_run = self.last_run + self.PERIOD
+                self.__log.debug('Sleeping until %s', next_run.isoformat())
                 self.sleep_until(next_run)
 
             self.PROJECT_BRANCH.checkout(True)
@@ -48,6 +82,7 @@ class Service:
                 self.repo.remote().repo.head.commit)
             if len(origin_diff) != 0:
                 # Install
+                self.__log.info('Installing')
                 self.repo.remote().pull()
                 subprocess.check_call(['ansible-galaxy', 'collection', 'install',
                             '-r', 'requirements.yml'])
