@@ -3,6 +3,7 @@
 import argparse
 import datetime as dt
 import logging
+import os
 import subprocess
 from pathlib import Path
 from time import sleep
@@ -19,7 +20,8 @@ class Service:
         self.PROM_PORT = prometheus_port
 
         self.last_run = dt.datetime.now()
-        self.repo = Repo(project_root)
+        self.PROJECT_ROOT = project_root
+        self.repo = Repo(self.PROJECT_ROOT)
         self.PROJECT_BRANCH = {
             head.name: head for head in self.repo.heads}[project_branch]
         self.__log = logging.getLogger('Waiter Ansible Deploy')
@@ -43,12 +45,19 @@ class Service:
                 self.repo.remote().pull()
                 subprocess.check_call(['ansible-galaxy', 'collection', 'install',
                             '-r', 'requirements.yml'])
+                new_env = os.environ
+                new_env['ANSIBLE_CONFIG'] = self.PROJECT_ROOT.joinpath(
+                    'ansible.cfg').absolute().as_posix()
+                new_env['ANSIBLE_INVENTORY'] = self.PROJECT_ROOT.joinpath(
+                    'inventory.yaml').absolute().as_posix()
+                bw_session_path = self.PROJECT_ROOT.joinpath('.bw_session')
+                with open(bw_session_path, 'r', encoding='utf-8') as handle:
+                    bw_session = handle.read()
+                new_env['BW_SESSION'] = bw_session
                 subprocess.check_call([
                     'ansible-playbook',
-                    'playbook.yaml',
-                    '-i',
-                    Path('inventory.yaml').as_posix(),
-                ])
+                    'playbook.yaml'
+                ], env=new_env)
                 docker_client = docker.from_env()
                 docker_client.images.prune()
 
