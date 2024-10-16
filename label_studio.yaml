@@ -13,7 +13,7 @@
   become: true
   ansible.builtin.file:
     group: label_studio_admin
-    mode: '0770'
+    mode: '0777'
     owner: root
     path: /share/label-studio/files
     state: directory

@@ -26,10 +26,10 @@ services:
     image: heartexlabs/label-studio:latest
     volumes:
       - ./label_studio_data:/label-studio/data
-      - /share/label-studio/files:/label-studio/files
+      - /share/label-studio/files:/data
     environment:
       - LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLE=true
-      - LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/label-studio/files
+      - LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/data
       - LABEL_STUDIO_DISABLE_SIGNUP_WITHOUT_LINK=true
       - LABEL_STUDIO_USERNAME=e4e@ucsd.edu
     labels:
