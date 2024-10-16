@@ -38,7 +38,9 @@ class Service:
         self.__last_time_path = self.__app_dirs.user_data_path.joinpath(
             'last_time')
 
+        self.__last_time_path.mkdir(parents=True, exist_ok=True)
         log_dest.mkdir(parents=True, exist_ok=True)
+
         root_logger = logging.getLogger()
         root_logger.setLevel(logging.DEBUG)
         master_log_file = logging.handlers.TimedRotatingFileHandler(
