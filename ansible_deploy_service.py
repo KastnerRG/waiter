@@ -3,11 +3,10 @@
 import argparse
 import datetime as dt
 import logging
+import subprocess
 from pathlib import Path
 from time import sleep
 
-from ansible.cli.galaxy import main as galaxy_main
-from ansible.cli.playbook import main as playbook_main
 from git import Repo
 from prometheus_client import start_http_server
 
@@ -42,9 +41,9 @@ class Service:
             if len(origin_diff) != 0:
                 # Install
                 self.repo.remote().pull()
-                galaxy_main(['ansible-galaxy', 'collection', 'install',
+                subprocess.check_call(['ansible-galaxy', 'collection', 'install',
                             '-r', 'requirements.yml'])
-                playbook_main([
+                subprocess.check_call([
                     'ansible-playbook',
                     'playbook.yaml',
                     '-i',
