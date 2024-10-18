@@ -77,6 +77,19 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./caddy-data:/data
 
+  guacd:
+    image: guacamole/guacd:latest
+    container_name: guacd
+    restart: always
+  guacamole:
+    image: guacamole/guacamole:latest
+    container_name: guacamole
+    restart: always
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    restart: always
+
 secrets:
   grafana_e4eadmin_password:
     file: .secrets/gf_admin_password.txt
