@@ -46,6 +46,7 @@ users:
     groups:
       - docker
       - rdp_users
+      - label_studio_admin
     password: $6$nsfPF5c2H2Puxea9$FcU3gsFT5BUWGXh6tzy196usIaWC83UvzWYS7FvOjnYY6gmtai1FD8Dbx4mqvy3mlRANK5xyGErH1zbv2tqGx1
   - username: z.ma
     name: Zhenghua Ma
@@ -79,6 +80,7 @@ users:
       - docker
       - rdp_users
       - cuda
+      - label_studio_admin
   - username: d.zuberi
     name: Danial Zuberi
     authorized_keys:
@@ -494,3 +496,27 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$3A6heppX3vCTQUaG$X1k8GQd8SttaFxx5.MTac6fPO3qXigkdM5Dt8CQ1sG8kHo9pjA41ceGGIizaWj78e33PhC3ZZG8XpbI6seQRW.
+  - username: cse237c_fa24_p_nguyen_390
+    name: Paul Nguyen
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF8Qm+7NJ/39fiQG5UKdw2Qtp1fpk2rhiSSx+iZFOkdR pdn002@ucsd.edu
+    expires: "2024-12-31 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$0v66dvuF5p6dPcOW$uIBJH8GgLtdnAQThIVw7ocOpf8gIvJv8Os4IcThUBmVju4fAbsMsNgVQvzAMxRsYn2LA5IEKmlS0lu6hs6gAZ/
+  - username: cse237c_fa24_c_sung_507
+    name: Chia-Chi Sung
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+jFlOFSCj9vNaHfwKQdCgGOtmuPJZLvwQ4+JxFs9GBGT8nEq9VjBjjbWXtoi4S3TmF3fK7k3ZCxLVJzda1/OgLhWwMKTcZ1u5ZqKPLZXp0uPd5PaF/aujppv3Aje6GAmaE2+Wj8iqcmyEbhu0b/kjjAloftZEiUYBi4j4GAiYailmyvvxxoSj3irr0Y80zMDIv5xEjwbDV1oYIdjm35sCTf2FtOo75UiVMsOOS7HpJ/mqZ+xnNIqDUO54MY/c3xC1XMA9uvFDYd/gYzq0lv4t+6CK2qCgtiwQwXT49O+M7EoBtQ9tpiIs1BXwKlpuCQP6EAIwrNKDWVYSq9CqA5kHMcOkK63QOO51fpWx5VUL5NhnX+PK0n+YPXPAf9xlvTd+6Wzzbhs6yrxFO7ydOlUO4zvY2t2URc4RHfMoQlSATzd+wHwR3Bj07Jr9bn1TY5PWYJyUPiJ0boI/vKBxta2rdcthlkSnW7xi2nq052D9EWSW+ko6SXEVtlF7MYY9pGlP3JEUmtD5yjjAUmG1IXdtIt6fu5kz+pM5tBgFq1w4425T/AfjJpcBumB4U/ehy3gHIOjPOjPM95JcRkVbUBu73uxPzAxP00WhuO2mQIHFPP7Q6+Qa5A3IxhjddHCM0xvFkTYMFTaKC6mjJOKkUlg+ONdi0apYY5GIa8NJQO8c2w== gout00555@gmail.com
+    expires: "2024-12-31 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$.DphfbMvV1nHG5qC$jwLHfciBa7ICYB79O.b5.fAXF2dGLYnchv9mTo4wF3nwHD60u.okea2JFiV/h.KSwp57hICPj6a7bJaaZ9XO6.
+  - username: t.yang.565
+    name: Tongfei Yang
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDGpca7egKmnKM856fl+vwxfD8/gC7eLqh+uNFAnIZY+ftB4YJUSRiUMlvlE8MvBH/mNxIccV7ZKCvJVOXLYV6+hTeKs+vNCFj6ymKrXSpW6TkQp1wOrPPgm9O53gtsyXwVPF4J16BoRt6Nl9Q7zLj7OFMXdXBJ9FszDim74f+zDP1SOk/gqeQDbg01wt3cfQvK9Gy+Ce2nAKvVKGT3+kCUw93bUE+OnvBTqLNlvpc0mPugcW+5oJgeN3FU8qYoT0jQk6ZccJgx2ZhQIxzF/xs5VPWD4sgA2jlv6kX/Zb6jWl4RmYVwl6vRP0d/50x9c/2oXGC6odXujx/gh4VRafikHbMX4UIc7OlpoDNwZ4bpPjadk1bJ0zS3aiM8fVmNa0gJLuWyBzlHgWllYri2RNLKyyFRGUWjTyPynbjoU0gdlfbE0oKqVACPLWSnJvl3bm2GuCImdYSvCb407qZcaLouK2/7tkkSkgai37y9hgWm0yc5Sup8OxPkYreVjnefgNE= tongfeiyang@Catherines-MacBook-Pro.local
+    expires: "2025-06-30 23:59:59"
+    groups:
+      - label_studio_admin
+    password: $6$rounds=656000$Ki0AsX3vvPlzwY8C$3ePDQQtpN.VNq1BMA1JehNXXzz3h7105OUsamSnMrtp2/wwCOs9BUO3uz/cOTNQICU/Evq5eWS4SdBTaPFHkb.

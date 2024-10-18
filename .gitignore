@@ -276,3 +276,4 @@ docker_compose.log*
 prometheus-data
 grafana-storage
 .secrets
+label_studio_data
