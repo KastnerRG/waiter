@@ -489,7 +489,7 @@ users:
   - username: cse237c_fa24_y_hu_302
     name: Ya-Chin Hu
     authorized_keys:
-      - AAAAB3NzaC1yc2EAAAADAQABAAABAQCLKMqrtvmV5NjHhhK0hRPq/AG/QLfrYmnz
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+81EAQQqcHU2/sEV/aZDKq+SZIMVNPJ74edibGaravmuyCGPNzmGkIW7/DZet6JHDTIGK5jgSd1g7xSGWUH1LglOOkis6CiNKu/9iUFSUZYT7ofb1LGfGkij2OkRrS9sXAyKy0lM1pf4mygzNOl2mwHf3gkXO4LOtlacW7sTlgfgfXPhHSnvRHFUyHmWG0RCmJgfWWfB0y4hsf1pjMlkFqNJjRSxT66sofsDdOisX3E2BWPNrjAkfNzALrB/uAHrLlJW/MSl/oquWd5grvtci7NM+w0GlnXcP5++/had3xKSTUiUTRwhsIMe05lI0AkpMXw/r3j3h0btFrHA9pIw6MuxAYQWj2lkUzQezrNgm30lUeGrKYQD2HWQg6SNWGTuKiToPLZDTw3k/fBZ81q3OiVbDLWx669uLv8erO8LanUWaSDIbpuj1KjGDjT6JzxiIlYgoA7W9nV+DMiBEFBRPAa//3YM6yCPFRHvl3S8AwNhAZhjdmJVSfJ50Oqy4+PhTPq1tDNjocZeijmLGAg+oTIHUHT6whujEoWsOQhng4cgrxfTgU/kszZH6O2f/WHWtxo0LMpDRALp4uMW+acPFy+QoYlKHjW2YCBSzsjK6VvBcAuywteQANBBOWslHIzWHZOewT6xKC+DkvfwX9TmpCksru2vd2NPe4Kfj6jpBfw== jessicahu1012@gmail.com
     expires: "2024-12-31 23:59:59"
     groups:
       - rdp_users
