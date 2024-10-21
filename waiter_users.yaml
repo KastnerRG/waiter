@@ -522,3 +522,13 @@ users:
       - docker
       - cuda
     password: $6$rounds=656000$Ki0AsX3vvPlzwY8C$3ePDQQtpN.VNq1BMA1JehNXXzz3h7105OUsamSnMrtp2/wwCOs9BUO3uz/cOTNQICU/Evq5eWS4SdBTaPFHkb.
+  - username: a.meza.278
+    name: Andy Meza
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICbV/IVj0iMtZ0neS7EjI5WXFz3g+hOwH6oXywclmg5M anmeza@ucsd.edu
+    expires: "2025-06-30 23:59:59"
+    groups:
+      - docker
+      - rdp_users
+      - cuda
+    password: $6$rounds=656000$7/QDJSjT/1Q6fm9D$GyEG3mk9xzbLPqMDWMnr05S9KVJ82d97iq3/JVq94JcAN4nKcCm.pQpUm4b8W/jDy8TyfYBaC1Jg3rVi1S97M1
