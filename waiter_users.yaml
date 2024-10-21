@@ -519,4 +519,6 @@ users:
     expires: "2025-06-30 23:59:59"
     groups:
       - label_studio_admin
+      - docker
+      - cuda
     password: $6$rounds=656000$Ki0AsX3vvPlzwY8C$3ePDQQtpN.VNq1BMA1JehNXXzz3h7105OUsamSnMrtp2/wwCOs9BUO3uz/cOTNQICU/Evq5eWS4SdBTaPFHkb.
