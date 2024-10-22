@@ -93,9 +93,10 @@ def main():
     for key in ssh_keys:
         document += f'      - {key}\n'
     document += f'    expires: "{expiration.strftime("%Y-%m-%d %H:%M:%S")}"\n'
-    document += '    groups:\n'
-    for group in groups:
-        document += f'      - {group}\n'
+    if len(groups) != 0:
+        document += '    groups:\n'
+        for group in groups:
+            document += f'      - {group}\n'
     document += f'    password: {password_hash}\n'
     with open(args.user_file, 'a', encoding='utf-8') as handle:
         handle.write(document)
