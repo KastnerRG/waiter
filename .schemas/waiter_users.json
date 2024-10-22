@@ -31,7 +31,8 @@
                 "enum": [
                   "docker",
                   "cuda",
-                  "rdp_users"
+                  "rdp_users",
+                  "label_studio_admin"
                 ]
               }
             },

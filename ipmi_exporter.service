@@ -1,0 +1,14 @@
+[Unit]
+Description=Prometheus IPMI Exporter
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/ipmi_exporter
+SyslogIdentifier=ipmi_exporter
+Restart=always
+RestartSec=1
+StartLimitInterval=0
+
+[Install]
+WantedBy=multi-user.target

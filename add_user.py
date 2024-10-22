@@ -64,7 +64,8 @@ def main():
     accepted_groups = {
         1: 'docker',
         2: 'cuda',
-        3: 'rdp_users'
+        3: 'rdp_users',
+        4: 'label_studio_admin'
     }
     for gid, gname in accepted_groups.items():
         print(f'{gid}: {gname}')
@@ -92,9 +93,10 @@ def main():
     for key in ssh_keys:
         document += f'      - {key}\n'
     document += f'    expires: "{expiration.strftime("%Y-%m-%d %H:%M:%S")}"\n'
-    document += '    groups:\n'
-    for group in groups:
-        document += f'      - {group}\n'
+    if len(groups) != 0:
+        document += '    groups:\n'
+        for group in groups:
+            document += f'      - {group}\n'
     document += f'    password: {password_hash}\n'
     with open(args.user_file, 'a', encoding='utf-8') as handle:
         handle.write(document)

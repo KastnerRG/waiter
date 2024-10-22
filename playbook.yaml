@@ -42,6 +42,24 @@
         - git
         - firefox
         - fail2ban
+        - freeipmi-tools
+        - cifs-utils
+        # Python dependencies
+        # - build-essential
+        - libssl-dev
+        - zlib1g-dev
+        - libbz2-dev
+        - libreadline-dev
+        - libsqlite3-dev
+        # - curl
+        # - git
+        - libncursesw5-dev
+        - xz-utils
+        - tk-dev
+        - libxml2-dev
+        - libxmlsec1-dev
+        - libffi-dev
+        - liblzma-dev
   - name: Ensure these packages are not installed
     become: true
     ansible.builtin.apt:
@@ -132,6 +150,9 @@
 # Enable unattended upgrades
   - import_tasks: unattended-upgrades.yml
 
+# Enable monitoring tools
+  - import_tasks: monitoring.yaml
+
 # Install XFCE Desktop
   - name: XFCE Desktop
     become: true
@@ -165,6 +186,25 @@
       enabled: true
       masked: false
       state: started
+    
+  - name: Setup Label Studio
+    import_tasks: label_studio.yaml
+
+  - name: Ensure systemd user dir exists
+    ansible.builtin.file:
+      path: .config/systemd/user/
+      state: directory
+  - name: Set up ansible_deploy_service.service
+    ansible.builtin.template:
+      src: ansible_deploy_service.service
+      dest: .config/systemd/user/ansible_deploy_service.service
+  - name: Enable ansible_deploy_service
+    ansible.builtin.systemd_service:
+      enabled: true
+      name: ansible_deploy_service
+      state: started
+      scope: user
+
 
 # This always at the end
   - name: Deploy gf_admin_password

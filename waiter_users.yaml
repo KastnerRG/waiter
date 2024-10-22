@@ -46,6 +46,7 @@ users:
     groups:
       - docker
       - rdp_users
+      - label_studio_admin
     password: $6$nsfPF5c2H2Puxea9$FcU3gsFT5BUWGXh6tzy196usIaWC83UvzWYS7FvOjnYY6gmtai1FD8Dbx4mqvy3mlRANK5xyGErH1zbv2tqGx1
   - username: z.ma
     name: Zhenghua Ma
@@ -79,6 +80,10 @@ users:
       - docker
       - rdp_users
       - cuda
+      - label_studio_admin
+    sudo_allow:
+      - /usr/bin/mount -t cifs *
+      - /usr/bin/umount *
   - username: d.zuberi
     name: Danial Zuberi
     authorized_keys:
@@ -486,6 +491,14 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$OyhJQcNrYeWm5cgI$4Z4ztR04u88/aEKz9eYs8u4Dicef6MGhtdMNraOypwQMbdA59kNL3woIxX3kBU8QMdyGyagYacw6VwHzGFk2q/
+  - username: cse237c_fa24_y_hu_302
+    name: Ya-Chin Hu
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+81EAQQqcHU2/sEV/aZDKq+SZIMVNPJ74edibGaravmuyCGPNzmGkIW7/DZet6JHDTIGK5jgSd1g7xSGWUH1LglOOkis6CiNKu/9iUFSUZYT7ofb1LGfGkij2OkRrS9sXAyKy0lM1pf4mygzNOl2mwHf3gkXO4LOtlacW7sTlgfgfXPhHSnvRHFUyHmWG0RCmJgfWWfB0y4hsf1pjMlkFqNJjRSxT66sofsDdOisX3E2BWPNrjAkfNzALrB/uAHrLlJW/MSl/oquWd5grvtci7NM+w0GlnXcP5++/had3xKSTUiUTRwhsIMe05lI0AkpMXw/r3j3h0btFrHA9pIw6MuxAYQWj2lkUzQezrNgm30lUeGrKYQD2HWQg6SNWGTuKiToPLZDTw3k/fBZ81q3OiVbDLWx669uLv8erO8LanUWaSDIbpuj1KjGDjT6JzxiIlYgoA7W9nV+DMiBEFBRPAa//3YM6yCPFRHvl3S8AwNhAZhjdmJVSfJ50Oqy4+PhTPq1tDNjocZeijmLGAg+oTIHUHT6whujEoWsOQhng4cgrxfTgU/kszZH6O2f/WHWtxo0LMpDRALp4uMW+acPFy+QoYlKHjW2YCBSzsjK6VvBcAuywteQANBBOWslHIzWHZOewT6xKC+DkvfwX9TmpCksru2vd2NPe4Kfj6jpBfw== jessicahu1012@gmail.com
+    expires: "2024-12-31 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$3A6heppX3vCTQUaG$X1k8GQd8SttaFxx5.MTac6fPO3qXigkdM5Dt8CQ1sG8kHo9pjA41ceGGIizaWj78e33PhC3ZZG8XpbI6seQRW.
   - username: cse237c_fa24_p_nguyen_390
     name: Paul Nguyen
     authorized_keys:
@@ -502,3 +515,23 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$.DphfbMvV1nHG5qC$jwLHfciBa7ICYB79O.b5.fAXF2dGLYnchv9mTo4wF3nwHD60u.okea2JFiV/h.KSwp57hICPj6a7bJaaZ9XO6.
+  - username: t.yang.565
+    name: Tongfei Yang
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDGpca7egKmnKM856fl+vwxfD8/gC7eLqh+uNFAnIZY+ftB4YJUSRiUMlvlE8MvBH/mNxIccV7ZKCvJVOXLYV6+hTeKs+vNCFj6ymKrXSpW6TkQp1wOrPPgm9O53gtsyXwVPF4J16BoRt6Nl9Q7zLj7OFMXdXBJ9FszDim74f+zDP1SOk/gqeQDbg01wt3cfQvK9Gy+Ce2nAKvVKGT3+kCUw93bUE+OnvBTqLNlvpc0mPugcW+5oJgeN3FU8qYoT0jQk6ZccJgx2ZhQIxzF/xs5VPWD4sgA2jlv6kX/Zb6jWl4RmYVwl6vRP0d/50x9c/2oXGC6odXujx/gh4VRafikHbMX4UIc7OlpoDNwZ4bpPjadk1bJ0zS3aiM8fVmNa0gJLuWyBzlHgWllYri2RNLKyyFRGUWjTyPynbjoU0gdlfbE0oKqVACPLWSnJvl3bm2GuCImdYSvCb407qZcaLouK2/7tkkSkgai37y9hgWm0yc5Sup8OxPkYreVjnefgNE= tongfeiyang@Catherines-MacBook-Pro.local
+    expires: "2025-06-30 23:59:59"
+    groups:
+      - label_studio_admin
+      - docker
+      - cuda
+    password: $6$rounds=656000$Ki0AsX3vvPlzwY8C$3ePDQQtpN.VNq1BMA1JehNXXzz3h7105OUsamSnMrtp2/wwCOs9BUO3uz/cOTNQICU/Evq5eWS4SdBTaPFHkb.
+  - username: a.meza.278
+    name: Andy Meza
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICbV/IVj0iMtZ0neS7EjI5WXFz3g+hOwH6oXywclmg5M anmeza@ucsd.edu
+    expires: "2025-06-30 23:59:59"
+    groups:
+      - docker
+      - rdp_users
+      - cuda
+    password: $6$rounds=656000$7/QDJSjT/1Q6fm9D$GyEG3mk9xzbLPqMDWMnr05S9KVJ82d97iq3/JVq94JcAN4nKcCm.pQpUm4b8W/jDy8TyfYBaC1Jg3rVi1S97M1

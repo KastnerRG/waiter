@@ -1,0 +1,37 @@
+# - name: Install IPMI Exporter
+#   become: true
+#   prometheus.prometheus.ipmi_exporter: {}
+- name: Ensure promtheus installer dir exists
+  ansible.builtin.file:
+    path: '{{ansible_env.HOME}}/installers/prometheus/'
+    state: directory
+
+- name: Download ipmi exporter
+  become: true
+  ansible.builtin.get_url:
+    url: https://github.com/prometheus-community/ipmi_exporter/releases/download/v1.9.0/ipmi_exporter-1.9.0.linux-amd64.tar.gz
+    checksum: sha256:89443fad0d1388b0c1753cbbc177c2c903790e19e9f2854c5235356b518019da
+    dest: '{{ansible_env.HOME}}/installers/prometheus/ipmi_exporter-1.9.0.linux-amd64.tar.gz'
+    decompress: false
+- name: Extract ipmi_exporter
+  ansible.builtin.unarchive:
+    src: '{{ansible_env.HOME}}/installers/prometheus/ipmi_exporter-1.9.0.linux-amd64.tar.gz'
+    dest: /tmp
+    creates: /tmp/ipmi_exporter-1.9.0.linux-amd64/ipmi_exporter
+- name: Install ipmi_exporter
+  become: true
+  ansible.builtin.copy:
+    src: /tmp/ipmi_exporter-1.9.0.linux-amd64/ipmi_exporter
+    dest: /usr/local/bin/ipmi_exporter
+    mode: 755
+- name: Deploy ipmi_exporter service
+  become: true
+  ansible.builtin.copy:
+    src: ipmi_exporter.service
+    dest: /etc/systemd/system/ipmi_exporter.service
+- name: Enable ipmi_exporter service
+  become: true
+  ansible.builtin.systemd_service:
+    enabled: true
+    name: ipmi_exporter.service
+    state: started
