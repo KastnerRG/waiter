@@ -1,4 +1,4 @@
-- name: Create Users
+- name: "Create User {{item.username}}"
   become: true
   ansible.builtin.user:
     name: '{{ item["username"] }}'
@@ -9,14 +9,14 @@
     password: '{{item.password | default("!")}}'
     expires: '{{(item.expires | to_datetime).strftime("%s")}}'
     update_password: 'on_create'
-  loop: "{{users}}"
 - name: Deploy keys
   become: true
   ansible.posix.authorized_key:
     user: "{{ item[0].username }}"
     state: present
     key: '{{ item[1] }}'
-  loop: "{{users|subelements('authorized_keys')}}"
+  loop: "{{item.authorized_keys}}"
+  when: item.authorized_keys is defined
 - name: sudo allow
   become: true
   community.general.sudoers:
@@ -25,7 +25,8 @@
     user: '{{ item[0].username }}'
     commands: '{{ item[1] }}'
     name: "ansible_sudoers_{{item[0].username | replace('.', '_')}}"
-  loop: "{{lookup('subelements', users, 'sudo_allow', {'skip_missing': True})}}"
+  loop: "{{item.sudo_allow}}"
+  when: item.sudo_allow is defined
 - name: sudo deny
   become: true
   community.general.sudoers:
@@ -34,5 +35,6 @@
     user: '{{ item[0].username }}'
     commands: '{{ item[1] }}'
     name: "ansible_sudoers_{{item[0].username | replace('.', '_')}}"
-  loop: "{{lookup('subelements', users, 'sudo_deny', {'skip_missing': True})}}"
+  loop: "{{item.sudo_deny}}"
+  when: item.sudo_deny is defined
   
