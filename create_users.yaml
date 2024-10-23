@@ -1,5 +1,4 @@
 - name: "Create User {{item.username}}"
-  tags: [test]
   become: true
   ansible.builtin.user:
     name: '{{ item["username"] }}'
@@ -11,7 +10,6 @@
     expires: '{{(item.expires | to_datetime).strftime("%s")}}'
     update_password: 'on_create'
 - name: Deploy keys
-  tags: [test]
   become: true
   ansible.posix.authorized_key:
     user: "{{ item.username }}"
@@ -22,7 +20,6 @@
   loop_control:
     loop_var: keys
 - name: sudo allow
-  tags: [test]
   become: true
   community.general.sudoers:
     runas: root
@@ -32,7 +29,6 @@
     name: "ansible_sudoers_{{item.username | replace('.', '_')}}"
   when: item.sudo_allow is defined
 - name: sudo deny
-  tags: [test]
   become: true
   community.general.sudoers:
     state: absent
