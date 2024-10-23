@@ -103,7 +103,6 @@
   # Install after nvidia container runtime.  We are going to register it as a Docker runtime.
   - import_tasks: docker_ubuntu_22.yaml
   - include_tasks: create_users.yaml
-    tags: [test]
     name: Create Users
     loop: "{{users}}"
   - name: Install nvm
