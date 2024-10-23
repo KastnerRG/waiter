@@ -23,7 +23,7 @@ services:
               capabilities: [gpu]
 
   label_studio:
-    image: heartexlabs/label-studio:latest
+    image: heartexlabs/label-studio:1.31.1
     volumes:
       - ./label_studio_data:/label-studio/data
       - /share/label-studio/files:/data
@@ -39,7 +39,7 @@ services:
       - .secrets/label_studio_admin_password.env
 
   prometheus:
-    image: prom/prometheus
+    image: prom/prometheus:v2.55.0
     container_name: prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
@@ -48,7 +48,7 @@ services:
       - ./prometheus:/etc/prometheus:ro
       - ./prometheus-data:/prometheus:rw
   grafana:
-    image: grafana/grafana-enterprise
+    image: grafana/grafana-enterprise:11.3.0
     container_name: grafana
     user: '1000'
     restart: unless-stopped
