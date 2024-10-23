@@ -81,6 +81,9 @@ users:
       - rdp_users
       - cuda
       - label_studio_admin
+    sudo_allow:
+      - /usr/bin/mount -t cifs *
+      - /usr/bin/umount *
   - username: d.zuberi
     name: Danial Zuberi
     authorized_keys:

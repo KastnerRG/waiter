@@ -41,6 +41,7 @@
         - git-lfs
         - git
         - firefox
+        - fail2ban
         - freeipmi-tools
         - cifs-utils
         # Python dependencies
@@ -125,6 +126,20 @@
     ansible.builtin.shell:
       cmd: '{{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/bin/node {{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/lib/node_modules/@bitwarden/cli/build/bw.js sync --session `cat .bw_session`'
       chdir: '{{ansible_env.HOME}}/waiter'
+
+  - name: Configure fail2ban
+    become: true
+    ansible.builtin.copy:
+      src: fail2ban/jail.local
+      dest: /etc/fail2ban/jail.local
+
+  - name: Enable fail2ban
+    become: true
+    ansible.builtin.systemd_service:
+      enabled: true
+      masked: false
+      name: fail2ban
+      state: started
 
   - import_tasks: ufw.yml
 
