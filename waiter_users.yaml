@@ -94,6 +94,7 @@ users:
     groups:
       - docker
       - cuda
+      - rdp_users
     password: $6$91Z1YlRTDKhqygak$yXtUjqxF8GSylFjc7DtXjG0jDaFho7jNmAxMbAS9wAWNAQHO6.6rdkbiWRuprg8Ju1PgVgKtbSwO/xX10RGDz0
   - username: wes_2025_a_baez
     name: Lila Baez
