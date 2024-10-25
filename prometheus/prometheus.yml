@@ -18,7 +18,7 @@ scrape_configs:
     static_configs:
       - targets:
           - waiter.ucsd.edu:9100
-          - kastner-ml.dynamic.ucsd.edu:9100
+          - kastner-ml.ucsd.edu:9100
           - fabricant.ucsd.edu:9100
 
     # tls_config:
@@ -36,19 +36,19 @@ scrape_configs:
     static_configs:
       - targets:
         - dcgm_exporter:9400
-        - kastner-ml.dynamic.ucsd.edu:9400
+        - kastner-ml.ucsd.edu:9400
   - job_name: 'docker_exporter'
     scrape_interval: 15s
     static_configs:
       - targets:
         - waiter.ucsd.edu:9323
-        - kastner-ml.dynamic.ucsd.edu:9323
+        - kastner-ml.ucsd.edu:9323
   - job_name: ansible_deploy_monitor
     scrape_interval: 5s
     static_configs:
       - targets:
         - waiter.ucsd.edu:9000
-        - kastner-ml.dynamic.ucsd.edu:9000
+        - kastner-ml.ucsd.edu:9000
         - fabricant.ucsd.edu:9000
   - job_name: ipmi_exporter
     scrape_interval: 15s
