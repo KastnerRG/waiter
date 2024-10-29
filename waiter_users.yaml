@@ -536,3 +536,11 @@ users:
       - rdp_users
       - cuda
     password: $6$rounds=656000$7/QDJSjT/1Q6fm9D$GyEG3mk9xzbLPqMDWMnr05S9KVJ82d97iq3/JVq94JcAN4nKcCm.pQpUm4b8W/jDy8TyfYBaC1Jg3rVi1S97M1
+  - username: s.dohadwalla.125
+    name: Sameer Dohadwalla
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQClkAP3iQa2OeDU9OSelxj45R5rUjsLL/DBRuXSCcrd0p/rM9IKetMY3m99QvsZgSkcYCR1XucKCr8CLDWNQiOs/ez7tvxQfVkD4gfAxh0fq3R0ubdEMsp7gVCOK7rT/zEZuJo/+zLuolVJ1cM309NMstq6JByfPZYmE+a0ICh13d+5LbdhdUXLOrHHLc3f4MJkX2UyDU0HokZ9pJH+aTLHhUgyRFdNcD/d+MUCg/qqeu7r3rzm0S0qyZ1S1LR7yw5C8uXTfTs6uEcmBx498SGdA9PNhD6lH6bbD92kSvH++H6412QA13K3xm73NeVxhAg+pVvNcyD56CeoXDS3PSCkV9ISuZGHbR08hZwDWSurAAJkrikJDwhxww0VaX3vOBi0Ql+brs8tdSkvOZ3WDiFEZr15vR1K1LN3IcdF+OdwpGkw2Q2CMYj3V6VbexZahBIzUrNbhXB5Tj9G/5KCmhG3qGhrfdaQ1t2djBFA2JdOENKIjUPUgllB6i4SCCmmgHk= sameer@LAPTOP-7K8GCBJS
+    expires: "2025-06-30 23:59:59"
+    groups:
+      - docker
+    password: $6$rounds=656000$kuH/MjXk4GPAod3g$JdY3NmE0O6BGIQf3ZODEiRH8jmkLsP4YPYKQGkpTG7klulAyUWl01BOQ4lD/7C7g0/7j2GiMZfdnlDcg6iJ3W/
