@@ -543,4 +543,5 @@ users:
     expires: "2025-06-30 23:59:59"
     groups:
       - docker
+      - rdp_users
     password: $6$rounds=656000$kuH/MjXk4GPAod3g$JdY3NmE0O6BGIQf3ZODEiRH8jmkLsP4YPYKQGkpTG7klulAyUWl01BOQ4lD/7C7g0/7j2GiMZfdnlDcg6iJ3W/
