@@ -105,7 +105,12 @@ def main():
     message += '\n'
     message += f'password: {new_password}\n'
     message += '\n'
-    message += 'Please allow up to 24 hours for this account to propagate'
+    message += 'Please allow up to 24 hours for this account to propagate\n'
+    if not class_flag:
+        message += '\n'
+        message += 'Please add to https://github.com/orgs/KastnerRG/teams/grafana and ensure they can access https://dashboard.waiter.ucsd.edu/goto/8B63n0ZNR?orgId=2\n'
+        message += '\n'
+        message += 'Please add to https://krg-ucsd.slack.com/archives/C06SM1E78FQ\n'
     print()
     print('Send the below message to the user:')
     print(message)
