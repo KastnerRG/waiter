@@ -545,3 +545,11 @@ users:
       - docker
       - rdp_users
     password: $6$rounds=656000$kuH/MjXk4GPAod3g$JdY3NmE0O6BGIQf3ZODEiRH8jmkLsP4YPYKQGkpTG7klulAyUWl01BOQ4lD/7C7g0/7j2GiMZfdnlDcg6iJ3W/
+  - username: j.eldon.828
+    name: John Eldon
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIR1cXklusoEBrgQP4miHRvUp64rkrTUX2OrAJrE5f6H
+    expires: "2025-06-30 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$H4YghK3H7cRJMYBf$A05jKVeExiVBoHXErK07SEDKp8Isf/R3x1SnsneGJAz/ygtvznlhQPxDUzDqliCyNzqCtV8T8s/3xhGoLYYtu.
