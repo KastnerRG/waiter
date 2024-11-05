@@ -553,3 +553,13 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$H4YghK3H7cRJMYBf$A05jKVeExiVBoHXErK07SEDKp8Isf/R3x1SnsneGJAz/ygtvznlhQPxDUzDqliCyNzqCtV8T8s/3xhGoLYYtu.
+  - username: h.vasanth.447
+    name: Harish Vasanth
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJt9vdx1pTTbbMu3YJ2Gys04VipSBqLCp/4fdRD8lFJ+ hnvul@DESKTOP-703A8A3
+    expires: "2025-06-30 23:59:59"
+    groups:
+      - label_studio_admin
+      - docker
+      - cuda
+    password: $6$rounds=656000$TtEhwkTJcNjXeSPr$hiq4ZXsqkFFZ1xQCTM38P3IlUdCRArJAzf4YoBLzBjHnVeub8v5bK6dTsnGyEVhSuR4VzXFNUsL0D4HbUXGA0/
