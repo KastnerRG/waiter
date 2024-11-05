@@ -564,5 +564,5 @@ users:
       - cuda
     password: $6$rounds=656000$TtEhwkTJcNjXeSPr$hiq4ZXsqkFFZ1xQCTM38P3IlUdCRArJAzf4YoBLzBjHnVeub8v5bK6dTsnGyEVhSuR4VzXFNUsL0D4HbUXGA0/
     sudo_allow:
-      - /usr/bin/mount -t cifs *
-      - /usr/bin/umount *
+      - /usr/bin/mount -t cifs * /home/h.vasanth.447/*
+      - /usr/bin/umount /home/h.vasanth.447/*
