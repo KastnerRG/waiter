@@ -113,7 +113,7 @@ class Service:
                     self.__log.info('Installing')
                     self.repo.remote().pull()
                     new_env = os.environ
-                    galaxy_install = subprocess.check_call(['.venv/bin/ansible-galaxy', 'collection', 'install',
+                    galaxy_install = subprocess.call(['.venv/bin/ansible-galaxy', 'collection', 'install',
                                                             '-r', 'requirements.yml'], env=new_env)
                     self.__log.info(
                         'Galaxy install returned %d', galaxy_install)
@@ -133,13 +133,13 @@ class Service:
                         playbook_cmd.append('--check')
 
                     playbook_cmd.append('playbook.yaml')
-                    playbook_run = subprocess.check_call(
+                    playbook_run = subprocess.call(
                         playbook_cmd, env=new_env, cwd=self.PROJECT_ROOT)
                     self.set_retval('ansible-playbook', playbook_run)
                     docker_client = docker.from_env()
                     docker_client.images.prune()
 
-                    poetry_install = subprocess.check_call(
+                    poetry_install = subprocess.call(
                         ['.venv/bin/poetry', 'install'], env=new_env)
                     self.set_retval('poetry-install', poetry_install)
                     self.last_run = dt.datetime.now()
