@@ -566,3 +566,17 @@ users:
     sudo_allow:
       - /usr/bin/mount -t cifs * /home/h.vasanth.447/*
       - /usr/bin/umount /home/h.vasanth.447/*
+  - username: b.mccalmon.685
+    name: Ben McCalmon
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFxcvh/Jr0yKEnk6cTMEESMNdWDJHXmvBmfyb6yvl7lS bbmcca26@g.holycross.edu
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMpQ0qd9ubsM/UPs6XHT5GaCMVHK51LHw2NDql93tYcd bbmcca26@g.holycross.edu
+    expires: "2025-06-30 23:59:59"
+    groups:
+      - docker
+      - cuda
+    password: $6$rounds=656000$S4x3D9juQADEvvHa$Zc/YFyWtTlgEEYe8ZR3oL8TeYNKtYwp1pcQk3xfNafGvdHyg0IA0ECofkqEOAJz1jWWPeNmtKR7qg.SNuX9dL/
+    sudo_allow:
+      - /usr/bin/mount -t cifs * /home/b.mccalmon.685/*
+      - /usr/bin/umount /home/b.mccalmon.685/*
+
