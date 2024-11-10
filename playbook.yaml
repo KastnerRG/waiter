@@ -28,6 +28,7 @@
       autoremove: yes
       update_cache: yes
   - name: Install/update system packages
+    tags: [test]
     become: true
     ansible.builtin.apt:
       pkg:
@@ -60,6 +61,21 @@
         - libxmlsec1-dev
         - libffi-dev
         - liblzma-dev
+        # Verilator/gtkwave
+        - help2man
+        - perl
+        - make
+        - g++
+        - libfl-dev
+        - zlibc
+        - zlib1g
+        - ccache
+        - mold
+        - libgoogleperftools-dev
+        - numactl
+        - perl-doc
+        - flex
+        - bison
   - name: Ensure these packages are not installed
     become: true
     ansible.builtin.apt:
