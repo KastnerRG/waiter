@@ -1,0 +1,48 @@
+- name: Clone verilator
+  ansible.builtin.git:
+    depth: 1
+    dest: "{{ansible_env.HOME}}/installers/verilator"
+    repo: https://github.com/verilator/verilator.git
+    single_branch: yes
+    version: v5.030
+- name: Verilator Build
+  ansible.builtin.shell:
+    chdir: "{{ansible_env.HOME}}/installers/verilator"
+    cmd: |
+      autoconf
+      unset VERILATOR_ROOT
+      ./configure
+      make -j
+      make test
+    creates: "{{ansible_env.HOME}}/installers/verilator/bin/verilator"
+- name: Verilator Install
+  become: true
+  ansible.builtin.command:
+    chdir: "{{ansible_env.HOME}}/installers/verilator"
+    cmd: make install
+    creates: "/usr/local/bin/verilator"
+
+- name: Clone GTKWave
+  ansible.builtin.get_url:
+    checksum: sha256:54aa45788d6d52afb659c3aef335aafde0ef2c8990a7770f8eaa64e57f227346
+    dest: "{{ansible_env.HOME}}/installers/gtkwave-gtk3-3.3.121.tar.gz"
+    url: https://gtkwave.sourceforge.net/gtkwave-gtk3-3.3.121.tar.gz
+- name: Unpack source
+  ansible.builtin.unarchive:
+    dest: "{{ansible_env.HOME}}/installers"
+    creates: "{{ansible_env.HOME}}/installers/gtkwave-gtk3-3.3.121/configure"
+    remote_src: true
+    src: "{{ansible_env.HOME}}/installers/gtkwave-gtk3-3.3.121.tar.gz"
+- name: GTKWave Build
+  ansible.builtin.shell:
+    chdir: "{{ansible_env.HOME}}/installers/gtkwave-gtk3-3.3.121"
+    cmd: |
+      ./configure
+      make -j
+    creates: "{{ansible_env.HOME}}/installers/gtkwave-gtk3-3.3.121/src/gtkwave"
+- name: GTKWave Install
+  become: true
+  ansible.builtin.command:
+    chdir: "{{ansible_env.HOME}}/installers/gtkwave-gtk3-3.3.121"
+    cmd: make install
+    creates: /usr/local/bin/gtkwave
