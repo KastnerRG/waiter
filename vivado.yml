@@ -52,7 +52,7 @@
     dest: "{{ansible_env.HOME}}/installers/Xilinx/vivado_2018.2.txt"
 - name: Install Vivado 2018.2
   ansible.builtin.command:
-    cmd: {{ansible_env.HOME}}/installers/Xilinx/Xilinx_Vivado_SDK_2018.2_0614_1954/xsetup -b Install -a 3rdPartyEULA,WebTalkTerms,XilinxEULA -c "{{ansible_env.HOME}}/installers/Xilinx/vivado_2018.2.txt"
+    cmd: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Vivado_SDK_2018.2_0614_1954/xsetup -b Install -a 3rdPartyEULA,WebTalkTerms,XilinxEULA -c \"{{ansible_env.HOME}}/installers/Xilinx/vivado_2018.2.txt\""
     creates: /tools/Xilinx/Vivado/2018.2/bin/vivado
 
 
@@ -60,62 +60,62 @@
 - name: Unzip Vivado 2019.1
   ansible.builtin.unarchive:
     src: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Vivado_SDK_2019.1_0524_1430.tar.gz"
-    dest: {{ansible_env.HOME}}/installers/Xilinx
+    dest: "{{ansible_env.HOME}}/installers/Xilinx"
     remote_src: yes
-    creates: {{ansible_env.HOME}}/installers/Xilinx/Xilinx_Vivado_SDK_2019.1_0524_1430/xsetup
+    creates: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Vivado_SDK_2019.1_0524_1430/xsetup"
 - name: Deploy 2019.1 Installer Config
   ansible.builtin.copy:
     src: xic_config/vivado_2019.1.txt
     dest: "{{ansible_env.HOME}}/installers/Xilinx/vivado_2019.1.txt"
 - name: Install Vivado 2019.1
   ansible.builtin.command:
-    cmd: {{ansible_env.HOME}}/installers/Xilinx/Xilinx_Vivado_SDK_2019.1_0524_1430/xsetup -b Install --agree XilinxEULA,3rdPartyEULA,WebTalkTerms -c "{{ansible_env.HOME}}/installers/Xilinx/vivado_2019.1.txt"
+    cmd: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Vivado_SDK_2019.1_0524_1430/xsetup -b Install --agree XilinxEULA,3rdPartyEULA,WebTalkTerms -c \"{{ansible_env.HOME}}/installers/Xilinx/vivado_2019.1.txt\""
     creates: /tools/Xilinx/Vivado/2019.1/bin/vivado
 
 # Xilinx 2020.2
 - name: Unzip Vivado 2020.2
   ansible.builtin.unarchive:
     src: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Unified_2020.2_1118_1232.tar.gz"
-    dest: {{ansible_env.HOME}}/installers/Xilinx
+    dest: "{{ansible_env.HOME}}/installers/Xilinx"
     remote_src: yes
-    creates: {{ansible_env.HOME}}/installers/Xilinx/Xilinx_Unified_2020.2_1118_1232/xsetup
+    creates: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Unified_2020.2_1118_1232/xsetup"
 - name: Deploy 2020.2 Installer Config
   ansible.builtin.copy:
     src: xic_config/vivado_2020.2.txt
     dest: "{{ansible_env.HOME}}/installers/Xilinx/vivado_2020.2.txt"
 - name: Install Vivado 2020.2
   ansible.builtin.command:
-    cmd: {{ansible_env.HOME}}/installers/Xilinx/Xilinx_Unified_2020.2_1118_1232/xsetup -b Install --agree XilinxEULA,3rdPartyEULA,WebTalkTerms -c "{{ansible_env.HOME}}/installers/Xilinx/vivado_2020.2.txt"
+    cmd: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Unified_2020.2_1118_1232/xsetup -b Install --agree XilinxEULA,3rdPartyEULA,WebTalkTerms -c \"{{ansible_env.HOME}}/installers/Xilinx/vivado_2020.2.txt\""
     creates: /tools/Xilinx/Vivado/2020.2/bin/vivado
 
 # Xilinx 2022.2
 - name: Unzip Vivado 2022.2
   ansible.builtin.unarchive:
     src: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Unified_2022.2_1014_8888.tar.gz"
-    dest: {{ansible_env.HOME}}/installers/Xilinx
+    dest: "{{ansible_env.HOME}}/installers/Xilinx"
     remote_src: yes
-    creates: {{ansible_env.HOME}}/installers/Xilinx/Xilinx_Unified_2022.2_1014_8888/xsetup
+    creates: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Unified_2022.2_1014_8888/xsetup"
 - name: Deploy 2022.2 Installer Config
   ansible.builtin.copy:
     src: xic_config/vivado_2022.2.txt
     dest: "{{ansible_env.HOME}}/installers/Xilinx/vivado_2022.2.txt"
 - name: Install Vivado 2022.2
   ansible.builtin.command:
-    cmd: {{ansible_env.HOME}}/installers/Xilinx/Xilinx_Unified_2022.2_1014_8888/xsetup -b Install --agree XilinxEULA,3rdPartyEULA,WebTalkTerms -c "{{ansible_env.HOME}}/installers/Xilinx/vivado_2022.2.txt"
+    cmd: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Unified_2022.2_1014_8888/xsetup -b Install --agree XilinxEULA,3rdPartyEULA,WebTalkTerms -c \"{{ansible_env.HOME}}/installers/Xilinx/vivado_2022.2.txt\""
     creates: /tools/Xilinx/Vivado/2022.2/bin/vivado
 
 # Xilinx 2024.1
 - name: Unzip Vivado 2024.1
   ansible.builtin.unarchive:
     src: "{{ansible_env.HOME}}/installers/Xilinx/FPGAs_AdaptiveSoCs_Unified_2024.1_0522_2023.tar"
-    dest: {{ansible_env.HOME}}/installers/Xilinx
+    dest: "{{ansible_env.HOME}}/installers/Xilinx"
     remote_src: yes
-    creates: {{ansible_env.HOME}}/installers/Xilinx/FPGAs_AdaptiveSoCs_Unified_2024.1_0522_2023/xsetup
+    creates: "{{ansible_env.HOME}}/installers/Xilinx/FPGAs_AdaptiveSoCs_Unified_2024.1_0522_2023/xsetup"
 - name: Deploy 2024.1 Installer Config
   ansible.builtin.copy:
     src: xic_config/vivado_2024.1.txt
     dest: "{{ansible_env.HOME}}/installers/Xilinx/vivado_2024.1.txt"
 - name: Install Vivado 2024.1
   ansible.builtin.command:
-    cmd: {{ansible_env.HOME}}/installers/Xilinx/FPGAs_AdaptiveSoCs_Unified_2024.1_0522_2023/xsetup -b Install --agree XilinxEULA,3rdPartyEULA,WebTalkTerms -c "{{ansible_env.HOME}}/installers/Xilinx/vivado_2024.1.txt"
+    cmd: "{{ansible_env.HOME}}/installers/Xilinx/FPGAs_AdaptiveSoCs_Unified_2024.1_0522_2023/xsetup -b Install --agree XilinxEULA,3rdPartyEULA,WebTalkTerms -c \"{{ansible_env.HOME}}/installers/Xilinx/vivado_2024.1.txt\""
     creates: /tools/Xilinx/Vivado/2024.1/bin/vivado
