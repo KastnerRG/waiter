@@ -9,6 +9,8 @@ Restart=always
 RestartSec=1
 ExecStart={{ansible_env.HOME}}/waiter/.venv/bin/python {{ansible_env.HOME}}/waiter/ansible_deploy_service.py
 WorkingDirectory={{ansible_env.HOME}}/waiter
+User=waiter-admin
+Group=waiter-admin
 
 [Install]
 WantedBy=default.target
