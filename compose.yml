@@ -24,6 +24,7 @@ services:
 
   label_studio:
     image: heartexlabs/label-studio:1.13.1
+    restart: unless-stopped
     volumes:
       - ./label_studio_data:/label-studio/data
       - /share/label-studio/files:/data
