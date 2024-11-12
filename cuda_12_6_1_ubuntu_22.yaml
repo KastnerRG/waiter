@@ -12,11 +12,18 @@
     dest: /etc/apt/preferences.d/cuda-repository-pin-600
     mode: '0444'
 # wget https://developer.download.nvidia.com/compute/cuda/12.6.1/local_installers/cuda-repo-ubuntu2204-12-6-local_12.6.1-560.35.03-1_amd64.deb
+- name: Download CUDA Repo
+  ansible.builtin.get_url:
+    url: https://developer.download.nvidia.com/compute/cuda/12.6.1/local_installers/cuda-repo-ubuntu2204-12-6-local_12.6.1-560.35.03-1_amd64.deb
+    dest: "{{ansible_env.HOME}}/installers/cuda-repo-ubuntu2204-12-6-local_12.6.1-560.35.03-1_amd64.deb"
+    mode: '0444'
+    checksum: sha256:129789e8d9ba2776e161d75c0e437f57adf666d7e9378d4892edefa99175b716
+
 # sudo dpkg -i cuda-repo-ubuntu2204-12-6-local_12.6.1-560.35.03-1_amd64.deb
 - name: Setup CUDA Repo
   become: true
   ansible.builtin.apt:
-    deb: https://developer.download.nvidia.com/compute/cuda/12.6.1/local_installers/cuda-repo-ubuntu2204-12-6-local_12.6.1-560.35.03-1_amd64.deb
+    deb: "{{ansible_env.HOME}}/installers/cuda-repo-ubuntu2204-12-6-local_12.6.1-560.35.03-1_amd64.deb"
 # sudo cp /var/cuda-repo-ubuntu2204-12-6-local/cuda-*-keyring.gpg /usr/share/keyrings/
 - name: Add CUDA GPG APT key
   become: true
