@@ -107,7 +107,7 @@
 # Xilinx 2024.1
 - name: Unzip Vivado 2024.1
   ansible.builtin.unarchive:
-    src: "{{ansible_env.HOME}}/installers/Xilinx/FPGAs_AdaptiveSoCs_Unified_2024.1_0522_2023.tar"
+    src: "{{ansible_env.HOME}}/installers/Xilinx/FPGAs_AdaptiveSoCs_Unified_2024.1_0522_2023.tar.gz"
     dest: "{{ansible_env.HOME}}/installers/Xilinx"
     remote_src: yes
     creates: "{{ansible_env.HOME}}/installers/Xilinx/FPGAs_AdaptiveSoCs_Unified_2024.1_0522_2023/xsetup"
