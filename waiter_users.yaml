@@ -580,3 +580,20 @@ users:
       - /usr/bin/mount -t cifs * /home/b.mccalmon.685/*
       - /usr/bin/umount /home/b.mccalmon.685/*
 
+  - username: y.chen.726
+    name: Yaohui Chen
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOF/Wa+Pw+oAqqyMm04U/npjoyby6+wkL0GKmWdIHJX5 yac033@ucsd.edu
+    expires: "2024-06-30 23:59:59"
+    groups:
+      - rdp_users
+      - docker
+    password: $6$rounds=656000$xKrv6AV8Zn5BTx8u$OLuFgyJSUfZ6EsLZbknXaHdRA2vVUZfSXwdpj4B5dysBSusx5PYv3TRefL5tl2S5fKgpGcRKS2Kcr2DokH6C01
+  - username: p.kallakuri.888
+    name: Pranith Kallakuri
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKVRjJ8O2cVQibmF3qOQ+Zo1sk7g4gwNcoKlEc4fAZwF pkallakuri@ucsd.edu-waiter-server-prof-kastner
+    expires: "2025-02-01 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$xb7JVQs.NipTCLdw$ukLWSUdPhjPIbS8me.4iUVkDLPyL5kdIKPoZ3XbslSLj4lCCK62Tvu8BFzy5Tb9rR2FvmZkiGwv9ckCCa.P931
