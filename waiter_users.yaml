@@ -90,6 +90,8 @@ users:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP6geLo8pS0dU9jOKdNkLY6pBrTGlaP+DvIdicxAVxZj dzuberi@kilogram
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBM09OFCP+hcvu6S/Ikl7LRj7qPsGjfreclJFRFF0lhu dzuberi@DESKTOP-BIFLG0S
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMJpX5YWVEwpcmfQpPWpXks3AB27wYOTLuazguSzdJK7 dzuberi522@gmail
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF8HSEwws1dhjpdIB/HgvBpHJYVotGwb0CzMqbIHhCMi dzube@DESKTOP-BIFLG0S
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG+bBt46zXmHIbLwGC7WfoGHZQ9xIlSix5NKamgTUhhM dzuberi@Danials-MacBook-Pro.local
     expires: '2025-06-30 23:59:59'
     groups:
       - docker
