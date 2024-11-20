@@ -4,7 +4,7 @@
     dest: "{{ansible_env.HOME}}/installers/verilator"
     repo: https://github.com/verilator/verilator.git
     single_branch: yes
-    version: v5.030
+    version: v5.024
 - name: Verilator Build
   ansible.builtin.shell:
     chdir: "{{ansible_env.HOME}}/installers/verilator"
