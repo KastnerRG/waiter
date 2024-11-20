@@ -183,7 +183,7 @@
 
 # Install Verilator/GTKWave
   - name: Install Verilator/GTKWave
-    include_tasks: verilator.yml
+    import_tasks: verilator.yml
 # Snapper Configuration for BTRFS
   - name: Install snapper config
     become: true
