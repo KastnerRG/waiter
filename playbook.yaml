@@ -233,11 +233,8 @@
       cmd: loginctl enable-linger {{ ansible_user_id }}
 
 # This always at the end
-  - name: Deploy gf_admin_password
-    ansible.builtin.shell:
-      cmd: '{{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/bin/node {{ansible_env.HOME}}/.nvm/versions/node/v22.9.0/lib/node_modules/@bitwarden/cli/build/bw.js --session `cat .bw_session` get password dashboard.waiter.ucsd.edu admin > {{ansible_env.HOME}}/waiter/.secrets/gf_admin_password.txt'
-      chdir: '{{ansible_env.HOME}}/waiter'
-      creates: '{{ansible_env.HOME}}/waiter/.secrets/gf_admin_password.txt'
+  - name: Deploy Docker Secrets
+    import_tasks: docker/docker_secrets.yml
 
   - name: Docker compose
     community.docker.docker_compose_v2:
