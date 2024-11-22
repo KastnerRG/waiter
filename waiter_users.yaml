@@ -591,6 +591,7 @@ users:
     groups:
       - rdp_users
       - docker
+      - cuda
     password: $6$rounds=656000$xKrv6AV8Zn5BTx8u$OLuFgyJSUfZ6EsLZbknXaHdRA2vVUZfSXwdpj4B5dysBSusx5PYv3TRefL5tl2S5fKgpGcRKS2Kcr2DokH6C01
   - username: p.kallakuri.888
     name: Pranith Kallakuri
