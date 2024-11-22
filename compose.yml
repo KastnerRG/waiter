@@ -85,7 +85,7 @@ services:
     environment:
       POSTGRES_PASSWORD_FILE: /run/secrets/postgres_admin_password
     volumes:
-      - pg_data:/var/lib/postgresql/data/:rw
+      - pg_data:/var/lib/postgresql/:rw
       - ./postgres/config/:/etc/postgresql/:ro
       - /etc/passwd:/etc/passwd:ro
     secrets:
