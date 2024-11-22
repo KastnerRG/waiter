@@ -100,6 +100,3 @@ secrets:
     file: .secrets/gf_admin_password.txt
   postgres_admin_password:
     file: .secrets/postgres_admin_password.txt
-
-volumes:
-  pg_data:
