@@ -1,0 +1,6 @@
+SELECT 'CREATE DATABASE label_studio' WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'label_studio')\gexec;
+
+CREATE ROLE label_studio_pg WITH
+    LOGIN
+    ENCRYPTED PASSWORD 'SCRAM-SHA-256$4096:KIzKDimHuvspHAxLUeip6g==$Pm16lkWCRjZEiOW3MgIDtm8WRSw3l7UuJ5YnK2hc+q0=:3RCzhG4cXdwZEXoUgM4KY+iB/t22yRAxVrNrblDCDmY=';
+GRANT CREATE, SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA public TO label_studio_pg;

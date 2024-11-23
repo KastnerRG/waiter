@@ -33,6 +33,11 @@ services:
       - LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/data
       - LABEL_STUDIO_DISABLE_SIGNUP_WITHOUT_LINK=true
       - LABEL_STUDIO_USERNAME=e4e@ucsd.edu
+      - DJANGO_DB=default
+      - POSTGRE_NAME=label_studio
+      - POSTGRE_USER=label_studio_pg
+      - POSTGRE_PORT=5432
+      - POSTGRE_HOST=waiter.ucsd.edu
     labels:
       caddy: labeler.e4e.ucsd.edu
       caddy.reverse_proxy: "{{upstreams 8080}}"
@@ -87,6 +92,7 @@ services:
     volumes:
       - ./postgres/data/:/var/lib/postgresql/data/:rw
       - ./postgres/config/:/etc/postgresql/:ro
+      - ./postgres/scripts/:/docker-entrypoint-initdb.d/:ro
       - /etc/passwd:/etc/passwd:ro
     secrets:
       - postgres_admin_password
