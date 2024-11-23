@@ -277,4 +277,5 @@ prometheus-data
 grafana-storage
 .secrets
 label_studio_data
+label_studio_data_pg
 postgres/data

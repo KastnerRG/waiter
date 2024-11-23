@@ -1,7 +1,7 @@
 - name: Deploy label_studio password
   ansible.builtin.script:
     cmd: scripts/deploy_label_studio_pass.sh
-    creates: "{{ansible_env.HOME}}/waiter/.secrets/label_studio_admin_password.env"
+    creates: "{{ansible_env.HOME}}/waiter/.secrets/label_studio_admin_password_pg.env"
     executable: /bin/bash
     chdir: "{{ansible_env.HOME}}/waiter"
 - name: Ensure label studio admin group exists
@@ -23,6 +23,6 @@
   ansible.builtin.file:
     group: root
     owner: waiter-admin
-    path: "{{ansible_env.HOME}}/waiter/label_studio_data"
+    path: "{{ansible_env.HOME}}/waiter/label_studio_data_pg"
     state: directory
     mode: '0770'

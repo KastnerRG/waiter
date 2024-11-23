@@ -1,6 +1,8 @@
-SELECT 'CREATE DATABASE label_studio' WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'label_studio')\gexec;
+CREATE DATABASE label_studio;
 
 CREATE ROLE label_studio_pg WITH
     LOGIN
-    ENCRYPTED PASSWORD 'SCRAM-SHA-256$4096:+i/syF+wmKmZ/CYJ5T9O+A==$1L3Vb6dp2jFKYBz3bkd6uEgS1r237bVQ0dhxnRxgyUw=:e5Y5S/V2ECRF7MwCMfYeUOcs8rhJBPtdObc2ndwa3B0=';
-GRANT CREATE, SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA public TO label_studio_pg;
+    ENCRYPTED PASSWORD 'SCRAM-SHA-256$4096:zj2IBQKWjD8dj0yjaykALQ==$2MxW+lK6FuX3rOA/JgoJEUXgI4ctSyx4tZKR7WtqfY8=:1sONcS0Ww39sW3Ea7PMBMJjrMWEQWBaqGeMfNaW8lMA=';
+GRANT ALL PRIVILEGES ON DATABASE label_studio TO label_studio_pg;
+\c label_studio postgres
+GRANT ALL ON SCHEMA public TO label_studio_pg;

@@ -22,11 +22,11 @@ services:
               count: all
               capabilities: [gpu]
 
-  label_studio:
+  label_studio_pg:
     image: heartexlabs/label-studio:1.13.1
     restart: unless-stopped
     volumes:
-      - ./label_studio_data:/label-studio/data
+      - ./label_studio_data_pg:/label-studio/data
       - /share/label-studio/files:/data
     environment:
       - LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED=true
@@ -37,12 +37,12 @@ services:
       - POSTGRE_NAME=label_studio
       - POSTGRE_USER=label_studio_pg
       - POSTGRE_PORT=5432
-      - POSTGRE_HOST=waiter.ucsd.edu
+      - POSTGRE_HOST=postgres
     labels:
       caddy: labeler.e4e.ucsd.edu
       caddy.reverse_proxy: "{{upstreams 8080}}"
     env_file:
-      - .secrets/label_studio_admin_password.env
+      - .secrets/label_studio_admin_password_pg.env
 
   prometheus:
     image: prom/prometheus:v2.55.0
