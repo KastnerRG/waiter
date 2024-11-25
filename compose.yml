@@ -77,6 +77,8 @@ services:
 
       # Since we are not going through Caddy, this should be http.
       - LABEL_STUDIO_HOST=http://label_studio:8080
+    env_file:
+      - .secrets/segment_anything.env
 
   prometheus:
     image: prom/prometheus:v2.55.0
