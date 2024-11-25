@@ -23,7 +23,7 @@ services:
               capabilities: [gpu]
 
   label_studio_pg:
-    container_name: label_studio
+    container_name: label-studio
     image: heartexlabs/label-studio:1.13.1
     restart: unless-stopped
     volumes:
@@ -76,7 +76,7 @@ services:
       - MODEL_DIR=/data/models
 
       # Since we are not going through Caddy, this should be http.
-      - LABEL_STUDIO_HOST=http://label_studio:8080
+      - LABEL_STUDIO_HOST=http://label-studio:8080
     env_file:
       - .secrets/segment_anything.env
 
