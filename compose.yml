@@ -75,7 +75,8 @@ services:
       - THREADS=8
       - MODEL_DIR=/data/models
 
-      - LABEL_STUDIO_HOST=label_studio:8080
+      # Since we are not going through Caddy, this should be http.
+      - LABEL_STUDIO_HOST=http://label_studio:8080
 
   prometheus:
     image: prom/prometheus:v2.55.0
