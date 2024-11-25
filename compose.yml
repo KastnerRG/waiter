@@ -23,6 +23,7 @@ services:
               capabilities: [gpu]
 
   label_studio_pg:
+    container_name: label_studio
     image: heartexlabs/label-studio:1.13.1
     restart: unless-stopped
     volumes:
@@ -43,6 +44,38 @@ services:
       caddy.reverse_proxy: "{{upstreams 8080}}"
     env_file:
       - .secrets/label_studio_admin_password_pg.env
+
+  label_studio_segment_anything_model:
+    container_name: label_studio_segment_anything_model
+    image: heartexlabs/label-studio-ml-backend:sam-master
+    build:
+      context: .
+      shm_size: '4gb'
+      args:
+        TEST_ENV: ${TEST_ENV}
+    deploy:
+      resources:
+        limits:
+            memory: 8G
+        reservations:
+            memory: 4G
+            devices:
+              - driver: nvidia
+                count: 1
+                capabilities: [gpu]
+    environment:
+      # This is not accessible outside of the container network.
+      # We probably do not need auth.
+      - BASIC_AUTH_USER=
+      - BASIC_AUTH_PASS=
+      - SAM_CHOICE=MobileSAM
+      - LOG_LEVEL=DEBUG
+      - NVIDIA_VISIBLE_DEVICES=all
+      - WORKERS=1
+      - THREADS=8
+      - MODEL_DIR=/data/models
+
+      - LABEL_STUDIO_HOST=label_studio:8080
 
   prometheus:
     image: prom/prometheus:v2.55.0
