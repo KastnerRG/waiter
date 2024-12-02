@@ -5,7 +5,7 @@ services:
       - /:/host:ro,rslave
     restart: unless-stopped
     network_mode: host
-    command: --path.rootfs=/host
+    command: --path.rootfs=/host --collector.systemd --collector.systemd.unit-whitelist="(xrdp).service"
   dcgm_exporter:
     image: nvcr.io/nvidia/k8s/dcgm-exporter:3.3.8-3.6.0-ubuntu22.04
     container_name: dcgm_exporter
