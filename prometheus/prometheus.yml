@@ -73,7 +73,7 @@ scrape_configs:
         - https://e4e-nas.ucsd.edu:6021/
         - https://e4e-octopi.dynamic.ucsd.edu/login/
         - https://labeler.e4e.ucsd.edu/
-        - https://dashboard.waiter.ucsd.edu/
+        - https://dashboard.waiter.ucsd.edu/login
         - https://vault.e4e-gateway.ucsd.edu/
     relabel_configs:
       - source_labels: [__address__]
