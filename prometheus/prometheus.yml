@@ -56,3 +56,51 @@ scrape_configs:
       - targets:
         - localhost:9290
         - fabricant.ucsd.edu:9290
+  - job_name: 'blackbox_exporter'  # collect blackbox exporter's operational metrics.
+    static_configs:
+      - targets:
+        - blackbox_exporter:9115
+
+  - job_name: website_monitoring
+    scrape_interval: 1m
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+      - targets:
+        - https://e4e.ucsd.edu/
+        - https://krg.ucsd.edu/
+        - https://e4e-nas.ucsd.edu:6021/
+        - https://e4e-octopi.dynamic.ucsd.edu/
+        - https://labeler.e4e.ucsd.edu/
+        - https://dashboard.waiter.ucsd.edu/
+        - https://vault.e4e-gateway.ucsd.edu/
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox_exporter:9115  # The blackbox exporter's real hostname:port.
+
+  - job_name: blackbox-ping
+    scrape_interval: 1m
+    metrics_path: /probe
+    params:
+      module: [icmp]
+    static_configs:
+      - targets:
+        - '1.1.1.1' # one.one.one.one
+        - '8.8.8.8' # dns.google
+        - waiter.ucsd.edu
+        - kastner-ml.ucsd.edu
+        - fabricant.ucsd.edu
+        - e4e-octopi.dynamic.ucsd.edu
+        - e4e-gateway.ucsd.edu
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox_exporter:9115  # The blackbox exporter's real hostname:port.    

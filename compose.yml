@@ -137,6 +137,12 @@ services:
       - 5432:5432
     user: "${USER_ID}:${GROUP_ID}"
 
+  blackbox_exporter:
+    image: quay.io/prometheus/blackbox-exporter:v0.25.0
+    container_name: blackbox_exporter
+    volumes:
+      - ./blackbox-exporter:/config:ro
+    command: --config.file=/config/blackbox.yml
 secrets:
   grafana_e4eadmin_password:
     file: .secrets/gf_admin_password.txt
