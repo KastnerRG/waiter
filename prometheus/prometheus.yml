@@ -20,6 +20,7 @@ scrape_configs:
           - waiter.ucsd.edu:9100
           - kastner-ml.ucsd.edu:9100
           - fabricant.ucsd.edu:9100
+          - e4e-fishsense-mobile-endpoint.dynamic.ucsd.edu:9100
 
     # tls_config:
     #   # CA certificate to validate API server certificate with. At most one of ca and ca_file is allowed.
@@ -43,6 +44,7 @@ scrape_configs:
       - targets:
         - waiter.ucsd.edu:9323
         - kastner-ml.ucsd.edu:9323
+        - e4e-fishsense-mobile-endpoint.dynamic.ucsd.edu:9323
   - job_name: ansible_deploy_monitor
     scrape_interval: 5s
     static_configs:
@@ -50,6 +52,7 @@ scrape_configs:
         - waiter.ucsd.edu:9000
         - kastner-ml.ucsd.edu:9000
         - fabricant.ucsd.edu:9000
+        - e4e-fishsense-mobile-endpoint.dynamic.ucsd.edu:9000
   - job_name: ipmi_exporter
     scrape_interval: 15s
     static_configs:
@@ -97,6 +100,7 @@ scrape_configs:
         - fabricant.ucsd.edu
         - e4e-octopi.dynamic.ucsd.edu
         - e4e-gateway.ucsd.edu
+        - e4e-fishsense-mobile-endpoint.dynamic.ucsd.edu
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
