@@ -51,6 +51,8 @@
     section: Slice
     option: MemoryMax
     value: '{{item.memory_limit}}'
+  when: item.memory_limit is defined
 - name: Systemctl daemon-reload
   ansible.builtin.systemd_service:
     daemon_reload: true
+  when: item.memory_limit is defined
