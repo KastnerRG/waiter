@@ -36,6 +36,8 @@
   when: item.sudo_allow is not defined
 
 # Create slice directory
+- ansible.builtin.getent:
+    database: passwd
 - name: Create slice dir
   become: true
   ansible.builtin.file:
