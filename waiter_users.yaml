@@ -38,6 +38,7 @@ users:
       - cuda
     password: $6$taN53S4OXGzmDC2B$tFVcsi56yyLMJD3IKvGYHXdSP3sAWL1XOmVEET/F6t1f1TU1FaEorza4/8qYrzoyvymZGUU21ZsEp/vf5JEDr.
   - username: n.hui
+    memory_limit: 10G
     name: Nathan Hui
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIR1cXklusoEBrgQP4miHRvUp64rkrTUX2OrAJrE5f6H nthui@eng.ucsd.edu

@@ -34,4 +34,21 @@
     state: absent
     name: "ansible_sudoers_{{item.username | replace('.', '_')}}"
   when: item.sudo_allow is not defined
-  
+
+# Create slice directory
+- name: Create slice dir
+  become: true
+  ansible.builtin.file:
+   path: "/etc/systemd/system/user-{{getent_passwd[item.username].1}}"
+   state: directory
+  when: item.memory_limit is defined
+- name: Create memory override
+  become: true
+  community.general.ini_file:
+    path: "/etc/systemd/system/user-{{getent_passwd[item.username].1}}/50-memory.conf"
+    section: Slice
+    option: MemoryMax
+    value: '{{item.memory_limit}}'
+- name: Systemctl daemon-reload
+  ansible.builtin.systemd_service:
+    daemon_reload: true
