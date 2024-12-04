@@ -43,7 +43,6 @@
   ansible.builtin.file:
    path: "/etc/systemd/system/user-{{getent_passwd[item.username].1}}.slice.d"
    state: directory
-  when: item.memory_limit is defined
 - name: Create memory override
   become: true
   community.general.ini_file:
@@ -52,6 +51,14 @@
     option: MemoryMax
     value: '{{item.memory_limit}}'
   when: item.memory_limit is defined
+- name: Create memory override
+  become: true
+  community.general.ini_file:
+    path: "/etc/systemd/system/user-{{getent_passwd[item.username].1}}.slice.d/50-memory.conf"
+    section: Slice
+    option: MemoryMax
+    state: absent
+  when: item.memory_limit is not defined
 - name: Systemctl daemon-reload
   become: true
   ansible.builtin.systemd_service:
