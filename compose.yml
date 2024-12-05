@@ -83,8 +83,7 @@ services:
   prometheus:
     image: prom/prometheus:v2.55.0
     container_name: prometheus
-    command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
+    command: --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.retention.time=2y --storage.tsdb.retention.size=700GB --storage.tsdb.wal-compression
     restart: unless-stopped
     volumes:
       - ./prometheus:/etc/prometheus:ro
