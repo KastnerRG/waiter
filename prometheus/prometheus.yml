@@ -10,6 +10,12 @@ global:
 # Here it's Prometheus itself.
 scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'label_studio_slack_reporter'
+    scrape_interval: 30s
+    static_configs:
+      - targets:
+          - fabricant.ucsd.edu:9101
+
   - job_name: 'node_exporter'
 
     # Override the global default and scrape targets from this job every 5 seconds.
