@@ -42,7 +42,7 @@ users:
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIR1cXklusoEBrgQP4miHRvUp64rkrTUX2OrAJrE5f6H nthui@eng.ucsd.edu
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOe9vgZYP4LcuvT0n72kJF+0kiL0gbLYZEcqI/e4e4sI ntlhui@gmail.com
-    expires: '2024-12-31 23:59:59'
+    expires: '2025-04-01 00:00:00'
     groups:
       - docker
       - rdp_users
