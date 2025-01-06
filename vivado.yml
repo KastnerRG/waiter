@@ -110,7 +110,7 @@
     dest: "{{ansible_env.HOME}}/installers/Xilinx/vitis_2022.2.txt"
 - name: Install Vitis 2022.2
   ansible.builtin.command:
-    cmd: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Unified_2022.2_1014_8888/xsetup -b Install --agree XilinxEULA,3rdPartyEULA,WebTalkTerms -c \"{{ansible_env.HOME}}/installers/Xilinx/vitis_2022.2.txt\""
+    cmd: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Unified_2022.2_1014_8888/xsetup -b Install --agree XilinxEULA,3rdPartyEULA -c \"{{ansible_env.HOME}}/installers/Xilinx/vitis_2022.2.txt\""
     creates: /tools/Xilinx/Vitis/2022.2/bin/vitis
 
 # Xilinx 2024.1
