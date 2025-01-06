@@ -644,3 +644,13 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$xb7JVQs.NipTCLdw$ukLWSUdPhjPIbS8me.4iUVkDLPyL5kdIKPoZ3XbslSLj4lCCK62Tvu8BFzy5Tb9rR2FvmZkiGwv9ckCCa.P931
+  - username: a.redding
+    name: Alexander Redding
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINGok5oTWThgWLh/VdWexmwXrp3i5Ce1qmafFymtJIcF alredding@ucsd.edu
+    expires: "2026-01-06 23:59:59"
+    groups:
+      - cuda
+      - docker
+      - rdp_users
+    password: $6$rounds=656000$.G/eCjFLIinSysuV$vf5yafrI0PH9F9lN8QX1hkusFBzahrVxQJakPRngIJ2D9C9LRx0E6xwQXRh6IpV/xZrojv2wranuYn2vD6jL9/
