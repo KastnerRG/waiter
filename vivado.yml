@@ -104,6 +104,15 @@
     cmd: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Unified_2022.2_1014_8888/xsetup -b Install --agree XilinxEULA,3rdPartyEULA,WebTalkTerms -c \"{{ansible_env.HOME}}/installers/Xilinx/vivado_2022.2.txt\""
     creates: /tools/Xilinx/Vivado/2022.2/bin/vivado
 
+- name: Deploy 2022.2 Vitis Installer Config
+  ansible.builtin.copy:
+    src: xic_config/vitis_2022.2.txt
+    dest: "{{ansible_env.HOME}}/installers/Xilinx/vitis_2022.2.txt"
+- name: Install Vitis 2022.2
+  ansible.builtin.command:
+    cmd: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Unified_2022.2_1014_8888/xsetup -b Install --agree XilinxEULA,3rdPartyEULA,WebTalkTerms -c \"{{ansible_env.HOME}}/installers/Xilinx/vitis_2022.2.txt\""
+    creates: /tools/Xilinx/Vitis/2022.2/bin/vitis
+
 # Xilinx 2024.1
 - name: Unzip Vivado 2024.1
   ansible.builtin.unarchive:
