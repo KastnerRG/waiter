@@ -95,15 +95,6 @@
     dest: "{{ansible_env.HOME}}/installers/Xilinx"
     remote_src: yes
     creates: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Unified_2022.2_1014_8888/xsetup"
-- name: Deploy 2022.2 Installer Config
-  ansible.builtin.copy:
-    src: xic_config/vivado_2022.2.txt
-    dest: "{{ansible_env.HOME}}/installers/Xilinx/vivado_2022.2.txt"
-- name: Install Vivado 2022.2
-  ansible.builtin.command:
-    cmd: "{{ansible_env.HOME}}/installers/Xilinx/Xilinx_Unified_2022.2_1014_8888/xsetup -b Install --agree XilinxEULA,3rdPartyEULA,WebTalkTerms -c \"{{ansible_env.HOME}}/installers/Xilinx/vivado_2022.2.txt\""
-    creates: /tools/Xilinx/Vivado/2022.2/bin/vivado
-
 - name: Deploy 2022.2 Vitis Installer Config
   ansible.builtin.copy:
     src: xic_config/vitis_2022.2.txt
