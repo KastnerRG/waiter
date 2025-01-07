@@ -22,6 +22,7 @@ users:
     name: Ryan Kastner
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMlIBt+L1YB+cR47hzwOpE/qwh9KWPoSmWb4e0qt5ntG kastner@ucsd.edu
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILNdvcM3KYKcpWkl4n6M6y8T/gLBcpqJncienoMbLqP0 kastner@haduken-laptop-2024.local
     expires: '2025-06-30 23:59:59'
     groups:
       - docker
