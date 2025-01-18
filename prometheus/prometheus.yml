@@ -81,7 +81,7 @@ scrape_configs:
         - https://kastner.ucsd.edu/
         - https://e4e-nas.ucsd.edu:6021/
         - https://e4e-octopi.dynamic.ucsd.edu/login/
-        - https://labeler.e4e.ucsd.edu/
+        - https://labeler.e4e.ucsd.edu/version
         - https://dashboard.waiter.ucsd.edu/login
         - https://vault.e4e-gateway.ucsd.edu/
         - https://etap.nsf.gov/award/2378/opportunity/10235
