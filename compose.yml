@@ -24,7 +24,7 @@ services:
 
   label_studio_pg:
     container_name: label-studio
-    image: ghcr.io/ucsd-e4e/label-studio:20250113.162625-develop-6c02a29
+    image: ghcr.io/ucsd-e4e/label-studio:20250118.193659-release-1-15-0-caf6134
     restart: unless-stopped
     volumes:
       - ./label_studio_data_pg:/label-studio/data
