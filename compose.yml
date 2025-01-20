@@ -34,6 +34,7 @@ services:
       - LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT=/data
       - LABEL_STUDIO_DISABLE_SIGNUP_WITHOUT_LINK=true
       - LABEL_STUDIO_USERNAME=e4e@ucsd.edu
+      - LABEL_STUDIO_HOST=https://labeler.e4e.ucsd.edu
       - DJANGO_DB=default
       - POSTGRE_NAME=label_studio
       - POSTGRE_USER=label_studio_pg
