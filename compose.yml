@@ -143,6 +143,8 @@ services:
     volumes:
       - ./blackbox-exporter:/config:ro
     command: --config.file=/config/blackbox.yml
+    ports:
+      - 9115:9115
 secrets:
   grafana_e4eadmin_password:
     file: .secrets/gf_admin_password.txt
