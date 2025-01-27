@@ -265,3 +265,21 @@ users:
       - docker
       - rdp_users
     password: $6$rounds=656000$.G/eCjFLIinSysuV$vf5yafrI0PH9F9lN8QX1hkusFBzahrVxQJakPRngIJ2D9C9LRx0E6xwQXRh6IpV/xZrojv2wranuYn2vD6jL9/
+  - username: r.munasinghe.85
+    name: Ravindu Munasinghe
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJNkSY/w1T448i5v/rHs1It8tTYtQRqdkclrcXdPZNFM raviduhm@gmail.com
+    expires: "2025-05-20 23:59:59"
+    groups:
+      - docker
+      - rdp_users
+    password: $6$rounds=656000$XH0RGFgou9rvVqvf$ALoc6gXZoKqxi1lsiL5Mka0nutOW9uuflzdmtO..kn/HFhBShNXq4gWsGHEVaCxpAU0MXHCqB2tiPLQ7F0vYF0
+  - username: t.kamal.516
+    name: Thanushan Kamal
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFwk4TIvUWTGX2bCEF5uEE/ijVKTRTbBBzZH70lXMh11 kamal@THANUSHLAPTOP
+    expires: "2025-05-20 23:59:59"
+    groups:
+      - docker
+      - rdp_users
+    password: $6$rounds=656000$OKumnlLKx3H30GN7$0jA0AbBkiox1UyzH6OppARNKdyyDz1KzsohZm5stnCJPF.9B0K6R3FTZ0mtdhYOhImZu0RLbw6b/RG9Uuoe/W1
