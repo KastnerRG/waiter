@@ -145,6 +145,7 @@ services:
     command: --config.file=/config/blackbox.yml
     ports:
       - 9115:9115
+    dns: 8.8.8.8
 secrets:
   grafana_e4eadmin_password:
     file: .secrets/gf_admin_password.txt
