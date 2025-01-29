@@ -270,6 +270,7 @@ users:
     name: Ravindu Munasinghe
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJNkSY/w1T448i5v/rHs1It8tTYtQRqdkclrcXdPZNFM raviduhm@gmail.com
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOrWKKF6UwcPQnJnEccl5GyNPvxujy6f4UU0g5ccTo4j raviduhm@gmail.com
     expires: "2025-05-20 23:59:59"
     groups:
       - docker
