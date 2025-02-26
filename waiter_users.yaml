@@ -58,6 +58,7 @@ users:
     groups:
       - docker
       - rdp_users
+      - cuda
     password: $6$MdMUw1Em6r.g9bI1$o7bcETGHvaSV43Ogn991bH5RPTOTJsnWN9adQ8Srt7C3YpNQMJCDQzvuTvXsxoophWQpKsL710Ut.IQ7kYL6t1
     sudo_allow:
       - /usr/bin/passwd cse237c_fa24*
