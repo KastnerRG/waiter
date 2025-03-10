@@ -287,3 +287,13 @@ users:
       - docker
       - rdp_users
     password: $6$rounds=656000$OKumnlLKx3H30GN7$0jA0AbBkiox1UyzH6OppARNKdyyDz1KzsohZm5stnCJPF.9B0K6R3FTZ0mtdhYOhImZu0RLbw6b/RG9Uuoe/W1
+  - username: c.arch.878
+    name: Cameron Arch
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJy1XI4UevkkPK4hQ/7TVngPxL0R6iWIY0G/aPJrpwWC cameronarch598@gmail.com
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDydt4n0H18E4331CVoKzVprtUODsyTmAvYyCSKCBW7+ carch@ucsd.edu
+    expires: "2025-12-31 23:59:59"
+    groups:
+      - docker
+      - rdp_users
+    password: $6$rounds=656000$qJGCxX9..iXOnXm.$UJ2RoTxn81F/ebJ/xM4rw.YVMZ3mkZwSA.TwnKUru4U/OmxPmVLtG5fyfQvutSgkPmlmBiXOGOb5N5615bgTH1
