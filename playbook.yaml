@@ -28,7 +28,6 @@
       autoremove: yes
       update_cache: yes
   - name: Install/update system packages
-    tags: [test]
     become: true
     ansible.builtin.apt:
       pkg:
@@ -90,7 +89,6 @@
         - cups-filters-core-drivers
         - libcupsfilters2t64
   - import_tasks: vivado.yml
-    tags: [test]
   - name: Update unix-chkpwd for xrdp
     become: true
     ansible.builtin.file:
