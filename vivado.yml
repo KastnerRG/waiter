@@ -119,3 +119,11 @@
   ansible.builtin.command:
     cmd: "{{ansible_env.HOME}}/installers/Xilinx/FPGAs_AdaptiveSoCs_Unified_2024.1_0522_2023/xsetup -b Install --agree XilinxEULA,3rdPartyEULA,WebTalkTerms -c \"{{ansible_env.HOME}}/installers/Xilinx/vivado_2024.1.txt\""
     creates: /tools/Xilinx/Vivado/2024.1/bin/vivado
+
+# Xilinx Runtime Library 2024.1
+- name: Download XRT 2024.1
+  tags: [test]
+  ansible.builtin.get_url:
+   checksum: sha256:fedf5ca03fc041e955b9cf77509174b4ce222630e440cd6ec1179443c5a3d600
+   dest: "{{ansible_env.HOME}}/installers/Xilinx"
+   url: https://www.xilinx.com/bin/public/openDownload?filename=xrt_202410.2.17.319_22.04-amd64-xrt.deb
