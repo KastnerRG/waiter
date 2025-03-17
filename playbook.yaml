@@ -28,7 +28,6 @@
       autoremove: yes
       update_cache: yes
   - name: Install/update system packages
-    tags: [test]
     become: true
     ansible.builtin.apt:
       pkg:
