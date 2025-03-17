@@ -120,3 +120,8 @@ scrape_configs:
     static_configs:
       - targets:
         - fabricant.ucsd.edu:9095
+  - job_name: e4efs_workers
+    scrape_interval: 15s
+    static_configs:
+      - targets:
+        - kastner-ml.ucsd.edu:9090
