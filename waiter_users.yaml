@@ -297,3 +297,13 @@ users:
       - docker
       - rdp_users
     password: $6$rounds=656000$qJGCxX9..iXOnXm.$UJ2RoTxn81F/ebJ/xM4rw.YVMZ3mkZwSA.TwnKUru4U/OmxPmVLtG5fyfQvutSgkPmlmBiXOGOb5N5615bgTH1
+  - username: s.perry.543
+    name: Sean Perry
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDJgTLPnKar3ndbQk5TEKVQa5wXxvbzsAWyzBxZxnK4StZa2KfSdcYgi0ozW9j2YtqG70Me0J95Tl5TxolTODcyh4V8n65HsYaSdzwmoT29EvX8MRHGF8qSqftaolEsE+0b4+CaxSjS1EDHnX8U+d+bHOTvrdhBOIgz9BVhHVavJ1AAbcMI0hQJV3iZsnqCnKCpvbhSd8qNymfNU+lh8voMcgQn/HNy6Vn+T9eBuv/7/q08/qzJ2g0HinptI7fVVj+sEt+k/iuNq0mign0NlHR18u8K0uz33yjQDDESVui5C7tlU5gySLpQ6Krd4wGzPZndWH5II1cEzbsFaBfxUAiOZNzI8zD31xRILHKoy8ndJEYDjcEZ7SEFICLNnjLMaKZBA/OBj8n6XaRWsYrc2oVgx47sSY/aecXmJ22Q4dSoaUMhaWSYDVWd/s2Y6gL+4OCZqaBEEaZItWnvjLnqwx4W7EKtiNdw75IXlNoixUP+1xKf7Nz+Otp7Ok807aVLUZE= seanh@siloenvy
+    expires: "2025-06-30 23:59:59"
+    groups:
+      - cuda
+      - label_studio_admin
+      - docker
+    password: $6$rounds=656000$ZRxhbzdjqCn2BNby$Lprt233IyTZ99dJAJPdvJhFzJ8zEN0eFddRL6nrmE2Oep0faWnXHzejOd5KZqAQRcqcazTchnfXev7sNYzKwM0
