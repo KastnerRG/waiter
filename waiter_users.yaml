@@ -300,7 +300,7 @@ users:
   - username: s.perry.543
     name: Sean Perry
     authorized_keys:
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDJgTLPnKar3ndbQk5TEKVQa5wXxvbzsAWyzBxZxnK4StZa2KfSdcYgi0ozW9j2YtqG70Me0J95Tl5TxolTODcyh4V8n65HsYaSdzwmoT29EvX8MRHGF8qSqftaolEsE+0b4+CaxSjS1EDHnX8U+d+bHOTvrdhBOIgz9BVhHVavJ1AAbcMI0hQJV3iZsnqCnKCpvbhSd8qNymfNU+lh8voMcgQn/HNy6Vn+T9eBuv/7/q08/qzJ2g0HinptI7fVVj+sEt+k/iuNq0mign0NlHR18u8K0uz33yjQDDESVui5C7tlU5gySLpQ6Krd4wGzPZndWH5II1cEzbsFaBfxUAiOZNzI8zD31xRILHKoy8ndJEYDjcEZ7SEFICLNnjLMaKZBA/OBj8n6XaRWsYrc2oVgx47sSY/aecXmJ22Q4dSoaUMhaWSYDVWd/s2Y6gL+4OCZqaBEEaZItWnvjLnqwx4W7EKtiNdw75IXlNoixUP+1xKf7Nz+Otp7Ok807aVLUZE= seanh@siloenvy
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIILwsfYNsl6DSg00wOjvTip7GwO+aANfEBn6T3YcAHNG seanh@siloenvy
     expires: "2025-06-30 23:59:59"
     groups:
       - cuda
