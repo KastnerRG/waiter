@@ -5,5 +5,19 @@
             "path": "nvidia-container-runtime"
         }
     },
-    "metrics-addr": "0.0.0.0:9323"
+    "metrics-addr": "0.0.0.0:9323",
+    "builder": {
+        "gc": {
+            "enabled": true,
+            "defaultKeepStorage": "512GB",
+            "policy": [
+                {
+                    "keepStorage": "0",
+                    "filter": [
+                        "unused-for=2160h"
+                    ]
+                }
+            ]
+        }
+    }
 }
