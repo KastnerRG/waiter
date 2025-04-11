@@ -307,3 +307,12 @@ users:
       - label_studio_admin
       - docker
     password: $6$rounds=656000$ZRxhbzdjqCn2BNby$Lprt233IyTZ99dJAJPdvJhFzJ8zEN0eFddRL6nrmE2Oep0faWnXHzejOd5KZqAQRcqcazTchnfXev7sNYzKwM0
+  - username: a.deshpande.186
+    name: Anurag Deshpande
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK5LMgKDMCtLr2gFbXU+R0lDOW1QOrNIhJR/jNSsQWS0 a4deshpande@ucsd.edu
+    expires: "2025-12-31 23:59:59"
+    groups:
+      - docker
+      - rdp_users
+    password: $6$rounds=656000$iS.TbdJ.4s7a6U5Z$.YTugKNLYFUxGMs9aDN1gvKjN5wXSSGUVVroMtvymGDN.tRpPdp6MxLY/0lHFTb7FR3qiaYLOSTWnt7YGkFk90
