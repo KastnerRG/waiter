@@ -6,9 +6,11 @@ import json
 import logging
 import logging.handlers
 import os
+import signal
 import subprocess
 import sys
 from pathlib import Path
+from threading import Event
 from time import sleep
 from typing import Dict, Optional
 
@@ -74,6 +76,9 @@ class Service:
 
         self.__log.info('Invoked with %s', sys.orig_argv)
 
+        self.__sigint_trigger = Event()
+        signal.signal(signal.SIGINT, lambda x, y: self.__sigint_trigger.set())
+
     def run(self):
         try:
             self.__log.debug('Running')
@@ -108,8 +113,9 @@ class Service:
 
                 origin_diff = self.PROJECT_BRANCH.commit.diff(
                     remote_head.commit)
-                if len(origin_diff) != 0:
+                if len(origin_diff) != 0 or self.__sigint_trigger.is_set():
                     # Install
+                    self.__sigint_trigger.clear()
                     self.__log.info('Installing')
                     self.repo.remote().pull()
                     new_env = os.environ
@@ -163,7 +169,7 @@ class Service:
         delta = (until - now).total_seconds()
         if delta < 0:
             return
-        sleep(delta)
+        self.__sigint_trigger.wait(delta)
 
     @property
     def last_run(self) -> Optional[dt.datetime]:
