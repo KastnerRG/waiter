@@ -2,12 +2,15 @@
 '''
 import datetime as dt
 import getpass
+import hashlib
+import re
 import secrets
 from argparse import ArgumentParser
 from pathlib import Path
+
 import yaml
 from passlib.hash import sha512_crypt
-import hashlib
+
 
 def main():
     parser = ArgumentParser()
@@ -51,6 +54,7 @@ def main():
         except Exception:
             continue
     ssh_keys = []
+    ssh_regex = r"ssh-(ed25519|rsa|dss|ecdsa) AAAA(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=|[A-Za-z0-9+\/]{4})( [^@]+@[^@]+)?"
     while True:
         new_key = input('SSH Key (enter to escape): ')
         if new_key == '':
@@ -58,6 +62,10 @@ def main():
                 print('SSH pubkey is required!')
                 continue
             break
+        matches = re.findall(ssh_regex, new_key)
+        if len(matches) == 0:
+            print('Invalid SSH key!')
+            continue
         ssh_keys.append(new_key)
     
     groups = set()
