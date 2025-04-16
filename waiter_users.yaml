@@ -327,3 +327,43 @@ users:
       - rdp_users
       - cuda
     password: $6$rounds=656000$Bwxy94MpS5KaH/Wz$rwoGpneRy1SEnJXdoH0QMs.Qn6dgGrhsshc3v5zclT8ln5Qi6AESXcB0otbmPzQ3vLks3NYclenxCdGWUgBq41
+  - username: f.gutierrez.614
+    name: Francisco Gutierrez
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOt1npdnmzDMvNTSYVOgPgO7EVl2HglrMuqZpl2JPhKS lowell@yuri aka francisco
+    expires: "2025-08-31 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$8jzC2oKoM0XuPGji$Om/wZ/VPbyGjh/3P1FAxdBXnanaLrtkPuBWC17GI10ruaHBS2jb1QpqeC3EUnlek2qqf4OJTdUQS6K4SiO0Q01
+  - username: s.katel.319
+    name: Subash Katel
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF71rq6c7zMy/Y5o+p+ykTm4mQJIuj387fSi8rXrXV2t
+    expires: "2025-06-30 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$AtPtL.hmWmmu80pb$IngXXgRHPXoD9ySMPF/RYdhwRGxnrkwdWyVArfPBcLZwHgRbLmkF1M4.1lS3AHrsqFe7WUz2nzBgLhQVtjGln1
+  - username: b.reponte.524
+    name: Brandon Reponte
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAbyPUuchNb/Q4N8HHv0EF23Ya3xCzKGMjJksvohVK9N bkreponte@ucsd.edu
+    expires: "2025-08-31 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$Lu6QUgykGJ8gZ.61$CmsBE8aYhdAQM.i4sVzrLykaY/mStsLRNqSPLn2IwX8T3T5IEl7N9zYIJB9dlBytu5SRocJYOzNMglzGFhknc.
+  - username: s.pacharne.945
+    name: Shreeyash Pacharne
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO7vx3O9FKqiFKj3wjqL7mQT5S8fI8TkVWwkqVpSzTol
+    expires: "2025-07-31 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$rAhLSfEhTpDdrL5R$/dYr.aDFAGOz/GuylJ32PrUv1RtwEDKqrJmyay/WCRovY/C.gMC4S89N4MsWtG4bIVbzLiKdKLU5oNCpHGpbt0
+  - username: g.koski.176
+    name: Gram Koski
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICv7N9fW4G/QvJw62koufJgTWFMbf2/wpcli2EU3JDgS gkoski@ucsd.edu
+    expires: "2025-08-31 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$ll7MAFfurtMK6gsn$08ycEIhhfL6C5ldcHGFU0jDygTxIakGJod4M.awC.Rg9OS2Q3x1fSBZDrLcZ30yWNisJCywhdmwC/BW/NvCut0
