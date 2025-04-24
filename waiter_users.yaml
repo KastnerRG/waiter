@@ -367,3 +367,12 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$ll7MAFfurtMK6gsn$08ycEIhhfL6C5ldcHGFU0jDygTxIakGJod4M.awC.Rg9OS2Q3x1fSBZDrLcZ30yWNisJCywhdmwC/BW/NvCut0
+  - username: x.liu.244
+    name: Xun Liu
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE5tT9mCMFsFeEA3cCz7OCZ9ANsyQLE8EGydVVcz3r9d xul007@ucsd.edu
+    expires: "2025-06-30 23:59:59"
+    groups:
+      - rdp_users
+      - docker
+    password: $6$rounds=656000$kdksEhdnQIxPS5/4$TDqvRh/f7mGa2feETASlQDn/A41H4Lc6s2PEYZmvd9tx68d1eHfuBtOAI9C3aeBnqaMsH0XkGwF2Uh676c2f61
