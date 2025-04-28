@@ -306,6 +306,7 @@ users:
       - cuda
       - label_studio_admin
       - docker
+      - rdp_users
     password: $6$rounds=656000$ZRxhbzdjqCn2BNby$Lprt233IyTZ99dJAJPdvJhFzJ8zEN0eFddRL6nrmE2Oep0faWnXHzejOd5KZqAQRcqcazTchnfXev7sNYzKwM0
   - username: a.deshpande.186
     name: Anurag Deshpande
