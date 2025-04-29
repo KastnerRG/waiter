@@ -1,4 +1,4 @@
 - name: Install Questa_Base 2023.4
   ansible.builtin.command:
-    cmd: "./questa_base_2023.4/install.sh"
+    cmd: "./scripts/install_questa_base_2023.4.sh"
     creates: /tools/Simens/Questa/Base/2023.4/questa_base/bin/vsim
