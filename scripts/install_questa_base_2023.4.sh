@@ -108,7 +108,7 @@ yes
 INSTALLEXIT=$?
 if [ ! "$MIPSKIP" = "T" ]; then
    :
-   "$MIPPATH" -batchverify "$SELF" $NEWTARG $NEWMIPLOC -block
+#
 fi
 if [ -e "$MIP_START_DIR/LOGS/"$MG_INSTALL_PID"mip_history.txt" ]; then
    cp "$MIP_START_DIR/LOGS/"$MG_INSTALL_PID"mip_history.txt" "/home/waiter-admin/logs"
