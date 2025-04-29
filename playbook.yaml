@@ -214,6 +214,9 @@
   - name: Setup Label Studio
     import_tasks: label_studio.yaml
 
+  - name: Setup FlooNoc
+    import_tasks: floonoc.yaml  
+
 # Auto deploy
   - name: Ensure systemd user dir exists
     ansible.builtin.file:
@@ -232,6 +235,8 @@
   - name: enable login linger
     ansible.builtin.command:
       cmd: loginctl enable-linger {{ ansible_user_id }}
+
+
 
 # This always at the end
   - name: Deploy Docker Secrets
