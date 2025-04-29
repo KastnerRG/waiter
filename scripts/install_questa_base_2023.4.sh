@@ -143,7 +143,7 @@ exit $LASTEXIT
 
 <batchFile>
 	<source value="/home/waiter-admin/installers/questa/questa_base-2023-4/installer/."/>
-	<target value="/tools/Simens/Questa/Base/2023.3"/>
+	<target value="/tools/Simens/Questa/Base/2023.4"/>
 	<installType value="all"/>
 	<platform value="Linux Opteron"/>
 	<release name="2023.4">
