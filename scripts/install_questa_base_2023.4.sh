@@ -29,7 +29,7 @@ MIPBATCMD="-batch"
 MIPBATPATH=`echo "$SELF"`
 MIPSKIP=
 MIPEXTRAARGS=
-MIPTARG="/tools/Simens/Questa/Base/2023.3"
+MIPTARG="/tools/Simens/Questa/Base/2023.4"
 MIPSRC="/home/waiter-admin/installers/questa/questa_base-2023-4/installer/."
 while [ $# -gt 0 ];
 do
