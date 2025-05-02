@@ -390,9 +390,6 @@ users:
     name: Yashas Unknown
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILUGe2uCojpQ9dBikdf/CrfEvMRkYv2+y0gq0+6x+BOL yashas@ucsd.edu
-      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILUGe2uCojpQ9dBikdf/CrfEvMRkYv2+y0gq0+6x+BOL yashas@ucsd.edu
-      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILUGe2uCojpQ9dBikdf/CrfEvMRkYv2+y0gq0+6x+BOL yashas@ucsd.edu
-      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILUGe2uCojpQ9dBikdf/CrfEvMRkYv2+y0gq0+6x+BOL yashas@ucsd.edu
     expires: "2025-06-30 23:59:59"
     groups:
       - rdp_users
