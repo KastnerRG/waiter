@@ -386,3 +386,11 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$CWKwPZNFVmX2jgf/$NUZhXvAAYwxvaYbFsrUlUURvtA3UN4NXrQTSX8/dWutyAJAhL3cyy6ZveWYzPHnM9J5eJ/rn3QfZg/ppilJ6w1
+  - username: y.unknown.183
+    name: Yashas Unknown
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILUGe2uCojpQ9dBikdf/CrfEvMRkYv2+y0gq0+6x+BOL yashas@ucsd.edu
+    expires: "2025-06-30 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$aD1j7O3C2mkS5H39$VvRs19n2W/Wd8fg0Ghvp7Kb83H/PxSF7IeEvfWrndgiT3W8DOgy24mZP8xl5HdKew82l5z7k64PzBNOUcT4Iv1
