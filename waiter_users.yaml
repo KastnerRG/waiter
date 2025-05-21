@@ -273,7 +273,7 @@ users:
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJNkSY/w1T448i5v/rHs1It8tTYtQRqdkclrcXdPZNFM raviduhm@gmail.com
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOrWKKF6UwcPQnJnEccl5GyNPvxujy6f4UU0g5ccTo4j raviduhm@gmail.com
-    expires: "2025-05-20 23:59:59"
+    expires: "2025-11-20 23:59:59"
     groups:
       - docker
       - rdp_users
@@ -282,7 +282,7 @@ users:
     name: Thanushan Kamal
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFwk4TIvUWTGX2bCEF5uEE/ijVKTRTbBBzZH70lXMh11 kamal@THANUSHLAPTOP
-    expires: "2025-05-20 23:59:59"
+    expires: "2025-11-20 23:59:59"
     groups:
       - docker
       - rdp_users
