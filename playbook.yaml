@@ -99,6 +99,11 @@
     ansible.builtin.group:
       name: rdp_users
       state: present
+  - name: Create phd_users group
+    become: true
+    ansible.builtin.group:
+      name: phd_users
+      state: present
   - name: Deploy sesman.ini
     become: true
     ansible.builtin.copy:
