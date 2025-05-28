@@ -273,7 +273,7 @@ users:
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJNkSY/w1T448i5v/rHs1It8tTYtQRqdkclrcXdPZNFM raviduhm@gmail.com
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOrWKKF6UwcPQnJnEccl5GyNPvxujy6f4UU0g5ccTo4j raviduhm@gmail.com
-    expires: "2025-05-20 23:59:59"
+    expires: "2025-11-20 23:59:59"
     groups:
       - docker
       - rdp_users
@@ -282,7 +282,7 @@ users:
     name: Thanushan Kamal
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFwk4TIvUWTGX2bCEF5uEE/ijVKTRTbBBzZH70lXMh11 kamal@THANUSHLAPTOP
-    expires: "2025-05-20 23:59:59"
+    expires: "2025-11-20 23:59:59"
     groups:
       - docker
       - rdp_users
@@ -390,9 +390,6 @@ users:
     name: Yashas Unknown
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILUGe2uCojpQ9dBikdf/CrfEvMRkYv2+y0gq0+6x+BOL yashas@ucsd.edu
-      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILUGe2uCojpQ9dBikdf/CrfEvMRkYv2+y0gq0+6x+BOL yashas@ucsd.edu
-      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILUGe2uCojpQ9dBikdf/CrfEvMRkYv2+y0gq0+6x+BOL yashas@ucsd.edu
-      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILUGe2uCojpQ9dBikdf/CrfEvMRkYv2+y0gq0+6x+BOL yashas@ucsd.edu
     expires: "2025-06-30 23:59:59"
     groups:
       - rdp_users
@@ -405,3 +402,11 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$Nc.TQxbrb1JT8FNm$u59jySaM3gKnO7AvL77ed28WOSS6pKfrWtolECv2og0Jhl1ar/cYPZMaxFavXMlVv0cjPFpfSJlCTZcAXBW.Q.
+  - username: cse237d_sp25_r_osuna_730
+    name: Rudy Osuna
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILf3TjmYfoZg0+/BcD/QyOr/HLQh84K+3T0y1T/95Bnq ruosuna@ucsd.edu
+    expires: "2025-06-30 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$NTkkM1DvmL5UaLFG$8SzDSAGwUH5xmNlgBSUAs4yWVdcI4UoqiU4uMaDvUrqHMs5GxC/.p/6G/qzH2zuTrlZu7jBbPd76Fh.NB/ucv1
