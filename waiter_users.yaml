@@ -38,7 +38,7 @@ users:
     groups:
       - docker
       - cuda
-      - phd_users
+      - krg_power_users
     password: $6$taN53S4OXGzmDC2B$tFVcsi56yyLMJD3IKvGYHXdSP3sAWL1XOmVEET/F6t1f1TU1FaEorza4/8qYrzoyvymZGUU21ZsEp/vf5JEDr.
   - username: n.hui
     name: Nathan Hui
@@ -60,7 +60,7 @@ users:
       - docker
       - rdp_users
       - cuda
-      - phd_users
+      - krg_power_users
     password: $6$MdMUw1Em6r.g9bI1$o7bcETGHvaSV43Ogn991bH5RPTOTJsnWN9adQ8Srt7C3YpNQMJCDQzvuTvXsxoophWQpKsL710Ut.IQ7kYL6t1
     sudo_allow:
       - /usr/bin/passwd cse237c_fa24*
@@ -72,7 +72,7 @@ users:
     groups:
       - docker
       - rdp_users
-      - phd_users
+      - krg_power_users
     password: $6$K3B9Pv9AR.YP8rhO$qHM9CShTVkBoa2KLbpaIOkoSqeHfaQQ07JuyUq.xOxgKyefO0m9SO1TqB7vUa9elDSJxXfV3ztkbrqSiTDLOr1
     sudo_allow:
       - /usr/bin/passwd cse237c_fa24*
@@ -88,7 +88,7 @@ users:
       - rdp_users
       - cuda
       - label_studio_admin
-      - phd_users
+      - krg_power_users
     sudo_allow:
       - /usr/bin/mount -t cifs *
       - /usr/bin/mount -v -t cifs *
@@ -106,7 +106,7 @@ users:
       - docker
       - cuda
       - rdp_users
-      - phd_users
+      - krg_power_users
     password: $6$f2c4.HEfvbX4iyjo$u.trGomNbpx2AVQJcLLkTckNRPwKCxXpPhbAHOlwHyaj8cGiN9JYgv.uhGM8JtQS0lTJSRVhH4TceEuSNsNye1
   - username: wes_2025_a_baez
     name: Lila Baez
@@ -180,7 +180,7 @@ users:
     expires: "2025-06-30 23:59:59"
     groups:
       - rdp_users
-      - phd_users
+      - krg_power_users
     password: $6$rounds=656000$a/pjLx6dHhqiocsB$KFT88l9478WgGU/cb/AlA65qCEYplGLWqb.Q.Kfi0vMpwLkFPDtvQO.X8xbE3YFpd2LSOg.wT0CnUZs4MN2l/.
   - username: t.yang.565
     name: Tongfei Yang
@@ -201,7 +201,7 @@ users:
       - docker
       - rdp_users
       - cuda
-      - phd_users
+      - krg_power_users
     password: $6$rounds=656000$7/QDJSjT/1Q6fm9D$GyEG3mk9xzbLPqMDWMnr05S9KVJ82d97iq3/JVq94JcAN4nKcCm.pQpUm4b8W/jDy8TyfYBaC1Jg3rVi1S97M1
   - username: s.dohadwalla.125
     name: Sameer Dohadwalla
@@ -314,7 +314,7 @@ users:
       - label_studio_admin
       - docker
       - rdp_users
-      - phd_users
+      - krg_power_users
     password: $6$rounds=656000$ZRxhbzdjqCn2BNby$Lprt233IyTZ99dJAJPdvJhFzJ8zEN0eFddRL6nrmE2Oep0faWnXHzejOd5KZqAQRcqcazTchnfXev7sNYzKwM0
   - username: a.deshpande.186
     name: Anurag Deshpande

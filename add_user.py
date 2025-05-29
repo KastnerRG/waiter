@@ -74,7 +74,7 @@ def main():
         2: 'cuda',
         3: 'rdp_users',
         4: 'label_studio_admin',
-        5: 'phd_users'
+        5: 'krg_power_users'
     }
     for gid, gname in accepted_groups.items():
         print(f'{gid}: {gname}')
