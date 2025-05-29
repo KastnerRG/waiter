@@ -104,7 +104,7 @@
     ansible.builtin.group:
       name: krg_power_users
       state: present
-  - name: give krg_power_users control of /tools
+  - name: Give krg_power_users control of /tools
     become: true
     ansible.builtin.files:
       path: /tools
