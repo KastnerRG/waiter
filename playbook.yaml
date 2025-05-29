@@ -99,6 +99,19 @@
     ansible.builtin.group:
       name: rdp_users
       state: present
+  - name: Create krg_power_users group
+    become: true
+    ansible.builtin.group:
+      name: krg_power_users
+      state: present
+  - name: Give krg_power_users control of /tools
+    become: true
+    ansible.builtin.files:
+      path: /tools
+      owner: waiter-admin
+      group: krg_power_users
+      mode: '775'
+      state: present
   - name: Deploy sesman.ini
     become: true
     ansible.builtin.copy:

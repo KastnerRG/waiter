@@ -32,7 +32,8 @@
                   "docker",
                   "cuda",
                   "rdp_users",
-                  "label_studio_admin"
+                  "label_studio_admin",
+                  "krg_power_users"
                 ]
               }
             },
