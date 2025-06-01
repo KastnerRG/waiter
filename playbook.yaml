@@ -106,7 +106,7 @@
       state: present
   - name: Give krg_power_users control of /tools
     become: true
-    ansible.builtin.files:
+    ansible.builtin.file:
       path: /tools
       owner: waiter-admin
       group: krg_power_users
