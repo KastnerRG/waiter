@@ -111,7 +111,7 @@
       owner: waiter-admin
       group: krg_power_users
       mode: '775'
-      state: present
+      state: directory
   - name: Deploy sesman.ini
     become: true
     ansible.builtin.copy:
