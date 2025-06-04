@@ -406,6 +406,7 @@ users:
     name: Venkateshwaran Sivaramakrishnan
     authorized_keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCdhvJEqxLujYG0gzMzG7Ai/IPv0wKuEAz+gHKkny9ZxdCap3tWFxLVr2CKtixx53kfyI7734rMl2dHptuWJnCxI65w+b2S/R1VEbYskoVx+yu0YQRcsKukcdR1LrnBNJ9WxU5V6hfzi5ByT+Jkkw/2/KednpUknNb2pRMwHf0AOUM9wbI/QMpqOTxw4saS48EBXNYXNQdNMnAxI5AtxoW4Q9QA1hAh622sWvHA/XIr9VQcLYCo9BrYJXxvEyW7I7fXDOd5Rxol5LwL2pmyrccO4TZ9KHh5aPfxKcL8gHl4fcr8phAHNPdzMx8tWTsJVMxiW+vjc2MIB6gpI0gTquX25RJ8CZhvbyHcyMdGTITjUuaK8tfsOYGWPPyBx4yUsotV9QgkR6LPuhaakVLvKLMoBIXUhQ5T/koQZjIwwK8Fkwc88Sn/sGwOWYnTo2jpE8Z/UgA/J7CJ6G3CUTflwQ6pHeBY7tD636o0zsIONKylUbyE1ltMr6O6nYUdoMcvm0u6OTmX1JdUkaCW+Yhfbx+icTY6tt9m8eXTqTkZlqswqQde/SVGmHhR9lyETN8EXodbzdqF/zlKbyhwNPhFX19O72iiYTyFYh+kooyik3tvlT5DmV+8aOY+7hx0wMK+WYe9KohxX+9MxXZSZVrY5ItLNb+LGhIlVo4yTWNEOrZkvQ== venkateshwaran292@gmail.com
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEDEyRAq6yUZUCD9Uy2qpCsI4wx3yOtkiadsafS63MXQ venkateshwaran292@gmail.com
     expires: "2025-06-30 23:59:59"
     groups:
       - rdp_users
