@@ -34,7 +34,7 @@ users:
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFYe4rcYCduSjZCAO+muks3ZZoxTUOY06nWJ22tg5p2R oweng@ucsd.edu
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMtzS/eesTKzCatoCu3ppVnFFeS/YVRjXAOixSgVx1gJ oweng@ucsd.edu
-    expires: '2025-06-30 23:59:59'
+    expires: '2026-08-30 23:59:59'
     groups:
       - docker
       - cuda
