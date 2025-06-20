@@ -419,3 +419,12 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$NTkkM1DvmL5UaLFG$8SzDSAGwUH5xmNlgBSUAs4yWVdcI4UoqiU4uMaDvUrqHMs5GxC/.p/6G/qzH2zuTrlZu7jBbPd76Fh.NB/ucv1
+  - username: z.ling.865
+    name: Zihan Ling
+    authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDUdQz0/qxuZUmoqwClxjniVl+11NzRH7szRjh9usz0GP2spze3da9Ja2QJZgeBHDAvCJQic18tyRXPUFXzu1lTSqUbO8xlTa7nmhGj6jitIkpgZuFFY72ozXrJysMa3Wg/bQ6dBkgoRxeGG05kN95eJdOS03hfCZnTEUMjg43EovkIK+FUDPzq9cSaWpyMCzfY/iuu3J+/wR5O9IGvoCbURsPDP0DQyccoLpskdtsuaLvPRZplIo/VETeD2HzSibZZJhCuxfwm13xVSRlXso+uuApZAwwmcfcKLviaN8jTsAwYf9laQ12zc6QEQJPRs8LrudGXkHW7QP/LQV4CUz3yLdW5xv024GeBLDYBXpF9EFPEcPV71GkLihuiCthA407HJ9Pm9tBAWeBUsev0i4Dlv6vHCuBNaSdUny+kmYbPwSVFjQ5JKRjUuhhwErERPYFpfAei3kUntl+SOUNiXWhVYqj6kHe0UqVPceEVVpJG0EMJ2r7eYmEVAgzfGXO2dKE6n0/2VHm6FRIPwOIP/5wMRzUD0MNQZpoug9gQSuXSXAD3yjLDJNY+AGfNBtDXN/6WpI0aBxKp5mgpEQ9RX+fX5SvxIuxfxvKMA8xGZkXxfUvGg59A6YNs8Lon81B1csQnkxx5SPQmIUTo5G81yn+pl/9jBuCsX5DFrrZJiunk6w== ziling@ucsd.edu
+    expires: "2026-06-30 23:59:59"
+    groups:
+      - cuda
+      - docker
+    password: $6$rounds=656000$XV2uw71xsUlky9Dw$FJSIb90ZFbY3TA0OXenkObJTv.jIR2FVrF1rUHhib8APNZqEPhX6rqOou6W29TROk13C3PJUQbhOinsd9nnCc0
