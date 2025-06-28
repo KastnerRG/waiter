@@ -431,7 +431,7 @@ users:
   - username: a.gaur.786
     name: Ayan Gaur
     authorized_keys:
-      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD7xhh5ebtorRktaD9EF6cGeMrCqdRM5rKOgc6mxDMY82EefchgcjluBadVAQ/8c73B05a3JA+4vU/PJKXtaJT5B3Lsjn48zkhJtF5/rfGmx9rYMgFen3SFL071hMCTHsk/d8a79crrWH1R+ekqkw7RxKiKuz0lkbKBV1EzNO2YPmbykdOG3CDr28V9OcPMaupyg4vSWNpPWjjzvwSiamoA2aJy14iD8lLQF5ETK4kUOHPB5g/YmdQJgpOHRFDMQsbJVIh+ypTmsR4tRyn+kDe+bhdvBvojxnwPKYbbx+HyXHbMmhG6rdbcrouq2HUZWXxPCvhrTvOMo5a5b4BD569jjQP4CH2Nrs85jcBQqflR3Otp8NRqQE+jx2qOmLU9rd+dnK9s3gH5yGZsxv22zjkF/5t097Mo9SxIuuqyo4mL+HEmw2CST4KQRImoFw2xqW7KZz1Ma3dHNSR1JkAWYYQTg6f/6AIerREH2iwWDgtLxBheeSRu7l8N6PxxErUfqUc= ayan@MacBookPro.lan
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII7fcVaeDfY2rsYXjSSPOMnu+hy4MXiprRzEYQVpPsLr ayan@MacBookPro.lan
     expires: "2025-12-31 23:59:59"
     groups:
       - rdp_users
