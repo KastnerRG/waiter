@@ -428,3 +428,12 @@ users:
       - cuda
       - docker
     password: $6$rounds=656000$XV2uw71xsUlky9Dw$FJSIb90ZFbY3TA0OXenkObJTv.jIR2FVrF1rUHhib8APNZqEPhX6rqOou6W29TROk13C3PJUQbhOinsd9nnCc0
+  - username: a.chen.415
+    name: Annabelle Chen
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEIH92Lhgn5ui/cjaJO9M3j8MKSEUCHRy50p6j9wiyPH annab@LAPTOP-6J92ST70
+    expires: "2025-08-29 23:59:59"
+    groups:
+      - cuda
+      - docker
+    password: $6$rounds=656000$.ZTVvP2x8lycQPVC$0BQHGntMn1p893vtoNNXPPdPfi4VmaL23VImoit16iPae7Ay63ZN0IIae9QhYFnTmY.IpQMpCMkrSC41wiHoE.
