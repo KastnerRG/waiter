@@ -55,7 +55,7 @@ users:
     name: Zhenghua Ma
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOZUUT9mmk3zYD0y3LTdEByfIvUJPsp7zn/OpqtIrnq8 zhm007@ucsd.edu
-    expires: '2025-06-30 23:59:59'
+    expires: '2026-06-30 23:59:59'
     groups:
       - docker
       - rdp_users
@@ -428,6 +428,22 @@ users:
       - cuda
       - docker
     password: $6$rounds=656000$XV2uw71xsUlky9Dw$FJSIb90ZFbY3TA0OXenkObJTv.jIR2FVrF1rUHhib8APNZqEPhX6rqOou6W29TROk13C3PJUQbhOinsd9nnCc0
+  - username: a.gaur.786
+    name: Ayan Gaur
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII7fcVaeDfY2rsYXjSSPOMnu+hy4MXiprRzEYQVpPsLr ayan@MacBookPro.lan
+    expires: "2025-12-31 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$d1BSVfV7hPhcsERf$Uhqh/V4RGw272aY.mKedtNhuK.CejPiRtg6a6Gxk9tgqSKulrPj2CS7Jhhbel2giNY0pr8nStk1UaQwIEXC671
+  - username: s.lipps.127
+    name: Sean Lipps
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEdVxEHfPlr0yjFiRO3SBOTXqeOOngo3TtRLwWmiYRYK fuzzi@DESKTOP-58JJ3K3
+    expires: "2025-12-31 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$Wz9WAmtwJNcF4d2E$W8WEkpFgoTQ3H51WXG5D8x/HgKTy/5i9RevC8V6aM97uhsTlQRyi8OZc.fYbLO45YemO.uhtha6O4EuvB481q/
   - username: a.chen.415
     name: Annabelle Chen
     authorized_keys:
