@@ -380,7 +380,7 @@ users:
     name: Xun Liu
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE5tT9mCMFsFeEA3cCz7OCZ9ANsyQLE8EGydVVcz3r9d xul007@ucsd.edu
-    expires: "2025-06-30 23:59:59"
+    expires: "2025-09-30 23:59:59"
     groups:
       - rdp_users
       - docker
