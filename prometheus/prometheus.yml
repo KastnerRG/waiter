@@ -14,7 +14,7 @@ scrape_configs:
     scrape_interval: 30s
     static_configs:
       - targets:
-          - fabricant.ucsd.edu:9101
+          - fabricant-prod.ucsd.edu:9101
 
   - job_name: 'node_exporter'
 
