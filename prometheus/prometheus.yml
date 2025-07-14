@@ -26,6 +26,7 @@ scrape_configs:
           - waiter.ucsd.edu:9100
           - kastner-ml.ucsd.edu:9100
           - fabricant.ucsd.edu:9100
+          - fabricant-prod.ucsd.edu:9100
           - e4e-fishsense-mobile-endpoint.dynamic.ucsd.edu:9100
 
     # tls_config:
@@ -119,7 +120,7 @@ scrape_configs:
     scrape_interval: 15s
     static_configs:
       - targets:
-        - fabricant.ucsd.edu:9095
+        - fabricant-prod.ucsd.edu:9095
   - job_name: e4efs_workers
     scrape_interval: 15s
     static_configs:
