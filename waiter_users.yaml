@@ -453,3 +453,11 @@ users:
       - cuda
       - docker
     password: $6$rounds=656000$.ZTVvP2x8lycQPVC$0BQHGntMn1p893vtoNNXPPdPfi4VmaL23VImoit16iPae7Ay63ZN0IIae9QhYFnTmY.IpQMpCMkrSC41wiHoE.
+  - username: h.mao.94
+    name: Huize Mao
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMHQfMFkM0d0CSYOzxX6/QeyHmEywJkNbP0jitOqjnFQ Huizemao@gmail.com
+    expires: "2025-12-31 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$ReC4taayzKRA56rL$KuZl94mncgGNrJw7gcAmfy7cLFlMdUwXV99JBN2XRWsGD0AOQyO7TZpfgaPyENUHKw1gih4NwhHWegvNBv/yp0
