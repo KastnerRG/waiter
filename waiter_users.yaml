@@ -251,7 +251,7 @@ users:
     name: Yaohui Chen
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOF/Wa+Pw+oAqqyMm04U/npjoyby6+wkL0GKmWdIHJX5 yac033@ucsd.edu
-    expires: "2025-06-30 23:59:59"
+    expires: "2026-06-30 23:59:59"
     groups:
       - rdp_users
       - docker
