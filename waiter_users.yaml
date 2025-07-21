@@ -308,7 +308,7 @@ users:
     name: Sean Perry
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIILwsfYNsl6DSg00wOjvTip7GwO+aANfEBn6T3YcAHNG seanh@siloenvy
-    expires: "2025-06-30 23:59:59"
+    expires: "2026-06-30 23:59:59"
     groups:
       - cuda
       - label_studio_admin
