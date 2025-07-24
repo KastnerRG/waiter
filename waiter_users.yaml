@@ -68,7 +68,7 @@ users:
     name: Aba Gnaneswaran
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGbpKj1MiYHa32RvQB50NltsfXAToigFMyYJkgpTxo8M abarajithan07@gmail.com
-    expires: '2025-06-30 23:59:59'
+    expires: '2026-06-30 23:59:59'
     groups:
       - docker
       - rdp_users
