@@ -177,7 +177,7 @@ users:
     name: Francesco Restuccia
     authorized_keys:
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDAJKdfv2lbengKgXOAnfCHddvlIpt1Ge6IjB3yPcicX/sKvDjCgYiKJC88l0Vw5CtjKh6lEp3SQzrTVRmtyTcLqqxIL44bcrSPUUJaoRP/bbtQPiJTNlVYAs2OEkTRRcyqsZrbrOMt7C0ARC6WKGq2L69BZZL44r4Ebp05tFTFshcZr2+pYgHvhYjJqdygjX7x9qVtO+ZfqYsMR78J4Y7Q++fzZtP5gVdYk5WvpO+qK49aSgBn6vyNXWcZrDXR3CzxQEpkJKVB+8CHHT67AkGCiLdTiJMfr1wvr0C/yTdLrEfj0A6Xs9MslHnZvYzEzJsEMMG1SPKNCTtZBAo7/ww/hQSaIPyBbXiiptv3DY3h6mIAUE4vM4VgRcSpRsuR7TlVI/hDHMgYAqSCa0Hn3gLWvstUt0Wg/UDbEL83Wkra00XL3d3l9n7yIN0v5w2F0C6sTSi91UEwWRqlqWa8bGz4neCYMts3B71VY/4QPClxlhNTFQIdf9d5dt6C57MRR5BfwxwZhcGx+NFilH6eGzLETCLJGTTbCadIOtzbM5q4wZFnq0yyfKkbVT431a4uFtyf/LVqReJ69TjqbW/KOhfhaN/ANgIn1ScuNiwpJv8b/uLNtQnQ2REe8xyFIWu6stSUc2h3fCZ9D4xQvQLAc1f06TAFhv8QPQj54xbpfXuXNw== francesc.restuccia@gmail.com
-    expires: "2025-06-30 23:59:59"
+    expires: "2026-06-30 23:59:59"
     groups:
       - rdp_users
       - krg_power_users
