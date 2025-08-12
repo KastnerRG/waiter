@@ -461,3 +461,13 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$ReC4taayzKRA56rL$KuZl94mncgGNrJw7gcAmfy7cLFlMdUwXV99JBN2XRWsGD0AOQyO7TZpfgaPyENUHKw1gih4NwhHWegvNBv/yp0
+  - username: k.vijayakumar.631
+    name: Keerthivasan Vijayakumar
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDx9eHsNnSAdg8XAKXUDrqBXPF4C3BwoibjhpN+Un3MN vkvasan6@gmail.com
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINIwKFeomDWe4Bac40x/FgHR+DYXcSECp4RJQOC3zGua vkvasan6@gmail.com
+    expires: "2026-08-10 23:59:59"
+    groups:
+      - rdp_users
+      - docker
+    password: $6$rounds=656000$PAjRbGagZu6evpyz$wzTj.n1n32l1RtPbfcrKFCaeIU0F686lpYYPmaG/ig/jIkkapYuLV4gqdGEJuTCw2oyfQ6vkfPTBb.0xI/io6/
