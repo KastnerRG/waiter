@@ -58,6 +58,7 @@ scrape_configs:
       - targets:
         - waiter.ucsd.edu:9000
         - kastner-ml.ucsd.edu:9000
+        - fabricant-prod.ucsd.edu:9000
         - fabricant.ucsd.edu:9000
         - e4e-fishsense-mobile-endpoint.dynamic.ucsd.edu:9000
   - job_name: ipmi_exporter
@@ -106,6 +107,7 @@ scrape_configs:
         - waiter.ucsd.edu
         - kastner-ml.ucsd.edu
         - fabricant.ucsd.edu
+        - fabricant-prod.ucsd.edu
         - e4e-octopi.dynamic.ucsd.edu
         - e4e-gateway.ucsd.edu
         - e4e-fishsense-mobile-endpoint.dynamic.ucsd.edu
