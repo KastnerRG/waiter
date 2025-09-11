@@ -199,11 +199,20 @@
   - name: Install Verilator/GTKWave
     import_tasks: verilator.yml
 # Snapper Configuration for BTRFS
-  - name: Install snapper config
+  - name: Install root snapper config
     become: true
     ansible.builtin.copy:
       src: snapper/root
       dest: /etc/snapper/configs/root
+      owner: root
+      group: root
+      mode: '0620' # user read/write, group read
+# This is for docker volumes and therefore needs to be after docker is installed.
+  - name: Install docker-volumes snapper config
+    become: true
+    ansible.builtin.copy:
+      src: snapper/docker-volumes
+      dest: /etc/snapper/configs/docker-volumes
       owner: root
       group: root
       mode: '0620' # user read/write, group read
