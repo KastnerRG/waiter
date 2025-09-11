@@ -2,12 +2,14 @@
   become: true
   community.general.btrfs_subvolume:
     name: /var/lib/docker
+    automount: true
     state: present
 
 - name: Create btrfs subvolume for Docker Volumes
   become: true
   community.general.btrfs_subvolume:
     name: /var/lib/docker/volumes
+    automount: true
     state: present
 
 - name: Add Docker GPG APT key
