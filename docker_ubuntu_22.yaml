@@ -1,9 +1,3 @@
-# - name: Create btrfs subvolume for Docker
-#   become: true
-#   community.general.btrfs_subvolume:
-#     name: /var/lib/docker
-#     state: present
-
 - name: Create btrfs subvolume for Docker Volumes
   become: true
   community.general.btrfs_subvolume:
