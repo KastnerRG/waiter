@@ -471,3 +471,66 @@ users:
       - rdp_users
       - docker
     password: $6$rounds=656000$PAjRbGagZu6evpyz$wzTj.n1n32l1RtPbfcrKFCaeIU0F686lpYYPmaG/ig/jIkkapYuLV4gqdGEJuTCw2oyfQ6vkfPTBb.0xI/io6/
+  - username: cse237c_fa25_a_cavazos_935
+    name: Alex Cavazos
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEDGh6Xlt/m58pi2JItbu48ZsRIl6vKeNIhfYVmsYS/a alexc@Cavazos_NIWC
+    expires: "2025-12-31 23:59:59"
+    groups:
+      - docker
+      - rdp_users
+    password: $6$rounds=656000$5RPtb0667YRuUsIx$XcIF1Ad0sEyoR3Ma40V4uGlT70idCwwusYc3kDQwp/ZMarbnMECbGyvb2GBPx3EF7v2FRuPYIwylf0XIWHlnL0
+  - username: cse237c_fa25_m_medina_168
+    name: Manuel Medina
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAMcwu59FJi2xo8Vo/PKPcHmt+mTHfbpgHAa1G4dT3Ne medin@Manwe1l
+    expires: "2025-12-31 23:59:59"
+    groups:
+      - docker
+      - rdp_users
+    password: $6$rounds=656000$knBI7.IjgEWxLenH$ro4TL3AkrX2g.EyzRO8i7dzN6Y.r3uZEuNlPbX3MubKyDkNABIO18XEx3BsZOVir7Sf2Xzk0P68El1Kx6Esvz.
+  - username: cse237c_fa25_a_goswami_477
+    name: Anjan Goswami
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIErbA56iWTPtGjZmczaP9AieTLmssvO9xNIb+3JBeQDd a2goswami@ucsd.edu
+    expires: "2025-12-31 23:59:59"
+    groups:
+      - rdp_users
+      - docker
+    password: $6$rounds=656000$FeOknjHJ/ATZKB0A$jxrleCj3fU1bIcDrEgYG/hc8tMbyaOBQhsse3TJyJ8FbPRmwXdFT8.DdH6qloeC3kpJ03o3544rAT5S6GWJJd/
+  - username: cse237c_fa25_m_infante_360
+    name: Mario Infante
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINaTwYsuBNmnwhS10ZTljohRmAuAidoQ9GhLnmahM1Xf mario@DESKTOP-2H0E6IK
+    expires: "2025-12-31 23:59:59"
+    groups:
+      - rdp_users
+      - docker
+    password: $6$rounds=656000$Obcppovd5HYsfQBx$85mja.Nu9IZz42kXetVyCAMsfoFn8Ivh7t/XT7rkjiBxlsV7zTk97nxVJbeCSjvFLcIYiHvUrfQWJ3y.bfVT./
+  - username: cse237c_fa25_d_rothfusz_224
+    name: Daniel Rothfusz
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDm48q/m5Zt9dmluOxDClfvhPMx1Vm9DWk7++gTw+VqJ daniel.rothfusz@gmail.com
+    expires: "2025-12-31 23:59:59"
+    groups:
+      - docker
+      - rdp_users
+    password: $6$rounds=656000$of7gbMegb5VJ6v2D$K9htKv.f6ieTv.5l.NeVsWz6yx4HhnJ1pATQNB6pFv8NjJnPDquKYw7Hlr9.yeO1B4fGZrn.0trWAI8kw1ycr0
+  - username: cse237c_fa25_b_rooney_704
+    name: Bryce Rooney
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOr43dYH6UzAWgII0I7zoaWPGJN5WqSpOXjWOOqXAeMe yayal@Yadi-Laptop
+    expires: "2025-12-31 23:59:59"
+    groups:
+      - rdp_users
+      - docker
+    password: $6$rounds=656000$odlfezRaYc3OMw30$rYpqxP82hxHobpMxFnbXppUWzghfaE3Zi.8XUuH10krolxmMt5NFT1ud.YnbMEegrnaQx9C5aRj0Ubpwe6/An/
+  - username: cse237c_fa25_l_mcmahan_559
+    name: LaChelle McMahan
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHITYhcFZDH6pUjN+pKmaJew+h38uXJUNa2GBf1vA1ar lache@Chelle
+    expires: "2025-12-31 23:59:59"
+    groups:
+      - rdp_users
+      - docker
+    password: $6$rounds=656000$8OwvJPIw6IPIrV5s$RuKyPN1auFTpfH6TSVgVNDAAhfVHaoUCRVprDNYevNfmCcGOvKDf3ZN788PZavYwoHUPJkVeG9DpQoncvWayU.
