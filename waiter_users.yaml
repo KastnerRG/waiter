@@ -101,7 +101,7 @@ users:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMJpX5YWVEwpcmfQpPWpXks3AB27wYOTLuazguSzdJK7 dzuberi522@gmail
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF8HSEwws1dhjpdIB/HgvBpHJYVotGwb0CzMqbIHhCMi dzube@DESKTOP-BIFLG0S
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG+bBt46zXmHIbLwGC7WfoGHZQ9xIlSix5NKamgTUhhM dzuberi@Danials-MacBook-Pro.local
-    expires: '2025-09-30 23:59:59'
+    expires: '2026-12-30 23:59:59'
     groups:
       - docker
       - cuda
