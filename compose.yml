@@ -1,13 +1,14 @@
 services:
   node_exporter:
-    image: quay.io/prometheus/node-exporter:v1.8.2
+    image: quay.io/prometheus/node-exporter:v1.9.1
     volumes:
       - /:/host:ro,rslave
     restart: unless-stopped
     network_mode: host
     command: --path.rootfs=/host --collector.systemd --collector.systemd.unit-whitelist="(xrdp).service"
+  
   dcgm_exporter:
-    image: nvcr.io/nvidia/k8s/dcgm-exporter:3.3.8-3.6.0-ubuntu22.04
+    image: nvcr.io/nvidia/k8s/dcgm-exporter:4.4.1-5.4.2-ubuntu22.04
     container_name: dcgm_exporter
     restart: always
     ports:
@@ -22,51 +23,52 @@ services:
               count: all
               capabilities: [gpu]
 
-  label_studio_segment_anything_model:
-    container_name: label_studio_segment_anything_model
-    image: heartexlabs/label-studio-ml-backend:sam-master
-    build:
-      context: .
-      shm_size: '4gb'
-      args:
-        TEST_ENV: ${TEST_ENV}
-    deploy:
-      resources:
-        limits:
-            memory: 8G
-        reservations:
-            memory: 4G
-            devices:
-              - driver: nvidia
-                count: 1
-                capabilities: [gpu]
-    environment:
-      # This is not accessible outside of the container network.
-      # We probably do not need auth.
-      - BASIC_AUTH_USER=
-      - BASIC_AUTH_PASS=
-      - SAM_CHOICE=MobileSAM
-      - LOG_LEVEL=DEBUG
-      - NVIDIA_VISIBLE_DEVICES=all
-      - WORKERS=1
-      - THREADS=8
-      - MODEL_DIR=/data/models
+  # label_studio_segment_anything_model:
+  #   container_name: label_studio_segment_anything_model
+  #   image: heartexlabs/label-studio-ml-backend:sam-master
+  #   build:
+  #     context: .
+  #     shm_size: '4gb'
+  #     args:
+  #       TEST_ENV: ${TEST_ENV}
+  #   deploy:
+  #     resources:
+  #       limits:
+  #           memory: 8G
+  #       reservations:
+  #           memory: 4G
+  #           devices:
+  #             - driver: nvidia
+  #               count: 1
+  #               capabilities: [gpu]
+  #   environment:
+  #     # This is not accessible outside of the container network.
+  #     # We probably do not need auth.
+  #     - BASIC_AUTH_USER=
+  #     - BASIC_AUTH_PASS=
+  #     - SAM_CHOICE=MobileSAM
+  #     - LOG_LEVEL=DEBUG
+  #     - NVIDIA_VISIBLE_DEVICES=all
+  #     - WORKERS=1
+  #     - THREADS=8
+  #     - MODEL_DIR=/data/models
 
-      # Since we are not going through Caddy, this should be http.
-      - LABEL_STUDIO_HOST=http://label-studio:8080
-    env_file:
-      - .secrets/segment_anything.env
+  #     # Since we are not going through Caddy, this should be http.
+  #     - LABEL_STUDIO_HOST=http://label-studio:8080
+  #   env_file:
+  #     - .secrets/segment_anything.env
 
   prometheus:
-    image: prom/prometheus:v2.55.0
+    image: prom/prometheus:v3.6.0
     container_name: prometheus
     command: --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.retention.time=2y --storage.tsdb.retention.size=700GB --storage.tsdb.wal-compression
     restart: unless-stopped
     volumes:
       - ./prometheus:/etc/prometheus:ro
       - ./prometheus-data:/prometheus:rw
+
   grafana:
-    image: grafana/grafana-enterprise:11.3.0
+    image: grafana/grafana-enterprise:12.2.0
     container_name: grafana
     user: '1000'
     restart: unless-stopped
@@ -83,7 +85,7 @@ services:
       caddy.reverse_proxy: "{{upstreams 3000}}"
 
   caddy:
-    image: lucaslorentz/caddy-docker-proxy:2.9.1
+    image: lucaslorentz/caddy-docker-proxy:2.10.0
     container_name: caddy
     restart: always
     ports:
@@ -95,26 +97,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./caddy-data:/data
 
-  postgres:
-    image: postgres:16.4
-    restart: always
-    shm_size: 128 mb
-    environment:
-      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_admin_password
-    volumes:
-      - ./postgres/data/:/var/lib/postgresql/data/:rw
-      - ./postgres/config/:/etc/postgresql/:ro
-      - ./postgres/scripts/:/docker-entrypoint-initdb.d/:ro
-      - /etc/passwd:/etc/passwd:ro
-    secrets:
-      - postgres_admin_password
-    command: --config_file=/etc/postgresql/postgres.conf
-    ports:
-      - 5432:5432
-    user: "${USER_ID}:${GROUP_ID}"
-
   blackbox_exporter:
-    image: quay.io/prometheus/blackbox-exporter:v0.25.0
+    image: quay.io/prometheus/blackbox-exporter:v0.27.0
     container_name: blackbox_exporter
     volumes:
       - ./blackbox-exporter:/config:ro
@@ -122,8 +106,7 @@ services:
     ports:
       - 9115:9115
     dns: 8.8.8.8
+
 secrets:
   grafana_e4eadmin_password:
     file: .secrets/gf_admin_password.txt
-  postgres_admin_password:
-    file: .secrets/postgres_admin_password.txt
