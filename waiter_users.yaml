@@ -542,3 +542,12 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$CcPw4gSxw2Oe6Bvi$FqJFAt9W92D/79d6p0fE9rrhHx6DHc3EI4KDi61m43PYKhpDy.ZDZhrhTB7TtmB3Ylnuk/E8hPqEnO0nSflhB1
+  - username: wes237c_fa25_j_hoang_151
+    name: Josh Hoang
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICBBe0NsHe74b2ytwssgLCO/+Y+rcQad6WRU21MPkNwu joh073@ucsd.edu
+    expires: "2025-12-31 23:59:59"
+    groups:
+      - docker
+      - rdp_users
+    password: $6$rounds=656000$pPDc6jGp47m8NGVs$QgGUwPUic/mtUsq91IRd7GI.m9a0Llnp.lONQk6gqKFaYjOq3vgjGM1AIUiYerMoP7OwigxH389tequjvLQSD0
