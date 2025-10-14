@@ -534,6 +534,14 @@ users:
       - rdp_users
       - docker
     password: $6$rounds=656000$8OwvJPIw6IPIrV5s$RuKyPN1auFTpfH6TSVgVNDAAhfVHaoUCRVprDNYevNfmCcGOvKDf3ZN788PZavYwoHUPJkVeG9DpQoncvWayU.
+  - username: m.liu.435
+    name: Mingyu Liu
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGFgyDHrMiyt2hPrYdxM43mz/D/yKwmROtgLiOMLXT7N 23282@LAPTOP-9PQK83V2
+    expires: "2026-04-30 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$CcPw4gSxw2Oe6Bvi$FqJFAt9W92D/79d6p0fE9rrhHx6DHc3EI4KDi61m43PYKhpDy.ZDZhrhTB7TtmB3Ylnuk/E8hPqEnO0nSflhB1
   - username: wes237c_fa25_j_hoang_151
     name: Josh Hoang
     authorized_keys:
