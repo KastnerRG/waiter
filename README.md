@@ -11,3 +11,4 @@ bw login
 bw unlock --raw
 ```
 2. Copy the output of the above to the file `~/bw_session`, ensuring that that file has `400` perms afterwards.
+
