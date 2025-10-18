@@ -38,7 +38,8 @@
   ansible.builtin.apt:
     pkg:
       - cuda-toolkit-12-6
-      - nvidia-open
+      - nvidia-driver-580-open # Upgrade to newer kernel version.
+      # - nvidia-open
     state: latest
     update_cache: true
 
