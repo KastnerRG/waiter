@@ -551,3 +551,19 @@ users:
       - docker
       - rdp_users
     password: $6$rounds=656000$pPDc6jGp47m8NGVs$QgGUwPUic/mtUsq91IRd7GI.m9a0Llnp.lONQk6gqKFaYjOq3vgjGM1AIUiYerMoP7OwigxH389tequjvLQSD0
+  - username: cse291a_fa25_k_long_653
+    name: Keyu Long
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGLXBMlaqZ5VZTJVz9z5was+ZnflZarZO/S2KTfafq0s keyuucsd@gmail.com
+    expires: "2025-12-31 23:59:59"
+    groups:
+      - cuda
+    password: $6$rounds=656000$iwjDUv8Ce1PJcs.b$hkX7CjCC4wsDWcTAdbpR852r71fuUT1H0IZS66FU96Jmzsl4ssKvgvubWEKbHmDUwCKtKVVJAyMXk1wA2Pqxs0
+  - username: cse291a_fa25_z_wang_426
+    name: Zuo Wang
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBqUrovg9pqDMYizHIO8+pWAe/wbyhrxwMPD5I6PtRF4 zwang1600@gmail.com
+    expires: "2025-12-31 23:59:59"
+    groups:
+      - cuda
+    password: $6$rounds=656000$Y6gi98FlRb28hZ3O$lJTKlJMrzV0k15FtpUhUiUNwTtv8QDDGc/ZhvGX235n5HHf0BTh2pt50xrImGYdL7AwtHx46KZgk7uXEiW1MO.
