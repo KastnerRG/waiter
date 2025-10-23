@@ -2,4 +2,4 @@
   ansible.builtin.get_url:
     url: https://nixos.org/nix/install
     checksum: sha256:81722b9b3f5f5e08e6fcbae775196c68b7d7787d15b9bd16e2e22ed085555453
-    dest: '{{ansible_env.HOME}}/installers/nix/install.sh'
+    dest: '{{ansible_env.HOME}}/installers/nix-install.sh'
