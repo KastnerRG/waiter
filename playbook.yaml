@@ -239,6 +239,9 @@
   - name: Setup FlooNoc
     import_tasks: floonoc.yaml  
 
+  - name: Setup nix package manager
+    import_tasks: nix_package_manager.yaml
+
 # Auto deploy
   - name: Ensure systemd user dir exists
     ansible.builtin.file:
