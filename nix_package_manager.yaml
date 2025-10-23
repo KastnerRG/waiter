@@ -7,7 +7,7 @@
 - name: Install nix package manager
   become: true
   ansible.builtin.script:
-    cmd: '{{ansible_env.HOME}}/installers/nix-install.sh' --yes --daemon
+    cmd: '{{ansible_env.HOME}}/installers/nix-install.sh --yes --daemon'
     creates: /nix/var/nix/profiles/default/bin/nix
     executable: /bin/bash
     chdir: "{{ansible_env.HOME}}/installers"
