@@ -261,7 +261,8 @@
     ansible.builtin.command:
       cmd: loginctl enable-linger {{ ansible_user_id }}
 
-
+  - name: Deploy Octoprint API Key
+    import_tasks: prometheus_secrets.yml
 
 # This always at the end
   - name: Deploy Docker Secrets

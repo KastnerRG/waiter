@@ -63,6 +63,8 @@ services:
     container_name: prometheus
     command: --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.retention.time=2y --storage.tsdb.retention.size=700GB --storage.tsdb.wal-compression
     restart: unless-stopped
+    env_file:
+      - .secrets/octoprint_api_key.env
     volumes:
       - ./prometheus:/etc/prometheus:ro
       - ./prometheus-data:/prometheus:rw
