@@ -232,15 +232,15 @@
       enabled: true
       masked: false
       state: started
-    
-  - name: Setup Label Studio
-    import_tasks: label_studio.yaml
 
   - name: Setup FlooNoc
     import_tasks: floonoc.yaml  
 
   - name: Setup nix package manager
     import_tasks: nix_package_manager.yaml
+
+  - name: Deploy Octoprint API Key
+    import_tasks: prometheus_secrets.yml
 
 # Auto deploy
   - name: Ensure systemd user dir exists
@@ -260,9 +260,6 @@
   - name: enable login linger
     ansible.builtin.command:
       cmd: loginctl enable-linger {{ ansible_user_id }}
-
-  - name: Deploy Octoprint API Key
-    import_tasks: prometheus_secrets.yml
 
 # This always at the end
   - name: Deploy Docker Secrets
