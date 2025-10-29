@@ -27,7 +27,6 @@ scrape_configs:
           - kastner-ml.ucsd.edu:9100
           - fabricant.ucsd.edu:9100
           - fabricant-prod.ucsd.edu:9100
-          - e4e-fishsense-mobile-endpoint.dynamic.ucsd.edu:9100
 
     # tls_config:
     #   # CA certificate to validate API server certificate with. At most one of ca and ca_file is allowed.
