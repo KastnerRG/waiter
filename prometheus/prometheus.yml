@@ -128,6 +128,8 @@ scrape_configs:
   - job_name: 'octoprint'
     scrape_interval: 5s
     metrics_path: '/plugin/prometheus_exporter/metrics'
+    tls_config:
+      insecure_skip_verify: true
     static_configs:
       - targets:
         - 'e4e-octopi.dynamic.ucsd.edu:443'
