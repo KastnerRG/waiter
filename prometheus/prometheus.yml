@@ -129,6 +129,6 @@ scrape_configs:
     scrape_interval: 5s
     metrics_path: '/plugin/prometheus_exporter/metrics'
     params:
-      apikey: [`${OCTOPRINT_API_KEY}`]
+      apikey: ['${OCTOPRINT_API_KEY}']
     static_configs:
       - targets: ['e4e-octopi.dynamic.ucsd.edu:443']
