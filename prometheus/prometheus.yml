@@ -128,4 +128,4 @@ scrape_configs:
     scrape_interval: 15s
     static_configs:
       - targets:
-        - fabricant-prod.ucsd.edu:8080/metrics
+        - fabricant-prod.ucsd.edu:8080
