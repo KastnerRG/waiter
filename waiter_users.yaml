@@ -365,7 +365,7 @@ users:
     name: Shreeyash Pacharne
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO7vx3O9FKqiFKj3wjqL7mQT5S8fI8TkVWwkqVpSzTol
-    expires: "2025-07-31 23:59:59"
+    expires: "2026-03-31 23:59:59"
     groups:
       - rdp_users
     password: $6$rounds=656000$rAhLSfEhTpDdrL5R$/dYr.aDFAGOz/GuylJ32PrUv1RtwEDKqrJmyay/WCRovY/C.gMC4S89N4MsWtG4bIVbzLiKdKLU5oNCpHGpbt0
