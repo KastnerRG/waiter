@@ -207,6 +207,11 @@
       owner: root
       group: root
       mode: '0620' # user read/write, group read
+  - name: Configure snapper root config
+    ansible.builtin.command:
+      cmd: >
+        snapper -c docker-volumes create-config /var/lib/docker/volumes
+      creates: /etc/snapper/configs/docker-volumes
 # This is for docker volumes and therefore needs to be after docker is installed.
   - name: Install docker-volumes snapper config
     become: true
