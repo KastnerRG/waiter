@@ -58,47 +58,6 @@ services:
   #   env_file:
   #     - .secrets/segment_anything.env
 
-  prometheus:
-    image: prom/prometheus:v3.6.0
-    container_name: prometheus
-    command: --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.retention.time=2y --storage.tsdb.retention.size=700GB --storage.tsdb.wal-compression
-    restart: unless-stopped
-    env_file:
-      - .secrets/octoprint_api_key.env
-    volumes:
-      - ./prometheus:/etc/prometheus:ro
-      - ./prometheus-data:/prometheus:rw
-
-  grafana:
-    image: grafana/grafana-enterprise:12.2.0
-    container_name: grafana
-    user: '1000'
-    restart: unless-stopped
-    environment:
-      - GF_SECURITY_ADMIN_USER=e4eadmin
-      - GF_SECURITY_ADMIN_PASSWORD__FILE=/run/secrets/grafana_e4eadmin_password
-    secrets:
-      - grafana_e4eadmin_password
-    volumes:
-      - ./grafana-storage:/var/lib/grafana:rw
-      - ./grafana:/etc/grafana:ro
-    labels:
-      caddy: dashboard.waiter.ucsd.edu
-      caddy.reverse_proxy: "{{upstreams 3000}}"
-
-  caddy:
-    image: lucaslorentz/caddy-docker-proxy:2.10.0
-    container_name: caddy
-    restart: always
-    ports:
-      - 80:80
-      - 443:443
-    environment:
-      - CADDY_INGRESS_NETWORKS=waiter_default
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./caddy-data:/data
-
   blackbox_exporter:
     image: quay.io/prometheus/blackbox-exporter:v0.27.0
     container_name: blackbox_exporter
