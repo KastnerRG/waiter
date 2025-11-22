@@ -128,6 +128,14 @@
       enabled: true
       masked: false
       state: started
+  - name: Enable sysrq
+    become: true
+    ansible.builtin.copy:
+      src: sysctl.d/90-sysrq.conf
+      dest: /etc/sysctl.d/90-sysrq.conf
+      owner: root
+      group: root
+      mode: '0644'
 
   - import_tasks: cuda_12_6_1_ubuntu_22.yaml
   - import_tasks: nvidia-container-toolkit_ubuntu.yaml
