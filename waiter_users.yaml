@@ -569,3 +569,13 @@ users:
     groups:
       - cuda
     password: $6$rounds=656000$Y6gi98FlRb28hZ3O$lJTKlJMrzV0k15FtpUhUiUNwTtv8QDDGc/ZhvGX235n5HHf0BTh2pt50xrImGYdL7AwtHx46KZgk7uXEiW1MO.
+  - username: t.singh.692
+    name: Tejus Singh
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEDy2pwjI83shvKTLjl8oAW46EPxLDkrL8UfUXRTsdmZ t1singh@ucsd.edu
+    expires: "2026-12-31 23:59:59"
+    groups:
+      - docker
+      - cuda
+      - rdp_users
+    password: $6$rounds=656000$4TtmmtGAZG0T66v/$wEW/wQu0Ir05sTyxmPbWI5CUMF5AHk0Q2XweTyJvG2G9wlvxO/B3PyN6.lJYvX1Othtx0bwcVQ4zW9NNP8.Ri/
