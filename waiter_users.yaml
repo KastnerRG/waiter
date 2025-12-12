@@ -405,3 +405,11 @@ users:
     groups:
       - rdp_users
     password: $6$rounds=656000$Nc.TQxbrb1JT8FNm$u59jySaM3gKnO7AvL77ed28WOSS6pKfrWtolECv2og0Jhl1ar/cYPZMaxFavXMlVv0cjPFpfSJlCTZcAXBW.Q.
+  - username: h.zhang.383
+    name: Hejia Zhang
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIObzSDK82kN1WFC9npKXtKUypPjKYwxDDXTc9n61zdDF hejiazhang2023@outlook.com
+    expires: "2026-06-30 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$7nzmoegSKrq9PavY$uT0qhuXPk4s58fi7PikLlYKaYgiYtNV9EzT8qpQEMKq9PuO58.XpErHyTajvvoRs3vYZ1brlkqEFiAInHVFTI/
