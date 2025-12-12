@@ -99,6 +99,19 @@
     ansible.builtin.group:
       name: rdp_users
       state: present
+  - name: Create krg_power_users group
+    become: true
+    ansible.builtin.group:
+      name: krg_power_users
+      state: present
+  - name: Give krg_power_users control of /tools
+    become: true
+    ansible.builtin.file:
+      path: /tools
+      owner: waiter-admin
+      group: krg_power_users
+      mode: '775'
+      state: directory
   - name: Deploy sesman.ini
     become: true
     ansible.builtin.copy:
@@ -115,6 +128,14 @@
       enabled: true
       masked: false
       state: started
+  - name: Enable sysrq
+    become: true
+    ansible.builtin.copy:
+      src: sysctl.d/90-sysrq.conf
+      dest: /etc/sysctl.d/90-sysrq.conf
+      owner: root
+      group: root
+      mode: '0644'
 
   - import_tasks: cuda_12_6_1_ubuntu_22.yaml
   - import_tasks: nvidia-container-toolkit_ubuntu.yaml
@@ -186,11 +207,25 @@
   - name: Install Verilator/GTKWave
     import_tasks: verilator.yml
 # Snapper Configuration for BTRFS
-  - name: Install snapper config
+  - name: Install root snapper config
     become: true
     ansible.builtin.copy:
       src: snapper/root
       dest: /etc/snapper/configs/root
+      owner: root
+      group: root
+      mode: '0620' # user read/write, group read
+  - name: Configure snapper root config
+    ansible.builtin.command:
+      cmd: >
+        snapper -c docker-volumes create-config /var/lib/docker/volumes
+      creates: /etc/snapper/configs/docker-volumes
+# This is for docker volumes and therefore needs to be after docker is installed.
+  - name: Install docker-volumes snapper config
+    become: true
+    ansible.builtin.copy:
+      src: snapper/docker-volumes
+      dest: /etc/snapper/configs/docker-volumes
       owner: root
       group: root
       mode: '0620' # user read/write, group read
@@ -210,12 +245,15 @@
       enabled: true
       masked: false
       state: started
-    
-  - name: Setup Label Studio
-    import_tasks: label_studio.yaml
 
   - name: Setup FlooNoc
     import_tasks: floonoc.yaml  
+
+  - name: Setup nix package manager
+    import_tasks: nix_package_manager.yaml
+
+  - name: Deploy Octoprint API Key
+    import_tasks: prometheus_secrets.yml
 
 # Auto deploy
   - name: Ensure systemd user dir exists
@@ -235,8 +273,6 @@
   - name: enable login linger
     ansible.builtin.command:
       cmd: loginctl enable-linger {{ ansible_user_id }}
-
-
 
 # This always at the end
   - name: Deploy Docker Secrets

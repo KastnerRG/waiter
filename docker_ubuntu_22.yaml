@@ -1,3 +1,10 @@
+- name: Create btrfs subvolume for Docker Volumes
+  become: true
+  community.general.btrfs_subvolume:
+    name: /var/lib/docker/volumes
+    recursive: true
+    state: present
+
 - name: Add Docker GPG APT key
   become: true
   apt_key:

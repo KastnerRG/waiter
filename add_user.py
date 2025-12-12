@@ -73,7 +73,8 @@ def main():
         1: 'docker',
         2: 'cuda',
         3: 'rdp_users',
-        4: 'label_studio_admin'
+        4: 'label_studio_admin',
+        5: 'krg_power_users'
     }
     for gid, gname in accepted_groups.items():
         print(f'{gid}: {gname}')
