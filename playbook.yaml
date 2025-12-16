@@ -79,6 +79,7 @@
         - libgtk2.0-dev
         # NFS
         - nfs-common
+        - zsh
   - name: Ensure these packages are not installed
     become: true
     ansible.builtin.apt:
