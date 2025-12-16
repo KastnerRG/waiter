@@ -51,9 +51,9 @@ TIMELINE_MIN_AGE="1800" # In seconds.  At least 30 minutes old to be deleted.
 TIMELINE_LIMIT_HOURLY="168" # A week of hourlies
 TIMELINE_LIMIT_DAILY="14" # Two weeks of dailies
 TIMELINE_LIMIT_WEEKLY="4" # A month of weeklies
-TIMELINE_LIMIT_MONTHLY="12" # A year of monthlies
-TIMELINE_LIMIT_QUARTERLY="8" # Two years worth of quarterlies
-TIMELINE_LIMIT_YEARLY="10" # 10 years of yearlies
+TIMELINE_LIMIT_MONTHLY="3" # Three months of monthlies
+TIMELINE_LIMIT_QUARTERLY="2" # Two quarters worth of quarterlies
+TIMELINE_LIMIT_YEARLY="0" # 1 year of yearlies
 
 
 # cleanup empty pre-post-pairs
