@@ -2,7 +2,7 @@
   - name: Configure snapper root config
     ansible.builtin.command:
       cmd: >
-        snapper -c root create-config /var/lib/docker/volumes
+        snapper -c root create-config /
       creates: /etc/snapper/configs/root
   - name: Install root snapper config
     become: true
@@ -31,7 +31,7 @@
   - name: Configure snapper home config
     ansible.builtin.command:
       cmd: >
-        snapper -c home create-config /var/lib/docker/volumes
+        snapper -c home create-config /home
       creates: /etc/snapper/configs/home
   - name: Install home snapper config
     become: true
@@ -59,4 +59,5 @@
       daemon_reload: true
       enabled: true
       masked: false
+
       state: started
