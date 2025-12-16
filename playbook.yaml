@@ -206,45 +206,8 @@
 # Install Verilator/GTKWave
   - name: Install Verilator/GTKWave
     import_tasks: verilator.yml
-# Snapper Configuration for BTRFS
-  - name: Install root snapper config
-    become: true
-    ansible.builtin.copy:
-      src: snapper/root
-      dest: /etc/snapper/configs/root
-      owner: root
-      group: root
-      mode: '0620' # user read/write, group read
-  - name: Configure snapper root config
-    ansible.builtin.command:
-      cmd: >
-        snapper -c docker-volumes create-config /var/lib/docker/volumes
-      creates: /etc/snapper/configs/docker-volumes
-# This is for docker volumes and therefore needs to be after docker is installed.
-  - name: Install docker-volumes snapper config
-    become: true
-    ansible.builtin.copy:
-      src: snapper/docker-volumes
-      dest: /etc/snapper/configs/docker-volumes
-      owner: root
-      group: root
-      mode: '0620' # user read/write, group read
-  - name: Start snapper timer
-    become: true
-    ansible.builtin.systemd_service:
-      name: snapper-timeline.timer
-      daemon_reload: true
-      enabled: true
-      masked: false
-      state: started
-  - name: Start snapper cleanup
-    become: true
-    ansible.builtin.systemd_service:
-      name: snapper-cleanup.timer
-      daemon_reload: true
-      enabled: true
-      masked: false
-      state: started
+  - name: Configure Snapper
+    import_tasks: snapper/snapper.yml
 
   - name: Setup FlooNoc
     import_tasks: floonoc.yaml  

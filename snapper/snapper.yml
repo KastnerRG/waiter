@@ -1,0 +1,62 @@
+# Snapper Configuration for BTRFS
+  - name: Configure snapper root config
+    ansible.builtin.command:
+      cmd: >
+        snapper -c root create-config /var/lib/docker/volumes
+      creates: /etc/snapper/configs/root
+  - name: Install root snapper config
+    become: true
+    ansible.builtin.copy:
+      src: snapper/root
+      dest: /etc/snapper/configs/root
+      owner: root
+      group: root
+      mode: '0620' # user read/write, group read
+
+# This is for docker volumes and therefore needs to be after docker is installed.
+  - name: Configure snapper docker-volumes config
+    ansible.builtin.command:
+      cmd: >
+        snapper -c docker-volumes create-config /var/lib/docker/volumes
+      creates: /etc/snapper/configs/docker-volumes
+  - name: Install docker-volumes snapper config
+    become: true
+    ansible.builtin.copy:
+      src: snapper/docker-volumes
+      dest: /etc/snapper/configs/docker-volumes
+      owner: root
+      group: root
+      mode: '0620' # user read/write, group read
+
+  - name: Configure snapper home config
+    ansible.builtin.command:
+      cmd: >
+        snapper -c home create-config /var/lib/docker/volumes
+      creates: /etc/snapper/configs/home
+  - name: Install home snapper config
+    become: true
+    ansible.builtin.copy:
+      src: snapper/home
+      dest: /etc/snapper/configs/home
+      owner: root
+      group: root
+      mode: '0620' # user read/write, group read
+
+
+# Misc 
+  - name: Start snapper timer
+    become: true
+    ansible.builtin.systemd_service:
+      name: snapper-timeline.timer
+      daemon_reload: true
+      enabled: true
+      masked: false
+      state: started
+  - name: Start snapper cleanup
+    become: true
+    ansible.builtin.systemd_service:
+      name: snapper-cleanup.timer
+      daemon_reload: true
+      enabled: true
+      masked: false
+      state: started
