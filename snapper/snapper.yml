@@ -1,5 +1,6 @@
 # Snapper Configuration for BTRFS
   - name: Configure snapper root config
+    become: true
     ansible.builtin.command:
       cmd: >
         snapper -c root create-config /
@@ -15,6 +16,7 @@
 
 # This is for docker volumes and therefore needs to be after docker is installed.
   - name: Configure snapper docker-volumes config
+    become: true
     ansible.builtin.command:
       cmd: >
         snapper -c docker-volumes create-config /var/lib/docker/volumes
@@ -29,6 +31,7 @@
       mode: '0620' # user read/write, group read
 
   - name: Configure snapper home config
+    become: true
     ansible.builtin.command:
       cmd: >
         snapper -c home create-config /home
@@ -61,3 +64,4 @@
       masked: false
 
       state: started
+
