@@ -34,13 +34,13 @@
     become: true
     ansible.builtin.command:
       cmd: >
-        snapper -c home create-config /home
-      creates: /etc/snapper/configs/home
+        snapper -c home-btrfs create-config /home
+      creates: /etc/snapper/configs/home-btrfs
   - name: Install home snapper config
     become: true
     ansible.builtin.copy:
-      src: snapper/home
-      dest: /etc/snapper/configs/home
+      src: snapper/home-btrfs
+      dest: /etc/snapper/configs/home-btrfs
       owner: root
       group: root
       mode: '0620' # user read/write, group read
