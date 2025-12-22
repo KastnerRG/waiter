@@ -1,6 +1,6 @@
 services:
   node_exporter:
-    image: quay.io/prometheus/node-exporter:v1.9.1
+    image: quay.io/prometheus/node-exporter:v1.10.2
     volumes:
       - /:/host:ro,rslave
     restart: unless-stopped
@@ -8,7 +8,7 @@ services:
     command: --path.rootfs=/host --collector.systemd --collector.systemd.unit-whitelist="(xrdp).service"
   
   dcgm_exporter:
-    image: nvcr.io/nvidia/k8s/dcgm-exporter:4.4.1-4.5.2-distroless
+    image: nvcr.io/nvidia/k8s/dcgm-exporter:4.4.2-4.7.1-distroless
     container_name: dcgm_exporter
     restart: always
     ports:
@@ -59,7 +59,7 @@ services:
   #     - .secrets/segment_anything.env
 
   blackbox_exporter:
-    image: quay.io/prometheus/blackbox-exporter:v0.27.0
+    image: quay.io/prometheus/blackbox-exporter:v0.28.0
     container_name: blackbox_exporter
     volumes:
       - ./blackbox-exporter:/config:ro
