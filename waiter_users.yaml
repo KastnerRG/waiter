@@ -54,7 +54,7 @@ users:
   - username: z.ma
     name: Zhenghua Ma
     authorized_keys:
-      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOZUUT9mmk3zYD0y3LTdEByfIvUJPsp7zn/OpqtIrnq8 zhm007@ucsd.edu
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOPaa5yW1SawXQhozh8AIqfg9OMvpRu4+bOykaepAGOD zhm007@ucsd.edu
     expires: '2026-06-30 23:59:59'
     groups:
       - docker
