@@ -587,3 +587,11 @@ users:
       - cuda
       - rdp_users
     password: $6$rounds=656000$4TtmmtGAZG0T66v/$wEW/wQu0Ir05sTyxmPbWI5CUMF5AHk0Q2XweTyJvG2G9wlvxO/B3PyN6.lJYvX1Othtx0bwcVQ4zW9NNP8.Ri/
+  - username: osenthil
+    name: Oviya Senthil
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOTy4M3H/SJ4cHxgeCFbSoqEtj1tDJzoUHNuQ1deVhPF oviya.senthil36@gmail.com
+    expires: "2026-12-31 23:59:59"
+    groups:
+      - docker
+      - cuda
