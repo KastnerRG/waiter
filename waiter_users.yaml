@@ -595,3 +595,27 @@ users:
     groups:
       - docker
       - cuda
+  - username: yasalas
+    name: Yahir Salas
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHET4oc11dj11Negg6HJKTCgV7zFq/1qqewnwHAv190u yasalas@ucsd.edu
+    expires: "2026-12-31 23:59:59"
+    groups:
+      - docker
+      - cuda
+  - username: yil327
+    name: Yixuan Li
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDFPXIg4gc4B8Pfv6X0o7UkgBs81i3zBcBpWvAr0Jqb8 yixuanli@Yixuans-MacBook-Pro.local
+    expires: "2026-12-31 23:59:59"
+    groups:
+      - docker
+      - cuda
+  - username: lolemus
+    name: Lorenzo Lemus
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJQBuZtcq5uYS9oRuXOeoEOeJRGf+rPr4lZIQfHlU7iB lolemus@ucsd.edu
+    expires: "2026-12-31 23:59:59"
+    groups:
+      - docker
+      - cuda
