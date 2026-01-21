@@ -81,7 +81,7 @@ users:
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF2Z7LbaDPTNkdnuvFivXTUx8X9gU0ZyWrrYBH7KSmG3 chris@chris-laptop
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMBdxTiDckTjaSr349635qAKpECjF1g8lIwISk+NY9VR christophercrutchfield@E4Es-MacBook-Air.local
-    expires: '2025-12-30 23:59:59'
+    expires: '2030-12-30 23:59:59'
     password: $6$w2DjXVZz4/c3NRAC$bIdyTZwZ.Zm26Fh3TSHITus2OhHRweHxGBYrfWe/jGDKIV4WwGbEoycKZKiHVZ53mqUwQRLoTyKK7vWkrpmw70
     groups:
       - docker
@@ -308,7 +308,7 @@ users:
     name: Sean Perry
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIILwsfYNsl6DSg00wOjvTip7GwO+aANfEBn6T3YcAHNG seanh@siloenvy
-    expires: "2026-06-30 23:59:59"
+    expires: "2030-06-30 23:59:59"
     groups:
       - cuda
       - label_studio_admin
