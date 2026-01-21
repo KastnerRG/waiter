@@ -590,7 +590,7 @@ users:
   - username: osenthil
     name: Oviya Senthil
     authorized_keys:
-      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOTy4M3H/SJ4cHxgeCFbSoqEtj1tDJzoUHNuQ1deVhPF oviya.senthil36@gmail.com
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMKdfDPn7JvXLZqm7YEOKShsL4eN8tEt/0B+tV4cVf6y osenthil@ucsd.edu
     expires: "2026-12-31 23:59:59"
     groups:
       - docker
