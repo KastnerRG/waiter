@@ -373,7 +373,7 @@ users:
     name: Gram Koski
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICv7N9fW4G/QvJw62koufJgTWFMbf2/wpcli2EU3JDgS gkoski@ucsd.edu
-    expires: "2025-12-31 23:59:59"
+    expires: "2026-06-30 23:59:59"
     groups:
       - rdp_users
     password: $6$rounds=656000$ll7MAFfurtMK6gsn$08ycEIhhfL6C5ldcHGFU0jDygTxIakGJod4M.awC.Rg9OS2Q3x1fSBZDrLcZ30yWNisJCywhdmwC/BW/NvCut0
