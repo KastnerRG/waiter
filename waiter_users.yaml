@@ -320,7 +320,7 @@ users:
     name: Anurag Deshpande
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK5LMgKDMCtLr2gFbXU+R0lDOW1QOrNIhJR/jNSsQWS0 a4deshpande@ucsd.edu
-    expires: "2025-12-31 23:59:59"
+    expires: "2026-12-31 23:59:59"
     groups:
       - docker
       - rdp_users
