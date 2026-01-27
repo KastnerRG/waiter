@@ -269,7 +269,7 @@ users:
     name: Alexander Redding
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINGok5oTWThgWLh/VdWexmwXrp3i5Ce1qmafFymtJIcF alredding@ucsd.edu
-    expires: "2026-01-06 23:59:59"
+    expires: "2030-01-06 23:59:59"
     groups:
       - cuda
       - docker
