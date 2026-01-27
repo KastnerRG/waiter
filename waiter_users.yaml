@@ -619,3 +619,13 @@ users:
     groups:
       - docker
       - cuda
+  - username: y.baran.659
+    name: Yusuf Baran
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILmtPBg9n4DtLt4sFPKjNn+9Y095l3k0M/Sj1gvuVyPN ybaran@ucsd.edu
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKSQakROcMQUglmDk9RF6KCI0d3jwSLZFbVihSVrdaSi ybaran@ucsd.edu
+    expires: "2027-12-31 23:59:59"
+    groups:
+      - rdp_users
+      - docker
+    password: $6$rounds=656000$KgSmPk0WYwCGdX.G$R4AuqmkjeSi7UlbvzNNjCCH28aJlZ.RTT1zWxcOd6i27p7lozVSs8Rv.ahj1SM3A7Sr.i.TDfFT1NW3n/CZSr.
