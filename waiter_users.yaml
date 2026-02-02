@@ -449,7 +449,7 @@ users:
     name: Sean Lipps
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEdVxEHfPlr0yjFiRO3SBOTXqeOOngo3TtRLwWmiYRYK fuzzi@DESKTOP-58JJ3K3
-    expires: "2025-12-31 23:59:59"
+    expires: "2026-06-30 23:59:59"
     groups:
       - rdp_users
     password: $6$rounds=656000$Wz9WAmtwJNcF4d2E$W8WEkpFgoTQ3H51WXG5D8x/HgKTy/5i9RevC8V6aM97uhsTlQRyi8OZc.fYbLO45YemO.uhtha6O4EuvB481q/
@@ -629,3 +629,12 @@ users:
       - rdp_users
       - docker
     password: $6$rounds=656000$KgSmPk0WYwCGdX.G$R4AuqmkjeSi7UlbvzNNjCCH28aJlZ.RTT1zWxcOd6i27p7lozVSs8Rv.ahj1SM3A7Sr.i.TDfFT1NW3n/CZSr.
+  - username: p.nguyen.75
+    name: Paul Nguyen
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF8Qm+7NJ/39fiQG5UKdw2Qtp1fpk2rhiSSx+iZFOkdR pdn002@ucsd.edu
+    expires: "2026-06-30 23:59:59"
+    groups:
+      - cuda
+      - rdp_users
+    password: $6$rounds=656000$Y4RFQWvukfAtZspS$LSo2Q3lRo2/1frRurmN5/TawNMRAxo5iqi2Xwdxk9jv4EDe9iV35HSUdiCTurcDywB/iYHuCOwymUGk5t1LiN0
