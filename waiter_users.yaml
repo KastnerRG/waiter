@@ -619,6 +619,14 @@ users:
     groups:
       - docker
       - cuda
+  - username: s.shrestha
+    name: Sijan Shrestha
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJhRIWVXVGvL01n/qcnywlfIG5M55x02MfzYMyuGvDAD sijan.shrestha0112@gmail.com
+    expires: "2026-12-31 23:59:59"
+    groups:
+      - docker
+      - cuda
   - username: y.baran.659
     name: Yusuf Baran
     authorized_keys:
