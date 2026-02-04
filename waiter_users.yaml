@@ -341,7 +341,7 @@ users:
     name: Francisco Gutierrez
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOt1npdnmzDMvNTSYVOgPgO7EVl2HglrMuqZpl2JPhKS lowell@yuri aka francisco
-    expires: "2025-12-31 23:59:59"
+    expires: "2026-06-30 23:59:59"
     groups:
       - rdp_users
     password: $6$rounds=656000$8jzC2oKoM0XuPGji$Om/wZ/VPbyGjh/3P1FAxdBXnanaLrtkPuBWC17GI10ruaHBS2jb1QpqeC3EUnlek2qqf4OJTdUQS6K4SiO0Q01
