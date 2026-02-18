@@ -196,7 +196,7 @@ users:
     name: Andy Meza
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICbV/IVj0iMtZ0neS7EjI5WXFz3g+hOwH6oXywclmg5M anmeza@ucsd.edu
-    expires: "2026-01-30 23:59:59"
+    expires: "2026-12-31 23:59:59"
     groups:
       - docker
       - rdp_users
