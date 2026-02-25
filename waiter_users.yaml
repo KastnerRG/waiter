@@ -376,6 +376,7 @@ users:
     expires: "2026-06-30 23:59:59"
     groups:
       - rdp_users
+      - cuda
     password: $6$rounds=656000$ll7MAFfurtMK6gsn$08ycEIhhfL6C5ldcHGFU0jDygTxIakGJod4M.awC.Rg9OS2Q3x1fSBZDrLcZ30yWNisJCywhdmwC/BW/NvCut0
   - username: x.liu.244
     name: Xun Liu
@@ -391,7 +392,7 @@ users:
     authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPVbmSlB0PltT1ehX1LOEmHlszIIJn9Rszk+98X75SSu jaeforest@jaeforest-Inspiron-7386
       - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCwLAOhZQmPMlUJiCk1vvRNm7QGMUCrKfXVTyiu9KJ1wR9uYFowh0Erno7sS7iyQqrFs8RocRCvCeQHolJkQyFHak48ytrxnhQuWagnIKr+Cmc2DhySNZxz7jXekESg9uxME1bxqXDesuPURac4Rzz+dqmVpwtYmzMhQcgUKb6BX2S1hnbIMQXISmpneroTuU/7Vzfq6oQIS4kb6H975lkVCrND1+oi2x8WxWxO6EgnMDcpm2dTq6dV9GtV7SaExUZLHZCT3gTIg0a9x+KLU8oghR/qJgpNOgLf6EnwWJZhPyoyACM+7M5L1nTgQw697zcGoJvytMDYyzAojQOG6py2z375JUr1yMqlLEgaDKIZbqz1dscu/Ue1IKBNUgKd6Oq5N3Gdq0XS2yCTi9+SkaS5M4rRkCBngUda5DJgcr990YYdZUyciq9J5mAjBLVAa/UtBroInOzP7L225kNq8+lzULRooph/aYVZaANX5frKiLR7dj28e8/ZVXbWlHX05OqdK0zXOENl17LCkbyUCX+YAf8RE4f96XA6nn9PbChHOfOvp90v1pIBVCr1hDHeWQ8Xs+tTp3bvVMhFYH/CiLCXaiYmTC93NvlVGClnu5M59pwgfm1t9BrigaEsvt69ARGYGvs10lorANwmITukdH4qaG6A/qC53ik9mCkNH6PeQQ== zzintta@DESKTOP-D4QI2LQ
-    expires: "2025-12-31 23:59:59"
+    expires: "2026-06-30 23:59:59"
     groups:
       - rdp_users
     password: $6$rounds=656000$CWKwPZNFVmX2jgf/$NUZhXvAAYwxvaYbFsrUlUURvtA3UN4NXrQTSX8/dWutyAJAhL3cyy6ZveWYzPHnM9J5eJ/rn3QfZg/ppilJ6w1
