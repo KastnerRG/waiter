@@ -39,7 +39,8 @@ users:
       - docker
       - cuda
       - krg_power_users
-    password: $6$taN53S4OXGzmDC2B$tFVcsi56yyLMJD3IKvGYHXdSP3sAWL1XOmVEET/F6t1f1TU1FaEorza4/8qYrzoyvymZGUU21ZsEp/vf5JEDr.
+      - rdp_users
+    password: $6$rounds=656000$P8qu4.Ss1tGtckWh$0AzUbVfo1Fbq95WJrGRa3jkq7Nr.dJRe8SnPB7XtH.8jqgppAguK4a090kware7JYYM78EhUNCvB/TyXbYdHt1
   - username: n.hui
     name: Nathan Hui
     authorized_keys:
