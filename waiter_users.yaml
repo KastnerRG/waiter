@@ -597,6 +597,7 @@ users:
     groups:
       - docker
       - cuda
+      - rdp_users
   - username: yasalas
     name: Yahir Salas
     authorized_keys:
@@ -605,6 +606,7 @@ users:
     groups:
       - docker
       - cuda
+      - rdp_users
   - username: yil327
     name: Yixuan Li
     authorized_keys:
@@ -613,6 +615,7 @@ users:
     groups:
       - docker
       - cuda
+      - rdp_users
   - username: lolemus
     name: Lorenzo Lemus
     authorized_keys:
@@ -621,6 +624,7 @@ users:
     groups:
       - docker
       - cuda
+      - rdp_users
   - username: s.shrestha
     name: Sijan Shrestha
     authorized_keys:
