@@ -11,3 +11,13 @@
     creates: /nix/var/nix/profiles/default/bin/nix
     executable: /bin/bash
     chdir: "{{ansible_env.HOME}}/installers"
+
+- name: Add nixpkgs unstable channel
+  ansible.builtin.command: nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+  register: nixpkgs_channel
+  changed_when: "'https://nixos.org/channels/nixpkgs-unstable' not in nixpkgs_channel.stdout"
+
+- name: Add home-manager master channel
+  ansible.builtin.command: nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+  register: hm_channel
+  changed_when: "'master.tar.gz' not in hm_channel.stdout"
