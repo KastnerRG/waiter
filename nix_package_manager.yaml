@@ -21,3 +21,7 @@
   ansible.builtin.command: nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
   register: hm_channel
   changed_when: "'master.tar.gz' not in hm_channel.stdout"
+  
+- name: Update Nix channels
+  ansible.builtin.command: nix-channel --update
+  when: nixpkgs_channel.changed or hm_channel.changed
