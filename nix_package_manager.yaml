@@ -11,3 +11,38 @@
     creates: /nix/var/nix/profiles/default/bin/nix
     executable: /bin/bash
     chdir: "{{ansible_env.HOME}}/installers"
+
+- name: Enable nix-command and flakes features
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/nix/nix.conf
+    regexp: '^experimental-features\s*='
+    line: 'experimental-features = nix-command flakes'
+    create: true
+  register: nix_experimental_features
+
+- name: Restart Nix daemon if config changed
+  become: true
+  ansible.builtin.service:
+    name: nix-daemon
+    state: restarted
+  when: nix_experimental_features is changed
+
+- name: List existing Nix channels
+  ansible.builtin.command: /nix/var/nix/profiles/default/bin/nix-channel --list
+  register: nix_channels_list
+  changed_when: false
+
+- name: Add nixpkgs unstable channel
+  ansible.builtin.command: /nix/var/nix/profiles/default/bin/nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+  register: nixpkgs_channel
+  when: "'nixpkgs https://nixos.org/channels/nixpkgs-unstable' not in nix_channels_list.stdout"
+
+- name: Add home-manager master channel
+  ansible.builtin.command: /nix/var/nix/profiles/default/bin/nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+  register: hm_channel
+  when: "'home-manager https://github.com/nix-community/home-manager/archive/master.tar.gz' not in nix_channels_list.stdout"
+
+- name: Update Nix channels
+  ansible.builtin.command: /nix/var/nix/profiles/default/bin/nix-channel --update
+  when: (nixpkgs_channel is changed) or (hm_channel is changed)
