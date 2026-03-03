@@ -12,6 +12,22 @@
     executable: /bin/bash
     chdir: "{{ansible_env.HOME}}/installers"
 
+- name: Enable nix-command and flakes features
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/nix/nix.conf
+    regexp: '^experimental-features\s*='
+    line: 'experimental-features = nix-command flakes'
+    create: true
+  register: nix_experimental_features
+
+- name: Restart Nix daemon if config changed
+  become: true
+  ansible.builtin.service:
+    name: nix-daemon
+    state: restarted
+  when: nix_experimental_features is changed
+
 - name: List existing Nix channels
   ansible.builtin.command: /nix/var/nix/profiles/default/bin/nix-channel --list
   register: nix_channels_list
