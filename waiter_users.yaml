@@ -652,3 +652,11 @@ users:
       - cuda
       - rdp_users
     password: $6$rounds=656000$Y4RFQWvukfAtZspS$LSo2Q3lRo2/1frRurmN5/TawNMRAxo5iqi2Xwdxk9jv4EDe9iV35HSUdiCTurcDywB/iYHuCOwymUGk5t1LiN0
+  - username: y.joh.117
+    name: Yuheon Joh
+    authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHf9CSpXvVrRv68yXIsZ9vGhYj5CvweKH2K3hQeUbbn4 johyuheon@gmail.com
+    expires: "2026-06-30 23:59:59"
+    groups:
+      - rdp_users
+    password: $6$rounds=656000$8b8YixVZ6TRAYYWO$jFxJNVKYiqF6Y4jCD6CyDecMah5rIb.f3rHVtdWswAjDtXLJMiiJZP9rAgrDXflMd//grEO1.L.ABLMxtiBi3/
