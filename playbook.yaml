@@ -80,6 +80,7 @@
         # NFS
         - nfs-common
         - zsh
+        - oomd
   - name: Ensure these packages are not installed
     become: true
     ansible.builtin.apt:
