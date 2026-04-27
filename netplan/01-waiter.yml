@@ -2,7 +2,7 @@ network:
   version: 2
   renderer: networkd
   ethernets:
-    eno1np0:
+    enp3s0f0:
       dhcp4: false
       dhcp6: false
       addresses:
@@ -15,5 +15,5 @@ network:
           - 132.239.0.252
           - 8.8.8.8
           - 1.1.1.1
-    eno2np1:
+    enp3s0f1:
       activation-mode: off
