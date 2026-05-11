@@ -12,6 +12,14 @@
     executable: /bin/bash
     chdir: "{{ansible_env.HOME}}/installers"
 
+# Nix adds its stuff to /etc/zshrc which is ignored (I think)
+- name: Ensure Nix is sourced in the correct Zsh config
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/zsh/zshrc
+    line: "[[ -e /etc/zshrc ]] && . /etc/zshrc"
+    create: yes
+
 - name: Enable nix-command and flakes features
   become: true
   ansible.builtin.lineinfile:
